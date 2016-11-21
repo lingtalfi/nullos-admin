@@ -1,0 +1,244 @@
+/*------------------------------------
+- PANES CODE
+------------------------------------*/
+html, body {
+    height: 100%;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+
+}
+
+.panes-container {
+    display: flex;
+    background: #eee;
+    height: 100%;
+}
+
+.pane-main {
+    width: 30%;
+    min-width: 200px;
+    background: #ddd;
+}
+
+.pane-aux {
+    background: #ccc;
+    flex: auto;
+}
+
+/*------------------------------------
+- SPLIT
+------------------------------------*/
+.gutter {
+    background-color: #eee;
+
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('/libs/split/vertical.png');
+    cursor: ew-resize;
+}
+
+.gutter.gutter-vertical {
+    background-image: url('/libs/split/horizontal.png');
+    cursor: ns-resize;
+}
+
+/*------------------------------------
+- LEFT MENU TOOLS
+------------------------------------*/
+.leftmenu .linkslist li {
+    border-bottom: 1px solid #bbb;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.leftmenu .linkslist li:last-child {
+    border-bottom: none;
+}
+
+.leftmenu .linkslist a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.leftmenu .linkslist a:hover {
+    background: #ccc;
+}
+
+.leftmenu .section-block {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #aaa;
+}
+
+.leftmenu .section-block h3 {
+    color: black;
+    background: rgba(178, 114, 0, 0.82);
+    padding: 10px;
+    font-weight: normal;
+}
+
+/*------------------------------------
+- LEFT MENU
+------------------------------------*/
+.leftmenu {
+    overflow: hidden;
+}
+
+.leftmenu a {
+    color: #666;
+    text-decoration: none;
+}
+
+.leftmenu .header .title {
+    display: block;
+    background: #aaa;
+    padding: 10px;
+    color: black;
+}
+
+/*------------------------------------
+- RIGHT TOOLS
+------------------------------------*/
+.hidden {
+    display: none;
+}
+
+.freepage {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.datatable-section a {
+    text-decoration: none;
+}
+
+.datatable-section a:hover {
+    text-decoration: underline;
+}
+
+.datatable-section .multiple-actions {
+    display: flex;
+}
+
+.datatable-section .checkall-btn,
+.datatable-section .uncheckall-btn
+{
+    margin-right: 20px;
+}
+
+.datatable-section .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #999;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.datatable-section .pagination {
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    width: 100%;
+    position: relative;
+    overflow-x: auto;
+}
+
+.datatable-section .pagination li {
+    border-right: 1px solid #666;
+}
+
+.datatable-section .pagination li:last-child {
+    border-right: none;
+}
+
+.datatable-section a:hover {
+    text-decoration: underline;
+}
+
+.datatable-section .pagination a {
+    display: block;
+    padding: 0 10px;
+    width: 100%;
+    height: 100%;
+    color: #666;
+}
+
+.datatable-section .pagination a.selected {
+    color: #ddd;
+}
+
+.datatable-section .search {
+    width: 30%;
+    display: flex;
+}
+
+.datatable-section .search .search-form {
+    display: flex;
+    width: 100%;
+}
+
+.search-input {
+    flex: auto;
+}
+
+.datatable-section .multiple-actions {
+    background: #666;
+    padding: 5px;
+}
+
+.datatable {
+    width: 100%;
+    display: block;
+    overflow-x: scroll;
+    border-collapse: collapse;
+}
+
+.datatable .checkbox {
+    width: 40px;
+    height: 40px;
+}
+
+.datatable tr.headerrow {
+    background: #aaa;
+}
+
+.datatable tr.headerrow a {
+    color: #555;
+}
+
+.datatable tr.even {
+    background: #eee;
+}
+
+.datatable tr.odd {
+    background: #ddd;
+}
+
+.datatable tr, td {
+    border-bottom: 1px solid #ccc;
+}
+
+.datatable td {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.datatable td {
+    padding: 5px;
+}
+
+.datatable tbody a {
+    color: #9341ce;
+}
+
+

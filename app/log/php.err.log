@@ -1,0 +1,36 @@
+[21-Nov-2016 20:25:26 UTC] PHP Notice:  Undefined variable: b in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php on line 28
+[21-Nov-2016 20:25:26 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1049] Unknown database 'nullos' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php(47): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
+[21-Nov-2016 20:25:35 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1049] Unknown database 'nullos' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php(44): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
+[21-Nov-2016 20:28:37 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1049] Unknown database 'nullos' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php(44): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
+[21-Nov-2016 20:35:35 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1049] Unknown database 'nullo' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php(44): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
+[21-Nov-2016 20:35:59 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1049] Unknown database 'nullos' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php(44): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
