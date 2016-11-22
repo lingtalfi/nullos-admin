@@ -77,3 +77,5 @@ Stack trace:
 #4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
 #5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
 #6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php( in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php on line 71
+[22-Nov-2016 08:09:20 UTC] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, class '<a class="postlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 199
+[22-Nov-2016 08:09:38 UTC] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, class '<a class="postlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 199

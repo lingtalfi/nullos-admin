@@ -4,7 +4,7 @@ Nullos Admin
 A php admin script to interact with a front end.
 
 
-This is a work in progress...
+This is a work in progress... (the development version)
 
 
 
@@ -394,6 +394,7 @@ There are many aspects of the list that we can configure with an instance of Dat
 - search columns
 - column headers
 - hidden columns
+- transformers
 - widgets
 - mutiple actions
 - single actions
@@ -446,9 +447,6 @@ to know the number of items, so there will be two queries performed, one with th
 with a count(*) expression.
 
 
-Note that the query uses dot notation (v.id for instance) and column aliases (as user_pseudo for instances).
-
-
 The fields part will tell DataTable which columns to display.
 
 By default, DataTable will display all of them, but that's configurable with other properties as you'll soon see.
@@ -459,8 +457,9 @@ Even if you decide to hide them from the view, they must be present in the reque
 the functional purpose of identifying the target row(s) in actions such as edit and delete.
 
 
+The query part is the rest of the query. It uses the %s symbol as a placeholder for the select expression (the 
+php sprintf function is used). 
 
-The query part is the rest of the query.
 
 Don't bother with the order by and limit clauses, they are added automatically by DataTable.
 
@@ -513,7 +512,9 @@ $table->searchColumns = ['v.url', 'c.titre'];
 ```
 
 Note that the columns that you specify via searchColumns are passed to the sql where clause,
-and therefore you cannot use the column aliases.
+and therefore you have to use the **concrete notation** (cannot use the column aliases, see the columns disambiguation in the
+nomenclature section).
+
 
 This means that if your fields look like this:
 
@@ -557,6 +558,8 @@ $table->columnHeaders = [
 ];
 ```
 
+Note: the keys use the column symbolic notation
+
 
 
 ### Hidden columns
@@ -583,8 +586,38 @@ $table->hiddenColumns = [
 ];
 ```
 
-Note that the names of the columns passed to hiddenColumns are the symbolic names (the column aliases if present,
-or the column name without the dot otherwise) 
+
+Note: the values use the column symbolic notation
+
+
+
+
+
+### Transformers
+
+
+One thing you can do is polish the content of the columns.
+
+A common optimization is the one that transform an url into an actual html link (or image).
+
+Another use of this is to transform a scary 0|1 boolean into a visual switch.
+
+
+ 
+To transform a column, you can use the setTransformer method, like so:
+
+```php
+$table->setTransformer('url', function($v){
+    return '<a target="_blank" href="'. htmlspecialchars($v) .'">'. $v .'</a>';
+});
+```
+
+The setTransformer accepts two arguments:
+
+- column: the colmun name (symbolic) to apply the callback to  
+- callback: the callback used to transform the content of the column.
+        The callback takes two arguments: the original column value and an associative array representing the row 
+
 
 
 
@@ -597,6 +630,7 @@ By default, DataTable will display not only the table, but also some widgets tha
 - search: a search module to filter the rows
 - nippSelector: a selector to choose the number of items to display per page 
 - pagination: a list of the available page links  
+- multipleActions: the multiple actions at the bottom of the table  
 
 
 If you don't want to use some widgets, you can hide them from the view with the customizeWidget method:
@@ -664,7 +698,87 @@ From a more abstract point of view, the registerMultipleAction method accept thr
 
 ### Single actions
 
-TODO...
+
+Single actions are actions related to a single row.
+ 
+Datatables display the single actions at the end of a row.
+ 
+By default, there are two single actions:
+
+- edit
+- delete
+
+
+You can define your own actions using the registerSingleAction method, like so:
+
+```php
+$table->registerSingleAction('simple_link', '<a href="/another/page?table={tableName}&ric={ric}">Hello</a>');
+```
+
+The above code will simply print a link at the end of each row.
+
+You might have noticed that the link contains tags ({tableName} and {ric}).
+
+Tags are converted automatically by DataTable.
+
+The following tags are available:
+
+- {tableName}: the name of the table
+- {ric}: the values of the ric, separated by a so-called ricSeparator (--*-- by default)
+
+
+With this kind of link and little bit of javascript magic, you can pretty much do anything you want.
+
+
+
+#### Postlink
+
+However, there is another mechanism that you can use to craft your single actions.
+
+This mechanism is called postLink and allows you to handle the action with php, directly 
+from your code.
+
+Basically, when you click the link, it creates a form with:
+
+- action: the_id_of_your_action
+- ric: the ric of the row, so that you can target it in php
+
+and submits it.
+
+When the form is submitted, it handles the $_POST[action] key and passes it back to a php callback that you provide.  
+
+The default delete single action uses this mechanism.
+
+Here is an example code that would simply display the ric when the "Click me" link is clicked:
+
+```php
+$table->registerSingleAction('ric_link', '<a class="postlink" data-action="ric_link" data-ric="{ric}" href="#">Click me</a>', function($table, array $ric){
+    a("table: $table, ric: " . implode(', ', $ric));
+});
+// string(23) "table: videos, ric: 195"
+```
+
+The registerSingleAction method accept three arguments:
+
+- id: the identifier of the single action (used internally to trigger the single action)
+- html: the html displayed in the column (tags are replaced first)
+- ?callback: A callback to execute.
+                The callback is only executed if there is an action in the $_POST array with the value of the id (identifier).
+                This callback accepts two arguments: table and ric.
+                        - table is the name of the table on which to apply the single action
+                        - ric is an array containing the values of the ric for the chosen row
+                
+
+
+
+To create a postlink, you need to add the following attributes to your link:
+ 
+- class=postlink
+- data-ric={ric}
+- data-action=(the action identifier to execute when the link is clicked upon)
+
+
+Any link with those attributes is automatically upgraded to a postlink by DataTable (via js).
 
 
 
@@ -673,8 +787,58 @@ TODO...
 
 ### Default values
 
+In addition to the properties discussed above, there are other default values that you can override.
 
-TODO...
+They are organized in two categories:
+
+- widgets customization
+- $_POST customization
+
+
+Widget customization contains the following keys:
+- nbItemsPerPage: int|all, default=50, how many items per page by default (can be overridden with the gui) 
+- sortColumn: string|null, default=null, which column (symbolic form) to use for the sort, null means none 
+- sortColumnDir: string(asc|desc)|null, default=null, which sort direction to start with
+- nbItemsPerPageList: array, default=[5, 10, 25, 50, 100, 250, 'all'], defines the possible values that the user can select from
+
+
+$_POST customization contains the keys passed via $_POST:
+- tableGetKey: default=name, refers to the table name
+- pageGetKey: default=page, refers to the number of the current page
+- nbItemsPerPageGetKey: default=nipp, refers to the number of items per page
+- sortColumnGetKey: default=sort, refers to the sort column
+- sortColumnDirGetKey: default=dir, refers to the sort column direction
+- searchGetKey: default=search, refers to the search expression passed to the search widget
+
+
+
+
+
+
+
+
+
+Call the printTable method
+----------------
+
+Once you've configured the DataTable instance the way you like, the last step is to display the table.
+ 
+This is done by calling the printTable method.
+
+It will print the table, according to your configuration.
+
+printTable has the following arguments
+
+- table: string, name of the table to interact with
+- query: string, the query (as defined in the view section)
+- fields: string, the fields (as defined in the view section)
+- ric: array which values are the ric column names
+
+
+
+
+
+
 
 
 
@@ -723,17 +887,65 @@ with that.
 
 
 
+Columns: symbolic name and concrete name 
+-------------------
+
+When we use the DataTable class to create a list, we manipulate columns.
+
+However, the notation of a column depends on what part of the configuration 
+we want to modify.
+
+For instance, the searchColumns property expects the concrete notation,
+whereas other properties like columnHeaders use the symbolic notation.
 
 
-  
-  
+The concrete notation and symbolic notation are terms that I made up with the hope
+of bringing some light to this otherwise dark subject.
 
+But what do they stand for exactly?
+
+
+Remember this configuration excerpt?
+
+```php
+$fields = '
+v.id,
+v.active,
+u.pseudo as user_pseudo, 
+c.titre as concours_titre,
+v.url,
+v.nb_vues,
+v.nb_likes,
+v.date_creation
+';
+```
+
+There are two cases:
+
+- if there is an **as** keyword in the column definition, then
+    the concrete notation refers to the left part, and
+    the symbolic notation to the right part.
     
-
-
-
-
-
-
-
-
+- if there is no **as** keyword in the column definition, then
+    the concrete notation refers to the column definition including the dot prefix,
+    and the symbolic notation refers to the column definition NOT including the dot prefix
+    
+ 
+Let's see how those rules apply to the example above:
+ 
+ 
+Column definition        |     concrete notation         | symbolic notation
+-------------------------------     |   -----------------------     | ----------------------- 
+v.id                                |   v.id                        |  id 
+v.active                            |   v.active                    |  active 
+u.pseudo as user_pseudo             |   u.pseudo                    |  user_pseudo 
+c.titre as concours_titre           |   c.titre                     |  concours_titre 
+v.url                               |   v.url                       |  url 
+v.vues                              |   v.vues                      |  nb_vues 
+v.likes                             |   v.likes                     |  nb_likes 
+v.creation                          |   v.creation                  |  date_creation 
+ 
+ 
+ 
+Note: the column alias notation is used almost everywhere. The only
+place where the concrete notation is used is with the search module.

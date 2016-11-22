@@ -23,31 +23,26 @@ class DataTable
     // likely to change
     /**
      * searchColumns: null(default)|array,
+     *          - if it's an array, it's an array of concrete columns names (v.id...)
      *          - if it's an empty array, no search will be performed
      *          - if it's null, it will be populated with all the columns from the fields property
      */
     public $searchColumns;
 
     /**
-     * array of <column|column alias> => label,
+     * array of <column alias> => label,
      * use this to override all or some of the column headers.
      */
     public $columnHeaders;
     /**
-     * array of columns to hide from view.
+     * array of <columns alias> to hide from view.
      * Note: the columns are kept in the html (because they might be useful to target a row)
      * but hidden from the view via css.
      */
     public $hiddenColumns;
 
 
-    public $extraField;
-    public $extraWhere;
     public $title;
-    public $noItemHtml;
-    public $markers;
-    public $linkGen;
-    public $table;
 
 
     //
@@ -80,6 +75,14 @@ class DataTable
      */
     private $singleActions;
 
+    /**
+     * array of <column alias> => callback,
+     *       The callback accepts the following arguments:
+     *              - value: mixed, the value of the column
+     *              - item: array of key => value, it represents the row
+     */
+    private $transformers;
+
 
     public function __construct()
     {
@@ -99,16 +102,14 @@ class DataTable
 
 
         //
-        $this->extraField = "";
-        $this->extraWhere = "";
         $this->title = null;
-        $this->noItemHtml = "";
-        $this->markers = [];
+
         $this->widgets = [
             'pageSelector' => true,
             'search' => true,
             'nippSelector' => true,
             'pagination' => true,
+            'multipleActions' => true,
         ];
 
         $this->multipleActions = [
@@ -118,14 +119,34 @@ class DataTable
             ],
         ];
 
+
+        /**
+         * The concept of postlink is important to understand.
+         * A postlink is a fake link bound to a specific row. It actually does the following when clicked upon:
+         *
+         * - it posts a form containing the following fields:
+         *      - action: the action to execute.
+         *                  In this scenario, actions are handled by this class, using the actions (not multiple actions) handler.
+         *                  The value of the action  must be passed via the link's data-action attribute.
+         *      - id: the ric of the row on which to execute the action
+         *                  The value of the ric must be passed via the link's data-ric attribute.
+         *
+         *      The action (destination) of the posted form is the same as the current url,
+         *      including the query string (so that we can delete one row without interrupting our workflow).
+         *
+         *
+         */
         $this->singleActions = [
-            'delete' => ':delete', // this is a special notation to indicate that we want to use the delete method of THIS class
+            'edit' => ['<a href="/table?name={tableName}&action=edit&ric={ric}">Edit</a>'],
+            // :delete is a special notation to indicate that we want to use the delete method of THIS class
+            'delete' => ['<a class="postlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>', ':delete'],
         ];
 
 
         //
         $this->ricSeparator = '--*--';
         $this->hiddenColumns = [];
+        $this->transformers = [];
 
 
     }
@@ -137,7 +158,7 @@ class DataTable
      *          This is used to delete/edit a specific row.
      *
      */
-    public function printTable($table, $query, $fields, array $ric = ['id'])
+    public function printTable($table, $query, $fields, array $ric)
     {
 
         //--------------------------------------------
@@ -171,11 +192,13 @@ class DataTable
                 $_ric = (string)$_POST['ric'];
                 $vals = explode($this->ricSeparator, $_ric);
                 $_ric = array_combine($ric, $vals);
-                $callback = $this->singleActions[$action];
-                if (':delete' === $callback) {
-                    $callback = [$this, "delete"];
+                $callback = $this->singleActions[$action][1];
+                if (null !== $callback) {
+                    if (':delete' === $callback) {
+                        $callback = [$this, "delete"];
+                    }
+                    call_user_func($callback, $table, $_ric);
                 }
-                call_user_func($callback, $table, $_ric);
             }
         }
 
@@ -192,10 +215,6 @@ class DataTable
         $search = (array_key_exists($this->searchGetKey, $_GET)) ? (string)$_GET[$this->searchGetKey] : '';
         if ('' !== $search) {
             if (null === $this->searchColumns) {
-                /**
-                 * note: Search columns use the dot notation, like v.id (ambiguous cases must be resolved, and CANNOT use column aliases),
-                 * whereas sort columns use the symbolic notation (possible to use columns aliases).
-                 */
                 $searchColumns = $this->getSearchColumnsFromFields($fields);
             } else {
                 $searchColumns = $this->searchColumns;
@@ -277,26 +296,12 @@ class DataTable
          * Display the table
          */
         $items = QuickPdo::fetchAll(sprintf($query, $fields), $markers);
-        /**
-         * The concept of postlink is important to understand.
-         * A postlink is a fake link bound to a specific row. It actually does the following when clicked upon:
-         *
-         * - it posts a form containing the following fields:
-         *      - action: the action to execute.
-         *                  In this scenario, actions are handled by this class, using the actions (not multiple actions) handler.
-         *                  The value of the action  must be passed via the link's data-action attribute.
-         *      - id: the ric of the row on which to execute the action
-         *                  The value of the ric must be passed via the link's data-ric attribute.
-         *
-         *      The action (destination) of the posted form is the same as the current url,
-         *      including the query string (so that we can delete one row without interrupting our workflow).
-         *
-         *
-         */
-        $extraCols = [
-            '<a href="/table?name={tableName}&action=edit&ric={ric}">Edit</a>',
-            '<a class="postlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>',
-        ];
+
+
+        $extraCols = array_map(function ($v) {
+            return $v[0];
+        }, $this->singleActions);
+
         $paginationSelectedId = "selected-link-" . rand(0, 10000);
         $tableId = "datatable-" . rand(0, -10000);
 
@@ -420,7 +425,14 @@ class DataTable
                                     $_hid = ($this->isHidden($k)) ? ' style="display: none"' : "";
                                     ?>
                                     <td<?php echo $_hid; ?>>
-                                        <?php echo $v; ?>
+                                        <?php
+
+                                        if (array_key_exists($k, $this->transformers)) {
+                                            $v = call_user_func($this->transformers[$k], $v, $item);
+                                        }
+
+                                        echo $v;
+                                        ?>
                                     </td>
                                 <?php endforeach; ?>
 
@@ -472,16 +484,18 @@ class DataTable
                     <?php endif; ?>
 
 
-                    <div class="multiple-actions">
-                        <button class="checkall-btn">Check all rows</button>
-                        <button class="uncheckall-btn hidden">Uncheck all rows</button>
-                        <select class="multiple-action-selector" name="multiple-action">
-                            <option value="0">For all selected rows</option>
-                            <?php foreach ($this->multipleActions as $k => $v): ?>
-                                <option value="<?php echo $k; ?>"><?php echo $v[0]; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
+                    <?php if ($this->hasWidget('multipleActions')): ?>
+                        <div class="multiple-actions">
+                            <button class="checkall-btn">Check all rows</button>
+                            <button class="uncheckall-btn hidden">Uncheck all rows</button>
+                            <select class="multiple-action-selector" name="multiple-action">
+                                <option value="0">For all selected rows</option>
+                                <?php foreach ($this->multipleActions as $k => $v): ?>
+                                    <option value="<?php echo $k; ?>"><?php echo $v[0]; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    <?php endif; ?>
 
                 </form>
                 <div class="hidden blackhole"></div>
@@ -606,6 +620,7 @@ class DataTable
      * - search
      * - nippSelector
      * - pagination
+     * - multipleActions
      *
      */
     public function customize(array $widgets)
@@ -621,9 +636,9 @@ class DataTable
     }
 
 
-    public function registerSingleAction($id, $function)
+    public function registerSingleAction($id, $html, $function = null)
     {
-        $this->singleActions[$id] = $function;
+        $this->singleActions[$id] = [$html, $function];
     }
 
     public function registerMultipleAction($id, $label, $function)
@@ -632,6 +647,11 @@ class DataTable
             $label,
             $function,
         ];
+    }
+
+    public function setTransformer($column, $function)
+    {
+        $this->transformers[$column] = $function;
     }
 
 

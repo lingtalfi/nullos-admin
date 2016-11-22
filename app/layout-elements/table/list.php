@@ -67,9 +67,16 @@ $table->sortColumn = 'id';
 $table->sortColumnDir = 'desc';
 //$table->customizeWidget('pagination', false);
 //$table->customizeWidget('search', false);
+//$table->customizeWidget('multipleActions', false);
 
-$table->registerSingleAction('simple_link', '<a href="/another/page">Hello</a>');
+$table->registerSingleAction('ric_link', '<a class="postlink" data-action="ric_link" data-ric="{ric}" href="#">Click me</a>', function($table, array $ric){
+    a("table: $table, ric: " . implode(', ', $ric));
+});
+// string(23) "table: videos, ric: 195"
 
+$table->setTransformer('url', function($v){
+    return '<a target="_blank" href="'. htmlspecialchars($v) .'">'. $v .'</a>';
+});
 
 
 
