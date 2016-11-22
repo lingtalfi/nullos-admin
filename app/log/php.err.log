@@ -34,3 +34,46 @@ Stack trace:
 #2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
 #3 {main}
   thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
+[22-Nov-2016 07:01:48 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Layout::{closure}() must be of the type array, string given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 165 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php:71
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(165): Layout->{closure}('videos', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(79): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/n in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php on line 71
+[22-Nov-2016 07:04:22 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Layout::{closure}() must be of the type array, string given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 168 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php:71
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(168): Layout->{closure}('videos', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(79): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/n in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php on line 71
+[22-Nov-2016 07:04:42 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Layout::{closure}() must be of the type array, string given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 166 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php:71
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(166): Layout->{closure}('videos', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(79): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/n in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php on line 71
+[22-Nov-2016 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Non-static method Closure::call() cannot be called statically in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php:166
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(79): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 166
+[22-Nov-2016 07:10:58 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to DataTable::{closure}() must be of the type array, string given in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php:71
+Stack trace:
+#0 [internal function]: DataTable->{closure}('videos', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(166): Closure->call(Object(DataTable), 'videos', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(79): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php( in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php on line 71

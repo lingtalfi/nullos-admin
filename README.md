@@ -330,8 +330,410 @@ Files called summary
 Datatables
 =============
 
-crud
+An important part of nullos admin is how it handles the crud.
 
-TODO....
+In this section, I try to explain the choices I made when designing the "datatables system". 
+
+
+The code for the table starts in **app/layout-elements/table.php**, which is responsible for generating the html
+for the **body** element of the main layout.
+
+This element script listen for a $_GET variable called action, and delegates the processing to one of the following scripts,
+depending on the value of $_GET[action]:
+
+- list: display the list of the rows of a specific table in the database
+- form (not implemented yet): display the form for inserting/updating a row in the database
+
+Those scripts are located in the **app/layout-elements/table** directory.
+
+
+List: the DataTable object
+-------------
+
+The code responsible for displaying the html of the list is in **app/layout-elements/table/list.php**.
+
+In there the table is printed using an object named DataTable.
+
+
+The DataTable object is relatively complex and so it's treated in its own section later in this page.
+
+
+
+Form
+------------------
+Not implemented yet
+
+
+
+
+
+
+DataTable
+================
+
+To work with the Datatable, you first create an instance of it, then you configure it,
+and finally you call the printTable method.
+
+
+Instantiation
+---------------
+The instantiation is trivial:
+
+```php
+$table = new DataTable();
+```
+
+
+Configuration
+----------------
+
+There are many aspects of the list that we can configure with an instance of DataTable.
+
+- view
+- title
+- search columns
+- column headers
+- hidden columns
+- widgets
+- mutiple actions
+- single actions
+- default values
+    - number of items per page
+    - sort column
+    - sort column direction    
+    - $_GET keys to listen to     
+
+
+### View
+
+The most important customization is the view.
+
+The view is the sql query used to generate the table.
+
+This is where nullos admin differs from phpMyAdmin: you create the query manually (it's not automatic yet).
+
+A view is split in two elements:
+
+- fields
+- query
+
+For instance:
+
+```php
+
+$fields = '
+v.id,
+v.active,
+u.pseudo as user_pseudo, 
+c.titre as concours_titre,
+v.url,
+v.nb_vues,
+v.nb_likes,
+v.date_creation
+';
+
+$query = "select
+%s
+from videos v
+inner join users u on u.id=v.users_id
+inner join concours c on c.id=v.concours_id
+";
+
+```
+
+If you wonder why we have to split it like this, it's because of the pagination system, which needs
+to know the number of items, so there will be two queries performed, one with the fields, and one
+with a count(*) expression.
+
+
+Note that the query uses dot notation (v.id for instance) and column aliases (as user_pseudo for instances).
+
+
+The fields part will tell DataTable which columns to display.
+
+By default, DataTable will display all of them, but that's configurable with other properties as you'll soon see.
+
+Your request should at least contain the **ric** fields (see the ric paragraph in nomenclature section).
+
+Even if you decide to hide them from the view, they must be present in the request, because they have
+the functional purpose of identifying the target row(s) in actions such as edit and delete.
+
+
+
+The query part is the rest of the query.
+
+Don't bother with the order by and limit clauses, they are added automatically by DataTable.
+
+However, should you have a where clause, you need to specify it in your query.
+
+For instance:
+
+```php
+$query = "select
+%s
+from users
+where active=1
+";
+
+```
+
+
+
+So, lot of the nullos admin power comes from this flexibility that you have crafting your own sql requests.
+
+
+
+
+### Title
+
+To display a title on top of the html table, use the following
+
+```php
+$table->title = "List of users";
+```
+
+
+### Search columns
+
+DataTable by default displays a widget called search, which allows the user to type an expression and click
+the submit button.
+
+This will update the sql request so that only the rows containing the expression will appear.
+
+By default, DataTable will search in all the columns that you specified with the fields variable (defined in the view section).
+ 
+ 
+However, you can optimize the search by specifying which columns are searched.
+
+You do this with the searchColumns property, like so:
+
+
+```php
+$table->searchColumns = ['v.url', 'c.titre'];
+```
+
+Note that the columns that you specify via searchColumns are passed to the sql where clause,
+and therefore you cannot use the column aliases.
+
+This means that if your fields look like this:
+
+
+```php
+$fields = '
+v.id,
+v.active,
+u.pseudo as user_pseudo, 
+c.titre as concours_titre,
+v.url,
+v.nb_vues,
+v.nb_likes,
+v.date_creation
+';
+```
+
+Then you have to use u.pseudo, and user_pseudo will not work.
+
+
+### Columns headers
+
+
+Being able to customize the table like you want is one of the main goal of nullos admin.
+
+So imagine you have a column named creation_date. You know that it's the right name for you column,
+but it can scare your client, because she will see the underscore in the middle of the word and she won't understand why it's there,
+and she will understand that she is missing some parts of the picture, and she will start freaking out...
+
+There is a simple fix to this: rename creation_date to creation date (two words).
+
+You can use the columnHeaders property to do so, like that:
+
+```php
+$table->columnHeaders = [
+    'user_pseudo' => 'pseudo',
+    'concours_titre' => 'concours',
+    'nb_vues' => 'nb vues',
+    'nb_likes' => 'nb likes',
+    'date_creation' => 'creation date',
+];
+```
+
+
+
+### Hidden columns
+
+
+Again, the main goal of nullos admin is to have complete control on how a table looks like.
+
+So imagine your client sees a column named id.
+
+"What the heck is that", she might think.
+
+
+Don't scare her with fancy column names, just remove those columns...
+
+But wait, if you remove the id column, you won't be able to target the row, so you won't be able to edit the row,
+delete the row..., so hide the column with **style="display none"** and that should be fine.
+ 
+There is a hiddenColumns property for that:
+
+```php
+$table->hiddenColumns = [
+    'id',
+    'user_pseudo',
+];
+```
+
+Note that the names of the columns passed to hiddenColumns are the symbolic names (the column aliases if present,
+or the column name without the dot otherwise) 
+
+
+
+### Widgets
+
+
+By default, DataTable will display not only the table, but also some widgets that help interact with it:
+
+- pageSelector: a selector (html select) used to navigate to a specific page 
+- search: a search module to filter the rows
+- nippSelector: a selector to choose the number of items to display per page 
+- pagination: a list of the available page links  
+
+
+If you don't want to use some widgets, you can hide them from the view with the customizeWidget method:
+
+```php
+$table->customizeWidget('search', false);
+```
+
+The first argument is the identifier of the widget, and the second argument defines if it's visible or not (boolean).
+
+
+
+Note that there is also a "sort" widget, but you cannot disable it: when you click on the column header,
+it toggles the rows sorting between ascendant and descendant for this particular column. 
+
+
+
+### Multiple actions
+
+
+At the bottom of the table, there is a toolbar containing a multiple actions selector.
+
+With this selector, the user can perform an action on every selected rows (rows are selected by checking the
+check box on the left of the row).
+
+Such actions are called multiple actions because they apply on multiple rows.
+
+As for now, there is only one multiple actions named deleteAll, which deletes every selected rows.
+
+
+However, you can add your own multiple actions.
+
+In order to do so, you will write something like this:
+
+
+```php
+$table->registerMultipleAction('logAll', 'Log All', function($table, array $rics){
+    foreach($rics as $ric){
+        // do your things here.
+        a($ric);
+    }
+});
+```
+
+The code above will display something like this:
+
+```txt
+array(1) {
+  ["id"] => string(3) "196"
+}
+
+array(1) {
+  ["id"] => string(3) "195"
+}
+```
+
+
+From a more abstract point of view, the registerMultipleAction method accept three arguments:
+
+- id: the identifier of the multiple action (used internally to trigger the multiple action when appropriate)
+- label: displayed in the selector
+- callback: what to do with the selected rows. Each row is passed in the form of a ric array.
+
+
+
+### Single actions
+
+TODO...
+
+
+
+
+
+
+### Default values
+
+
+TODO...
+
+
+
+
+
+
+Nomenclature
+================
+
+Ric
+--------
+
+Ric: (array of) row identifying columns.
+
+Imagine you have a table named users with the following structure:
+
+- users
+    - id: auto-incremented key
+    - email: varchar(64)
+    - pseudo: varchar(64)
+    
+    
+In this case, the id column is the one that identifies any row in a unique manner.
+So the ric would be [id].
+
+
+Now imagine you have another table named users_has_phones with the following structure:
+
+- users_has_phones
+    - users_id: foreign key 
+    - phones_id: foreign key
+     
+     
+In this case, we need both the users_id and the phones_id to identify a row.
+So the ric would be [users_id, phones_id].
+     
+
+In other words (and I've just discovered it), the ric is nothing more 
+than the so-called [primary key](https://www.tutorialspoint.com/sql/sql-primary-key.htm) in sql.
+     
+     
+But, sometimes the term ric is used to actually means the keys ([users_id, phones_id]), and sometimes
+it means the key and concrete values [users_id => 6, phones_id => 40], depending on the context, so be careful
+with that.
+     
+
+
+
+
+
+  
+  
+
+    
+
+
+
+
+
+
 
 

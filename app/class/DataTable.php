@@ -107,7 +107,7 @@ class DataTable
         $this->widgets = [
             'pageSelector' => true,
             'search' => true,
-            'niipSelector' => true,
+            'nippSelector' => true,
             'pagination' => true,
         ];
 
@@ -161,8 +161,8 @@ class DataTable
                     if (':deleteAll' === $callback) {
                         $callback = [$this, "deleteAll"];
                     }
-
                     call_user_func($callback, $table, $rics);
+
                 }
             }
         } else if (array_key_exists('action', $_POST) && array_key_exists('ric', $_POST)) {
@@ -347,12 +347,12 @@ class DataTable
                     <?php endif; ?>
 
 
-                    <?php if ($this->hasWidget('niipSelector')): ?>
+                    <?php if ($this->hasWidget('nippSelector')): ?>
                         <div class="nblines_per_page">
                             <form method="get" action="">
                                 <span><?php echo __("Number of rows:", 'datatable'); ?></span>
-                                <?php $this->printHiddenFields('niip', $table, $currentPage, $sortColumn, $sortColumnDir, $search, $nbItemsPerPageChoice); ?>
-                                <select name="<?php echo $this->nbItemsPerPageGetKey; ?>" class="niip-selected">
+                                <?php $this->printHiddenFields('nipp', $table, $currentPage, $sortColumn, $sortColumnDir, $search, $nbItemsPerPageChoice); ?>
+                                <select name="<?php echo $this->nbItemsPerPageGetKey; ?>" class="nipp-selected">
                                     <?php foreach ($this->nbItemsPerPageList as $value):
                                         $sel = ((int)$value === (int)$nbItemsPerPageChoice) ? ' selected="selected"' : '';
                                         ?>
@@ -500,14 +500,14 @@ class DataTable
                 /**
                  * toolbar
                  */
-                var niipSelector = tableSection.querySelector('.niip-selected');
+                var nippSelector = tableSection.querySelector('.nipp-selected');
 
                 var toolbarSubmit = function () {
                     this.parentNode.submit();
                 };
 
                 pageSelector.addEventListener('change', toolbarSubmit);
-                niipSelector.addEventListener('change', toolbarSubmit);
+                nippSelector.addEventListener('change', toolbarSubmit);
 
 
                 /**
@@ -604,7 +604,7 @@ class DataTable
      *
      * - pageSelector
      * - search
-     * - niipSelector
+     * - nippSelector
      * - pagination
      *
      */
@@ -696,7 +696,7 @@ class DataTable
         <?php endif;
 
 
-        if ('niip' !== $exclude): ?>
+        if ('nipp' !== $exclude): ?>
             <input type="hidden" name="<?php echo $this->nbItemsPerPageGetKey; ?>"
                    value="<?php echo $nbItemsPerPageChoice; ?>">
         <?php endif;

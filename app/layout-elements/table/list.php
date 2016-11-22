@@ -67,4 +67,10 @@ $table->sortColumn = 'id';
 $table->sortColumnDir = 'desc';
 //$table->customizeWidget('pagination', false);
 //$table->customizeWidget('search', false);
+
+$table->registerSingleAction('simple_link', '<a href="/another/page">Hello</a>');
+
+
+
+
 $table->printTable('videos', $query, $fields, ['id']);
