@@ -7,7 +7,7 @@ $form = new Form('concours', ['id']);
 
 
 
-$form->controlErrorLocation = 'top';
+$form->controlErrorLocation = 'local';
 $form->allowMultipleErrorsPerControl = true;
 
 
@@ -35,7 +35,7 @@ $form->addControl('url_photo')->type("text");
 $form->addControl('url_video')->type("text");
 $form->addControl('date_debut')->type("date6");
 $form->addControl('date_fin')->type("date6");
-$form->addControl('lots')->type("message");
+//$form->addControl('lots')->type("message");
 $form->addControl('reglement')->type("message");
 $form->addControl('description')->type("message");
 

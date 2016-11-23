@@ -10,7 +10,7 @@ This is a work in progress... (the development version)
 
 [![Screen Shot 2016-11-21 at 23.45.32.png](https://s13.postimg.org/7rmsaid5z/Screen_Shot_2016_11_21_at_23_45_32.png)](https://postimg.org/image/6pclryucj/)
 
-
+[![form-default.png](https://s14.postimg.org/3uudy6dm9/form_default.png)](https://postimg.org/image/t0vc50ewd/)
 
 
 
@@ -1207,6 +1207,11 @@ It accepts two values:
 - local (default), will display the error next to the control it is related to
 - top, all the control errors will be displayed at the top of the form 
 
+
+[![form-messages-on-control.png](https://s14.postimg.org/e66qqu5bl/form_messages_on_control.png)](https://postimg.org/image/6dg2yuzcd/)
+
+
+[![form-messages-on-top.png](https://s14.postimg.org/yrq3whca9/form_messages_on_top.png)](https://postimg.org/image/waecp7sdp/)
 
 
 
