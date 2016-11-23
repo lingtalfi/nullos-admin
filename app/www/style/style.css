@@ -19,7 +19,7 @@ ul, li {
 
 .pane-main {
     width: 30%;
-    min-width: 200px;
+    min-width: 20px;
     background: #ddd;
 }
 
@@ -249,7 +249,7 @@ ul, li {
     margin: 0 auto;
 }
 
-.form-title{
+.form-title {
     background: #aaa;
     padding: 10px;
 }
@@ -266,7 +266,8 @@ ul, li {
     /*padding-bottom: 20px;*/
 }
 
-.form .label {
+.form .label
+{
     text-align: left;
     width: 30%;
 }
@@ -309,21 +310,19 @@ ul, li {
 }
 
 .form ._day,
-.form ._month
-{
+.form ._month {
     margin-right: 1%;
 }
 
-.form ._lastdate{
+.form ._lastdate {
     margin-right: 5%;
 }
-
 
 .form .submit {
     text-align: center;
 }
 
-.form .input-submit{
+.form .input-submit {
     background: #446092 none repeat scroll 0 0;
     border: medium none;
     border-radius: 5px;
@@ -334,7 +333,32 @@ ul, li {
     padding: 10px 20px;
 }
 
+.form .error,
+.top-control-errors,
+.top-db-result.error{
+    color: #c00;
+    background: yellow;
+}
 
+.top-db-result.success{
+    color: #fff;
+    background: #589a5e;
+}
+
+
+.top-control-errors,
+.top-db-result
+{
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.top-control-errors ul,
+.top-control-errors li
+{
+    margin-left: 20px;
+}
 
 .dynamic-items li {
     display: flex;

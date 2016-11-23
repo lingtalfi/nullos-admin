@@ -92,5 +92,5 @@ Spirit::set('ricSeparator', '--*--');
 // TRANSLATION
 //--------------------------------------------
 define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/en");
-Translator::init();
+
 

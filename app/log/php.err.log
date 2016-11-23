@@ -151,3 +151,35 @@ Stack trace:
 [23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
 [23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
 [23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 07:37:47 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: this field cannot be empty in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:38
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php(85): __('this field cann...', 'form-validation')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php(59): Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
+#7 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 38
+[23-Nov-2016 07:40:13 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: this field must contain at least 5 characters in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:38
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php(93): __('this field must...', 'form-validation')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php(60): Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
+#7 {main}
+   in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 38
+[23-Nov-2016 07:40:45 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: this field must contain at least {minChar} characters in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:38
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php(93): __('this field must...', 'form-validation')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php(60): Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
+#7 { in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 38

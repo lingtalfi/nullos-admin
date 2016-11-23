@@ -68,7 +68,7 @@ class Layout
         <script>
             Split(['#one', '#two'], {
                 sizes: [20, 80],
-                minSize: 200
+                minSize: 20
             });
         </script>
 

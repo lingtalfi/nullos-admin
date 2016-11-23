@@ -15,6 +15,45 @@ function url($url, array $params = null, $mergeParams = true)
 }
 
 
+function __($identifier, $context = 'default', array $tags = [])
+{
+    static $terms = [];
+
+
+    // load definitions for the given context
+    if (array_key_exists($context, $terms)) {
+        $defs = $terms[$context];
+    } else {
+        $defs = [];
+        require_once APP_DICTIONARY_PATH . '/' . $context . '.php';
+        $terms[$context] = $defs;
+    }
+
+
+    // use the loaded definitions and check if there is a matching identifier
+    if (array_key_exists($identifier, $defs)) {
+        $value = $defs[$identifier];
+        if (count($tags) > 0) {
+            $ks = array_map(function ($v) {
+                return '{' . $v . '}';
+            }, array_keys($tags));
+            $vs = array_values($tags);
+            $value = str_replace($ks, $vs, $value);
+        }
+        return $value;
+    } else {
+        // error?
+        throw new \Exception("__ error: dictionary term not found: " . $identifier);
+//                return $identifier;
+    }
+}
+
+function ___()
+{
+    return htmlspecialchars(call_user_func_array('__', func_get_args()));
+}
+
+
 /**
  *
  * This function simplify the sending of a simple email.

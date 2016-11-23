@@ -359,12 +359,6 @@ The DataTable object is relatively complex and so it's treated in its own sectio
 
 
 
-Form
-------------------
-Not implemented yet
-
-
-
 
 
 
@@ -951,6 +945,490 @@ printTable has the following arguments
 - query: string, the query (as defined in the view section)
 - fields: string, the fields (as defined in the view section)
 - ric: array which values are the ric column names
+
+
+
+
+
+
+Form
+=============
+
+Form is another big part of nullos admin.
+It's the complementary part of the list (datatable) in the crud system.
+
+
+
+Here is an example of how a configured form looks like in terms of code:
+
+```php
+<?php
+
+// app/layout-elements/table/edit.php (but will be relocated soon...)
+
+
+
+$form = new Form('concours', ['id']);
+
+
+
+$form->controlErrorLocation = 'top';
+$form->allowMultipleErrorsPerControl = true;
+
+
+$form->insertDefaults = [
+    'date_debut' => '2014-06-05 14:05:00',
+];
+
+$form->labels = [
+    'equipe_id' => 'equipe',
+    'url_photo' => 'photo url',
+    'url_video' => 'video url',
+    'date_debut' => 'starts at',
+    'date_fin' => 'ends at',
+    'reglement' => 'règlement',
+];
+
+
+
+$form->addControl('equipe_id')->type("selectByRequest", "select id, nom from equipe");
+$form->addControl('titre')->type("text")
+    ->addConstraint("required")
+    ->addConstraint("minChar", 5)
+;
+$form->addControl('url_photo')->type("text");
+$form->addControl('url_video')->type("text");
+$form->addControl('date_debut')->type("date6");
+$form->addControl('date_fin')->type("date6");
+$form->addControl('lots')->type("message");
+$form->addControl('reglement')->type("message");
+$form->addControl('description')->type("message");
+
+
+$form->display();
+```
+
+
+
+
+Let's see how it works.
+
+First of all, the whole goal of this file is to generate an html form.
+
+The Form object helps you generate an html form that interacts with the database.
+
+A Form object can operate in two different modes: 
+
+- update: to update an existing row in the database
+- insert: to create a new row in the database
+
+I don't want to bother you with technical details, but basically it automatically detects which mode to use,
+so you don't have to worry about it.
+
+
+
+
+
+
+
+In the above example, we first instantiate the Form object, passing two arguments:
+
+- table: the name of the table which will be interacted with when the form is successfully submitted 
+- ric: an array containing the name of the column(s) involved in the primary key (see ric definition in this document for more details) 
+
+
+
+Then, we have a few configuration lines, but I will skip them for now; I will talk about them later, but now I want to
+talk about the control section (the lines which call the addControl method).
+
+
+What's a control?
+
+Visually, a control is composed of the ensemble of the label, the "widget" (through which the user passes data to the application),
+and the eventual error messages related to it.
+If a hint feature were implemented, it would also be part of the control.
+
+In terms of code, the Form uses FormControl objects, each FormControl is a control, and is attached to the Form object via the addControl method.
+ 
+ 
+In terms of design, I decided that if a FormControl is not registered, it cannot be faked by creating a key in $_POST.
+
+In other words, attaching (or not attaching) a FormControl to the Form is a basic security mechanism in itself.
+
+You'll notice that the above code doesn't declare the FormControl related to the id key, but I can assure you that the table
+I used in the example had an id auto-incremented primary key.
+
+I could have add this statement:
+
+```php
+$form->addControl('id')->type("text");
+```
+
+And then the user would have been able to decide/change her id if she wanted to.
+
+In general, I believe we don't want the user to be able to change the id:
+  
+- if the form is an insert form, the auto-incremented will be automatically incremented
+- if the form is an update form, the id should keep remain the same (especially if the website has users accounts)
+  
+But in the end, that's for the nullos developer to decide, the point is that the Form would allow you to do what you want.
+
+
+Back to the example, the addControl method creates a FormControl, registers it to the Form object and returns the created FormControl.
+
+The main method of a FormControl is type, which define the form of the control.
+The type method takes the type identifier as its first argument, and some other arguments, depending on the type.
+
+
+
+FormControl Types
+------------
+
+The following types are available:
+
+- text: creates a basic 'input type=text'
+- selectByRequest: creates a select and feeds it with the values of a table from the database.
+                This is the right choice when you need to implement a control that represents a foreign key.
+                It accepts the following arguments: 
+                        - query
+                        - markers
+                Those arguments are passed as is to the QuickPdo::fetchAll method (for those who know QuickPdo).
+                The query should select two columns.
+                The first column will be injected into the 'value' attribute of the every html select options, 
+                and the second column will be the text content of those options.
+                Note: concat is your friend if you want to have full control on the formatting of the options's content
+                
+                 
+- date6: used to create a date time. It displays 6 html select tags: year, month, day, hours, minutes and seconds.
+- message: proxy to the html's textarea control
+
+
+
+
+Validation
+----------------
+It is possible to add validation constraints to a FormControl.
+
+This is done using the addConstraint method, which first argument is the name of the rule, and the rest of the arguments
+represent the so-called ruleArgs.
+
+Here is the conception map I used to create the Validation system.
+ 
+
+### Validation System
+
+- rule
+    - ruleName
+    - ruleArgs
+    
+    
+There is a subject.
+
+The subject is tested against a rule.
+    
+The executed test is either a success or a failure.
+ 
+In case of success, the test returns true.
+ 
+In case of failure, the test returns an error message indicating the cause of the failure.
+
+The error message is either passed via a string or an array.
+
+If the error message contains tags (minChar, ...), then the error message is an array containing
+the following:
+
+- symbolic error message (for instance: this field must contain at least {minChar} characters)
+- tags, an array of tag => value (for instance: [minChar => 5]) 
+ 
+
+
+
+
+
+
+
+
+
+insertDefaults
+---------------------
+
+The insertDefaults property let you define which are the default values when the form is operating
+in insert mode (if the form is operating in update mode, then the default values come from the
+database).
+
+Note that default values are replaced by the $_POST values when the form is submitted.
+
+
+
+
+
+
+
+
+
+title
+-------------
+
+This property defines the title displayed at the top of the form.
+
+If it's null, no title will be display.
+
+By default, it's the table name followed by the word form.
+
+
+
+labels
+-------------
+
+This property allows you to control the content of the form labels,
+by replacing the default ugly column names into more human readable labels.
+
+For instance, you can replace creation_date by date.
+
+It's an array of column name => label
+
+
+Note that this is redundant with the label method of the FormControl.
+
+
+Actually, I prefer to set all the label at once, but I keep the label method on the FormControl too for now,
+because I'm not sure (it makes sense semantically to have label on the form control, but it's less convenient
+than defining all the labels at once, so maybe both solutions in parallel is good?)...
+
+
+
+controlErrorLocation
+------------------------
+
+This property defines the location of the control related errors (invalid email for instance).
+
+It accepts two values:
+
+- local (default), will display the error next to the control it is related to
+- top, all the control errors will be displayed at the top of the form 
+
+
+
+
+allowMultipleErrorsPerControl
+------------------------
+
+When you have multiple error messages per control, it can be overwhelming for the user.
+
+Maybe you prefer the policy of displaying only one error message per control.
+
+If so, you can set the allowMultipleErrorsPerControl property to false (default is true).
+
+
+
+
+
+Form Design
+----------------
+
+Note: this section might be redundant with what have been said earlier.
+
+The form uses form controls.
+
+Form controls represent the columns that will be updated/inserted.
+In other words, a column in the database is not updated unless it has a corresponding form control.
+ 
+
+ 
+The form control holds the value of the control.
+This let the developer provides default values if she wants to.
+
+The sum of all form control values is called the form values.
+
+When the form is submitted, the values posted by the user replace the default values.
+
+The form is the object responsible for injecting the values into the form controls.
+
+The case where the developer manually injects the values using the FormControl's value method is rare.
+
+In practice, the default values come directly from the database and are injected by the Form object.
+
+
+### Handling of errors
+
+So what happens when an error occurs?
+
+There are differents types of errors:
+
+- errors that are related to a control, like email validation error for instance
+- errors that are related to the form, for instance: "the row couldn't be updated, there is a problem with the database"
+
+
+For displaying control related errors, the most common patterns are either:
+ 
+- to dipslay the error next to the control it is related to
+- to display all control related errors at the top of the form 
+
+In terms of design, control errors belong to the FormControl objects, 
+and they can be hydrated? to the top form panel if necessary.
+
+This behaviour is defined by the controlErrorLocation property.
+
+
+Every FormControl object has an addErrorMessage method and a getErrorMessages method (i.e. FormControl
+can have multiple error messages).
+
+
+Validation rules related to a control are declared at the FormControl object level but processed by
+an external validator system, triggered by the Form object when the form is submitted.
+
+
+
+
+
+Javascript
+---------------
+
+Some fancy FormControls will inevitably use javascript in order to display a cool widget.
+
+The Form object's display method provides some basic javascript that FormControls can use for their own.
+
+A common pattern for such widgets is to update a hidden input upon the form submission.
+ 
+For instance, imagine a fancy js file browser. Okay it's fancy but in the end it just generates 
+an url (that's ridiculous).
+
+The date6 FormControl also uses this technique: rather to overwhelm the $_POST array with a year, month,
+day, hour, minute and second entry, it just waits when the form is submitted and generate only one appropriate $_POST entry
+for the whole control.
+
+(By the way, quick reminder: not using the name attribute in html suffices to not create a key in the $_POST array when the form is submitted)
+
+So if you are implementing that kind of widget, Form has a surprise for you: it provides the onSubmitCallbacks array.
+
+Basically, the Form generates this line at some point, and before your FormControls are called:
+
+```js
+window.onSubmitCallbacks = [];
+```
+
+Okay, so, what you can do is register a callback to this array.
+
+If you do so, your callback will be called just before the form is submitted (that is: when the user clicks the submit button,
+but the form values have not been sent yet).
+
+To ensure that the work in your callback has been executed, you need to call the done function provided as the first and only
+argument of your callback.
+
+So here is fictitious example of me creating a callback that has no purpose in life:
+ 
+```js
+ window.onSubmitCallbacks.push(function(done){
+    console.log("I'm so useless");
+    // ... or you could update the value of a hidden input ... 
+    done();
+ });
+``` 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Log
+==========
+TODO:...
+Logger
+
+
+
+Multi-Language
+==================
+
+
+Nullos is designed to be multi-language friendly.
+
+The dictionary containing all the terms is organized into contexts.
+
+Nullos has the following contexts:
+
+- datatable: contains all the terms related to the datatable object (the list)
+- form: contains all the terms used by the Form object 
+- form-validation: contains all the terms used by the FormValidator object 
+- default: all the terms that don't belong to another context 
+
+
+Those files are located in the dictionary directory, which by default is **app/lang/en** for english,
+**app/lang/fr** for french, and so on...
+
+The actual path of the dictionary directory is defined in **app/init.php** by 
+the **APP_DICTIONARY_PATH** constant (should you wish to change its location).
+
+Each file in the dictionary directory is called a translation file, and it's a simple php file that defines an array
+containing the definitions of the terms for a given context.
+
+Here is how a translation file looks like:
+
+```php
+<?php
+
+
+$defs=[
+    'home' => 'accueil',
+    'Oops, there is an error' => 'Oops, il y a une erreur',
+    'You have {number} new messages' => 'Vous avez {number} nouveaux messages',
+];
+```
+
+As you can see, the basic mechanism is a simple map.
+
+In the above example, the third term uses a tag.
+ 
+I will assume that you know  what and why it is there.
+
+
+Now the last thing you need to know is how to actually use a translated string in your app.
+
+Nullos provide two functions:
+
+- __ (double undercore)
+- ___ (triple undercore)
+
+
+The double underscore function takes the following arguments:
+
+- identifier: the term to translate. 
+- context=default: the name of the context to look inside of
+- tags=[]: an array of tag => value (don't put curly brace around the tag, this is done for you) 
+
+
+The triple underscore function is identical, but it also call the php's htmlspecialchars function 
+before returning the result. Therefore it's useful if you ever need to write inside of html attributes.
+
+
+
+Note that I used the term identifier as the first argument of the __ function.
+
+That's because you are not forced to put the whole string as is as the identifier.
+
+Imagine you have a very long text you want to store. It will be inefficient memory wise (I believe, did not test) to 
+store this big chunk of text in an array; so instead you can choose a meaningful identifier as the key if you want to.
+ 
+ 
+And don't worry, the nullos design supports you in doing this, because the __ function is very peaky about its job, 
+and whenever an identifier is not found, it will crash the website and throwing an in your face exception.
+
+
+Personal opinion: 
+That's the way I like it with errors in general, because it allows developers to not worry about handling developer errors
+(huge time saver in development), and if something is wrong, that's only because it has to be fixed anyway.
+
+
+So in other words, you can safely use short identifiers without risking to have a part of your website that displays 
+just the identifier instead of the translation (it will either display the right translation, or crash).
 
 
 

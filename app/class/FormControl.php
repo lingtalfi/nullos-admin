@@ -9,6 +9,15 @@ class FormControl
     private $_label;
     private $_value;
 
+    private $errors;
+    private $constraints;
+
+    public function __construct()
+    {
+        $this->errors = [];
+        $this->constraints = [];
+    }
+
 
     //--------------------------------------------
     // METHODS MEANT TO BE USED BY THE DEVELOPER
@@ -31,6 +40,20 @@ class FormControl
     public function value($value)
     {
         $this->_value = $value;
+        return $this;
+    }
+
+    public function addErrorMessage($msg)
+    {
+        $this->errors[] = $msg;
+        return $this;
+    }
+
+    public function addConstraint($ruleName)
+    {
+        $ruleArgs = func_get_args();
+        array_shift($ruleArgs);
+        $this->constraints[$ruleName] = $ruleArgs;
         return $this;
     }
 
@@ -61,6 +84,16 @@ class FormControl
     public function getValue()
     {
         return $this->_value;
+    }
+
+    public function getErrorMessages()
+    {
+        return $this->errors;
+    }
+
+    public function getConstraints()
+    {
+        return $this->constraints;
     }
 
 }

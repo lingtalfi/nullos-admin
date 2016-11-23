@@ -7,6 +7,10 @@ class Form
 {
 
     public $insertDefaults;
+    public $controlErrorLocation; // local(default)|top
+    public $title; // string(default="$table form")|null, null means no title
+    public $labels;
+    public $allowMultipleErrorsPerControl;
 
 
     private $table;
@@ -15,6 +19,7 @@ class Form
     //
     private $controls;
     private $ricSeparator;
+    private $translatorContext;
 
     public function __construct($table, array $ric, $mode = null)
     {
@@ -25,6 +30,7 @@ class Form
         }
         $this->mode = $mode;
         $this->controls = [];
+        $this->labels = [];
         $this->insertDefaults = [];
 
         /**
@@ -34,6 +40,11 @@ class Form
          * transiting via the http url.
          */
         $this->ricSeparator = Spirit::get('ricSeparator');
+        $this->translatorContext = "form-validation";
+        $this->controlErrorLocation = "local";
+        $this->title = __("{table} form", "form", ['table' => ucfirst($table)]);
+
+        $this->allowMultipleErrorsPerControl = true;
     }
 
 
@@ -51,8 +62,11 @@ class Form
     {
         $table = $this->table;
 
-
         $updateRowFound = false;
+        $atLeastOneControlError = false;
+        $dbInteractionIsSuccess = false;
+        $dbInteractionMsg = null; // witnesses whether or not the form has been posted
+
         //--------------------------------------------
         // FORM SUBMITTED
         //--------------------------------------------
@@ -62,24 +76,69 @@ class Form
             $controlsNames = array_keys($this->controls);
             $safeValues = array_intersect_key($_POST, array_flip($controlsNames));
 
-
             $formattedValues = [];
             foreach ($safeValues as $k => $v) {
                 $formattedValues[$k] = $v;
+                $this->controls[$k]->value($v);
             }
 
-            if ('update' === $this->mode) {
-                $ric = $this->getRicArray();
-                $where = [];
-                foreach ($ric as $k => $v) {
-                    $where[] = [$k, '=', $v];
-                }
-                QuickPdo::update($this->table, $formattedValues, $where);
-                // todo: success message
-            } else {
 
-                $id = QuickPdo::insert($this->table, $formattedValues);
-                // todo: success message
+            // validation
+            $validator = new FormValidator();
+            foreach ($this->controls as $columnName => $c) {
+                $countErr = 0;
+                foreach ($c->getConstraints() as $ruleName => $ruleArgs) {
+                    $res = $validator->test($ruleName, $ruleArgs, $c->getValue());
+                    if (true !== $res) {
+                        if (false === $this->allowMultipleErrorsPerControl && $countErr > 0) {
+                            break;
+                        }
+                        $atLeastOneControlError = true;
+                        if (is_string($res)) {
+                            $errMsg = __($res, $this->translatorContext);
+                        } else {
+                            $err = $res[0];
+                            $tags = $res[1];
+                            $keys = array_map(function ($v) {
+                                return '{' . $v . '}';
+                            }, array_keys($tags));
+                            $values = array_values($tags);
+                            $errMsg = str_replace($keys, $values, __($err, $this->translatorContext));
+                        }
+                        $c->addErrorMessage($errMsg);
+                        $countErr++;
+                    }
+                }
+            }
+
+
+            // submit
+            if (false === $atLeastOneControlError) {
+                try {
+
+                    /**
+                     * Note that below I assume that pdo works in Exception error mode, so that
+                     * every error goes to the catch block...
+                     */
+                    if ('update' === $this->mode) {
+                        $ric = $this->getRicArray();
+                        $where = [];
+                        foreach ($ric as $k => $v) {
+                            $where[] = [$k, '=', $v];
+                        }
+                        QuickPdo::update($this->table, $formattedValues, $where);
+                        $dbInteractionIsSuccess = true;
+                        $dbInteractionMsg = __("The data has been successfully updated", "form");
+
+                    } else {
+                        QuickPdo::insert($this->table, $formattedValues);
+                        $dbInteractionIsSuccess = true;
+                        $dbInteractionMsg = __("The data has been successfully inserted", "form");
+                    }
+                } catch (\Exception $e) {
+                    $dbInteractionMsg = __("Oops, something went wrong with the database, sorry...", "form");
+                    Logger::log($e);
+                }
             }
 
 
@@ -123,27 +182,72 @@ class Form
 
         <section class="form-section freepage">
 
-            <h3 class="form-title">Concours form</h3>
+            <h3 class="form-title"><?php echo $this->title; ?></h3>
+
+            <?php if (null !== $dbInteractionMsg):
+                $class = (true === $dbInteractionIsSuccess) ? 'success' : 'error';
+                ?>
+                <div class="top-db-result <?php echo $class; ?>"><?php echo $dbInteractionMsg; ?></div>
+            <?php endif; ?>
+
+
+            <?php if (true === $atLeastOneControlError && 'top' === $this->controlErrorLocation): ?>
+                <div class="top-control-errors">
+                    <p>
+                        <?php echo __("The form has the following errors, please fix them and resubmit the form", "form"); ?>
+                    </p>
+
+                    <?php foreach ($this->controls as $name => $c):
+                        $errors = $c->getErrorMessages();
+                        $n = count($errors);
+                        if ($n > 0): ?>
+                            <ul>
+                                <li><?php echo ucfirst($this->label($name, $c)) . ': ';
+                                    if (1 === $n): ?>
+                                        <?php echo $errors[0]; ?>
+                                    <?php else: ?>
+                                        <ul>
+                                            <?php foreach ($errors as $err): ?>
+                                                <li><?php echo $err; ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                </li>
+                            </ul>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
 
             <?php if (true === $displayForm): ?>
                 <form class="form" method="post" action="" id="<?php echo $formId; ?>">
                     <?php
                     foreach ($this->controls as $column => $c) {
-                        $label = $column;
-                        $clabel = $c->getLabel();
-                        if (null !== $clabel) {
-                            $label = $clabel;
-                        }
-
-
                         ?>
                         <div class="row">
-                            <span class="label"><?php echo $label; ?></span>
+                            <span class="label"><?php echo ucfirst($this->label($column, $c)); ?></span>
                             <div class="control">
                                 <?php $this->displayControl($column, $c); ?>
                             </div>
                         </div>
+
                         <?php
+                        if ('local' === $this->controlErrorLocation):
+                            $errors = $c->getErrorMessages();
+                            if (count($errors) > 0):
+                                ?>
+                                <div class="row error">
+                                    <span class="label"></span>
+                                    <div>
+                                        <?php foreach ($errors as $msg): ?>
+                                            <p><?php echo $msg; ?></p>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                                <?php
+                            endif;
+                        endif;
                     }
                     ?>
                     <input type="hidden" name="_nullos_form_posted" value="1">
@@ -293,25 +397,23 @@ class Form
                         $i = sprintf('%02s', $i);
                         $sel = ((int)$i === (int)$hour) ? ' selected="selected"' : '';
                         ?>
-                        <option <?php echo $sel; ?> value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                        <option <?php echo $sel; ?> value="<?php echo $i; ?>"><?php echo $i; ?>h</option>
                     <?php endfor; ?>
                 </select>
-                <span>:</span>
                 <select class="autowidth _minute">
                     <?php for ($i = 0; $i <= 59; $i++):
                         $i = sprintf('%02s', $i);
                         $sel = ((int)$i === (int)$minute) ? ' selected="selected"' : '';
                         ?>
-                        <option <?php echo $sel; ?> value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                        <option <?php echo $sel; ?> value="<?php echo $i; ?>"><?php echo $i; ?>m</option>
                     <?php endfor; ?>
                 </select>
-                <span>:</span>
                 <select class="autowidth _second">
                     <?php for ($i = 0; $i <= 59; $i++):
                         $i = sprintf('%02s', $i);
                         $sel = ((int)$i === (int)$second) ? ' selected="selected"' : '';
                         ?>
-                        <option <?php echo $sel; ?> value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                        <option <?php echo $sel; ?> value="<?php echo $i; ?>"><?php echo $i; ?>s</option>
                     <?php endfor; ?>
                 </select>
 
@@ -367,5 +469,17 @@ class Form
         $ricValue = $_GET['ric'];
         $ricValueArr = explode($this->ricSeparator, $ricValue);
         return array_combine($this->ric, $ricValueArr);
+    }
+
+    private function label($name, FormControl $c)
+    {
+        $label = $c->getLabel();
+        if (null !== $label) {
+            return $label;
+        }
+        if (array_key_exists($name, $this->labels)) {
+            return $this->labels[$name];
+        }
+        return $name;
     }
 }
