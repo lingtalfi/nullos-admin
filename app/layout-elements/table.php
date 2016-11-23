@@ -12,7 +12,7 @@ if (array_key_exists('action', $_GET)) {
 }
 
 
-$actions = ['list'];
+$actions = ['list', 'edit'];
 
 
 if (in_array($action, $actions, true)) {

@@ -411,7 +411,18 @@ The most important customization is the view.
 
 The view is the sql query used to generate the table.
 
-This is where nullos admin differs from phpMyAdmin: you create the query manually (it's not automatic yet).
+This is where nullos admin differs from phpMyAdmin: you create the query manually (there is no automatic tool yet).
+
+The benefit of this is that for instance you can decide how you format the foreign key columns.
+In phpMyAdmin, a foreign key would be displayed as a link contaning the number of the id representing 
+the foreign key's related row.
+
+That's nice if you are a developer, but this might scare your client.
+
+Nullos admin let you change those numbers into more meaningful values, see the example below.
+
+
+
 
 A view is split in two elements:
 
@@ -441,6 +452,10 @@ inner join concours c on c.id=v.concours_id
 ";
 
 ```
+
+
+
+
 
 If you wonder why we have to split it like this, it's because of the pagination system, which needs
 to know the number of items, so there will be two queries performed, one with the fields, and one
@@ -617,6 +632,109 @@ The setTransformer accepts two arguments:
 - column: the colmun name (symbolic) to apply the callback to  
 - callback: the callback used to transform the content of the column.
         The callback takes two arguments: the original column value and an associative array representing the row 
+
+
+
+
+Let me share another nice transformer trick that I discovered today (2016-11-22).
+Imagine you have the following schema:
+
+- users
+    - id
+    - email
+    - country_id
+    
+- country
+    - id
+    - name
+    
+    
+So what if you want that the users datatable displays the email, and the name of the country?
+
+You would do something like this:
+
+```php
+$fields = '
+u.id,
+u.email,
+c.name as country_name
+';
+
+$query = "select
+%s
+from users u
+inner join country c on c.id=u.country_id
+";
+
+$table = new DataTable();
+
+$table->hiddenColumns = [
+    'id', // hide the id from the view because it will scare the client
+];
+
+//...
+```
+
+That's a nice start. Notice that you have to include the id column anyway because it's the primary key and it's required
+for row actions like edit and delete.
+
+But now, let's say you want to click on the country name and it should redirect you to the page where you have the 
+form to edit that country row. 
+
+The only problem we have here is that we need the country id in order to create the link, but unfortunately, we've just replaced
+the country id by the country name in order to make the datatable look better. So, what do we do now?
+
+The solution sounds complicated, but it's actually very fast to implement.
+
+The idea is to put the country id in the request, so that it's part of the row, and then use a transformer to 
+upgrade the country name to a link. The last step is to hide the country id from the view.
+
+Here is the code:
+
+```php
+```php
+$fields = '
+u.id,
+u.email,
+c.name as country_name,
+c.id as country_id
+';
+
+$query = "select
+%s
+from users u
+inner join country c on c.id=u.country_id
+";
+
+$table = new DataTable();
+
+$table->hiddenColumns = [
+    'id', // hide the id from the view because it will scare the client
+    'country_id', 
+];
+
+$table->setTransformer('country_name', function ($v, array $item) {
+    return '<a href="/table?name=country&action=edit&ric=' . $item['country_id'] . '">' . $v . '</a>';
+});
+
+
+//...
+
+
+
+
+
+```
+```
+
+
+
+
+
+    
+    
+    
+
 
 
 

@@ -32,13 +32,14 @@ $fields = '
 v.id,
 v.active,
 u.pseudo as user_pseudo, 
+c.id as concours_id,
 c.titre as concours_titre,
 v.url,
 v.nb_vues,
 v.nb_likes,
 v.date_creation
 ';
-$pageGetKey = 'page';
+
 
 $query = "select
 %s
@@ -61,6 +62,7 @@ $table->columnHeaders = [
 ];
 $table->hiddenColumns = [
     'id',
+    'concours_id',
 ];
 $table->nbItemsPerPage = 5;
 $table->sortColumn = 'id';
@@ -69,15 +71,18 @@ $table->sortColumnDir = 'desc';
 //$table->customizeWidget('search', false);
 //$table->customizeWidget('multipleActions', false);
 
-$table->registerSingleAction('ric_link', '<a class="postlink" data-action="ric_link" data-ric="{ric}" href="#">Click me</a>', function($table, array $ric){
+$table->registerSingleAction('ric_link', '<a class="postlink" data-action="ric_link" data-ric="{ric}" href="#">Click me</a>', function ($table, array $ric) {
     a("table: $table, ric: " . implode(', ', $ric));
 });
 // string(23) "table: videos, ric: 195"
 
-$table->setTransformer('url', function($v){
-    return '<a target="_blank" href="'. htmlspecialchars($v) .'">'. $v .'</a>';
+$table->setTransformer('url', function ($v) {
+    return '<a target="_blank" href="' . htmlspecialchars($v) . '">' . $v . '</a>';
 });
 
+$table->setTransformer('concours_titre', function ($v, array $item) {
+    return '<a href="/table?name=concours&action=edit&ric=' . $item['concours_id'] . '">' . $v . '</a>';
+});
 
 
 $table->printTable('videos', $query, $fields, ['id']);

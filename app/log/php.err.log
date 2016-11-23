@@ -79,3 +79,75 @@ Stack trace:
 #6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php( in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php on line 71
 [22-Nov-2016 08:09:20 UTC] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, class '<a class="postlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 199
 [22-Nov-2016 08:09:38 UTC] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, class '<a class="postlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 199
+[22-Nov-2016 18:22:21 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php on line 19
+[22-Nov-2016 18:22:21 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php on line 19
+[22-Nov-2016 18:22:31 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php on line 19
+[22-Nov-2016 18:22:31 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php on line 19
+[22-Nov-2016 20:51:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method FormControl::setValue() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php:62
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php(51): Form->display()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 62
+[22-Nov-2016 21:47:05 UTC] PHP Parse error:  syntax error, unexpected '}' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 69
+[22-Nov-2016 21:53:54 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column 'date_debut' at row 1 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:207
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(207): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php(70): QuickPdo\QuickPdo::update('concours', Array, Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php(51): Form->display()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php( in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 207
+[23-Nov-2016 05:29:50 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 313
+[23-Nov-2016 05:29:50 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 313
+[23-Nov-2016 05:29:50 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 313
+[23-Nov-2016 05:29:50 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 313
+[23-Nov-2016 05:30:19 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 315
+[23-Nov-2016 05:30:19 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 315
+[23-Nov-2016 05:30:19 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 315
+[23-Nov-2016 05:30:19 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 315
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248

@@ -144,7 +144,7 @@ class DataTable
 
 
         //
-        $this->ricSeparator = '--*--';
+        $this->ricSeparator = Spirit::get('ricSeparator');
         $this->hiddenColumns = [];
         $this->transformers = [];
 
@@ -760,15 +760,7 @@ class DataTable
     private function delete($table, $ric)
     {
         $q = "delete from $table where ";
-        $markers = [];
-        $i = 0;
-        $q .= "(";
-        foreach ($ric as $k => $v) {
-            $marker = 'm' . $i++;
-            $q .= "$k=:" . $marker;
-            $markers[$marker] = $v;
-        }
-        $q .= ")";
+        $q .= Helper::getWhereFragmentFromRic($ric, $markers);
         QuickPdo::freeQuery($q, $markers);
     }
 

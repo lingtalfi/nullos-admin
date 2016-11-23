@@ -70,6 +70,10 @@ define('MAIL_PASS', "feozejoiijz");
 define('MAIL_FROM', 'postmaster@my_website.com');
 
 
+
+Spirit::set('ricSeparator', '--*--');
+
+
 // Session user
 //define('USER_SESSION_TIMEOUT', 60 * 5 * 1000); // number of seconds before session times out
 //
