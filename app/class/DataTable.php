@@ -42,6 +42,9 @@ class DataTable
     public $hiddenColumns;
 
 
+    /**
+     * If it's null, it's not displayed.
+     */
     public $title;
 
 

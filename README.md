@@ -20,6 +20,7 @@ Table of contents
 TODO
 
 - Privileges
+- Crud Generator
 
 
 

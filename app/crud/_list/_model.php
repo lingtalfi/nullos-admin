@@ -82,7 +82,7 @@ $table->registerSingleAction('ric_link', '<a class="postlink" data-action="ric_l
 
 
 $table->setTransformer('url', function ($v) {
-    return '<a target="_blank" href="' . htmlspecialchars($v) . '">' . $v . '</a>';
+    return '<a href="' . htmlspecialchars($v) . '">' . $v . '</a>';
 });
 $table->setTransformer('concours_titre', function ($v, array $item) {
     return '<a href="/table?name=concours&action=edit&ric=' . $item['concours_id'] . '">' . $v . '</a>';

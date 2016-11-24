@@ -12,6 +12,7 @@ require __DIR__ . "/../init.php";
 $uri2pagesMap = [
     '/' => 'home.php',
     '/table' => 'table.php',
+    '/crudgen' => 'crudgen.php',
 ];
 
 $uri = explode('?', $_SERVER['REQUEST_URI'])[0];

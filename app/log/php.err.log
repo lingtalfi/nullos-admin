@@ -281,3 +281,70 @@ Stack trace:
 #4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
 #5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
 #6 /Volumes/Macintosh HD 2/it/php/projects/ in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
+[24-Nov-2016 11:05:45 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'v.equipe_id' in 'on clause' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:275
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(275): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(264): QuickPdo\QuickPdo::fetch('select\ncount(*)...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php(61): DataTable->printTable('concours', 'select\n%s\nfrom ...', '\nc.id,\ne.nom as...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/ in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 275
+[24-Nov-2016 11:05:59 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.mpts' in 'field list' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(308): QuickPdo\QuickPdo::fetchAll('select\n\nc.id,\ne...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php(61): DataTable->printTable('concours', 'select\n%s\nfrom ...', '\nc.id,\ne.nom as...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:18:47 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdoInfoTool.php on line 33
+[24-Nov-2016 11:22:02 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdoInfoTool.php on line 33
+[24-Nov-2016 11:23:30 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdoInfoTool.php on line 33
+[24-Nov-2016 11:43:21 UTC] PHP Parse error:  syntax error, unexpected '$db' (T_VARIABLE), expecting ',' or ')' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/crudgen.php on line 25
+[24-Nov-2016 12:17:56 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 51
+[24-Nov-2016 13:57:05 UTC] PHP Warning:  mkdir(): File name too long in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Bat/FileSystemTool.php on line 220
+[24-Nov-2016 14:04:02 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/crudgen.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php on line 78
+[24-Nov-2016 14:04:02 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/crudgen.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php on line 78
+[24-Nov-2016 14:08:20 UTC] PHP Warning:  mkdir(): File exists in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Bat/FileSystemTool.php on line 220
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/concours.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/coups_de_coeur.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/equipe.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/equipe_has_membres.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/instruments.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/membres.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/messages.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/niveaux.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/pays.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/styles_musicaux.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:22 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/users.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:22 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/users_has_instruments.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:22 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/users_has_styles_musicaux.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:22 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/videos.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:22:20 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/crudgen.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php on line 78
+[24-Nov-2016 14:22:20 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/crudgen.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php on line 78
+[24-Nov-2016 14:23:41 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from configuration
+ limit 0, 50' at line 6 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(308): QuickPdo\QuickPdo::fetchAll('select\n\ncle,\nva...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur,\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(33): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_ in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[24-Nov-2016 14:23:46 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from configuration
+ limit 0, 50' at line 6 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(308): QuickPdo\QuickPdo::fetchAll('select\n\ncle,\nva...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur,\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(33): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_ in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
