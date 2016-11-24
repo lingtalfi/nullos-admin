@@ -5,18 +5,16 @@ require_once __DIR__ . "/../init.php";
 
 
 use Crud\CrudConfig;
-use Crud\CrudListGenerator;
+use Crud\CrudFormGenerator;
 
 
-$gen = new CrudListGenerator();
+$gen = new CrudFormGenerator();
 $gen->foreignKeyPrettierColumns = CrudConfig::getForeignKeyPrettierColumns();
 $gen->prettyTableNames = CrudConfig::getPrettyTableNames();
 $gen->fixPrettyColumnNames = CrudConfig::getPrettyColumnNames();
 
 
-$gen->urlTransformerIf = CrudConfig::getListUrlTransformerIfCallback();
-
-$gen->generateLists();
+$gen->generateForms();
 
 
 

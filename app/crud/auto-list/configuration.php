@@ -21,7 +21,7 @@ $table->title = "Configuration";
 
 
 $table->columnHeaders = [
-    "cle" => "cle",
+    "cle" => "clé",
     "valeur" => "valeur",
 ];
 

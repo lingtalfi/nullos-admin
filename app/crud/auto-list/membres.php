@@ -26,7 +26,7 @@ $table->columnHeaders = [
     "id" => "id",
     "pseudo" => "pseudo",
     "email" => "email",
-    "url_photo" => "url photo",
+    "url_photo" => "url de la photo",
 ];
 
 

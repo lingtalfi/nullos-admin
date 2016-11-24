@@ -8,9 +8,9 @@ use QuickPdo\QuickPdoInfoTool;
 
 
 /**
- * Helps creating the default crud files in app/crud/form and app/crud/list
+ * Helps creating the default crud files in app/crud/list
  */
-class CrudGenerator
+class CrudListGenerator extends AbstractCrudGenerator
 {
 
 
@@ -19,13 +19,12 @@ class CrudGenerator
     public $fixPrettyColumnNames;
     public $urlTransformerIf;
 
-    private $out;
-
     /**
      * table null means all tables
      */
     public function __construct()
     {
+        parent::__construct();
         $this->foreignKeyPrettierColumns = [];
         $this->prettyTableNames = [];
         $this->fixPrettyColumnNames = [];
@@ -64,19 +63,9 @@ class CrudGenerator
 
 
         $columnNames = QuickPdoInfoTool::getColumnNames($table, $db);
-//        a($columnNames);
-
         $primaryKey = QuickPdoInfoTool::getPrimaryKey($table, $db);
-//        a($primaryKey);
-
-
         $autoIncrementedColumn = QuickPdoInfoTool::getAutoIncrementedField($table, $db);
-//        a($autoIncrementedColumn);
-
-
         $fkInfo = QuickPdoInfoTool::getForeignKeysInfo($table, $db);
-//        a($fkInfo);
-
         $hasForeignKey = (count($fkInfo) > 0);
 
 
@@ -96,9 +85,7 @@ class CrudGenerator
             $fields = $columnNames;
         } else {
             $foreignTables = self::getForeignTables($table, $db);
-//            a("foreign tables", $foreignTables);
             $tableAliases = self::getTableAliases($table, $foreignTables);
-//            a("tables aliases", $tableAliases);
             $mainAlias = $tableAliases[$table];
 
             foreach ($columnNames as $c) {
@@ -263,21 +250,6 @@ class CrudGenerator
     //--------------------------------------------
     //
     //--------------------------------------------
-    private function line($m)
-    {
-        $this->out .= $m . PHP_EOL;
-    }
-
-    private function dqe($m)
-    {
-        return str_replace('"', '\"', $m);
-    }
-
-    private function sqe($m)
-    {
-        return str_replace("'", "\\'", $m);
-    }
-
     private function fields(array $fields)
     {
         $this->line('$fields = \'');

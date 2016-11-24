@@ -6,7 +6,14 @@ Privilege
 nullos use the [Privilege](https://github.com/lingtalfi/Privilege) framework.
 
 
-- crud privilege: 
-    - $action.$table.$column, where action can be one of: insert, update or delete
-    - page.$table, this defines whether or not the user can access the page related to a given table
-    
+As far as the crud module is concerned, my first intent was to use Privilege for every single sql privilege.
+That may be a todo..., but for now, my client doesn't need it, so just use the sql language directly if that's something
+you need.
+
+
+
+
+
+
+
+

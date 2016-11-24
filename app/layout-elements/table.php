@@ -6,6 +6,10 @@ use Crud\CrudConfig;
 $table = null;
 $action = "list";
 
+
+
+
+
 if (array_key_exists('name', $_GET)) {
     $table = (string)$_GET['name'];
 
@@ -21,18 +25,36 @@ if (array_key_exists('name', $_GET)) {
             $action = 'form';
         }
 
-        //--------------------------------------------
-        // First try the user file, otherwise try the auto-generated file if any
-        //--------------------------------------------
-        $file = CrudConfig::getCrudListDir() . '/' . $table . '.php';
-        if (file_exists($file)) {
-            require_once $file;
-        } else {
-            $file = CrudConfig::getCrudGenListDir() . '/' . $table . '.php';
+
+        if ('list' === $action) {
+            //--------------------------------------------
+            // First try the user file, otherwise try the auto-generated file if any
+            //--------------------------------------------
+            $file = CrudConfig::getCrudListDir() . '/' . $table . '.php';
             if (file_exists($file)) {
                 require_once $file;
             } else {
-                Logger::log("file does not exist: $file");
+                $file = CrudConfig::getCrudGenListDir() . '/' . $table . '.php';
+                if (file_exists($file)) {
+                    require_once $file;
+                } else {
+                    Logger::log("file does not exist: $file");
+                }
+            }
+        } else {
+            //--------------------------------------------
+            // First try the user file, otherwise try the auto-generated file if any
+            //--------------------------------------------
+            $file = CrudConfig::getCrudFormDir() . '/' . $table . '.php';
+            if (file_exists($file)) {
+                require_once $file;
+            } else {
+                $file = CrudConfig::getCrudGenFormDir() . '/' . $table . '.php';
+                if (file_exists($file)) {
+                    require_once $file;
+                } else {
+                    Logger::log("file does not exist: $file");
+                }
             }
         }
     }

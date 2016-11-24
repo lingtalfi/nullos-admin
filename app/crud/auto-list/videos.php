@@ -35,14 +35,14 @@ $table->title = "Vidéos";
 $table->columnHeaders = [
     "id" => "id",
     "active" => "active",
-    "users_id" => "users id",
-    "concours_id" => "concours id",
+    "users_id" => "utilisateur",
+    "concours_id" => "concours",
     "titre" => "titre",
     "url" => "url",
-    "url_photo" => "url photo",
+    "url_photo" => "url de la photo",
     "nb_likes" => "nb likes",
     "nb_vues" => "nb vues",
-    "date_creation" => "date creation",
+    "date_creation" => "date création",
 ];
 
 

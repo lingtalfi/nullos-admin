@@ -331,6 +331,88 @@ class Form
                 </select>
                 <?php
                 break;
+            case 'date3':
+                $args = $c->getTypeArgs();
+
+                if (array_key_exists(0, $args) && null !== $args[0]) {
+                    $months = $args[0];
+                } else {
+                    $months = [
+                        'january',
+                        'february',
+                        'march',
+                        'april',
+                        'may',
+                        'june',
+                        'july',
+                        'august',
+                        'september',
+                        'october',
+                        'november',
+                        'december',
+                    ];
+                }
+                $maxYear = (array_key_exists(1, $args)) ? $args[1] : date('Y');
+                $minYear = (array_key_exists(2, $args)) ? $args[2] : 1900;
+                if ($minYear > $maxYear) { // avoid infinite loop
+                    $this->error("date3: max year cannot be less than min year");
+                }
+
+                $elId = 'date-3-' . $column;
+
+
+                $value = $c->getValue();
+                if (null !== $value) {
+                    list($year, $month, $day) = explode('-', $value);
+                } else {
+                    $year = $month = $day = 0;
+                }
+
+                ?>
+                <select class="autowidth _day" id="<?php echo $elId; ?>">
+                    <?php for ($i = 1; $i <= 31; $i++):
+                        $sel = ((int)$i === (int)$day) ? ' selected="selected"' : '';
+                        $i = sprintf('%02s', $i);
+                        ?>
+                        <option <?php echo $sel; ?> value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                    <?php endfor; ?>
+                </select>
+                <select class="autowidth _month">
+                    <?php for ($i = 0; $i < 12; $i++):
+                        $sel = ((int)($i + 1) === (int)$month) ? ' selected="selected"' : '';
+                        ?>
+                        <option <?php echo $sel; ?>
+                            value="<?php echo sprintf('%02s', $i + 1); ?>"><?php echo $months[$i]; ?></option>
+                    <?php endfor; ?>
+                </select>
+                <select class="autowidth _year _lastdate">
+                    <?php for ($i = $maxYear; $i >= $minYear; $i--):
+                        $sel = ((int)$i === (int)$year) ? ' selected="selected"' : '';
+                        ?>
+                        <option <?php echo $sel; ?> value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                    <?php endfor; ?>
+                </select>
+                <input class="_target" type="hidden" name="<?php echo htmlspecialchars($column); ?>" value="">
+                <script>
+                    (function () {
+                        var dayEl = document.getElementById('<?php echo $elId; ?>');
+                        window.onSubmitCallbacks.push(function (c) {
+                            var parent = dayEl.parentNode;
+                            var day = dayEl.options[dayEl.selectedIndex].value;
+                            var monthEl = parent.querySelector('._month');
+                            var month = monthEl.options[monthEl.selectedIndex].value;
+                            var yearEl = parent.querySelector('._year');
+                            var year = yearEl.options[yearEl.selectedIndex].value;
+
+                            var date = year + '-' + month + '-' + day;
+                            var target = parent.querySelector('._target');
+                            target.value = date;
+                            c();
+                        })
+                    })();
+                </script>
+                <?php
+                break;
             case 'date6':
                 $args = $c->getTypeArgs();
 

@@ -21,12 +21,12 @@ inner join users us on us.id=u.users_id
 
 $table = CrudModule::getDataTable();
 
-$table->title = "Styles musical des utilisateurs";
+$table->title = "Styles musicaux des utilisateurs";
 
 
 $table->columnHeaders = [
-    "users_id" => "users id",
-    "styles_musicaux_id" => "styles musicaux id",
+    "users_id" => "utilisateur",
+    "styles_musicaux_id" => "style musical",
 ];
 
 

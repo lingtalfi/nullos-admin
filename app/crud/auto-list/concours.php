@@ -32,14 +32,14 @@ $table->title = "Concours";
 
 $table->columnHeaders = [
     "id" => "id",
-    "equipe_id" => "equipe id",
+    "equipe_id" => "équipe",
     "titre" => "titre",
-    "url_photo" => "url photo",
-    "url_video" => "url video",
-    "date_debut" => "date debut",
+    "url_photo" => "url de la photo",
+    "url_video" => "url de la vidéo",
+    "date_debut" => "date début",
     "date_fin" => "date fin",
     "lots" => "lots",
-    "reglement" => "reglement",
+    "reglement" => "règlement",
     "description" => "description",
 ];
 

@@ -1,19 +1,13 @@
 <?php
 
 
+use Crud\CrudModule;
 
 
-$form = new Form('concours', ['id']);
-
-
-
-// common
-//$form->controlErrorLocation = 'local';
-//$form->allowMultipleErrorsPerControl = true;
+$form = CrudModule::getForm('concours', ['id']);
 
 
 // instance specific
-$form->title = null;
 $form->labels = [
     'equipe_id' => 'equipe',
     'url_photo' => 'photo url',
@@ -22,21 +16,15 @@ $form->labels = [
     'date_fin' => 'ends at',
     'reglement' => 'règlement',
 ];
-$form->insertDefaults = [
-    'date_debut' => '2014-06-05 14:05:00',
-];
 
 
+$form->title = "Concours";
 
 
-
-
-
-$form->addControl('equipe_id')->type("selectByRequest", "select id, nom from equipe");
+$form->addControl("equipe_id")->type("selectByRequest", "select id, nom from equipe");
 $form->addControl('titre')->type("text")
     ->addConstraint("required")
-    ->addConstraint("minChar", 5)
-;
+    ->addConstraint("minChar", 5);
 $form->addControl('url_photo')->type("text");
 $form->addControl('url_video')->type("text");
 $form->addControl('date_debut')->type("date6");

@@ -19,8 +19,8 @@ Table of contents
 
 TODO
 
-- Privileges
-- Crud Generator
+- [Privileges](https://github.com/lingtalfi/nullos-admin/blob/master/doc/privileges.md)
+- [Crud Generator](https://github.com/lingtalfi/nullos-admin/blob/master/doc/crud-generator.md)
 
 
 

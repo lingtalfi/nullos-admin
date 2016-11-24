@@ -28,7 +28,7 @@ $table->columnHeaders = [
     "objet" => "objet",
     "message" => "message",
     "email" => "email",
-    "date_creation" => "date creation",
+    "date_creation" => "date création",
 ];
 
 
