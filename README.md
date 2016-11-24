@@ -14,6 +14,16 @@ This is a work in progress... (the development version)
 
 
 
+Table of contents
+--------------------
+
+TODO
+
+- Privileges
+
+
+
+
 Why?
 -----------------
 
@@ -805,6 +815,7 @@ From a more abstract point of view, the registerMultipleAction method accept thr
 - id: the identifier of the multiple action (used internally to trigger the multiple action when appropriate)
 - label: displayed in the selector
 - callback: what to do with the selected rows. Each row is passed in the form of a ric array.
+- confirm: bool, whether or not to display a js confirmation dialog before actually executing the multiple action
 
 
 
@@ -893,6 +904,17 @@ To create a postlink, you need to add the following attributes to your link:
 Any link with those attributes is automatically upgraded to a postlink by DataTable (via js).
 
 
+
+#### confirmlink
+
+confirmlink is a css class that you can add on any element inside the datatable, usually an single action link.
+
+Then when such an element is clicked, DataTables intercepts the click and displays a javascript confirmation dialog before
+either executing the action, or cancelling the action.
+
+This is useful for the cases where the action has critical effects, such as deleting a row in the database.
+
+The delete single action provided by DataTable uses this mechanism. 
 
 
 

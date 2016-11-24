@@ -1,10 +1,12 @@
 <?php
 
 use BumbleBee\Autoload\ButineurAutoloader;
+use Crud\CrudModule;
+use Privilege\PrivilegeUser;
 use QuickPdo\QuickPdo;
 
 
-//session_start();
+session_start();
 
 
 $__butineurStart = false;
@@ -16,6 +18,7 @@ require __DIR__ . "/functions/main-functions.php";
 //--------------------------------------------
 ButineurAutoloader::getInst()
     ->addLocation(__DIR__ . "/class")
+    ->addLocation(__DIR__ . "/class-modules")
     ->start();
 
 
@@ -39,14 +42,12 @@ if (true === Helper::isLocal()) {
 }
 
 
-
 QuickPdo::setConnection("mysql:host=localhost;dbname=$dbName", $dbUser, $dbPass, [
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY','')), NAMES 'utf8'",
 //    PDO::MYSQL_ATTR_INIT_COMMAND => "SET sql_mode=(SELECT REPLACE(@@sql_mode,'STRICT_TRANS_TABLES','')), NAMES 'utf8'",
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 ]);
-
 
 
 
@@ -70,27 +71,25 @@ define('MAIL_PASS', "feozejoiijz");
 define('MAIL_FROM', 'postmaster@my_website.com');
 
 
-
 Spirit::set('ricSeparator', '--*--');
 
 
 // Session user
-//define('USER_SESSION_TIMEOUT', 60 * 5 * 1000); // number of seconds before session times out
-//
-//
-//
-////--------------------------------------------
-//// USER
-////--------------------------------------------
-//User::refresh();
-//if (array_key_exists('disconnect', $_GET)) {
-//    User::disconnect();
-//}
+PrivilegeUser::$sessionTimeout = 60 * 5 * 1000;
+
+
+//--------------------------------------------
+// USER
+//--------------------------------------------
+PrivilegeUser::refresh();
+if (array_key_exists('disconnect', $_GET)) {
+    PrivilegeUser::disconnect();
+}
 
 
 //--------------------------------------------
 // TRANSLATION
 //--------------------------------------------
-define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/en");
+define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/fr");
 
 

@@ -72,6 +72,7 @@ class DataTable
      *          It accepts two arguments:
      *                  - table: string, the table name
      *                  - ric: array of key => value (identifying the row on which the action should be executed)
+     *                  - confirmation=false: whether or not a confirmation dialog should be displayed before actually executing the action
      */
     private $singleActions;
 
@@ -82,6 +83,8 @@ class DataTable
      *              - item: array of key => value, it represents the row
      */
     private $transformers;
+
+    private $translatorContext;
 
 
     public function __construct()
@@ -116,6 +119,7 @@ class DataTable
             'deleteAll' => [
                 'Delete all',
                 ':deleteAll', // this is a special notation to indicate that we want to use the deleteAll method of THIS class
+                true, // whether or not this action requires javascript confirmation
             ],
         ];
 
@@ -139,7 +143,7 @@ class DataTable
         $this->singleActions = [
             'edit' => ['<a href="/table?name={tableName}&action=edit&ric={ric}">Edit</a>'],
             // :delete is a special notation to indicate that we want to use the delete method of THIS class
-            'delete' => ['<a class="postlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>', ':delete'],
+            'delete' => ['<a class="postlink confirmlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>', ':delete'],
         ];
 
 
@@ -148,7 +152,7 @@ class DataTable
         $this->hiddenColumns = [];
         $this->transformers = [];
 
-
+        $this->translatorContext = 'datatable';
     }
 
 
@@ -177,7 +181,7 @@ class DataTable
                         return array_combine($ric, $vals);
                     }, $ids);
                     $actionInfo = $this->multipleActions[$multipleAction];
-                    $callback = array_pop($actionInfo);
+                    $callback = $actionInfo[1];
 
                     if (':deleteAll' === $callback) {
                         $callback = [$this, "deleteAll"];
@@ -260,10 +264,13 @@ class DataTable
         $nbPages = 1; // if the user chooses to display all items on the same page...
         if ($nbItemsPerPageChoice > 0) {
             $nbPages = ceil($nbItemsTotal / $nbItemsPerPageChoice);
+            if ($nbPages < 1) {
+                $nbPages = 1;
+            }
             if ($currentPage > $nbPages) {
                 $currentPage = (int)$nbPages;
-            } else if ($currentPage < 0) {
-                $currentPage = 0;
+            } else if ($currentPage < 1) {
+                $currentPage = 1;
             }
         }
 
@@ -314,9 +321,13 @@ class DataTable
         <section id="<?php echo $tableId; ?>" class="datatable-section freepage">
 
             <?php if (null !== $this->title): ?>
-                <h3><?php echo $this->title; ?></h3>
+                <h3 class="list-title"><?php echo $this->title; ?></h3>
             <?php endif; ?>
 
+            <p class="create-new-item-container">
+                <a href="/table?name=<?php echo $table; ?>&action=insert"><?php Icons::printIcon('add', 'blue'); ?>
+                    <span><?php echo __("Create a new item", $this->translatorContext); ?></span></a>
+            </p>
 
             <?php if (count($items) > 0): ?>
 
@@ -344,9 +355,9 @@ class DataTable
                                 <?php $this->printHiddenFields('search', $table, 1, $sortColumn, $sortColumnDir, $search, $nbItemsPerPageChoice); ?>
                                 <input name="<?php echo $this->searchGetKey; ?>" class="search-input" type="text"
                                        value="<?php echo htmlspecialchars($search); ?>"
-                                       placeholder="<?php echo ___("Search in rows", 'datatable'); ?>">
+                                       placeholder="<?php echo ___("Search in rows", $this->translatorContext); ?>">
                                 <input class="search-submit-btn" type="submit"
-                                       value="<?php echo ___("Search", 'datatable'); ?>">
+                                       value="<?php echo ___("Search", $this->translatorContext); ?>">
                             </form>
                         </div>
                     <?php endif; ?>
@@ -355,7 +366,7 @@ class DataTable
                     <?php if ($this->hasWidget('nippSelector')): ?>
                         <div class="nblines_per_page">
                             <form method="get" action="">
-                                <span><?php echo __("Number of rows:", 'datatable'); ?></span>
+                                <span><?php echo __("Number of rows:", $this->translatorContext); ?></span>
                                 <?php $this->printHiddenFields('nipp', $table, $currentPage, $sortColumn, $sortColumnDir, $search, $nbItemsPerPageChoice); ?>
                                 <select name="<?php echo $this->nbItemsPerPageGetKey; ?>" class="nipp-selected">
                                     <?php foreach ($this->nbItemsPerPageList as $value):
@@ -490,8 +501,11 @@ class DataTable
                             <button class="uncheckall-btn hidden">Uncheck all rows</button>
                             <select class="multiple-action-selector" name="multiple-action">
                                 <option value="0">For all selected rows</option>
-                                <?php foreach ($this->multipleActions as $k => $v): ?>
-                                    <option value="<?php echo $k; ?>"><?php echo $v[0]; ?></option>
+                                <?php foreach ($this->multipleActions as $k => $v):
+                                    $confirm = (array_key_exists(2, $v) && true === $v[2]) ? ' data-confirm="true"' : '';
+                                    ?>
+                                    <option <?php echo $confirm; ?>
+                                        value="<?php echo $k; ?>"><?php echo $v[0]; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -565,7 +579,16 @@ class DataTable
                 var tableForm = tableSection.querySelector('.datatable-form');
                 var multiActionSelector = tableSection.querySelector(".multiple-action-selector");
                 multiActionSelector.addEventListener('change', function () {
-                    tableForm.submit();
+
+                    var option = multiActionSelector.options[multiActionSelector.selectedIndex];
+                    if (option.hasAttribute('data-confirm') && 'true' === option.getAttribute('data-confirm')) {
+                        if (true === window.confirm("<?php echo Helper::jsQuote(__("Are you sure you want to execute this action on all the selected rows?", $this->translatorContext)); ?>")) {
+                            tableForm.submit();
+                        }
+                    }
+                    else {
+                        tableForm.submit();
+                    }
                 });
 
                 /**
@@ -573,6 +596,15 @@ class DataTable
                  */
                 var blackhole = tableSection.querySelector(".blackhole");
                 table.addEventListener('click', function (e) {
+
+                    if (e.target.classList.contains("confirmlink")) {
+                        if (false === window.confirm("<?php echo Helper::jsQuote(__("Are you sure you want to execute this action?", $this->translatorContext)); ?>")) {
+                            e.preventDefault();
+                            return; // prevent postlink to execute (delete link for instance)
+                        }
+                    }
+
+
                     if (e.target.classList.contains('postlink')) {
 
 
@@ -641,11 +673,12 @@ class DataTable
         $this->singleActions[$id] = [$html, $function];
     }
 
-    public function registerMultipleAction($id, $label, $function)
+    public function registerMultipleAction($id, $label, $function, $confirmation = false)
     {
         $this->multipleActions[$id] = [
             $label,
             $function,
+            $confirmation,
         ];
     }
 
@@ -760,6 +793,7 @@ class DataTable
     private function delete($table, $ric)
     {
         $q = "delete from $table where ";
+        $markers = [];
         $q .= Helper::getWhereFragmentFromRic($ric, $markers);
         QuickPdo::freeQuery($q, $markers);
     }

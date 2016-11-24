@@ -47,17 +47,7 @@ class Layout
                 <section class="header">
                     <span class="title">My admin</span>
                 </section>
-                <section class="section-block table-links">
-                    <h3>Some Tables</h3>
-                    <ul class="linkslist">
-                        <li><a href="/table?name=concours">concours</a></li>
-                        <li><a href="#">table b</a></li>
-                        <li><a href="#">table b</a></li>
-                        <li><a href="#">table b</a></li>
-                        <li><a href="#">table b</a></li>
-                        <li><a href="#">table b</a></li>
-                    </ul>
-                </section>
+                <?php Bridge::displayLeftMenuBlocks(); ?>
             </div>
             <div id="two" class="pane-aux right-pane">
                 <?php $this->includeElement('body'); ?>
@@ -71,6 +61,9 @@ class Layout
                 minSize: 20
             });
         </script>
+
+
+        <?php Icons::printIconsDefinitions(); ?>
 
         </body>
         </html>

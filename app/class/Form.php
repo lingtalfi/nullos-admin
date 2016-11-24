@@ -76,6 +76,7 @@ class Form
             $controlsNames = array_keys($this->controls);
             $safeValues = array_intersect_key($_POST, array_flip($controlsNames));
 
+            //todo:: inect post values into form, redo constring test: with control->getVAlue instead of formatted?
             $formattedValues = [];
             foreach ($safeValues as $k => $v) {
                 $formattedValues[$k] = $v;
@@ -271,18 +272,20 @@ class Form
             var form = document.getElementById('<?php echo $formId; ?>');
             var submitBtn = form.querySelector('.input-submit');
             submitBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                var count = window.onSubmitCallbacks.length;
-                var done = function () {
-                    count--;
-                    if (0 === count) {
-                        form.submit();
-                    }
-                };
-                window.onSubmitCallbacks.forEach(function (c) {
-                    c(done);
-                });
 
+                if (window.onSubmitCallbacks.length > 0) {
+                    e.preventDefault();
+                    var count = window.onSubmitCallbacks.length;
+                    var done = function () {
+                        count--;
+                        if (0 === count) {
+                            form.submit();
+                        }
+                    };
+                    window.onSubmitCallbacks.forEach(function (c) {
+                        c(done);
+                    });
+                }
             });
         </script>
         <?php

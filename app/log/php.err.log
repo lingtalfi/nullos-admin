@@ -183,3 +183,101 @@ Stack trace:
 #5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
 #6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
 #7 { in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 38
+[23-Nov-2016 14:04:09 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Create a new item in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(321): __('Create a new it...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(88): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(88): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Vo in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
+[23-Nov-2016 14:05:46 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Create a new item in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(324): __('Create a new it...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(88): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(88): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Vo in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
+[23-Nov-2016 19:53:39 UTC] PHP Notice:  Undefined variable: _SESSION in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/PrivilegeUser.php on line 33
+[23-Nov-2016 19:53:39 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/PrivilegeUser.php on line 33
+[23-Nov-2016 19:53:39 UTC] PHP Notice:  Undefined variable: _SESSION in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/PrivilegeUser.php on line 33
+[23-Nov-2016 19:53:39 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/PrivilegeUser.php on line 33
+[23-Nov-2016 19:58:11 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Privilege.php on line 32
+[23-Nov-2016 20:55:33 UTC] PHP Fatal error:  Uncaught Error: Class 'PrivilegeUser' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php:78
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require()
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php on line 78
+[23-Nov-2016 21:03:37 UTC] PHP Fatal error:  Uncaught Error: Class 'PrivilegeUser' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php:78
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require()
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php on line 78
+[24-Nov-2016 04:35:27 UTC] PHP Fatal error:  Uncaught Error: Class 'CrudModule' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php:17
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(50): Bridge::displayLeftMenuLinks()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/home.php(6): Layout->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(27): require_once('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php on line 17
+[24-Nov-2016 04:35:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\CrudModule' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php:19
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(50): Bridge::displayLeftMenuLinks()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/home.php(6): Layout->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(27): require_once('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php on line 19
+[24-Nov-2016 05:29:00 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-50, 50' at line 7 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(300): QuickPdo\QuickPdo::fetchAll('select\n\ncle,\nva...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(21): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volume in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[24-Nov-2016 05:29:22 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-50, 50' at line 7 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(300): QuickPdo\QuickPdo::fetchAll('select\n\ncle,\nva...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(21): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5  in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[24-Nov-2016 06:15:04 UTC] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Helper::getWhereFragmentFromRic() must be of the type array, null given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 772 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Helper.php:16
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(772): Helper::getWhereFragmentFromRic(Array, NULL)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(202): DataTable->delete('configuration', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Helper.php on line 16
+[24-Nov-2016 06:43:00 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Are you sure you want to delete all the selected rows? in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(585): __('Are you sure yo...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
+[24-Nov-2016 06:43:07 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Are you sure you want to delete all the selected rows? in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(585): __('Are you sure yo...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
+[24-Nov-2016 06:44:49 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Are you sure you want to execute this action on all the selected rows? in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(585): __('Are you sure yo...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/ in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
