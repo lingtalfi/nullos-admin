@@ -41,7 +41,7 @@ inner join pays p on p.id=u.pays_id
 
 $table = CrudModule::getDataTable();
 
-$table->title = "Users";
+$table->title = "Utilisateurs";
 
 
 $table->columnHeaders = [

@@ -43,6 +43,7 @@ class CrudConfig
             'users_has_styles_musicaux' => "styles musicaux des utilisateurs",
             'styles_musicaux' => "styles musicaux",
             'coups_de_coeur' => "coups de coeur",
+            'users' => "utilisateurs",
         ];
     }
 

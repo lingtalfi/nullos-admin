@@ -33,7 +33,7 @@ $form->labels = [
 ];
 
 
-$form->title = "Users";
+$form->title = "Utilisateurs";
 
 
 $form->addControl("niveaux_id")->type("selectByRequest", "select id, nom from niveaux");
