@@ -1,0 +1,448 @@
+html, body {
+    height: 100%;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+/*------------------------------------
+- PANES CODE
+------------------------------------*/
+.panes-container {
+    display: flex;
+    background: #eee;
+    min-height: 100%;
+}
+
+.pane-main {
+    width: 30%;
+    min-width: 20px;
+    background: #ddd;
+}
+
+.pane-aux {
+    background: #ccc;
+    flex: auto;
+}
+
+/*------------------------------------
+- GENERAL TOOLS
+------------------------------------*/
+.icon{
+    /*width: 48px;*/
+    /*height: 48px;*/
+}
+
+
+
+/*------------------------------------
+- SPLIT
+------------------------------------*/
+.gutter {
+    background-color: #eee;
+
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('../libs/split/vertical.png');
+    cursor: ew-resize;
+}
+
+.gutter.gutter-vertical {
+    background-image: url('../libs/split/horizontal.png');
+    cursor: ns-resize;
+}
+
+/*------------------------------------
+- LEFT MENU TOOLS
+------------------------------------*/
+.leftmenu .linkslist li {
+    border-bottom: 1px solid #bbb;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.leftmenu .linkslist li:last-child {
+    border-bottom: none;
+}
+
+.leftmenu .linkslist a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.leftmenu .linkslist a:hover {
+    background: #ccc;
+}
+
+.leftmenu .section-block {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #aaa;
+}
+
+.leftmenu .section-block h3 {
+    color: black;
+    background: rgba(178, 114, 0, 0.82);
+    padding: 10px;
+    font-weight: normal;
+}
+
+/*------------------------------------
+- LEFT MENU
+------------------------------------*/
+.leftmenu {
+    overflow: hidden;
+}
+
+.leftmenu a {
+    color: #666;
+    text-decoration: none;
+}
+
+.leftmenu .header{
+    display: flex;
+    background: #aaa;
+    padding: 10px;
+    align-items: center;
+
+}
+
+.leftmenu .header .title {
+    display: block;
+    color: black;
+    flex: auto;
+}
+
+/*------------------------------------
+- RIGHT TOOLS
+------------------------------------*/
+.hidden {
+    display: none;
+}
+
+.freepage {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.datatable-section a {
+    text-decoration: none;
+}
+
+.datatable-section a:hover {
+    text-decoration: underline;
+}
+
+
+.datatable-section .create-new-item-container{
+    text-align: center;
+}
+
+.datatable-section .create-new-item-container a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.datatable-section .multiple-actions {
+    display: flex;
+}
+
+.datatable-section .checkall-btn,
+.datatable-section .uncheckall-btn {
+    margin-right: 20px;
+}
+
+.datatable-section .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #999;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.datatable-section .pagination {
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    width: 100%;
+    position: relative;
+    overflow-x: auto;
+}
+
+.datatable-section .pagination li {
+    border-right: 1px solid #666;
+}
+
+.datatable-section .pagination li:last-child {
+    border-right: none;
+}
+
+.datatable-section a:hover {
+    text-decoration: underline;
+}
+
+.datatable-section .pagination a {
+    display: block;
+    padding: 0 10px;
+    width: 100%;
+    height: 100%;
+    color: #666;
+}
+
+.datatable-section .pagination a.selected {
+    color: #ddd;
+}
+
+.datatable-section .search {
+    width: 30%;
+    display: flex;
+}
+
+.datatable-section .search .search-form {
+    display: flex;
+    width: 100%;
+}
+
+.search-input {
+    flex: auto;
+}
+
+.datatable-section .multiple-actions {
+    background: #666;
+    padding: 5px;
+}
+
+.datatable {
+    /*
+    * The width:100% doesn't work as I expected here
+    * Todo: find why, test with a table with few columns, like the configuration table so that you can see the problem
+    */
+    width: 100%;
+    overflow-x: scroll;
+    border-collapse: collapse;
+}
+
+
+.datatable .checkbox {
+    width: 40px;
+    height: 40px;
+}
+
+.datatable tr.headerrow {
+    background: #aaa;
+}
+
+.datatable tr.headerrow a {
+    color: #555;
+}
+
+.datatable tr.even {
+    background: #eee;
+}
+
+.datatable tr.odd {
+    background: #ddd;
+}
+
+.datatable tr, td {
+    border-bottom: 1px solid #ccc;
+}
+
+.datatable td {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.datatable td {
+    padding: 5px;
+}
+
+.datatable tbody a {
+    color: #9341ce;
+}
+
+/*------------------------------------
+- FORM
+------------------------------------*/
+.form-section {
+    background: rgba(255, 255, 255, 0.05);
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form-title,
+.list-title
+{
+    background: #aaa;
+    padding: 10px;
+}
+
+.form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form .row {
+    display: flex;
+    margin-bottom: 20px;
+    /*border-bottom: 1px solid #bbb;*/
+    /*padding-bottom: 20px;*/
+}
+
+.form .label
+{
+    text-align: left;
+    width: 30%;
+}
+
+.form .control {
+    flex: auto;
+}
+
+.form input,
+.form textarea,
+.form select {
+    width: 100%;
+}
+
+.form textarea {
+    height: 200px;
+}
+
+.form .autowidth {
+    width: auto;
+}
+
+.form hr {
+    border: 1px solid #eee;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.form .control-container {
+    flex: auto;
+}
+
+.form .row_visible {
+    display: flex;
+    margin-top: 10px;
+}
+
+.form .visible_label {
+    margin-right: 2%;
+}
+
+.form ._day,
+.form ._month {
+    margin-right: 1%;
+}
+
+.form ._lastdate {
+    margin-right: 5%;
+}
+
+.form .submit {
+    text-align: center;
+}
+
+.form .input-submit {
+    background: #446092 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px 20px;
+}
+
+.form .error,
+.top-control-errors,
+.top-db-result.error{
+    color: #c00;
+    background: yellow;
+}
+
+.top-db-result.success{
+    color: #fff;
+    background: #589a5e;
+}
+
+
+.top-control-errors,
+.top-db-result
+{
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.top-control-errors ul,
+.top-control-errors li
+{
+    margin-left: 20px;
+}
+
+.dynamic-items li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #eee;
+    padding: 5px;
+}
+
+.dynamic-items li button {
+    margin-left: 100px;
+}
+
+
+
+/*------------------------------------
+- AUTHENTICATION
+------------------------------------*/
+.authentication-body {
+    background: #eee;
+    display: flex;
+    align-items: center;
+}
+.authentication-section{
+    width: 60%;
+    background: #ddd;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.authentication-section h1{
+    text-align: center;
+}
+
+.form-connection .error{
+    display: none;
+}
+
+.form-connection .error.activated{
+    display: block;
+}
+
+
+.form-connection .input-submit{
+    margin-top: 50px;
+    width: auto;
+}
+
+

@@ -1,0 +1,618 @@
+[21-Nov-2016 20:25:26 UTC] PHP Notice:  Undefined variable: b in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php on line 28
+[21-Nov-2016 20:25:26 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1049] Unknown database 'nullos' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php(47): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
+[21-Nov-2016 20:25:35 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1049] Unknown database 'nullos' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php(44): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
+[21-Nov-2016 20:28:37 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1049] Unknown database 'nullos' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php(44): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
+[21-Nov-2016 20:35:35 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1049] Unknown database 'nullo' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php(44): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
+[21-Nov-2016 20:35:59 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1049] Unknown database 'nullos' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php(44): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 36
+[22-Nov-2016 07:01:48 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Layout::{closure}() must be of the type array, string given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 165 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php:71
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(165): Layout->{closure}('videos', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(79): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/n in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php on line 71
+[22-Nov-2016 07:04:22 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Layout::{closure}() must be of the type array, string given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 168 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php:71
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(168): Layout->{closure}('videos', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(79): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/n in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php on line 71
+[22-Nov-2016 07:04:42 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Layout::{closure}() must be of the type array, string given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 166 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php:71
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(166): Layout->{closure}('videos', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(79): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/n in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php on line 71
+[22-Nov-2016 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Non-static method Closure::call() cannot be called statically in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php:166
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(79): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 166
+[22-Nov-2016 07:10:58 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to DataTable::{closure}() must be of the type array, string given in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php:71
+Stack trace:
+#0 [internal function]: DataTable->{closure}('videos', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(166): Closure->call(Object(DataTable), 'videos', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(79): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php( in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php on line 71
+[22-Nov-2016 08:09:20 UTC] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, class '<a class="postlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 199
+[22-Nov-2016 08:09:38 UTC] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, class '<a class="postlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 199
+[22-Nov-2016 18:22:21 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php on line 19
+[22-Nov-2016 18:22:21 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php on line 19
+[22-Nov-2016 18:22:31 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php on line 19
+[22-Nov-2016 18:22:31 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php on line 19
+[22-Nov-2016 20:51:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method FormControl::setValue() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php:62
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php(51): Form->display()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 62
+[22-Nov-2016 21:47:05 UTC] PHP Parse error:  syntax error, unexpected '}' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 69
+[22-Nov-2016 21:53:54 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column 'date_debut' at row 1 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:207
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(207): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php(70): QuickPdo\QuickPdo::update('concours', Array, Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php(51): Form->display()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php( in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 207
+[23-Nov-2016 05:29:50 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 313
+[23-Nov-2016 05:29:50 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 313
+[23-Nov-2016 05:29:50 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 313
+[23-Nov-2016 05:29:50 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 313
+[23-Nov-2016 05:30:19 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 315
+[23-Nov-2016 05:30:19 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 315
+[23-Nov-2016 05:30:19 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 315
+[23-Nov-2016 05:30:19 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 315
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:34 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 243
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:46:40 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 244
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:14 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 247
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 05:48:27 UTC] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 248
+[23-Nov-2016 07:37:47 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: this field cannot be empty in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:38
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php(85): __('this field cann...', 'form-validation')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php(59): Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
+#7 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 38
+[23-Nov-2016 07:40:13 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: this field must contain at least 5 characters in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:38
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php(93): __('this field must...', 'form-validation')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php(60): Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
+#7 {main}
+   in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 38
+[23-Nov-2016 07:40:45 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: this field must contain at least {minChar} characters in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:38
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php(93): __('this field must...', 'form-validation')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/edit.php(60): Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(85): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Volumes/Macint...')
+#7 { in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 38
+[23-Nov-2016 14:04:09 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Create a new item in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(321): __('Create a new it...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(88): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(88): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Vo in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
+[23-Nov-2016 14:05:46 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Create a new item in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(324): __('Create a new it...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table/list.php(88): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\nv.id,\nv.active...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(19): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(88): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(63): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(25): require_once('/Vo in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
+[23-Nov-2016 19:53:39 UTC] PHP Notice:  Undefined variable: _SESSION in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/PrivilegeUser.php on line 33
+[23-Nov-2016 19:53:39 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/PrivilegeUser.php on line 33
+[23-Nov-2016 19:53:39 UTC] PHP Notice:  Undefined variable: _SESSION in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/PrivilegeUser.php on line 33
+[23-Nov-2016 19:53:39 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/PrivilegeUser.php on line 33
+[23-Nov-2016 19:58:11 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Privilege.php on line 32
+[23-Nov-2016 20:55:33 UTC] PHP Fatal error:  Uncaught Error: Class 'PrivilegeUser' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php:78
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require()
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php on line 78
+[23-Nov-2016 21:03:37 UTC] PHP Fatal error:  Uncaught Error: Class 'PrivilegeUser' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php:78
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(4): require()
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php on line 78
+[24-Nov-2016 04:35:27 UTC] PHP Fatal error:  Uncaught Error: Class 'CrudModule' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php:17
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(50): Bridge::displayLeftMenuLinks()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/home.php(6): Layout->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(27): require_once('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php on line 17
+[24-Nov-2016 04:35:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\CrudModule' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php:19
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(50): Bridge::displayLeftMenuLinks()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/home.php(6): Layout->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(27): require_once('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php on line 19
+[24-Nov-2016 05:29:00 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-50, 50' at line 7 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(300): QuickPdo\QuickPdo::fetchAll('select\n\ncle,\nva...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('videos', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(21): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volume in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[24-Nov-2016 05:29:22 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-50, 50' at line 7 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(300): QuickPdo\QuickPdo::fetchAll('select\n\ncle,\nva...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(21): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5  in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[24-Nov-2016 06:15:04 UTC] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Helper::getWhereFragmentFromRic() must be of the type array, null given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php on line 772 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Helper.php:16
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(772): Helper::getWhereFragmentFromRic(Array, NULL)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(202): DataTable->delete('configuration', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Helper.php on line 16
+[24-Nov-2016 06:43:00 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Are you sure you want to delete all the selected rows? in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(585): __('Are you sure yo...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
+[24-Nov-2016 06:43:07 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Are you sure you want to delete all the selected rows? in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(585): __('Are you sure yo...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
+[24-Nov-2016 06:44:49 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Are you sure you want to execute this action on all the selected rows? in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(585): __('Are you sure yo...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/configuration.php(47): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/ in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/functions/main-functions.php on line 46
+[24-Nov-2016 11:05:45 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'v.equipe_id' in 'on clause' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:275
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(275): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(264): QuickPdo\QuickPdo::fetch('select\ncount(*)...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php(61): DataTable->printTable('concours', 'select\n%s\nfrom ...', '\nc.id,\ne.nom as...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/ in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 275
+[24-Nov-2016 11:05:59 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.mpts' in 'field list' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(308): QuickPdo\QuickPdo::fetchAll('select\n\nc.id,\ne...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php(61): DataTable->printTable('concours', 'select\n%s\nfrom ...', '\nc.id,\ne.nom as...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(24): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:06:17 UTC] PHP Notice:  Undefined index: concours_id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/list/concours.php on line 57
+[24-Nov-2016 11:18:47 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdoInfoTool.php on line 33
+[24-Nov-2016 11:22:02 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdoInfoTool.php on line 33
+[24-Nov-2016 11:23:30 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdoInfoTool.php on line 33
+[24-Nov-2016 11:43:21 UTC] PHP Parse error:  syntax error, unexpected '$db' (T_VARIABLE), expecting ',' or ')' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/crudgen.php on line 25
+[24-Nov-2016 12:17:56 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 51
+[24-Nov-2016 13:57:05 UTC] PHP Warning:  mkdir(): File name too long in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Bat/FileSystemTool.php on line 220
+[24-Nov-2016 14:04:02 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/crudgen.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php on line 78
+[24-Nov-2016 14:04:02 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/crudgen.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php on line 78
+[24-Nov-2016 14:08:20 UTC] PHP Warning:  mkdir(): File exists in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Bat/FileSystemTool.php on line 220
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/concours.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/coups_de_coeur.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/equipe.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/equipe_has_membres.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/instruments.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/membres.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/messages.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/niveaux.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/pays.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:21 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/styles_musicaux.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:22 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/users.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:22 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/users_has_instruments.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:22 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/users_has_styles_musicaux.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:08:22 UTC] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/videos.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudGenerator.php on line 256
+[24-Nov-2016 14:22:20 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/crudgen.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php on line 78
+[24-Nov-2016 14:22:20 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/crudgen.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php on line 78
+[24-Nov-2016 14:23:41 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from configuration
+ limit 0, 50' at line 6 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(308): QuickPdo\QuickPdo::fetchAll('select\n\ncle,\nva...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur,\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(33): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_ in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[24-Nov-2016 14:23:46 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from configuration
+ limit 0, 50' at line 6 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/DataTable.php(308): QuickPdo\QuickPdo::fetchAll('select\n\ncle,\nva...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur,\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(33): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_ in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[24-Nov-2016 20:15:47 UTC] PHP Fatal error:  Access level to Crud\CrudFormGenerator::$out must be protected (as in class Crud\AbstractCrudGenerator) or weaker in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudFormGenerator.php on line 13
+[24-Nov-2016 20:42:45 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'oui.maurice' doesn't exist in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudFormGenerator.php(112): QuickPdo\QuickPdo::fetchAll('SHOW COLUMNS FR...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/scripts/crudgen-form.php(24): Crud\CrudFormGenerator->generateForm('concours')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(12): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/it/php/projects/null in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[24-Nov-2016 21:36:37 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudFormGenerator.php:210
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/scripts/crudgen-form.php(24): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(12): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(28): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudFormGenerator.php on line 210
+[24-Nov-2016 21:37:51 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudFormGenerator.php:210
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/scripts/crudgen-form.php(24): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(12): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(28): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudFormGenerator.php on line 210
+[24-Nov-2016 21:38:08 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudFormGenerator.php:210
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/scripts/crudgen-form.php(24): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(12): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(28): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudFormGenerator.php on line 210
+[24-Nov-2016 21:39:11 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudFormGenerator.php:210
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/scripts/crudgen-form.php(24): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(12): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(28): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudFormGenerator.php on line 210
+[24-Nov-2016 21:42:27 UTC] PHP Fatal error:  Access level to Crud\CrudListGenerator::line() must be protected (as in class Crud\AbstractCrudGenerator) or weaker in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudListGenerator.php on line 13
+[24-Nov-2016 21:43:18 UTC] PHP Fatal error:  Access level to Crud\CrudListGenerator::line() must be protected (as in class Crud\AbstractCrudGenerator) or weaker in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudListGenerator.php on line 13
+[24-Nov-2016 21:47:40 UTC] PHP Fatal error:  Uncaught Exception: control type not handled: date3 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php:466
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php(458): Form->error('control type no...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php(232): Form->displayControl('date_naissance', Object(FormControl))
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-form/users.php(63): Form->display()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(54): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/ in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 466
+[25-Nov-2016 04:31:00 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 04:31:00 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 04:31:00 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 04:31:00 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 04:31:00 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 04:31:00 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 06:08:12 UTC] PHP Fatal error:  Uncaught Error: Class 'DataTable' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudModule.php:49
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(18): Crud\CrudModule::getDataTable()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudModule.php on line 49
+[25-Nov-2016 06:08:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Spirit' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:156
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudModule.php(49): Crud\DataTable->__construct()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(18): Crud\CrudModule::getDataTable()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#7 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 156
+[25-Nov-2016 06:09:07 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Icons' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:333
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 333
+[25-Nov-2016 06:09:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:09:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/coups_de_coeur.php(46): Crud\DataTable->printTable('coups_de_coeur', 'select\n%s\nfrom ...', '\nc.id,\nc.videos...', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:09:25 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Spirit' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/Form.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudModule.php(57): Crud\Form->__construct('coups_de_coeur', Array, 'insert')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-form/coups_de_coeur.php(6): Crud\CrudModule::getForm('coups_de_coeur', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(54): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+# in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/Form.php on line 46
+[25-Nov-2016 06:09:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:11:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:12:06 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:12:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/concours.php(80): Crud\DataTable->printTable('concours', 'select\n%s\nfrom ...', '\nc.id,\nc.equipe...', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:12:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:12:15 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 07:37:12 UTC] PHP Fatal error:  Uncaught Error: Class 'QuickPdo\QuickPdo' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php:56
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(6): require()
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php on line 56
+[25-Nov-2016 07:37:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Privilege\PrivilegeUser' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php:83
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(6): require()
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php on line 83
+[25-Nov-2016 07:37:58 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\CrudModule' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php:19
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(50): Bridge::displayLeftMenuBlocks()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php on line 19
+[25-Nov-2016 07:41:26 UTC] PHP Fatal error:  Uncaught Error: Class 'Bat\FileSystemTool' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudListGenerator.php:39
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/scripts/crudgen-list.php(19): Crud\CrudListGenerator->generateLists()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/scripts/crudgen.php(5): require_once('/Volumes/Macint...')
+#2 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudListGenerator.php on line 39
+[25-Nov-2016 11:51:56 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-your_front_app/www-nullos/../pages/login.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-your_front_app/www-nullos/index.php on line 37
+[25-Nov-2016 11:51:56 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-your_front_app/www-nullos/../pages/login.php' (include_path='.:') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-your_front_app/www-nullos/index.php on line 37
+[25-Nov-2016 12:20:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php:161
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/equipe.php(23): Crud\Form->display()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(54): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(79): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(54): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(38): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php on line 161
+[25-Nov-2016 13:46:41 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:210
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(110): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/scripts/crudgen-form.php(17): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/scripts/crudgen.php(6): require_once('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 210
+[25-Nov-2016 14:05:58 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/AbstractCrudGenerator.php on line 50
+[25-Nov-2016 14:05:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdoInfoTool.php(44): QuickPdo\QuickPdo::fetchAll('SHOW COLUMNS FR...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/AbstractCrudGenerator.php(53): QuickPdo\QuickPdoInfoTool::getColumnDataTypes(NULL, false)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(126): Crud\AbstractCrudGenerator->generateForeignKeyPrettierColumns()
+#4 /Volumes/Macintos in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php on line 254
+[25-Nov-2016 14:06:17 UTC] PHP Notice:  Undefined offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/AbstractCrudGenerator.php on line 50
+[25-Nov-2016 14:06:17 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdoInfoTool.php(44): QuickPdo\QuickPdo::fetchAll('SHOW COLUMNS FR...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/AbstractCrudGenerator.php(53): QuickPdo\QuickPdoInfoTool::getColumnDataTypes(NULL, false)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(126): Crud\AbstractCrudGenerator->generateForeignKeyPrettierColumns()
+#4 /Volumes/Macintos in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php on line 254
+[25-Nov-2016 14:09:38 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key id in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:211
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(110): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/scripts/crudgen-form.php(17): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/scripts/crudgen.php(6): require_once('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 211
+[25-Nov-2016 14:10:30 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key id, table is concours in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:211
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(110): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/scripts/crudgen-form.php(17): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/scripts/crudgen.php(6): require_once('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 211
+[25-Nov-2016 14:11:18 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is concours in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:211
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(110): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/scripts/crudgen-form.php(17): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/scripts/crudgen.php(6): require_once('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 211
