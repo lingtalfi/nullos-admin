@@ -10,7 +10,7 @@ class Layout
 
     private function __construct()
     {
-        $this->elementsDir = APP_ROOT_DIR . "/layout-elements";
+        $this->elementsDir = NULLOS_APP_ROOT_DIR . "/layout-elements";
     }
 
     public static function create()
@@ -35,7 +35,7 @@ class Layout
         <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <title><?php echo ucfirst(WEBSITE_NAME); ?></title>
+            <title><?php echo ucfirst(NULLOS_WEBSITE_NAME); ?></title>
             <link rel="stylesheet" href="/style/style.css">
             <script src="/libs/split/split.js"></script>
         </head>
@@ -45,7 +45,7 @@ class Layout
         <div class="panes-container">
             <div id="one" class="pane-main leftmenu">
                 <section class="header">
-                    <span class="title"><?php echo ucfirst(WEBSITE_NAME); ?></span>
+                    <span class="title"><?php echo ucfirst(NULLOS_WEBSITE_NAME); ?></span>
                 </section>
                 <?php Bridge::displayLeftMenuBlocks(); ?>
             </div>

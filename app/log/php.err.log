@@ -537,3 +537,20 @@ Stack trace:
 #5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
 #6 {main}
   thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 07:37:12 UTC] PHP Fatal error:  Uncaught Error: Class 'QuickPdo\QuickPdo' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php:56
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(6): require()
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php on line 56
+[25-Nov-2016 07:37:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Privilege\PrivilegeUser' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php:83
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(6): require()
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/init.php on line 83
+[25-Nov-2016 07:37:58 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\CrudModule' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php:19
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(50): Bridge::displayLeftMenuBlocks()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Bridge.php on line 19

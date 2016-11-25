@@ -19,8 +19,8 @@ if (PrivilegeUser::isConnected()) {
     ];
 
     $uri = explode('?', $_SERVER['REQUEST_URI'])[0];
-    if ('' !== URL_PREFIX && URL_PREFIX === substr($uri, 0, strlen(URL_PREFIX))) {
-        $uri = substr($uri, strlen(URL_PREFIX));
+    if ('' !== NULLOS_URL_PREFIX && NULLOS_URL_PREFIX === substr($uri, 0, strlen(NULLOS_URL_PREFIX))) {
+        $uri = substr($uri, strlen(NULLOS_URL_PREFIX));
     }
     Spirit::set('uri', $uri);
 

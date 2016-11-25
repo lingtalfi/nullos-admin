@@ -59,7 +59,7 @@ if (
 <section class="authentication-section">
 
     <?php if (false === $formValidated): ?>
-        <h1 class="centered block"><?php echo __('Welcome to {website}', $tt, ['website' => WEBSITE_NAME]); ?></h1>
+        <h1 class="centered block"><?php echo __('Welcome to {website}', $tt, ['website' => NULLOS_WEBSITE_NAME]); ?></h1>
         <div class="centered block">
             <form id="form-connection" action="#posted" method="post" class="form form-connection">
                 <p class="error <?php echo $credentialsInvalid; ?>" id="error-credentials-invalid">

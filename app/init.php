@@ -10,19 +10,27 @@ use QuickPdo\QuickPdo;
 session_start();
 
 
-$__butineurStart = false;
-require "bigbang.php";
-require __DIR__ . "/functions/main-functions.php";
+//------------------------------------------------------------------------------/
+// UNIVERSE AUTOLOADER (bigbang)
+//------------------------------------------------------------------------------/
 
-//--------------------------------------------
-// UNIVERSE AUTOLOADER
-//--------------------------------------------
+
+
+require_once __DIR__ . '/class-planets/BumbleBee/Autoload/BeeAutoloader.php';
+require_once __DIR__ . '/class-planets/BumbleBee/Autoload/ButineurAutoloader.php';
 ButineurAutoloader::getInst()
     ->addLocation(__DIR__ . "/class")
     ->addLocation(__DIR__ . "/class-modules")
-    ->start();
+    ->addLocation(__DIR__ . "/class-planets");
+ButineurAutoloader::getInst()->start();
 
 
+
+
+//--------------------------------------------
+// FUNCTIONS
+//--------------------------------------------
+require_once __DIR__ . "/functions/main-functions.php";
 
 
 //--------------------------------------------
@@ -34,13 +42,13 @@ if (true === Helper::isLocal()) {
     $dbUser = 'root';
     $dbPass = 'root';
     $dbName = 'oui';
-    define('URL_PREFIX', '');
+    define('NULLOS_URL_PREFIX', '');
     ini_set('display_errors', 1);
 } else {
     $dbUser = 'my_website_admin';
     $dbPass = 'gjie1i11gR40';
     $dbName = 'oui';
-    define('URL_PREFIX', '/nullos');
+    define('NULLOS_URL_PREFIX', '/nullos');
     ini_set('display_errors', 0);
 }
 
@@ -57,22 +65,13 @@ QuickPdo::setConnection("mysql:host=localhost;dbname=$dbName", $dbUser, $dbPass,
 // CONFIG
 //--------------------------------------------
 // paths
-define('APP_ROOT_DIR', __DIR__);
+define('NULLOS_APP_ROOT_DIR', __DIR__);
 
 
 // website
 // used in mail communication and authentication form,
 // used in html title, and at the top of the left menu
-define('WEBSITE_NAME', 'my website');
-
-
-// email
-define('MAIL_ADMIN', "postmaster@my_website.com");
-define('MAIL_HOST', "ssl.some_fai.net");
-define('MAIL_PORT', 465);
-define('MAIL_USER', 'postmaster@my_website.com');
-define('MAIL_PASS', "feozejoiijz");
-define('MAIL_FROM', 'postmaster@my_website.com');
+define('NULLOS_WEBSITE_NAME', 'my website');
 
 
 Spirit::set('ricSeparator', '--*--');
@@ -100,7 +99,7 @@ Privilege::setProfiles([
 //--------------------------------------------
 // TRANSLATION
 //--------------------------------------------
-define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/fr");
+define('NULLOS_APP_DICTIONARY_PATH', NULLOS_APP_ROOT_DIR . "/lang/fr");
 
 
 

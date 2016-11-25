@@ -4,12 +4,12 @@
 function url($url, array $params = null, $mergeParams = true)
 {
     if (null === $params) {
-        $ret = URL_PREFIX . $url;
+        $ret = NULLOS_URL_PREFIX . $url;
     } else {
         if (true === $mergeParams) {
             $params = array_replace($_GET, $params);
         }
-        $ret = URL_PREFIX . $url . '?' . http_build_query($params);
+        $ret = NULLOS_URL_PREFIX . $url . '?' . http_build_query($params);
     }
     return htmlspecialchars($ret);
 }
@@ -25,7 +25,7 @@ function __($identifier, $context = 'default', array $tags = [])
         $defs = $terms[$context];
     } else {
         $defs = [];
-        require_once APP_DICTIONARY_PATH . '/' . $context . '.php';
+        require_once NULLOS_APP_DICTIONARY_PATH . '/' . $context . '.php';
         $terms[$context] = $defs;
     }
 
@@ -54,53 +54,33 @@ function ___()
 }
 
 
-/**
- *
- * This function simplify the sending of a simple email.
- * It depends on SwiftMailer.
- *
- * Also, you need to define those constants before you call the function:
- *
- * - MAIL_HOST
- * - MAIL_PORT
- * - MAIL_USER
- * - MAIL_PASS
- * - MAIL_FROM
- *
- *
- * - subject: string
- * - msg: string | array (0 => plainMsg, 1 => htmlMsg)
- *          if it's a string, only the plain message will be sent
- * - to: string | array, accept whatever SwiftMailer's to field accepts:
- *          More info here: http://swiftmailer.org/docs/sending.html
- *
- *
- */
-function sendMailTo($subject, $msg, $to)
-{
-    $msgHtml = null;
-    if (is_array($msg)) {
-        $msg = $msg[0];
-        $msgHtml = $msg[1];
+
+
+//------------------------------------------------------------------------------/
+// BONUS FUNCTIONS, SO HANDFUL... (a huge time saver in the end)
+//------------------------------------------------------------------------------/
+if (!function_exists('a')) {
+    function a()
+    {
+        foreach (func_get_args() as $arg) {
+            ob_start();
+            var_dump($arg);
+            $output = ob_get_clean();
+            if ('1' !== ini_get('xdebug.default_enable')) {
+                $output = preg_replace("!\]\=\>\n(\s+)!m", "] => ", $output);
+            }
+            if ('cli' === PHP_SAPI) {
+                echo $output;
+            }
+            else {
+                echo '<pre>' . $output . '</pre>';
+            }
+        }
     }
-
-    $transport = Swift_SmtpTransport::newInstance(MAIL_HOST, MAIL_PORT)
-        ->setUsername(MAIL_USER)
-        ->setPassword(MAIL_PASS)
-        ->setEncryption("ssl");
-    $mailer = Swift_Mailer::newInstance($transport);
-
-    // Create a message
-    $message = Swift_Message::newInstance($subject)
-        ->setFrom(MAIL_FROM)
-        ->setTo($to)
-        ->setBody($msg, 'text/plain');
-
-
-    if (null !== $msgHtml) {
-        $message->addPart($msgHtml, 'text/html');
+    function az()
+    {
+        call_user_func_array('a', func_get_args());
+        exit;
     }
-    $result = $mailer->send($message);
-    return $result;
 }
 

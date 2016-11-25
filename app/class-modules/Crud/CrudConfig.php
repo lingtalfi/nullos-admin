@@ -157,7 +157,7 @@ class CrudConfig
 
     public static function getCrudDir()
     {
-        return APP_ROOT_DIR . "/crud";
+        return NULLOS_APP_ROOT_DIR . "/crud";
     }
 
     public static function getCrudGenListDir()
