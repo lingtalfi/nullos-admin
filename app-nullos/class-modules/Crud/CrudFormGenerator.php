@@ -248,7 +248,10 @@ class CrudFormGenerator extends AbstractCrudGenerator
                     $constraint = $this->column2Constraint[$c];
                 } elseif (array_key_exists($table, $foreignKeyPrettierColumns) && $c === $foreignKeyPrettierColumns[$table]) {
                     $constraint = "required";
+                } elseif (array_key_exists(0, $primaryKey) && $c === $primaryKey[0] &&  array_key_exists($primaryKey[0], $columnTypes) && 'varchar' === $columnTypes[$primaryKey[0]]) { // configuration table with 2 columns: cle, valeur
+                    $constraint = "required";
                 }
+
 
 
                 $semiColon = (null === $constraint) ? ';' : '';

@@ -38,7 +38,12 @@ ul, li {
     /*height: 48px;*/
 }
 
-
+.button-icon{
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
 
 /*------------------------------------
 - SPLIT
@@ -135,6 +140,21 @@ ul, li {
     padding: 10px;
 }
 
+.tac {
+    text-align: center;
+}
+
+.bignose{
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+
+
+
+/*------------------------------------
+- DATATABLE
+------------------------------------*/
 .datatable-section a {
     text-decoration: none;
 }
@@ -372,19 +392,19 @@ ul, li {
 
 .form .error,
 .top-control-errors,
-.top-db-result.error{
+.top-form-result.error{
     color: #c00;
     background: yellow;
 }
 
-.top-db-result.success{
+.top-form-result.success{
     color: #fff;
     background: #589a5e;
 }
 
 
 .top-control-errors,
-.top-db-result
+.top-form-result
 {
     box-sizing: border-box;
     margin-bottom: 20px;
@@ -412,7 +432,7 @@ ul, li {
 
 
 /*------------------------------------
-- AUTHENTICATION
+- AUTHENTICATION FORM
 ------------------------------------*/
 .authentication-body {
     background: #eee;

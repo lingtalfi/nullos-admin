@@ -8,4 +8,5 @@ $defs = [
     'Oops, something went wrong with the database, sorry...' => 'Oops, something went wrong with the database, sorry...',
     'The data has been successfully inserted' => 'The data has been successfully inserted',
     'The data has been successfully updated' => 'The data has been successfully updated',
+    "Submit" => "Submit",
 ];

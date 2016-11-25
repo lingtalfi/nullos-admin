@@ -616,3 +616,37 @@ Stack trace:
 #2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/scripts/crudgen.php(6): require_once('/Volumes/Macint...')
 #3 {main}
   thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 211
+[25-Nov-2016 16:11:57 UTC] PHP Notice:  Undefined index: name in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php on line 9
+[25-Nov-2016 16:11:59 UTC] PHP Notice:  Undefined index: name in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php on line 9
+[25-Nov-2016 18:03:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method QuickForm\QuickForm::displayForm() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php on line 16
+[25-Nov-2016 21:30:09 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Submit in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:45
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(78): __('Submit', 'form')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/membres.php(27): Crud\Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(54): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(38): require_once('/Volumes/Macint...')
+#7 { in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 45
+[25-Nov-2016 21:31:22 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Oops, there was a problem with the form in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:45
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(79): __('Oops, there was...', 'form')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/membres.php(27): Crud\Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(54): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 45
+[25-Nov-2016 21:37:39 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php:810
+Stack trace:
+#0 [internal function]: Crud\DataTable->delete('configuration', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php(213): call_user_func(Array, 'configuration', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-n in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php on line 810

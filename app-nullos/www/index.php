@@ -16,6 +16,8 @@ if (PrivilegeUser::isConnected()) {
     $uri2pagesMap = [
         '/' => 'home.php',
         '/table' => 'table.php',
+        '/quickstart' => 'quickstart.php',
+        '/test' => 'test.php',
     ];
 
     $uri = explode('?', $_SERVER['REQUEST_URI'])[0];

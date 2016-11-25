@@ -753,6 +753,7 @@ $table->setTransformer('country_name', function ($v, array $item) {
 
 By default, DataTable will display not only the table, but also some widgets that help interact with it:
 
+- newItemLink: a link to the page containing the form for creating a new item 
 - pageSelector: a selector (html select) used to navigate to a specific page 
 - search: a search module to filter the rows
 - nippSelector: a selector to choose the number of items to display per page 

@@ -41,7 +41,6 @@ class Layout
         </head>
 
         <body>
-
         <div class="panes-container">
             <div id="one" class="pane-main leftmenu">
                 <section class="header">

@@ -1,6 +1,6 @@
 <?php
 
-
+// https://github.com/lingtalfi/Icons
 class Icons
 {
     private static $icons = [];

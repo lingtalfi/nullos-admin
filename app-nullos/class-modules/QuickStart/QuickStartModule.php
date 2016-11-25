@@ -16,6 +16,14 @@ class QuickStartModule
 //        $tables = QuickPdoInfoTool::getTables($db);
 
 
+        /**
+         * The start links page contains a form with:
+         *
+         * - user
+         * - password
+         * - ?db (in second page?)
+         *
+         */
         if (Privilege::has('quickstart.access')):
             ?>
 
@@ -23,9 +31,7 @@ class QuickStartModule
             <section class="section-block table-links">
                 <h3>Quickstart</h3>
                 <ul class="linkslist">
-                    <li>
-                        <a href="<?php echo self::getQuickStartUrl(''); ?>">Start</a>
-                    </li>
+                    <li><a href="<?php echo self::getQuickStartUrl('start'); ?>">Start</a></li>
                 </ul>
             </section>
             <?php

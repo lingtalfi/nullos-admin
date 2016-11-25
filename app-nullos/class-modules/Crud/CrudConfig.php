@@ -10,8 +10,25 @@ class CrudConfig
 
     public static function getTables()
     {
+        return [];
         if (null === self::$tables) {
-            self::$tables = [];
+            self::$tables = [
+                'configuration',
+                'concours',
+                'equipe',
+                'equipe_has_membres',
+                'membres',
+                'coups_de_coeur',
+                'videos',
+                'messages',
+                'users',
+                'users_has_styles_musicaux',
+                'styles_musicaux',
+                'pays',
+                'users_has_instruments',
+                'instruments',
+                'niveaux',
+            ];
         }
         return self::$tables;
     }
@@ -19,12 +36,51 @@ class CrudConfig
     public static function getLeftMenuSections()
     {
         return [];
+        return [
+            "Configuration" => [
+                'configuration',
+            ],
+            "Modération" => [
+                'concours',
+                'coups_de_coeur',
+                'videos',
+            ],
+            'Equipe' => [
+                'equipe',
+                'equipe_has_membres',
+                'membres',
+            ],
+            'Utilisateurs' => [
+                'users',
+                'users_has_styles_musicaux',
+                'users_has_instruments',
+            ],
+            'Données statiques' => [
+                'instruments',
+                'niveaux',
+                'pays',
+                'styles_musicaux',
+            ],
+            'Messages' => [
+                'messages',
+            ],
+        ];
     }
 
 
     public static function getPrettyTableNames()
     {
         return [];
+        return [
+            'equipe' => 'équipe',
+            'equipe_has_membres' => "membres des équipes",
+            'videos' => "vidéos",
+            'users_has_instruments' => "instruments des utilisateurs",
+            'users_has_styles_musicaux' => "styles musicaux des utilisateurs",
+            'styles_musicaux' => "styles musicaux",
+            'coups_de_coeur' => "coups de coeur",
+            'users' => "utilisateurs",
+        ];
     }
 
 
@@ -34,11 +90,58 @@ class CrudConfig
     public static function getForeignKeyPrettierColumns()
     {
         return [];
+        return [
+            'equipe' => 'nom',
+            'membres' => 'pseudo',
+            'videos' => 'titre',
+            'users' => 'pseudo',
+            'concours' => 'titre',
+            'pays' => 'nom',
+            'instruments' => 'nom',
+            'niveaux' => 'nom',
+            'styles_musicaux' => 'nom',
+        ];
     }
 
     public static function getPrettyColumnNames()
     {
         return [];
+        /**
+         * If you want to be truly mutli language,
+         * you need to translate the values as well,
+         * but my client is french and she is the only one to use the admin,
+         * so I didn't bother translating in other languages...
+         */
+        return [
+            'cle' => 'clé',
+            'equipe_id' => 'équipe',
+            'url_photo' => 'url de la photo',
+            'url_video' => 'url de la vidéo',
+            'date_debut' => 'date début',
+            'date_fin' => 'date fin',
+            'reglement' => 'règlement',
+            'membres_id' => 'membre',
+            'videos_id' => 'vidéo',
+            'users_id' => 'utilisateur',
+            'concours_id' => 'concours',
+            'nb_vues' => 'nb vues',
+            'nb_likes' => 'nb likes',
+            'date_creation' => 'date création',
+            'password' => 'mot de passe',
+            'date_naissance' => 'date naissance',
+            'code_postal' => 'code postal',
+            'pays_id' => 'pays',
+            'niveaux_id' => 'niveau',
+            'prochains_concerts' => 'prochains concerts',
+            'sites_internet' => 'sites internet',
+            // case where it should be different in form and list..., but it's just a helper, so you should tweak it manually, no big deal
+            'show_sexe' => 'affichage sexe',
+            'show_date_naissance' => 'affichage date de naissance',
+            'show_niveau' => 'affichage niveau',
+            'styles_musicaux_id' => 'style musical',
+            'instruments_id' => 'instrument',
+            'active' => 'actif',
+        ];
     }
 
     public static function getListUrlTransformerIfCallback()
@@ -47,7 +150,6 @@ class CrudConfig
             return (false !== strpos($c, 'url_'));
         };
     }
-
 
     //--------------------------------------------
     //

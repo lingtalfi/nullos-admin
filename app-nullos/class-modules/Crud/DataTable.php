@@ -116,6 +116,7 @@ class DataTable
         $this->title = null;
 
         $this->widgets = [
+            'newItemLink' => true,
             'pageSelector' => true,
             'search' => true,
             'nippSelector' => true,
@@ -332,10 +333,14 @@ class DataTable
                 <h3 class="list-title"><?php echo $this->title; ?></h3>
             <?php endif; ?>
 
+
+            <?php if ($this->hasWidget('newItemLink')): ?>
             <p class="create-new-item-container">
-                <a href="/table?name=<?php echo $table; ?>&action=insert"><?php \Icons::printIcon('add', 'blue'); ?>
+                <a href="<?php echo CrudHelper::getInsertFormUrl($table); ?>&action=insert"><?php \Icons::printIcon('add', 'blue'); ?>
                     <span><?php echo __("Create a new item", $this->translatorContext); ?></span></a>
             </p>
+            <?php endif; ?>
+
 
             <?php if (count($items) > 0): ?>
 
@@ -802,7 +807,7 @@ class DataTable
     {
         $q = "delete from $table where ";
         $markers = [];
-        $q .= Helper::getWhereFragmentFromRic($ric, $markers);
+        $q .= \Helper::getWhereFragmentFromRic($ric, $markers);
         QuickPdo::freeQuery($q, $markers);
     }
 
