@@ -402,3 +402,40 @@ ul, li {
     margin-left: 100px;
 }
 
+
+
+/*------------------------------------
+- AUTHENTICATION
+------------------------------------*/
+.authentication-body {
+    background: #eee;
+    display: flex;
+    align-items: center;
+}
+.authentication-section{
+    width: 60%;
+    background: #ddd;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.authentication-section h1{
+    text-align: center;
+}
+
+.form-connection .error{
+    display: none;
+}
+
+.form-connection .error.activated{
+    display: block;
+}
+
+
+.form-connection .input-submit{
+    margin-top: 50px;
+    width: auto;
+}
+
+

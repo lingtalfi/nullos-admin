@@ -25,8 +25,8 @@ $table->title = "Styles musicaux des utilisateurs";
 
 
 $table->columnHeaders = [
-    "users_id" => "utilisateur",
-    "styles_musicaux_id" => "style musical",
+    "users_pseudo" => "utilisateur",
+    "styles_musicaux_nom" => "style musical",
 ];
 
 

@@ -2,6 +2,7 @@
 
 use BumbleBee\Autoload\ButineurAutoloader;
 use Crud\CrudModule;
+use Privilege\Privilege;
 use Privilege\PrivilegeUser;
 use QuickPdo\QuickPdo;
 
@@ -14,12 +15,14 @@ require "bigbang.php";
 require __DIR__ . "/functions/main-functions.php";
 
 //--------------------------------------------
-// ADD MY OWN CLASSES
+// UNIVERSE AUTOLOADER
 //--------------------------------------------
 ButineurAutoloader::getInst()
     ->addLocation(__DIR__ . "/class")
     ->addLocation(__DIR__ . "/class-modules")
     ->start();
+
+
 
 
 //--------------------------------------------
@@ -50,7 +53,6 @@ QuickPdo::setConnection("mysql:host=localhost;dbname=$dbName", $dbUser, $dbPass,
 ]);
 
 
-
 //--------------------------------------------
 // CONFIG
 //--------------------------------------------
@@ -59,7 +61,9 @@ define('APP_ROOT_DIR', __DIR__);
 
 
 // website
-define('WEBSITE_NAME', 'my website'); // used in mail communication
+// used in mail communication and authentication form,
+// used in html title, and at the top of the left menu
+define('WEBSITE_NAME', 'my website');
 
 
 // email
@@ -74,22 +78,30 @@ define('MAIL_FROM', 'postmaster@my_website.com');
 Spirit::set('ricSeparator', '--*--');
 
 
-// Session user
+//--------------------------------------------
+// PRIVILEGE
+//--------------------------------------------
 PrivilegeUser::$sessionTimeout = 60 * 5 * 1000;
-
-
-//--------------------------------------------
-// USER
-//--------------------------------------------
 PrivilegeUser::refresh();
 if (array_key_exists('disconnect', $_GET)) {
     PrivilegeUser::disconnect();
 }
+Privilege::setProfiles([
+    'root' => [
+        '*',
+    ],
+    'admin' => [
+        '*',
+        '-mysql.privilege.admin',
+    ],
+]);
 
 
 //--------------------------------------------
 // TRANSLATION
 //--------------------------------------------
 define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/fr");
+
+
 
 

@@ -6,9 +6,12 @@ Privilege
 nullos use the [Privilege](https://github.com/lingtalfi/Privilege) framework.
 
 
-As far as the crud module is concerned, my first intent was to use Privilege for every single sql privilege.
-That may be a todo..., but for now, my client doesn't need it, so just use the sql language directly if that's something
-you need.
+
+
+Intent: the root user can gives right on tables, columns (insert, delete, select, update), page access to other users.
+  
+  
+Not implemented yet, because my client doesn't need it.  
 
 
 

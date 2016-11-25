@@ -25,8 +25,8 @@ $table->title = "Membres des équipes";
 
 
 $table->columnHeaders = [
-    "equipe_id" => "équipe",
-    "membres_id" => "membre",
+    "equipe_nom" => "équipe",
+    "membres_pseudo" => "membre",
 ];
 
 

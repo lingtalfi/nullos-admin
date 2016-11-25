@@ -9,7 +9,7 @@ $form = CrudModule::getForm("users", ['id']);
 
 $form->labels = [
     "id" => "id",
-    "active" => "active",
+    "active" => "actif",
     "email" => "email",
     "pseudo" => "pseudo",
     "password" => "mot de passe",

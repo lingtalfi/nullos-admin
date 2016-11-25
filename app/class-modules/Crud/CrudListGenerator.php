@@ -79,6 +79,7 @@ class CrudListGenerator extends AbstractCrudGenerator
         $tableAliases = [];
         $mainAlias = null;
         $replacedForeignKeys = [];
+        $foreignKeyAliases = [];
 
 
         if (false === $hasForeignKey) {
@@ -96,13 +97,17 @@ class CrudListGenerator extends AbstractCrudGenerator
                     if (array_key_exists($foreignTable, $foreignKeyPrettierColumns)) {
                         $prettyColumnName = $foreignKeyPrettierColumns[$foreignTable];
                         $auxAlias = $tableAliases[$foreignTable];
-                        $fields[] = $auxAlias . '.' . $prettyColumnName . ' as ' . $foreignTable . '_' . $prettyColumnName;
+
+                        $foreignKeyAlias = $foreignTable . '_' . $prettyColumnName;
+
+                        $fields[] = $auxAlias . '.' . $prettyColumnName . ' as ' . $foreignKeyAlias;
                         $replacedForeignKeys[] = $c;
                         $fkTransformersInfo[] = [
                             $foreignTable . '_' . $prettyColumnName,
                             $foreignTable,
                             $c,
                         ];
+                        $foreignKeyAliases[$c] = $foreignKeyAlias;
 
                     } else {
                         // todo... fallback to choose a decent column with automated heuristics
@@ -153,11 +158,17 @@ class CrudListGenerator extends AbstractCrudGenerator
         //--------------------------------------------
         $headers = [];
         foreach ($columnNames as $c) {
-            if (array_key_exists($c, $fixPrettyColumnNames)) {
-                $headers[$c] = $fixPrettyColumnNames[$c];
-            } else {
-                $headers[$c] = str_replace('_', ' ', $c);
+            $column = $c;
+            if (array_key_exists($c, $foreignKeyAliases)) {
+                $column = $foreignKeyAliases[$c];
             }
+
+            if (array_key_exists($c, $fixPrettyColumnNames)) {
+                $headers[$column] = $fixPrettyColumnNames[$c];
+            } else {
+                $headers[$column] = str_replace('_', ' ', $c);
+            }
+
         }
         if (count($headers) > 0) {
             $this->line('$table->columnHeaders = [');
@@ -210,9 +221,30 @@ class CrudListGenerator extends AbstractCrudGenerator
             $this->line('');
         }
 
+        //--------------------------------------------
+        // TRANSFORMERS -- SHORTEN LONG TEXT
+        //--------------------------------------------
+        $textColumns = [];
+        $types = QuickPdoInfoTool::getColumnDataTypes($table, false);
+        foreach($types as $c => $type){
+            if('text' === $type){
+                $textColumns[] = $c;
+            }
+        }
+        if (count($textColumns) > 0) {
+            $this->line('$n = 30;');
+            foreach ($textColumns as $v) {
+                $this->line('$table->setTransformer(\'' . $this->sqe($v) . '\', function ($v) use ($n) {');
+                $this->line('    return substr($v, 0, $n) . \'...\';');
+                $this->line('});');
+            }
+            $this->line('');
+            $this->line('');
+        }
+
 
         //--------------------------------------------
-        // FK TRANSFORMERS
+        // TRANSFORMERS -- FK
         //--------------------------------------------
         if (count($fkTransformersInfo) > 0) {
             foreach ($fkTransformersInfo as $info) {

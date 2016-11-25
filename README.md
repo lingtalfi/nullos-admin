@@ -20,7 +20,7 @@ Table of contents
 
 TODO
 
-- [Privileges](https://github.com/lingtalfi/nullos-admin/blob/master/doc/privileges.md)
+- [Privilege](https://github.com/lingtalfi/nullos-admin/blob/master/doc/privilege.md)
 - [Crud Generator](https://github.com/lingtalfi/nullos-admin/blob/master/doc/crud-generator.md)
 
 
@@ -386,6 +386,8 @@ Instantiation
 The instantiation is trivial:
 
 ```php
+use Crud\DataTable;
+
 $table = new DataTable();
 ```
 
@@ -1387,7 +1389,7 @@ Nullos has the following contexts:
 - datatable: contains all the terms related to the datatable object (the list)
 - form: contains all the terms used by the Form object 
 - form-validation: contains all the terms used by the FormValidator object 
-- default: all the terms that don't belong to another context 
+- default: all the terms that don't belong to another context. You will put all your titles in there for instance. 
 
 
 Those files are located in the dictionary directory, which by default is **app/lang/en** for english,

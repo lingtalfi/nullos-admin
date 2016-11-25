@@ -34,9 +34,9 @@ $table->title = "Vidéos";
 
 $table->columnHeaders = [
     "id" => "id",
-    "active" => "active",
-    "users_id" => "utilisateur",
-    "concours_id" => "concours",
+    "active" => "actif",
+    "users_pseudo" => "utilisateur",
+    "concours_titre" => "concours",
     "titre" => "titre",
     "url" => "url",
     "url_photo" => "url de la photo",

@@ -37,4 +37,10 @@ $table->hiddenColumns = [
 ];
 
 
+$n = 30;
+$table->setTransformer('message', function ($v) use ($n) {
+    return substr($v, 0, $n) . '...';
+});
+
+
 $table->printTable('messages', $query, $fields, ['id']);

@@ -9,7 +9,7 @@ $form = CrudModule::getForm("videos", ['id']);
 
 $form->labels = [
     "id" => "id",
-    "active" => "active",
+    "active" => "actif",
     "users_id" => "utilisateur",
     "concours_id" => "concours",
     "titre" => "titre",

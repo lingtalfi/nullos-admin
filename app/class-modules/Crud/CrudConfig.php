@@ -32,6 +32,39 @@ class CrudConfig
         return self::$tables;
     }
 
+    public static function getLeftMenuSections()
+    {
+        return [
+            "Configuration" => [
+                'configuration',
+            ],
+            "Modération" => [
+                'concours',
+                'coups_de_coeur',
+                'videos',
+            ],
+            'Equipe' => [
+                'equipe',
+                'equipe_has_membres',
+                'membres',
+            ],
+            'Utilisateurs' => [
+                'users',
+                'users_has_styles_musicaux',
+                'users_has_instruments',
+            ],
+            'Données statiques' => [
+                'instruments',
+                'niveaux',
+                'pays',
+                'styles_musicaux',
+            ],
+            'Messages' => [
+                'messages',
+            ],
+        ];
+    }
+
 
     public static function getPrettyTableNames()
     {
@@ -45,11 +78,6 @@ class CrudConfig
             'coups_de_coeur' => "coups de coeur",
             'users' => "utilisateurs",
         ];
-    }
-
-    public static function getLeftMenuLinksSectionTitle()
-    {
-        return __('Website data', 'crud');
     }
 
 
@@ -70,8 +98,15 @@ class CrudConfig
             'styles_musicaux' => 'nom',
         ];
     }
+
     public static function getPrettyColumnNames()
     {
+        /**
+         * If you want to be truly mutli language,
+         * you need to translate the values as well,
+         * but my client is french and she is the only one to use the admin,
+         * so I didn't bother translating in other languages...
+         */
         return [
             'cle' => 'clé',
             'equipe_id' => 'équipe',
@@ -100,7 +135,7 @@ class CrudConfig
             'show_niveau' => 'affichage niveau',
             'styles_musicaux_id' => 'style musical',
             'instruments_id' => 'instrument',
-
+            'active' => 'actif',
         ];
     }
 

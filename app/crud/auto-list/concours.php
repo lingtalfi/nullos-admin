@@ -32,7 +32,7 @@ $table->title = "Concours";
 
 $table->columnHeaders = [
     "id" => "id",
-    "equipe_id" => "équipe",
+    "equipe_nom" => "équipe",
     "titre" => "titre",
     "url_photo" => "url de la photo",
     "url_video" => "url de la vidéo",
@@ -55,6 +55,18 @@ $table->setTransformer('url_photo', function ($v) {
 });
 $table->setTransformer('url_video', function ($v) {
     return '<a href="' . htmlspecialchars($v) . '">' . $v . '</a>';
+});
+
+
+$n = 30;
+$table->setTransformer('lots', function ($v) use ($n) {
+    return substr($v, 0, $n) . '...';
+});
+$table->setTransformer('reglement', function ($v) use ($n) {
+    return substr($v, 0, $n) . '...';
+});
+$table->setTransformer('description', function ($v) use ($n) {
+    return substr($v, 0, $n) . '...';
 });
 
 

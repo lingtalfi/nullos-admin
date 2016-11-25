@@ -410,3 +410,130 @@ Stack trace:
 #5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
 #6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
 #7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/ in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Form.php on line 466
+[25-Nov-2016 04:31:00 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 04:31:00 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 04:31:00 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 04:31:00 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 04:31:00 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 04:31:00 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/../pages/login.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php on line 37
+[25-Nov-2016 06:08:12 UTC] PHP Fatal error:  Uncaught Error: Class 'DataTable' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudModule.php:49
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(18): Crud\CrudModule::getDataTable()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudModule.php on line 49
+[25-Nov-2016 06:08:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Spirit' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:156
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudModule.php(49): Crud\DataTable->__construct()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(18): Crud\CrudModule::getDataTable()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#7 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 156
+[25-Nov-2016 06:09:07 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Icons' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:333
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 333
+[25-Nov-2016 06:09:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:09:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/coups_de_coeur.php(46): Crud\DataTable->printTable('coups_de_coeur', 'select\n%s\nfrom ...', '\nc.id,\nc.videos...', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:09:25 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Spirit' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/Form.php:46
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/CrudModule.php(57): Crud\Form->__construct('coups_de_coeur', Array, 'insert')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-form/coups_de_coeur.php(6): Crud\CrudModule::getForm('coups_de_coeur', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(54): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+# in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/Form.php on line 46
+[25-Nov-2016 06:09:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:11:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:12:06 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:12:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/concours.php(80): Crud\DataTable->printTable('concours', 'select\n%s\nfrom ...', '\nc.id,\nc.equipe...', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:12:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590
+[25-Nov-2016 06:12:15 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\Helper' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php:590
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/crud/auto-list/configuration.php(29): Crud\DataTable->printTable('configuration', 'select\n%s\nfrom ...', '\ncle,\nvaleur\n', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/layout-elements/table.php(39): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/pages/table.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/www/index.php(37): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app/class-modules/Crud/DataTable.php on line 590

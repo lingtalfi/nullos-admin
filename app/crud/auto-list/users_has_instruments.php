@@ -25,8 +25,8 @@ $table->title = "Instruments des utilisateurs";
 
 
 $table->columnHeaders = [
-    "users_id" => "utilisateur",
-    "instruments_id" => "instrument",
+    "users_pseudo" => "utilisateur",
+    "instruments_nom" => "instrument",
 ];
 
 

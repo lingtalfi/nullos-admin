@@ -1,5 +1,7 @@
 <?php
 
+namespace Crud;
+
 use QuickPdo\QuickPdo;
 
 
@@ -92,6 +94,9 @@ class DataTable
 
     public function __construct()
     {
+        $this->translatorContext = 'datatable';
+
+
         $this->tableGetKey = "name";
         $this->pageGetKey = "page";
         $this->nbItemsPerPageGetKey = "nipp";
@@ -120,7 +125,7 @@ class DataTable
 
         $this->multipleActions = [
             'deleteAll' => [
-                'Delete all',
+                __('Delete all', $this->translatorContext),
                 ':deleteAll', // this is a special notation to indicate that we want to use the deleteAll method of THIS class
                 true, // whether or not this action requires javascript confirmation
             ],
@@ -144,18 +149,18 @@ class DataTable
          *
          */
         $this->singleActions = [
-            'edit' => ['<a href="/table?name={tableName}&action=edit&ric={ric}">Edit</a>'],
+            'edit' => ['<a href="/table?name={tableName}&action=edit&ric={ric}">' . __('Edit', $this->translatorContext) . '</a>'],
             // :delete is a special notation to indicate that we want to use the delete method of THIS class
-            'delete' => ['<a class="postlink confirmlink" data-action="delete" data-ric="{ric}" href="#">Delete</a>', ':delete'],
+            'delete' => ['<a class="postlink confirmlink" data-action="delete" data-ric="{ric}" href="#">' . __('Delete', $this->translatorContext) . '</a>', ':delete'],
         ];
 
 
         //
-        $this->ricSeparator = Spirit::get('ricSeparator');
+        $this->ricSeparator = \Spirit::get('ricSeparator');
         $this->hiddenColumns = [];
         $this->transformers = [];
 
-        $this->translatorContext = 'datatable';
+
     }
 
 
@@ -328,7 +333,7 @@ class DataTable
             <?php endif; ?>
 
             <p class="create-new-item-container">
-                <a href="/table?name=<?php echo $table; ?>&action=insert"><?php Icons::printIcon('add', 'blue'); ?>
+                <a href="/table?name=<?php echo $table; ?>&action=insert"><?php \Icons::printIcon('add', 'blue'); ?>
                     <span><?php echo __("Create a new item", $this->translatorContext); ?></span></a>
             </p>
 
@@ -500,10 +505,10 @@ class DataTable
 
                     <?php if ($this->hasWidget('multipleActions')): ?>
                         <div class="multiple-actions">
-                            <button class="checkall-btn">Check all rows</button>
-                            <button class="uncheckall-btn hidden">Uncheck all rows</button>
+                            <button class="checkall-btn"><?php echo __("Check all rows", $this->translatorContext); ?></button>
+                            <button class="uncheckall-btn hidden"><?php echo __("Uncheck all rows", $this->translatorContext); ?></button>
                             <select class="multiple-action-selector" name="multiple-action">
-                                <option value="0">For all selected rows</option>
+                                <option value="0"><?php echo __("For all selected rows", $this->translatorContext); ?></option>
                                 <?php foreach ($this->multipleActions as $k => $v):
                                     $confirm = (array_key_exists(2, $v) && true === $v[2]) ? ' data-confirm="true"' : '';
                                     ?>
@@ -519,7 +524,7 @@ class DataTable
 
             <?php else: ?>
                 <p>
-                    No results for this table.
+                    <?php echo __("No results for this table", $this->translatorContext); ?>
                 </p>
             <?php endif; ?>
         </section>
@@ -585,7 +590,7 @@ class DataTable
 
                     var option = multiActionSelector.options[multiActionSelector.selectedIndex];
                     if (option.hasAttribute('data-confirm') && 'true' === option.getAttribute('data-confirm')) {
-                        if (true === window.confirm("<?php echo Helper::jsQuote(__("Are you sure you want to execute this action on all the selected rows?", $this->translatorContext)); ?>")) {
+                        if (true === window.confirm("<?php echo \Helper::jsQuote(__("Are you sure you want to execute this action on all the selected rows?", $this->translatorContext)); ?>")) {
                             tableForm.submit();
                         }
                     }
@@ -601,7 +606,7 @@ class DataTable
                 table.addEventListener('click', function (e) {
 
                     if (e.target.classList.contains("confirmlink")) {
-                        if (false === window.confirm("<?php echo Helper::jsQuote(__("Are you sure you want to execute this action?", $this->translatorContext)); ?>")) {
+                        if (false === window.confirm("<?php echo \Helper::jsQuote(__("Are you sure you want to execute this action?", $this->translatorContext)); ?>")) {
                             e.preventDefault();
                             return; // prevent postlink to execute (delete link for instance)
                         }

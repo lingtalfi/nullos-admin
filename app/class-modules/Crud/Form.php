@@ -1,5 +1,9 @@
 <?php
 
+namespace Crud;
+
+
+
 use QuickPdo\QuickPdo;
 
 
@@ -39,7 +43,7 @@ class Form
          * That's because the ricSeparator is shared between the list and the form features,
          * transiting via the http url.
          */
-        $this->ricSeparator = Spirit::get('ricSeparator');
+        $this->ricSeparator = \Spirit::get('ricSeparator');
         $this->translatorContext = "form-validation";
         $this->controlErrorLocation = "local";
         $this->title = __("{table} form", "form", ['table' => ucfirst($table)]);

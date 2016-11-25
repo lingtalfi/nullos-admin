@@ -35,7 +35,7 @@ class Layout
         <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <title>My Admin</title>
+            <title><?php echo ucfirst(WEBSITE_NAME); ?></title>
             <link rel="stylesheet" href="/style/style.css">
             <script src="/libs/split/split.js"></script>
         </head>
@@ -45,7 +45,7 @@ class Layout
         <div class="panes-container">
             <div id="one" class="pane-main leftmenu">
                 <section class="header">
-                    <span class="title">My admin</span>
+                    <span class="title"><?php echo ucfirst(WEBSITE_NAME); ?></span>
                 </section>
                 <?php Bridge::displayLeftMenuBlocks(); ?>
             </div>

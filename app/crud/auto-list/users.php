@@ -46,7 +46,7 @@ $table->title = "Utilisateurs";
 
 $table->columnHeaders = [
     "id" => "id",
-    "active" => "active",
+    "active" => "actif",
     "email" => "email",
     "pseudo" => "pseudo",
     "password" => "mot de passe",
@@ -57,8 +57,8 @@ $table->columnHeaders = [
     "date_naissance" => "date naissance",
     "code_postal" => "code postal",
     "ville" => "ville",
-    "pays_id" => "pays",
-    "niveaux_id" => "niveau",
+    "pays_nom" => "pays",
+    "niveaux_nom" => "niveau",
     "biographie" => "biographie",
     "influences" => "influences",
     "prochains_concerts" => "prochains concerts",
@@ -79,6 +79,21 @@ $table->hiddenColumns = [
 
 $table->setTransformer('url_photo', function ($v) {
     return '<a href="' . htmlspecialchars($v) . '">' . $v . '</a>';
+});
+
+
+$n = 30;
+$table->setTransformer('biographie', function ($v) use ($n) {
+    return substr($v, 0, $n) . '...';
+});
+$table->setTransformer('influences', function ($v) use ($n) {
+    return substr($v, 0, $n) . '...';
+});
+$table->setTransformer('prochains_concerts', function ($v) use ($n) {
+    return substr($v, 0, $n) . '...';
+});
+$table->setTransformer('sites_internet', function ($v) use ($n) {
+    return substr($v, 0, $n) . '...';
 });
 
 

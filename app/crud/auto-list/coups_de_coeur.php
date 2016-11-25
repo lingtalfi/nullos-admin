@@ -25,7 +25,7 @@ $table->title = "Coups de coeur";
 
 $table->columnHeaders = [
     "id" => "id",
-    "videos_id" => "vidéo",
+    "videos_titre" => "vidéo",
     "position" => "position",
 ];
 
