@@ -35,17 +35,18 @@ class Helper
      * you are in js code, and you need to write a translation string (see DataTable.php -> multiple action), like so:
      *
      *
-        if (confirm) {
-            if (true === window.confirm("<?php echo Helper::jsQuote(__("Are you sure you want to delete all the selected rows?")); ?>")) {
-                tableForm.submit();
-            }
-        }
-        else {
-            tableForm.submit();
-        }
+     * if (confirm) {
+     * if (true === window.confirm("<?php echo Helper::jsQuote(__("Are you sure you want to delete all the selected rows?")); ?>")) {
+     * tableForm.submit();
+     * }
+     * }
+     * else {
+     * tableForm.submit();
+     * }
      *
      */
-    public static function jsQuote($m){
+    public static function jsQuote($m)
+    {
         return str_replace('"', '\"', $m);
     }
 }

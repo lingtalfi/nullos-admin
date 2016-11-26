@@ -5,7 +5,14 @@ use Authentication\AuthenticationHelper;
 use Privilege\PrivilegeUser;
 
 
-require_once __DIR__ . "/../init.php";
+
+
+if (file_exists(__DIR__ . "/../init.php")) {
+    require_once __DIR__ . "/../init.php";
+} else {
+    require_once __DIR__ . "/../init-fallback.php";
+}
+
 
 
 //--------------------------------------------
@@ -81,6 +88,10 @@ if (
             </form>
         </div>
 
+        <script>
+            document.getElementById('input-pseudo').focus();
+        </script>
+
     <?php else: ?>
         <script>
             window.location.href = "<?php echo $successUrl; ?>";
@@ -89,5 +100,6 @@ if (
     <?php endif; ?>
 
 </section>
+
 </body>
 </html>

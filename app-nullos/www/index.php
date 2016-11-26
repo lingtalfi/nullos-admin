@@ -3,13 +3,17 @@
 
 use Privilege\PrivilegeUser;
 
-//require __DIR__ . "/../../../app-nullos/init.php";
-require __DIR__ . "/../init.php";
+if (file_exists(__DIR__ . "/../init.php")) {
+    require_once __DIR__ . "/../init.php";
+} else {
+    require_once __DIR__ . "/../init-fallback.php";
+}
 
 
 //--------------------------------------------
 // ROUTER
 //--------------------------------------------
+ob_start(); // ob start gives us the ability to do redirect from php "view" code, using header(location...); exit;
 if (PrivilegeUser::isConnected()) {
 
 
@@ -37,4 +41,4 @@ if (PrivilegeUser::isConnected()) {
 
 
 require_once APP_ROOT_DIR . "/pages/" . $page;
-
+echo ob_get_clean();

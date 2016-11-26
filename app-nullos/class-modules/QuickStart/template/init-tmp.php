@@ -57,14 +57,14 @@ if ('/index.php' === $_SERVER['PHP_SELF']) {
 ini_set('error_log', __DIR__ . "/log/php.err.log");
 
 if (true === Helper::isLocal()) {
-    $dbUser = 'root';
-    $dbPass = 'root';
-    $dbName = 'oui';
+    $dbUser = '{dbUserLocal}';
+    $dbPass = '{dbPassLocal}';
+    $dbName = '{dbNameLocal}';
     ini_set('display_errors', 1);
 } else {
-    $dbUser = 'root';
-    $dbPass = 'root';
-    $dbName = 'oui';
+    $dbUser = '{dbUserDistant}';
+    $dbPass = '{dbPassDistant}';
+    $dbName = '{dbNameDistant}';
     ini_set('display_errors', 0);
 }
 
@@ -90,7 +90,7 @@ define('APP_ROOT_DIR', __DIR__);
 // website
 // used in mail communication and authentication form,
 // used in html title, and at the top of the left menu
-define('WEBSITE_NAME', 'My Website');
+define('WEBSITE_NAME', '{websiteName}');
 
 
 Spirit::set('ricSeparator', '--*--');
@@ -119,7 +119,7 @@ Privilege::setProfiles([
 //--------------------------------------------
 // TRANSLATION
 //--------------------------------------------
-define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/en");
+define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/{lang}");
 
 
 

@@ -10,12 +10,11 @@ use QuickPdo\QuickPdo;
 //--------------------------------------------
 // PHP TOP CONFIG
 //--------------------------------------------
-$sessionTimeout = 60 * 5;
+$sessionTimeout = 60 * 5 * 1000;
 if (null !== $sessionTimeout) { // or session expires when browser quits
     ini_set('session.cookie_lifetime', $sessionTimeout);
 }
 session_start();
-
 
 
 
@@ -37,7 +36,6 @@ ButineurAutoloader::getInst()->start();
 require_once __DIR__ . "/functions/main-functions.php";
 
 
-
 //--------------------------------------------
 // REDIRECTION
 //--------------------------------------------
@@ -48,36 +46,11 @@ if ('/index.php' === $_SERVER['PHP_SELF']) {
     define('URL_PREFIX', substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/')));
 }
 
-
-
-
 //--------------------------------------------
 // LOCAL VS PROD
 //--------------------------------------------
 ini_set('error_log', __DIR__ . "/log/php.err.log");
-
-if (true === Helper::isLocal()) {
-    $dbUser = 'root';
-    $dbPass = 'root';
-    $dbName = 'oui';
-    ini_set('display_errors', 1);
-} else {
-    $dbUser = 'root';
-    $dbPass = 'root';
-    $dbName = 'oui';
-    ini_set('display_errors', 0);
-}
-
-
-//--------------------------------------------
-// DATABASE CONNEXION
-//--------------------------------------------
-//QuickPdo::setConnection("mysql:host=localhost;dbname=$dbName", $dbUser, $dbPass, [
-//    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
-//    PDO::MYSQL_ATTR_INIT_COMMAND => "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY','')), NAMES 'utf8'",
-////    PDO::MYSQL_ATTR_INIT_COMMAND => "SET sql_mode=(SELECT REPLACE(@@sql_mode,'STRICT_TRANS_TABLES','')), NAMES 'utf8'",
-//    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-//]);
+ini_set('display_errors', 1);
 
 
 //--------------------------------------------
@@ -90,7 +63,7 @@ define('APP_ROOT_DIR', __DIR__);
 // website
 // used in mail communication and authentication form,
 // used in html title, and at the top of the left menu
-define('WEBSITE_NAME', 'My Website');
+define('WEBSITE_NAME', 'Nullos Admin');
 
 
 Spirit::set('ricSeparator', '--*--');
@@ -99,7 +72,9 @@ Spirit::set('ricSeparator', '--*--');
 //--------------------------------------------
 // PRIVILEGE
 //--------------------------------------------
-PrivilegeUser::$sessionTimeout = 60 * 5 * 1000;
+PrivilegeUser::$sessionTimeout = $sessionTimeout;
+
+
 PrivilegeUser::refresh();
 if (array_key_exists('disconnect', $_GET)) {
     PrivilegeUser::disconnect();
@@ -121,13 +96,7 @@ Privilege::setProfiles([
 //--------------------------------------------
 define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/en");
 
-
-
-
-
-
-
-
+define('I_AM_JUST_THE_FALLBACK_INIT', true);
 
 
 

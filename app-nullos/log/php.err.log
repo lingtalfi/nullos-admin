@@ -650,3 +650,138 @@ Stack trace:
 #4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
 #5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
 #6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-n in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php on line 810
+[26-Nov-2016 04:16:43 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php:36
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php(36): PDO->__construct('mysql:host=loca...', 'root', 'rddoot', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/init.php(55): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'rddoot', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(7): require('/Volumes/Macint...')
+#3 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php on line 36
+[26-Nov-2016 04:28:01 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/../init.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/login.php on line 8
+[26-Nov-2016 04:28:01 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/../init.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/login.php on line 8
+[26-Nov-2016 04:28:06 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/../init.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/login.php on line 8
+[26-Nov-2016 04:28:06 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/../init.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/login.php on line 8
+[26-Nov-2016 04:29:05 UTC] PHP Notice:  Use of undefined constant URL_PREFIX - assumed 'URL_PREFIX' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 6
+[26-Nov-2016 04:32:34 UTC] PHP Notice:  Use of undefined constant URL_PREFIX - assumed 'URL_PREFIX' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 6
+[26-Nov-2016 04:55:22 UTC] PHP Fatal error:  Uncaught Exception: Connection not set in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php:51
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php(251): QuickPdo\QuickPdo::getConnection()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(20): QuickPdo\QuickPdo::fetchAll('show databases')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/home.php(12): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-adm in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/QuickPdo/QuickPdo.php on line 51
+[26-Nov-2016 05:23:25 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: name in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:45
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(24): __('name', 'quickstart')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(42): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 45
+[26-Nov-2016 06:42:42 UTC] PHP Fatal error:  Uncaught Error: Class 'DirScanner\YorgDirScannerTool' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php:40
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(42): require_once('/Volumes/Macint...')
+#5 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 40
+[26-Nov-2016 06:43:05 UTC] PHP Fatal error:  Uncaught Error: Class 'DirScanner\YorgDirScannerTool' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php:40
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(42): require_once('/Volumes/Macint...')
+#5 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 40
+[26-Nov-2016 06:45:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function scan_dir() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php:40
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(42): require_once('/Volumes/Macint...')
+#5 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 40
+[26-Nov-2016 06:51:26 UTC] PHP Fatal error:  Uncaught Exception: Was not able to handle control language in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:307
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(230): QuickForm\QuickForm->displayControl('language', Object(QuickForm\QuickFormControl))
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(44): QuickForm\QuickForm->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/a in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 307
+[26-Nov-2016 06:51:51 UTC] PHP Fatal error:  Uncaught Exception: Was not able to handle control of type select (language) in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:307
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(230): QuickForm\QuickForm->displayControl('language', Object(QuickForm\QuickFormControl))
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(44): QuickForm\QuickForm->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projec in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 307
+[26-Nov-2016 06:51:59 UTC] PHP Fatal error:  Uncaught Exception: Was not able to handle control of type select (name=language) in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:307
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(230): QuickForm\QuickForm->displayControl('language', Object(QuickForm\QuickFormControl))
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(44): QuickForm\QuickForm->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/p in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 307
+[26-Nov-2016 06:57:16 UTC] PHP Notice:  Array to string conversion in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/ControlFactory/LingControlFactory.php on line 60
+[26-Nov-2016 06:57:16 UTC] PHP Fatal error:  Uncaught Exception: Was not able to handle control of type select (name=language) in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:307
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(230): QuickForm\QuickForm->displayControl('language', Object(QuickForm\QuickFormControl))
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(44): QuickForm\QuickForm->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/p in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 307
+[26-Nov-2016 06:58:33 UTC] PHP Fatal error:  Uncaught Exception: Was not able to handle control of type select (name=language) in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:307
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(230): QuickForm\QuickForm->displayControl('language', Object(QuickForm\QuickFormControl))
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(44): QuickForm\QuickForm->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/p in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 307
+[26-Nov-2016 06:59:24 UTC] PHP Fatal error:  Uncaught Exception: Was not able to handle control of type select (name=language) in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:307
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(230): QuickForm\QuickForm->displayControl('language', Object(QuickForm\QuickFormControl))
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(44): QuickForm\QuickForm->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/p in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 307
+[26-Nov-2016 06:59:27 UTC] PHP Fatal error:  Uncaught Exception: Was not able to handle control of type select (name=language) in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:307
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(230): QuickForm\QuickForm->displayControl('language', Object(QuickForm\QuickFormControl))
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(44): QuickForm\QuickForm->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/p in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 307
+[26-Nov-2016 08:19:10 UTC] PHP Notice:  Undefined variable: _SESSION in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Privilege/PrivilegeUser.php on line 35
+[26-Nov-2016 08:19:10 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Privilege/PrivilegeUser.php on line 35
+[26-Nov-2016 12:28:14 UTC] PHP Notice:  Undefined variable: trigger in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 241
+[26-Nov-2016 13:05:41 UTC] PHP Parse error:  syntax error, unexpected 'use' (T_USE), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 15
+[26-Nov-2016 13:06:28 UTC] PHP Parse error:  syntax error, unexpected 'use' (T_USE), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 15
+[26-Nov-2016 13:06:54 UTC] PHP Parse error:  syntax error, unexpected 'use' (T_USE), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 15
+[26-Nov-2016 13:32:22 UTC] PHP Parse error:  syntax error, unexpected 'use' (T_USE), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 16
+[26-Nov-2016 13:33:01 UTC] PHP Parse error:  syntax error, unexpected 'use' (T_USE) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 15
+[26-Nov-2016 13:33:54 UTC] PHP Parse error:  syntax error, unexpected 'use' (T_USE) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 15
+[26-Nov-2016 13:34:34 UTC] PHP Parse error:  syntax error, unexpected 'use' (T_USE) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 15
+[26-Nov-2016 13:34:51 UTC] PHP Parse error:  syntax error, unexpected 'use' (T_USE) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 17
+[26-Nov-2016 14:35:11 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF), expecting end of file in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 143

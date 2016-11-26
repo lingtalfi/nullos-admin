@@ -20,6 +20,9 @@ Table of contents
 
 TODO
 
+- Installation
+    - apache
+    - nginx
 - [Privilege](https://github.com/lingtalfi/nullos-admin/blob/master/doc/privilege.md)
 - [Crud Generator](https://github.com/lingtalfi/nullos-admin/blob/master/doc/crud-generator.md)
 - [QuickStart Module](https://github.com/lingtalfi/nullos-admin/blob/master/doc/quickstart-module.md)
