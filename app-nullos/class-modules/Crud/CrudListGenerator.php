@@ -18,6 +18,7 @@ class CrudListGenerator extends AbstractCrudGenerator
     public $prettyTableNames;
     public $fixPrettyColumnNames;
     public $urlTransformerIf;
+    public $db;
 
     /**
      * table null means all tables
@@ -28,12 +29,16 @@ class CrudListGenerator extends AbstractCrudGenerator
         $this->foreignKeyPrettierColumns = [];
         $this->prettyTableNames = [];
         $this->fixPrettyColumnNames = [];
+        $this->db = null;
     }
 
 
     public function generateLists()
     {
-        $db = QuickPdoInfoTool::getDatabase();
+        $db = $this->db;
+        if (null === $db) {
+            $db = QuickPdoInfoTool::getDatabase();
+        }
         $tables = QuickPdoInfoTool::getTables($db);
         $autoListDir = CrudConfig::getCrudGenListDir();
         FileSystemTool::mkdir($autoListDir);
@@ -58,8 +63,10 @@ class CrudListGenerator extends AbstractCrudGenerator
         $fixPrettyColumnNames = $this->fixPrettyColumnNames;
         $fkTransformersInfo = [];
 
-
-        $db = QuickPdoInfoTool::getDatabase();
+        $db = $this->db;
+        if (null === $db) {
+            $db = QuickPdoInfoTool::getDatabase();
+        }
 
 
         $columnNames = QuickPdoInfoTool::getColumnNames($table, $db);
@@ -226,8 +233,8 @@ class CrudListGenerator extends AbstractCrudGenerator
         //--------------------------------------------
         $textColumns = [];
         $types = QuickPdoInfoTool::getColumnDataTypes($table, false);
-        foreach($types as $c => $type){
-            if('text' === $type){
+        foreach ($types as $c => $type) {
+            if ('text' === $type) {
                 $textColumns[] = $c;
             }
         }

@@ -10,24 +10,23 @@ class CrudConfig
 
     public static function getTables()
     {
-        return [];
         if (null === self::$tables) {
             self::$tables = [
-                'configuration',
-                'concours',
-                'equipe',
-                'equipe_has_membres',
-                'membres',
-                'coups_de_coeur',
-                'videos',
-                'messages',
-                'users',
-                'users_has_styles_musicaux',
-                'styles_musicaux',
-                'pays',
-                'users_has_instruments',
-                'instruments',
-                'niveaux',
+                "concours",
+                "configuration",
+                "coups_de_coeur",
+                "equipe",
+                "equipe_has_membres",
+                "instruments",
+                "membres",
+                "messages",
+                "niveaux",
+                "pays",
+                "styles_musicaux",
+                "users",
+                "users_has_instruments",
+                "users_has_styles_musicaux",
+                "videos",
             ];
         }
         return self::$tables;
@@ -35,34 +34,25 @@ class CrudConfig
 
     public static function getLeftMenuSections()
     {
-        return [];
         return [
-            "Configuration" => [
-                'configuration',
-            ],
-            "Modération" => [
+            'Main' => [
                 'concours',
+                'configuration',
                 'coups_de_coeur',
-                'videos',
-            ],
-            'Equipe' => [
                 'equipe',
                 'equipe_has_membres',
+                'instruments',
                 'membres',
             ],
-            'Utilisateurs' => [
-                'users',
-                'users_has_styles_musicaux',
-                'users_has_instruments',
-            ],
-            'Données statiques' => [
-                'instruments',
+            'Others' => [
+                'messages',
                 'niveaux',
                 'pays',
                 'styles_musicaux',
-            ],
-            'Messages' => [
-                'messages',
+                'users',
+                'users_has_instruments',
+                'users_has_styles_musicaux',
+                'videos',
             ],
         ];
     }
@@ -70,16 +60,12 @@ class CrudConfig
 
     public static function getPrettyTableNames()
     {
-        return [];
         return [
-            'equipe' => 'équipe',
-            'equipe_has_membres' => "membres des équipes",
-            'videos' => "vidéos",
-            'users_has_instruments' => "instruments des utilisateurs",
-            'users_has_styles_musicaux' => "styles musicaux des utilisateurs",
-            'styles_musicaux' => "styles musicaux",
-            'coups_de_coeur' => "coups de coeur",
-            'users' => "utilisateurs",
+            'coups_de_coeur' => 'coups de coeur',
+            'equipe_has_membres' => 'equipe has membres',
+            'styles_musicaux' => 'styles musicaux',
+            'users_has_instruments' => 'users has instruments',
+            'users_has_styles_musicaux' => 'users has styles musicaux',
         ];
     }
 
@@ -89,23 +75,21 @@ class CrudConfig
     //--------------------------------------------
     public static function getForeignKeyPrettierColumns()
     {
-        return [];
         return [
             'equipe' => 'nom',
-            'membres' => 'pseudo',
             'videos' => 'titre',
-            'users' => 'pseudo',
-            'concours' => 'titre',
+            'membres' => 'pseudo',
+            'niveaux' => 'nom',
             'pays' => 'nom',
             'instruments' => 'nom',
-            'niveaux' => 'nom',
+            'users' => 'email',
             'styles_musicaux' => 'nom',
+            'concours' => 'titre',
         ];
     }
 
     public static function getPrettyColumnNames()
     {
-        return [];
         /**
          * If you want to be truly mutli language,
          * you need to translate the values as well,
@@ -113,41 +97,36 @@ class CrudConfig
          * so I didn't bother translating in other languages...
          */
         return [
-            'cle' => 'clé',
-            'equipe_id' => 'équipe',
-            'url_photo' => 'url de la photo',
-            'url_video' => 'url de la vidéo',
-            'date_debut' => 'date début',
+            'equipe_id' => 'equipe id',
+            'url_photo' => 'url photo',
+            'url_video' => 'url video',
+            'date_debut' => 'date debut',
             'date_fin' => 'date fin',
-            'reglement' => 'règlement',
-            'membres_id' => 'membre',
-            'videos_id' => 'vidéo',
-            'users_id' => 'utilisateur',
-            'concours_id' => 'concours',
-            'nb_vues' => 'nb vues',
-            'nb_likes' => 'nb likes',
-            'date_creation' => 'date création',
-            'password' => 'mot de passe',
+            'videos_id' => 'videos id',
+            'membres_id' => 'membres id',
+            'date_creation' => 'date creation',
             'date_naissance' => 'date naissance',
             'code_postal' => 'code postal',
-            'pays_id' => 'pays',
-            'niveaux_id' => 'niveau',
+            'pays_id' => 'pays id',
+            'niveaux_id' => 'niveaux id',
             'prochains_concerts' => 'prochains concerts',
             'sites_internet' => 'sites internet',
-            // case where it should be different in form and list..., but it's just a helper, so you should tweak it manually, no big deal
-            'show_sexe' => 'affichage sexe',
-            'show_date_naissance' => 'affichage date de naissance',
-            'show_niveau' => 'affichage niveau',
-            'styles_musicaux_id' => 'style musical',
-            'instruments_id' => 'instrument',
-            'active' => 'actif',
+            'show_sexe' => 'show sexe',
+            'show_date_naissance' => 'show date naissance',
+            'show_niveau' => 'show niveau',
+            'users_id' => 'users id',
+            'instruments_id' => 'instruments id',
+            'styles_musicaux_id' => 'styles musicaux id',
+            'concours_id' => 'concours id',
+            'nb_likes' => 'nb likes',
+            'nb_vues' => 'nb vues',
         ];
     }
 
     public static function getListUrlTransformerIfCallback()
     {
         return function ($c) {
-            return (false !== strpos($c, 'url_'));
+            return (false !== strpos($c, 'url_') || false !== strpos($c, '_url'));
         };
     }
 

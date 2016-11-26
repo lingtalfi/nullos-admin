@@ -26,6 +26,8 @@ class CrudFormGenerator extends AbstractCrudGenerator
     // constraints
     public $column2Constraint;
 
+    public $db;
+
 
     /**
      * table null means all tables
@@ -97,12 +99,17 @@ class CrudFormGenerator extends AbstractCrudGenerator
          *
          */
         $this->column2Constraint = [];
+        $this->db = null;
     }
 
 
     public function generateForms()
     {
-        $db = QuickPdoInfoTool::getDatabase();
+        $db = $this->db;
+        if (null === $db) {
+            $db = QuickPdoInfoTool::getDatabase();
+        }
+
         $tables = QuickPdoInfoTool::getTables($db);
         $autoFormDir = CrudConfig::getCrudGenFormDir();
         FileSystemTool::mkdir($autoFormDir);
@@ -115,14 +122,17 @@ class CrudFormGenerator extends AbstractCrudGenerator
     {
 
 
-        $db = QuickPdoInfoTool::getDatabase();
+        $db = $this->db;
+        if (null === $db) {
+            $db = QuickPdoInfoTool::getDatabase();
+        }
         $columnNames = QuickPdoInfoTool::getColumnNames($table, $db);
         $primaryKey = QuickPdoInfoTool::getPrimaryKey($table, $db);
         $autoIncrementedColumn = QuickPdoInfoTool::getAutoIncrementedField($table, $db);
         $fkInfo = QuickPdoInfoTool::getForeignKeysInfo($table, $db);
         $foreignKeyPrettierColumns = $this->foreignKeyPrettierColumns;
         if (null === $foreignKeyPrettierColumns) {
-            $foreignKeyPrettierColumns = $this->generateForeignKeyPrettierColumns();
+            $foreignKeyPrettierColumns = CrudGenHelper::generateForeignKeyPrettierColumns();
         }
         $prettyTableNames = $this->prettyTableNames;
         $fixPrettyColumnNames = $this->fixPrettyColumnNames;
@@ -248,10 +258,9 @@ class CrudFormGenerator extends AbstractCrudGenerator
                     $constraint = $this->column2Constraint[$c];
                 } elseif (array_key_exists($table, $foreignKeyPrettierColumns) && $c === $foreignKeyPrettierColumns[$table]) {
                     $constraint = "required";
-                } elseif (array_key_exists(0, $primaryKey) && $c === $primaryKey[0] &&  array_key_exists($primaryKey[0], $columnTypes) && 'varchar' === $columnTypes[$primaryKey[0]]) { // configuration table with 2 columns: cle, valeur
+                } elseif (array_key_exists(0, $primaryKey) && $c === $primaryKey[0] && array_key_exists($primaryKey[0], $columnTypes) && 'varchar' === $columnTypes[$primaryKey[0]]) { // configuration table with 2 columns: cle, valeur
                     $constraint = "required";
                 }
-
 
 
                 $semiColon = (null === $constraint) ? ';' : '';

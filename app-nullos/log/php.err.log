@@ -785,3 +785,64 @@ Stack trace:
 [26-Nov-2016 13:34:34 UTC] PHP Parse error:  syntax error, unexpected 'use' (T_USE) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 15
 [26-Nov-2016 13:34:51 UTC] PHP Parse error:  syntax error, unexpected 'use' (T_USE) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 17
 [26-Nov-2016 14:35:11 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF), expecting end of file in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 143
+[26-Nov-2016 18:14:33 UTC] PHP Fatal error:  Uncaught Exception: Connection not set in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:51
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(251): QuickPdo\QuickPdo::getConnection()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(146): QuickPdo\QuickPdo::fetchAll('show databases')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint. in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 51
+[26-Nov-2016 19:37:15 UTC] PHP Warning:  file_get_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/QuickStart/template/CrudConfig-temp.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 262
+[26-Nov-2016 19:37:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Crud\CrudConfig' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php:18
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Bridge.php(22): Crud\CrudModule::displayLeftMenuLinks()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(50): Bridge::displayLeftMenuBlocks()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint...')
+#4 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php on line 18
+[26-Nov-2016 21:03:32 UTC] PHP Fatal error:  Uncaught Exception: not implemented yet in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickFormValidator.php:51
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickFormValidator.php(21): QuickForm\QuickFormValidator->error('not implemented...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(130): QuickForm\QuickFormValidator->test('required', Array, Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(214): QuickForm\QuickForm->play()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullo in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickFormValidator.php on line 51
+[26-Nov-2016 21:20:40 UTC] PHP Fatal error:  Uncaught Exception: not implemented yet in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickFormValidator.php:51
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickFormValidator.php(21): QuickForm\QuickFormValidator->error('not implemented...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(130): QuickForm\QuickFormValidator->test('required', Array, Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(215): QuickForm\QuickForm->play()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullo in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickFormValidator.php on line 51
+[26-Nov-2016 21:29:52 UTC] PHP Notice:  Array to string conversion in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php on line 207
+[26-Nov-2016 21:59:29 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'oui.columns_priv' doesn't exist in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:275
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(275): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php(270): QuickPdo\QuickPdo::fetch('select\ncount(*)...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-list/columns_priv.php(39): Crud\DataTable->printTable('columns_priv', 'select\n%s\nfrom ...', '\nHost,\nDb,\nUser...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(38): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/ in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 275
+[26-Nov-2016 21:59:32 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'oui.engine_cost' doesn't exist in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:275
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(275): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php(270): QuickPdo\QuickPdo::fetch('select\ncount(*)...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-list/engine_cost.php(37): Crud\DataTable->printTable('engine_cost', 'select\n%s\nfrom ...', '\nengine_name,\nd...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(38): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layo in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 275
+[26-Nov-2016 22:00:34 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is concours in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:221
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(117): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(309): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nu in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 221

@@ -166,6 +166,10 @@ ul, li {
     color: #3c763d;
 }
 
+.warning-color{
+    color: #bd1515;
+}
+
 /*------------------------------------
 - DATATABLE
 ------------------------------------*/
@@ -483,4 +487,12 @@ ul, li {
 ------------------------------------*/
 .install-page .alert{
     justify-content: center;
+}
+.install-page .icon-span{
+    margin-right: 10px;
+}
+
+.install-page .path{
+    font-family: monospace;
+    background: #ddd;
 }
