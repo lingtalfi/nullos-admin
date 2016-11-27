@@ -120,7 +120,7 @@ Privilege::setProfiles([
 //--------------------------------------------
 // TRANSLATION
 //--------------------------------------------
-define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/" . LangModule::getLang('{{lang}}'));
+define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/" . LangModule::getLang('{lang}'));
 
 
 

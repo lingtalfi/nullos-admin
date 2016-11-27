@@ -7,10 +7,8 @@ function linkt($text, $href, $external = false)
     if (true === $external) {
         $target = 'target="_blank"';
     }
-    return '<a ' . $target . ' href="' . htmlspecialchars($href) . '">' . __($text, LL) . '</a>';
+    return '<a ' . $target . ' href="' . $href . '">' . __($text, LL) . '</a>';
 }
-
-
 
 ?>
 <div class="tac bignose install-page">

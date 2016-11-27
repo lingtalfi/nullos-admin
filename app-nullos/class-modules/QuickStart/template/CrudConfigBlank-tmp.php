@@ -25,6 +25,12 @@ class CrudConfig
         ];
     }
 
+    public static function getLeftMenuSectionsClasses()
+    {
+        return [
+
+        ];
+    }
 
     public static function getPrettyTableNames()
     {

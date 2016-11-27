@@ -20,10 +20,10 @@ Features
 -------------
 
 - free and open source
+- crud system: you can interact with any database with little effort
 - flexible: you can use it as a base to administer any website
 - simple page system: you can create your own pages easily
 - handles multi-language
-- crud system: you can interact with any database with little effort
 
 
 

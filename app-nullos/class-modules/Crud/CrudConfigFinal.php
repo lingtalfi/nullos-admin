@@ -12,21 +12,21 @@ class CrudConfig
     {
         if (null === self::$tables) {
             self::$tables = [
-                'oui.concours',
                 'oui.configuration',
-                'oui.coups_de_coeur',
+                'oui.concours',
                 'oui.equipe',
                 'oui.equipe_has_membres',
-                'oui.instruments',
                 'oui.membres',
-                'oui.messages',
-                'oui.niveaux',
-                'oui.pays',
-                'oui.styles_musicaux',
-                'oui.users',
-                'oui.users_has_instruments',
-                'oui.users_has_styles_musicaux',
+                'oui.coups_de_coeur',
                 'oui.videos',
+                'oui.messages',
+                'oui.users',
+                'oui.users_has_styles_musicaux',
+                'oui.styles_musicaux',
+                'oui.pays',
+                'oui.users_has_instruments',
+                'oui.instruments',
+                'oui.niveaux',
             ];
         }
         return self::$tables;
@@ -35,42 +35,60 @@ class CrudConfig
     public static function getLeftMenuSections()
     {
         return [
-            'Main' => [
-                'oui.concours',
+            "Configuration" => [
                 'oui.configuration',
+            ],
+            "Modération" => [
+                'oui.concours',
                 'oui.coups_de_coeur',
+                'oui.videos',
+            ],
+            'Equipe' => [
                 'oui.equipe',
                 'oui.equipe_has_membres',
-                'oui.instruments',
                 'oui.membres',
             ],
-            'Others' => [
-                'oui.messages',
+            'Utilisateurs' => [
+                'oui.users',
+                'oui.users_has_styles_musicaux',
+                'oui.users_has_instruments',
+            ],
+            'Données statiques' => [
+                'oui.instruments',
                 'oui.niveaux',
                 'oui.pays',
                 'oui.styles_musicaux',
-                'oui.users',
-                'oui.users_has_instruments',
-                'oui.users_has_styles_musicaux',
-                'oui.videos',
+            ],
+            'Messages' => [
+                'oui.messages',
             ],
         ];
     }
 
     public static function getLeftMenuSectionsClasses()
     {
-        return [];
+        return [
+            "Configuration" => "blue",
+            "Modération" => "blue",
+            'Equipe' => "purple",
+            'Utilisateurs' => "yellow",
+            'Données statiques' => "blue",
+            'Messages' => "gray",
+        ];
     }
 
 
     public static function getPrettyTableNames()
     {
         return [
-            'oui.coups_de_coeur' => 'coups de coeur',
-            'oui.equipe_has_membres' => 'equipe has membres',
-            'oui.styles_musicaux' => 'styles musicaux',
-            'oui.users_has_instruments' => 'users has instruments',
-            'oui.users_has_styles_musicaux' => 'users has styles musicaux',
+            'oui.equipe' => 'équipe',
+            'oui.equipe_has_membres' => "membres des équipes",
+            'oui.videos' => "vidéos",
+            'oui.users_has_instruments' => "instruments des utilisateurs",
+            'oui.users_has_styles_musicaux' => "styles musicaux des utilisateurs",
+            'oui.styles_musicaux' => "styles musicaux",
+            'oui.coups_de_coeur' => "coups de coeur",
+            'oui.users' => "utilisateurs",
         ];
     }
 
@@ -82,14 +100,14 @@ class CrudConfig
     {
         return [
             'oui.equipe' => 'nom',
-            'oui.videos' => 'titre',
             'oui.membres' => 'pseudo',
-            'oui.niveaux' => 'nom',
+            'oui.videos' => 'titre',
+            'oui.users' => 'pseudo',
+            'oui.concours' => 'titre',
             'oui.pays' => 'nom',
             'oui.instruments' => 'nom',
-            'oui.users' => 'email',
+            'oui.niveaux' => 'nom',
             'oui.styles_musicaux' => 'nom',
-            'oui.concours' => 'titre',
         ];
     }
 
@@ -102,38 +120,44 @@ class CrudConfig
          * so I didn't bother translating in other languages...
          */
         return [
-            'equipe_id' => 'equipe',
-            'url_photo' => 'url photo',
-            'url_video' => 'url video',
-            'date_debut' => 'date debut',
+            'cle' => 'clé',
+            'equipe_id' => 'équipe',
+            'url_photo' => 'url de la photo',
+            'url_video' => 'url de la vidéo',
+            'date_debut' => 'date début',
             'date_fin' => 'date fin',
-            'videos_id' => 'videos',
-            'membres_id' => 'membres',
-            'date_creation' => 'date creation',
+            'reglement' => 'règlement',
+            'membres_id' => 'membre',
+            'videos_id' => 'vidéo',
+            'users_id' => 'utilisateur',
+            'concours_id' => 'concours',
+            'nb_vues' => 'nb vues',
+            'nb_likes' => 'nb likes',
+            'date_creation' => 'date création',
+            'password' => 'mot de passe',
             'date_naissance' => 'date naissance',
             'code_postal' => 'code postal',
             'pays_id' => 'pays',
-            'niveaux_id' => 'niveaux',
+            'niveaux_id' => 'niveau',
             'prochains_concerts' => 'prochains concerts',
             'sites_internet' => 'sites internet',
-            'show_sexe' => 'show sexe',
-            'show_date_naissance' => 'show date naissance',
-            'show_niveau' => 'show niveau',
-            'users_id' => 'users',
-            'instruments_id' => 'instruments',
-            'styles_musicaux_id' => 'styles musicaux',
-            'concours_id' => 'concours',
-            'nb_likes' => 'nb likes',
-            'nb_vues' => 'nb vues',
+            // case where it should be different in form and list..., but it's just a helper, so you should tweak it manually, no big deal
+            'show_sexe' => 'affichage sexe',
+            'show_date_naissance' => 'affichage date de naissance',
+            'show_niveau' => 'affichage niveau',
+            'styles_musicaux_id' => 'style musical',
+            'instruments_id' => 'instrument',
+            'active' => 'actif',
         ];
     }
 
     public static function getListUrlTransformerIfCallback()
     {
         return function ($c) {
-            return (false !== strpos($c, 'url_') || false !== strpos($c, '_url'));
+            return (false !== strpos($c, 'url_'));
         };
     }
+
 
     //--------------------------------------------
     //

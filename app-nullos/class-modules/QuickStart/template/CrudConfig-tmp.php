@@ -23,6 +23,11 @@ class CrudConfig
         //{leftMenuSections}
     }
 
+    public static function getLeftMenuSectionsClasses()
+    {
+        return [];
+    }
+
 
     public static function getPrettyTableNames()
     {

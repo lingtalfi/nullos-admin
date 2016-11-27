@@ -574,3 +574,23 @@ body.holygrail {
     color: white;
     padding: 3px;
 }
+
+
+/*------------------------------------
+- YOUR STYLES...
+------------------------------------*/
+.table-links.blue h3{
+    background: #454565;
+    color: #bbb;
+}
+.table-links.purple h3{
+    background: #70317d;
+    color: #bbb;
+}
+.table-links.yellow h3{
+    background: #a59723;
+}
+.table-links.gray h3{
+    background: #444;
+    color: #bbb;
+}

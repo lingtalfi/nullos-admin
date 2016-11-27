@@ -91,7 +91,7 @@ define('APP_ROOT_DIR', __DIR__);
 // website
 // used in mail communication and authentication form,
 // used in html title, and at the top of the left menu
-define('WEBSITE_NAME', 'Mon Site');
+define('WEBSITE_NAME', 'My Website');
 
 
 Spirit::set('ricSeparator', '--*--');
@@ -120,7 +120,7 @@ Privilege::setProfiles([
 //--------------------------------------------
 // TRANSLATION
 //--------------------------------------------
-define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/" . LangModule::getLang('{en}'));
+define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/" . LangModule::getLang('en'));
 
 
 

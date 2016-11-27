@@ -12,21 +12,21 @@ class CrudConfigCopy
     {
         if (null === self::$tables) {
             self::$tables = [
-                'configuration',
-                'concours',
-                'equipe',
-                'equipe_has_membres',
-                'membres',
-                'coups_de_coeur',
-                'videos',
-                'messages',
-                'users',
-                'users_has_styles_musicaux',
-                'styles_musicaux',
-                'pays',
-                'users_has_instruments',
-                'instruments',
-                'niveaux',
+                'oui.configuration',
+                'oui.concours',
+                'oui.equipe',
+                'oui.equipe_has_membres',
+                'oui.membres',
+                'oui.coups_de_coeur',
+                'oui.videos',
+                'oui.messages',
+                'oui.users',
+                'oui.users_has_styles_musicaux',
+                'oui.styles_musicaux',
+                'oui.pays',
+                'oui.users_has_instruments',
+                'oui.instruments',
+                'oui.niveaux',
             ];
         }
         return self::$tables;
@@ -36,31 +36,31 @@ class CrudConfigCopy
     {
         return [
             "Configuration" => [
-                'configuration',
+                'oui.configuration',
             ],
             "Modération" => [
-                'concours',
-                'coups_de_coeur',
-                'videos',
+                'oui.concours',
+                'oui.coups_de_coeur',
+                'oui.videos',
             ],
             'Equipe' => [
-                'equipe',
-                'equipe_has_membres',
-                'membres',
+                'oui.equipe',
+                'oui.equipe_has_membres',
+                'oui.membres',
             ],
             'Utilisateurs' => [
-                'users',
-                'users_has_styles_musicaux',
-                'users_has_instruments',
+                'oui.users',
+                'oui.users_has_styles_musicaux',
+                'oui.users_has_instruments',
             ],
             'Données statiques' => [
-                'instruments',
-                'niveaux',
-                'pays',
-                'styles_musicaux',
+                'oui.instruments',
+                'oui.niveaux',
+                'oui.pays',
+                'oui.styles_musicaux',
             ],
             'Messages' => [
-                'messages',
+                'oui.messages',
             ],
         ];
     }
@@ -69,14 +69,14 @@ class CrudConfigCopy
     public static function getPrettyTableNames()
     {
         return [
-            'equipe' => 'équipe',
-            'equipe_has_membres' => "membres des équipes",
-            'videos' => "vidéos",
-            'users_has_instruments' => "instruments des utilisateurs",
-            'users_has_styles_musicaux' => "styles musicaux des utilisateurs",
-            'styles_musicaux' => "styles musicaux",
-            'coups_de_coeur' => "coups de coeur",
-            'users' => "utilisateurs",
+            'oui.equipe' => 'équipe',
+            'oui.equipe_has_membres' => "membres des équipes",
+            'oui.videos' => "vidéos",
+            'oui.users_has_instruments' => "instruments des utilisateurs",
+            'oui.users_has_styles_musicaux' => "styles musicaux des utilisateurs",
+            'oui.styles_musicaux' => "styles musicaux",
+            'oui.coups_de_coeur' => "coups de coeur",
+            'oui.users' => "utilisateurs",
         ];
     }
 
@@ -87,15 +87,15 @@ class CrudConfigCopy
     public static function getForeignKeyPrettierColumns()
     {
         return [
-            'equipe' => 'nom',
-            'membres' => 'pseudo',
-            'videos' => 'titre',
-            'users' => 'pseudo',
-            'concours' => 'titre',
-            'pays' => 'nom',
-            'instruments' => 'nom',
-            'niveaux' => 'nom',
-            'styles_musicaux' => 'nom',
+            'oui.equipe' => 'nom',
+            'oui.membres' => 'pseudo',
+            'oui.videos' => 'titre',
+            'oui.users' => 'pseudo',
+            'oui.concours' => 'titre',
+            'oui.pays' => 'nom',
+            'oui.instruments' => 'nom',
+            'oui.niveaux' => 'nom',
+            'oui.styles_musicaux' => 'nom',
         ];
     }
 

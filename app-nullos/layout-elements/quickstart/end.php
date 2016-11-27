@@ -7,7 +7,7 @@ function linkt($text, $href, $external = false)
     if (true === $external) {
         $target = 'target="_blank"';
     }
-    return '<a ' . $target . ' href="' . htmlspecialchars($href) . '">' . __($text, LL) . '</a>';
+    return '<a ' . $target . ' href="' . $href . '">' . __($text, LL) . '</a>';
 }
 
 
@@ -23,20 +23,6 @@ function linkt($text, $href, $external = false)
         </p>
     <?php endif; ?>
     <p>
-        <?php echo __("If you want to remove the Quickstart section in the left menu, do the following:", LL); ?>
-    </p>
-    <ul class="centered-ul">
-        <li>
-            <?php echo __("Open the {path} file in your favorite editor.", LL, ['path' => '<span class="path">class-modules/QuickStart/QuickStartConfig.php</span>']); ?>
-        </li>
-        <li>
-            <?php echo __("Replace the line {code} with {code2}.", LL, [
-                'code' => '<span class="code">public static $showLeftMenuLinks = true;</span>',
-                'code2' => '<span class="code">public static $showLeftMenuLinks = false;</span>',
-            ]); ?>
-        </li>
-    </ul>
-    <p>
-        <?php echo __("For more information please visit the {link}.", LL, ['link' => linkt("nullos documentation", wl2('nullos-doc-install-end'))]); ?>
+        <?php echo __("If you want to remove the Quickstart section in the left menu, please consult this {page}", LL, ['page' => linkt("page", wl2("nullos-doc-hide-quickstart-menu"))]); ?>
     </p>
 </div>

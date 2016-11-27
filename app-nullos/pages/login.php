@@ -100,6 +100,5 @@ if (
     <?php endif; ?>
 
 </section>
-
 </body>
 </html>

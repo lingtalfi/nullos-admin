@@ -18,11 +18,12 @@ class CrudModule
     {
         $prettyTables = CrudConfig::getPrettyTableNames();
         $sections = CrudConfig::getLeftMenuSections();
-
+        $classes = CrudConfig::getLeftMenuSectionsClasses();
 
         foreach ($sections as $label => $tables):
+            $class = (array_key_exists($label, $classes)) ? $classes[$label] : '';
             ?>
-            <section class="section-block table-links">
+            <section class="section-block table-links <?php echo $class; ?>">
                 <h3><?php echo $label; ?></h3>
                 <ul class="linkslist">
                     <?php foreach ($tables as $table):
@@ -61,4 +62,24 @@ class CrudModule
     {
         return new Form($table, $ric, $mode);
     }
+
+    public static function triggerGenerators()
+    {
+        // generate lists files
+        $gen = new CrudListGenerator();
+        $gen->foreignKeyPrettierColumns = CrudConfig::getForeignKeyPrettierColumns();
+        $gen->prettyTableNames = CrudConfig::getPrettyTableNames();
+        $gen->fixPrettyColumnNames = CrudConfig::getPrettyColumnNames();
+        $gen->urlTransformerIf = CrudConfig::getListUrlTransformerIfCallback();
+        $gen->generateLists();
+
+
+        // generate forms files
+        $gen = new CrudFormGenerator();
+        $gen->foreignKeyPrettierColumns = CrudConfig::getForeignKeyPrettierColumns();
+        $gen->prettyTableNames = CrudConfig::getPrettyTableNames();
+        $gen->fixPrettyColumnNames = CrudConfig::getPrettyColumnNames();
+        $gen->generateForms();
+    }
+
 }

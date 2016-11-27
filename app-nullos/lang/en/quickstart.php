@@ -5,6 +5,7 @@ $defs = [
     // left menu links
     "Quickstart" => "Quickstart",
     "Start" => "Start",
+    "Customize" => "Customize",
     "Reset" => "Reset",
     "Hide this" => "Hide this",
     // start script
@@ -51,6 +52,16 @@ $defs = [
     "Please {refresh}." => "Please {refresh}.",
     "refresh the page" => "refresh the page",
     "An error occurred, sorry." => "An error occurred, sorry.",
+
+    // customization
+    "Customization" => "Customization",
+    "In this section, customize the generators, then press the ok button below." => "In this section, customize the generators, then press the ok button below.",
+    "If you don't know how to customize your generators, check out the {link}." => "If you don't know how to customize your generators, check out the {link}.",
+    "nullos documentation" => "nullos documentation",
+    "The crud generators have been successfully executed." => "The crud generators have been successfully executed.",
+
+
+
     // reset
     "Welcome to the Reset Utility" => "Welcome to the Reset Utility",
     "Warning!" => "Warning!",
@@ -69,9 +80,9 @@ $defs = [
     // end
     "Congratulations!" => "Congratulations!",
     "Your admin website is now ready to use." => "Your admin website is now ready to use.",
-    "If you want to remove the Quickstart section in the left menu, do the following:" => "If you want to remove the Quickstart section in the left menu, do the following:",
-    "Open the {path} file in your favorite editor." => "Open the {path} file in your favorite editor.",
-    "Replace the line {code} with {code2}." => "Replace the line {code} with {code2}.",
-    "For more information please visit the {link}." => "For more information please visit the {link}.",
-    "nullos documentation" => "nullos documentation",
+    "If you want to remove the Quickstart section in the left menu, please consult this {page}" => "If you want to remove the Quickstart section in the left menu, please consult this {page}",
+    "page" => "page",
+
+
+
 ];

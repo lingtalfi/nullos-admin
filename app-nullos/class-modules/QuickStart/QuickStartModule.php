@@ -12,7 +12,7 @@ class QuickStartModule
     public static function displayLeftMenuLinks()
     {
 
-        if (true === QuickStartConfig::$showLeftMenuLinks) {
+        if (true === QuickStartConfig::showLeftMenuLinks()) {
             if (Privilege::has('quickstart.access')):
                 ?>
                 <section class="section-block table-links">
@@ -21,6 +21,11 @@ class QuickStartModule
                         <li>
                             <a href="<?php echo self::getQuickStartUrl('start'); ?>"><?php echo __("Start", "quickstart"); ?></a>
                         </li>
+                        <?php if(false===defined("I_AM_JUST_THE_FALLBACK_INIT")): ?>
+                        <li>
+                            <a href="<?php echo self::getQuickStartUrl('customize'); ?>"><?php echo __("Customize", "quickstart"); ?></a>
+                        </li>
+                        <?php endif; ?>
                         <li>
                             <a href="<?php echo self::getQuickStartUrl('reset'); ?>"><?php echo __("Reset", "quickstart"); ?></a>
                         </li>

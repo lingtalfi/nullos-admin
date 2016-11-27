@@ -65,7 +65,8 @@ function wl2($identifier)
     $links = [
         'nullos-doc-install' => '#',
         'nullos-doc-quickstart-reset' => '#',
-        'nullos-doc-install-end' => '#',
+        'nullos-doc-install-customize' => '#',
+        'nullos-doc-hide-quickstart-menu' => '#',
     ];
     return htmlspecialchars($links[$identifier]);
 }

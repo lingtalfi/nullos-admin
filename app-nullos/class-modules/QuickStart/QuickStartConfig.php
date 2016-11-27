@@ -6,5 +6,9 @@ namespace QuickStart;
 class QuickStartConfig
 {
 
-    public static $showLeftMenuLinks = true;
+
+    public static function showLeftMenuLinks()
+    {
+        return true;
+    }
 }

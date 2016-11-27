@@ -1323,3 +1323,54 @@ Stack trace:
 #5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(44): require_once('/Volumes/Macint...')
 #6 {main}
   thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 48
+[27-Nov-2016 14:41:38 UTC] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/{en}/quickstart.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 30
+[27-Nov-2016 14:41:38 UTC] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/{en}/quickstart.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 30
+[27-Nov-2016 18:49:55 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is oui.equipe in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:226
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(117): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php(80): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/customize.php(34): Crud\CrudModule::triggerGenerators()
+#3 [internal function]: Layout->{closure}(Array, NULL)
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(163): call_user_func_array(Object(Closure), Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/customize.ph in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 226
+[27-Nov-2016 18:50:58 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is oui.equipe in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:226
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(117): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php(80): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/customize.php(34): Crud\CrudModule::triggerGenerators()
+#3 [internal function]: Layout->{closure}(Array, NULL)
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(163): call_user_func_array(Object(Closure), Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/customize.ph in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 226
+[27-Nov-2016 18:51:10 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is oui.equipe in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:226
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(117): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php(80): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/customize.php(34): Crud\CrudModule::triggerGenerators()
+#3 [internal function]: Layout->{closure}(Array, NULL)
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(163): call_user_func_array(Object(Closure), Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/customize.ph in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 226
+[27-Nov-2016 18:52:02 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is oui.equipe in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:227
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(117): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php(80): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/customize.php(34): Crud\CrudModule::triggerGenerators()
+#3 [internal function]: Layout->{closure}(Array, NULL)
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(163): call_user_func_array(Object(Closure), Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/customize.ph in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 227
+[27-Nov-2016 19:12:55 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to __() must be of the type array, string given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/end.php on line 26 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:20
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/end.php(26): __('If you want to ...', 'quickstart', '<a  href="#">pa...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(83): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(57): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 20
+[27-Nov-2016 20:09:13 UTC] PHP Parse error:  syntax error, unexpected ';', expecting function (T_FUNCTION) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/QuickStart/QuickStartConfig.php on line 12
+[27-Nov-2016 20:09:22 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: QuickStart\QuickStartConfig::$showLeftMenuLinks in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/QuickStart/QuickStartModule.php:15
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Bridge.php(22): QuickStart\QuickStartModule::displayLeftMenuLinks()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(54): Bridge::displayLeftMenuBlocks()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(44): require_once('/Volumes/Macint...')
+#4 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/QuickStart/QuickStartModule.php on line 15

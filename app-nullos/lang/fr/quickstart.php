@@ -5,6 +5,7 @@ $defs = [
     // left menu links
     "Quickstart" => "Quickstart",
     "Start" => "Installer",
+    "Customize" => "Configurer",
     "Reset" => "Réinitialiser",
     "Hide this" => "Masquer ce menu",
     // start script
@@ -51,6 +52,17 @@ $defs = [
     "Please {refresh}." => "Veuillez {refresh}.",
     "refresh the page" => "rafraîchir la page",
     "An error occurred, sorry." => "Une erreur est survenue, désolé",
+
+
+    // customization
+    "Customization" => "Configuration",
+    "In this section, customize the generators, then press the ok button below." => "Dans cette section, configurez vos générateurs, puis cliquez sur le bouton ok.",
+    "If you don't know how to customize your generators, check out the {link}." => "Si vous ne savez pas comment configurer vos générateurs, consultez la page {link}.",
+    "nullos documentation" => "documentation de nullos",
+    "The crud generators have been successfully executed." => "Les générateurs crud ont bien été exécutés.",
+
+
+
     // reset
     "Welcome to the Reset Utility" => "Bienvenue dans l'utilitaire de réinitialisation",
     "Warning!" => "Attention!",
@@ -69,10 +81,8 @@ $defs = [
     // end
     "Congratulations!" => "Félicitations!",
     "Your admin website is now ready to use." => "Votre site nullos est maintenant prêt à être utilisé.",
-    "If you want to remove the Quickstart section in the left menu, do the following:" => "Pour retirer la section Quickstart dans le menu à gauche, faîtes les choses suivantes:",
-    "Open the {path} file in your favorite editor." => "Ouvrez le fichier {path} dans votre éditeur de texte favori.",
-    "Replace the line {code} with {code2}." => "Remplacez la ligne {code} par la ligne {code2}.",
-    "For more information please visit the {link}." => "Pour plus d'informations, veuillez visiter la page {link}.",
-    "nullos documentation" => "documentation de nullos",
+    "If you want to remove the Quickstart section in the left menu, please consult this {page}" => "Pour masquer la section QuickStart dans le menu de gauche, veuillez consulter cette {page}",
+    "page" => "page",
+
 
 ];
