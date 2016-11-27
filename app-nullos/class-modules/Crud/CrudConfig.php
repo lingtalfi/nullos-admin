@@ -12,21 +12,7 @@ class CrudConfig
     {
         if (null === self::$tables) {
             self::$tables = [
-                "concours",
-                "configuration",
-                "coups_de_coeur",
-                "equipe",
-                "equipe_has_membres",
-                "instruments",
-                "membres",
-                "messages",
-                "niveaux",
-                "pays",
-                "styles_musicaux",
-                "users",
-                "users_has_instruments",
-                "users_has_styles_musicaux",
-                "videos",
+                'ville.villes_france_free',
             ];
         }
         return self::$tables;
@@ -35,24 +21,10 @@ class CrudConfig
     public static function getLeftMenuSections()
     {
         return [
-            'Main' => [
-                'concours',
-                'configuration',
-                'coups_de_coeur',
-                'equipe',
-                'equipe_has_membres',
-                'instruments',
-                'membres',
+            'Principal' => [
+                'ville.villes_france_free',
             ],
-            'Others' => [
-                'messages',
-                'niveaux',
-                'pays',
-                'styles_musicaux',
-                'users',
-                'users_has_instruments',
-                'users_has_styles_musicaux',
-                'videos',
+            'Autres' => [
             ],
         ];
     }
@@ -61,11 +33,7 @@ class CrudConfig
     public static function getPrettyTableNames()
     {
         return [
-            'coups_de_coeur' => 'coups de coeur',
-            'equipe_has_membres' => 'equipe has membres',
-            'styles_musicaux' => 'styles musicaux',
-            'users_has_instruments' => 'users has instruments',
-            'users_has_styles_musicaux' => 'users has styles musicaux',
+            'ville.villes_france_free' => 'villes france free',
         ];
     }
 
@@ -76,15 +44,6 @@ class CrudConfig
     public static function getForeignKeyPrettierColumns()
     {
         return [
-            'equipe' => 'nom',
-            'videos' => 'titre',
-            'membres' => 'pseudo',
-            'niveaux' => 'nom',
-            'pays' => 'nom',
-            'instruments' => 'nom',
-            'users' => 'email',
-            'styles_musicaux' => 'nom',
-            'concours' => 'titre',
         ];
     }
 
@@ -97,29 +56,33 @@ class CrudConfig
          * so I didn't bother translating in other languages...
          */
         return [
-            'equipe_id' => 'equipe id',
-            'url_photo' => 'url photo',
-            'url_video' => 'url video',
-            'date_debut' => 'date debut',
-            'date_fin' => 'date fin',
-            'videos_id' => 'videos id',
-            'membres_id' => 'membres id',
-            'date_creation' => 'date creation',
-            'date_naissance' => 'date naissance',
-            'code_postal' => 'code postal',
-            'pays_id' => 'pays id',
-            'niveaux_id' => 'niveaux id',
-            'prochains_concerts' => 'prochains concerts',
-            'sites_internet' => 'sites internet',
-            'show_sexe' => 'show sexe',
-            'show_date_naissance' => 'show date naissance',
-            'show_niveau' => 'show niveau',
-            'users_id' => 'users id',
-            'instruments_id' => 'instruments id',
-            'styles_musicaux_id' => 'styles musicaux id',
-            'concours_id' => 'concours id',
-            'nb_likes' => 'nb likes',
-            'nb_vues' => 'nb vues',
+            'ville_id' => 'ville',
+            'ville_departement' => 'ville departement',
+            'ville_slug' => 'ville slug',
+            'ville_nom' => 'ville nom',
+            'ville_nom_simple' => 'ville nom simple',
+            'ville_nom_reel' => 'ville nom reel',
+            'ville_nom_soundex' => 'ville nom soundex',
+            'ville_nom_metaphone' => 'ville nom metaphone',
+            'ville_code_postal' => 'ville code postal',
+            'ville_commune' => 'ville commune',
+            'ville_code_commune' => 'ville code commune',
+            'ville_arrondissement' => 'ville arrondissement',
+            'ville_canton' => 'ville canton',
+            'ville_amdi' => 'ville amdi',
+            'ville_population_2010' => 'ville population 2010',
+            'ville_population_1999' => 'ville population 1999',
+            'ville_population_2012' => 'ville population 2012',
+            'ville_densite_2010' => 'ville densite 2010',
+            'ville_surface' => 'ville surface',
+            'ville_longitude_deg' => 'ville longitude deg',
+            'ville_latitude_deg' => 'ville latitude deg',
+            'ville_longitude_grd' => 'ville longitude grd',
+            'ville_latitude_grd' => 'ville latitude grd',
+            'ville_longitude_dms' => 'ville longitude dms',
+            'ville_latitude_dms' => 'ville latitude dms',
+            'ville_zmin' => 'ville zmin',
+            'ville_zmax' => 'ville zmax',
         ];
     }
 

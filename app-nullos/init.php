@@ -2,6 +2,7 @@
 
 use BumbleBee\Autoload\ButineurAutoloader;
 use Crud\CrudModule;
+use Lang\LangModule;
 use Privilege\Privilege;
 use Privilege\PrivilegeUser;
 use QuickPdo\QuickPdo;
@@ -90,7 +91,7 @@ define('APP_ROOT_DIR', __DIR__);
 // website
 // used in mail communication and authentication form,
 // used in html title, and at the top of the left menu
-define('WEBSITE_NAME', 'My Website');
+define('WEBSITE_NAME', 'Mon Site');
 
 
 Spirit::set('ricSeparator', '--*--');
@@ -119,7 +120,7 @@ Privilege::setProfiles([
 //--------------------------------------------
 // TRANSLATION
 //--------------------------------------------
-define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/en");
+define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/" . LangModule::getLang('{en}'));
 
 
 

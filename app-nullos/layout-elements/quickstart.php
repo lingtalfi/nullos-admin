@@ -1,7 +1,8 @@
 <?php
 
 
-$actions = ['start'];
+
+$actions = ['start', 'reset', 'end'];
 
 
 $action = 'start';
@@ -15,15 +16,6 @@ if (!in_array($action, $actions, true)) {
 
 ?>
 <section class="freepage">
-    <?php
-    if ('start' === $action) {
-        require_once __DIR__ . "/quickstart/start.php";
-
-    } else {
-        Logger::log("Not implemented yet");
-    }
-
-
-    ?>
+    <?php require_once __DIR__ . "/quickstart/$action.php"; ?>
 </section>
 

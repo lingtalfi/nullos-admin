@@ -43,7 +43,7 @@ class CrudListGenerator extends AbstractCrudGenerator
         $autoListDir = CrudConfig::getCrudGenListDir();
         FileSystemTool::mkdir($autoListDir);
         foreach ($tables as $table) {
-            $this->generateList($table, $autoListDir . "/" . $table . '.php');
+            $this->generateList($table, $autoListDir . "/" . $db . '.' . $table . '.php');
         }
     }
 
@@ -68,6 +68,9 @@ class CrudListGenerator extends AbstractCrudGenerator
             $db = QuickPdoInfoTool::getDatabase();
         }
 
+
+
+        $fullTable = $db . '.' . $table;
 
         $columnNames = QuickPdoInfoTool::getColumnNames($table, $db);
         $primaryKey = QuickPdoInfoTool::getPrimaryKey($table, $db);
@@ -105,12 +108,18 @@ class CrudListGenerator extends AbstractCrudGenerator
                         $prettyColumnName = $foreignKeyPrettierColumns[$foreignTable];
                         $auxAlias = $tableAliases[$foreignTable];
 
-                        $foreignKeyAlias = $foreignTable . '_' . $prettyColumnName;
+                        $cleanedForeignTable = $foreignTable;
+                        $cleanedForeignTable = explode('.', $cleanedForeignTable);
+                        $cleanedForeignTable = array_pop($cleanedForeignTable);
+
+
+
+                        $foreignKeyAlias = $cleanedForeignTable . '_' . $prettyColumnName;
 
                         $fields[] = $auxAlias . '.' . $prettyColumnName . ' as ' . $foreignKeyAlias;
                         $replacedForeignKeys[] = $c;
                         $fkTransformersInfo[] = [
-                            $foreignTable . '_' . $prettyColumnName,
+                            $cleanedForeignTable . '_' . $prettyColumnName,
                             $foreignTable,
                             $c,
                         ];
@@ -135,7 +144,7 @@ class CrudListGenerator extends AbstractCrudGenerator
         $this->line('$query = "select');
         $this->line('%s');
         $al = (true === $hasForeignKey) ? ' ' . $mainAlias : '';
-        $this->line('from ' . $table . $al);
+        $this->line('from ' . $fullTable . $al);
         foreach ($foreignTables as $k => $t) {
             $this->line("inner join " . $t . " " . $tableAliases[$t] . " on " . $tableAliases[$t] . '.' . $fkInfo[$k][2] . '=' . $mainAlias . '.' . $k);
         }
@@ -149,10 +158,12 @@ class CrudListGenerator extends AbstractCrudGenerator
         //--------------------------------------------
         // WRITE TITLE
         //--------------------------------------------
-        if (array_key_exists($table, $prettyTableNames)) {
-            $title = $prettyTableNames[$table];
+        if (array_key_exists($fullTable, $prettyTableNames)) {
+            $title = $prettyTableNames[$fullTable];
         } else {
-            $title = str_replace('_', ' ', $table);
+            $p=explode('.', $fullTable,2);
+            $t=array_pop($p);
+            $title = str_replace('_', ' ', $t);
         }
         $title = ucfirst($title);
         $this->line('$table->title = "' . $this->dqe($title) . '";');
@@ -175,8 +186,12 @@ class CrudListGenerator extends AbstractCrudGenerator
             } else {
                 $headers[$column] = str_replace('_', ' ', $c);
             }
-
         }
+//        a($fixPrettyColumnNames);
+//        a($columnNames);
+//        az($headers);
+
+
         if (count($headers) > 0) {
             $this->line('$table->columnHeaders = [');
             foreach ($headers as $k => $v) {
@@ -232,7 +247,7 @@ class CrudListGenerator extends AbstractCrudGenerator
         // TRANSFORMERS -- SHORTEN LONG TEXT
         //--------------------------------------------
         $textColumns = [];
-        $types = QuickPdoInfoTool::getColumnDataTypes($table, false);
+        $types = QuickPdoInfoTool::getColumnDataTypes($fullTable, false);
         foreach ($types as $c => $type) {
             if ('text' === $type) {
                 $textColumns[] = $c;
@@ -269,11 +284,15 @@ class CrudListGenerator extends AbstractCrudGenerator
         //--------------------------------------------
         // PRINT TABLE
         //--------------------------------------------
+        if(0 === count($primaryKey)){
+            $primaryKey = $columnNames;
+        }
+
         $ric = array_map(function ($v) {
             return "'" . $v . "'";
         }, $primaryKey);
 
-        $this->line('$table->printTable(\'' . $table . '\', $query, $fields, [' . implode(', ', $ric) . ']);');
+        $this->line('$table->printTable(\'' . $fullTable . '\', $query, $fields, [' . implode(', ', $ric) . ']);');
 
 
         //--------------------------------------------
@@ -323,7 +342,7 @@ class CrudListGenerator extends AbstractCrudGenerator
     {
         $fkInfo = QuickPdoInfoTool::getForeignKeysInfo($table, $db);
         return array_map(function ($v) {
-            return $v[1];
+            return $v[0] . '.' . $v[1];
         }, $fkInfo);
     }
 }

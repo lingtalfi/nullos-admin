@@ -150,7 +150,7 @@ class Form
         $this->qform->displayForm = $displayForm;
 
 
-        $this->qform->display();
+        $this->qform->play();
 
     }
 

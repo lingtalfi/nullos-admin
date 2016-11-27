@@ -3,6 +3,7 @@
 
 namespace Crud;
 
+
 class CrudModule
 {
 
@@ -28,6 +29,10 @@ class CrudModule
                         $original = $table;
                         if (array_key_exists($table, $prettyTables)) {
                             $table = $prettyTables[$table];
+                        } else {
+                            if (false !== ($pos = strpos($table, '.'))) {
+                                $table = substr($table, $pos + 1);
+                            }
                         }
                         ?>
                         <li>

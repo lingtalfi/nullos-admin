@@ -2,6 +2,7 @@
 
 use BumbleBee\Autoload\ButineurAutoloader;
 use Crud\CrudModule;
+use Lang\LangModule;
 use Privilege\Privilege;
 use Privilege\PrivilegeUser;
 use QuickPdo\QuickPdo;
@@ -119,7 +120,7 @@ Privilege::setProfiles([
 //--------------------------------------------
 // TRANSLATION
 //--------------------------------------------
-define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/{lang}");
+define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/" . LangModule::getLang('{{lang}}'));
 
 
 

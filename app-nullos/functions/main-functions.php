@@ -3,6 +3,9 @@
 
 function url($url, array $params = null, $mergeParams = true)
 {
+    if (null === $url) {
+        $url = Spirit::get('uri');
+    }
     $ret = URL_PREFIX . $url;
     if (null !== $params) {
         if (true === $mergeParams) {
@@ -50,6 +53,21 @@ function __($identifier, $context = 'default', array $tags = [])
 function ___()
 {
     return htmlspecialchars(call_user_func_array('__', func_get_args()));
+}
+
+
+//--------------------------------------------
+//
+//--------------------------------------------
+// will link to, experimental function against memory lost used during development...
+function wl2($identifier)
+{
+    $links = [
+        'nullos-doc-install' => '#',
+        'nullos-doc-quickstart-reset' => '#',
+        'nullos-doc-install-end' => '#',
+    ];
+    return htmlspecialchars($links[$identifier]);
 }
 
 

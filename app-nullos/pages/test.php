@@ -1,37 +1,29 @@
 <?php
 
 
-require_once "bigbang.php";
+use Crud\CrudConfig;
+use Crud\CrudListGenerator;
 
-use ArrayToString\ArrayToStringUtil;
-use ArrayToString\SymbolManager\PhpArrayToStringSymbolManager;
+$gen = new CrudListGenerator();
+$gen->foreignKeyPrettierColumns = CrudConfig::getForeignKeyPrettierColumns();
+$gen->prettyTableNames = CrudConfig::getPrettyTableNames();
+$gen->fixPrettyColumnNames = CrudConfig::getPrettyColumnNames();
 
 
-$a = [
-    'pou' => 456,
-    'aaa' => 777,
-    'bbb' => [
-        'omélie' => 'archeval',
-        'pedros' => 'la casa',
-    ],
-];
+$gen->urlTransformerIf = CrudConfig::getListUrlTransformerIfCallback();
 
-header("content-type: text/plain");
-$manager = new PhpArrayToStringSymbolManager();
-$manager->setNbSpaces(4);
-$manager->setIndentationCallback(function ($spaceSymbol, $nbSpaces, $level) {
-    if (1 === $level) {
-        return str_repeat($spaceSymbol, 4);
-    }
-    return str_repeat($spaceSymbol, $nbSpaces * $level);
-});
-$manager->setEndSymbol(function ($level) {
-    if (1 === $level) {
-        return ']';
-    }
-    return ']';
-});
+
+$gen->db = "oui";
+$gen->db = "information_schema";
+
+$table = "concours";
+$table = "equipe_has_membres";
+$table = "CHARACTER_SETS";
+
+
+ob_start();
+$gen->generateList($table);
+echo nl2br(ob_get_clean());
 
 
 
-echo 'return ' . ArrayToStringUtil::create()->setSymbolManager($manager)->toString($a) . ';';

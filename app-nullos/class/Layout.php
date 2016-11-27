@@ -40,8 +40,12 @@ class Layout
             <script src="<?php echo url('/libs/split/split.js'); ?>"></script>
         </head>
 
-        <body>
-        <div class="panes-container">
+        <body class="holygrail">
+        <div class="topbar">
+            <?php Bridge::displayTopBar(); ?>
+
+        </div>
+        <div class="body panes-container">
             <div id="one" class="pane-main leftmenu">
                 <section class="header">
                     <span class="title"><?php echo ucfirst(WEBSITE_NAME); ?></span>
@@ -53,6 +57,7 @@ class Layout
                 <?php $this->includeElement('body'); ?>
             </div>
         </div>
+        <div class="bottombar"></div>
 
 
         <script>

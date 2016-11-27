@@ -3,7 +3,7 @@
 
 namespace Crud;
 
-class CrudConfigCopy
+class CrudConfig
 {
 
     private static $tables = null;

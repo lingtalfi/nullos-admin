@@ -846,3 +846,480 @@ Stack trace:
 #3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
 #4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
 #5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nu in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 221
+[27-Nov-2016 04:57:11 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'oui.villes_france_free' doesn't exist in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:275
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(275): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php(270): QuickPdo\QuickPdo::fetch('select\ncount(*)...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-list/villes_france_free.php(84): Crud\DataTable->printTable('villes_france_f...', 'select\n%s\nfrom ...', '\nville_id,\nvill...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(38): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/ in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 275
+[27-Nov-2016 05:10:15 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'oui.villes_france_free' doesn't exist in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:275
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(275): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php(270): QuickPdo\QuickPdo::fetch('select\ncount(*)...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-list/ville.villes_france_free.php(84): Crud\DataTable->printTable('villes_france_f...', 'select\n%s\nfrom ...', '\nville_id,\nvill...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(38): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos- in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 275
+[27-Nov-2016 05:19:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method QuickForm\QuickForm::display() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php:153
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/ville.villes_france_free.php(72): Crud\Form->display()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php on line 153
+[27-Nov-2016 05:20:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Crud\Form::play() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/ville.villes_france_free.php:72
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint...')
+#5 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/ville.villes_france_free.php on line 72
+[27-Nov-2016 05:23:59 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is concours in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:221
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(117): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(314): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nu in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 221
+[27-Nov-2016 05:34:32 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:32 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:32 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:32 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:32 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:32 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:33 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:33 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:33 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:33 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:33 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:33 UTC] PHP Notice:  Undefined offset: 0 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudGenHelper.php on line 20
+[27-Nov-2016 05:34:34 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is concours in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:222
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(117): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(314): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nu in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 222
+[27-Nov-2016 05:35:08 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is concours in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:222
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(117): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(314): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nu in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 222
+[27-Nov-2016 05:47:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Crud\Form::play() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.concours.php:38
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint...')
+#5 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.concours.php on line 38
+[27-Nov-2016 05:47:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method QuickForm\QuickForm::display() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php:153
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.concours.php(38): Crud\Form->display()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php on line 153
+[27-Nov-2016 05:48:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method QuickForm\QuickForm::display() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php:153
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.concours.php(38): Crud\Form->display()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php on line 153
+[27-Nov-2016 05:48:36 UTC] PHP Notice:  Undefined index: id in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 109
+[27-Nov-2016 05:48:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function value() on null in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:109
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(153): QuickForm\QuickForm->play()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.concours.php(38): Crud\Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint...')
+#7 {main in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 109
+[27-Nov-2016 05:50:41 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is oui.equipe in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:222
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(117): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(314): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app- in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 222
+[27-Nov-2016 05:51:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Crud\Form::play() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.concours.php:38
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint...')
+#5 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.concours.php on line 38
+[27-Nov-2016 05:51:52 UTC] PHP Notice:  Undefined index: id in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 109
+[27-Nov-2016 05:51:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function value() on null in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:109
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(153): QuickForm\QuickForm->play()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.concours.php(38): Crud\Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint...')
+#7 {main in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 109
+[27-Nov-2016 05:56:27 UTC] PHP Notice:  Undefined index: id in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 109
+[27-Nov-2016 05:56:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function value() on null in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:109
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(153): QuickForm\QuickForm->play()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.concours.php(38): Crud\Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43): require_once('/Volumes/Macint...')
+#7 {main in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 109
+[27-Nov-2016 06:02:48 UTC] PHP Fatal error:  Uncaught Exception: Please provide an entry for the foreignKeyPrettierColumns with the key equipe.id, table is oui.equipe in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php:222
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php(117): Crud\CrudFormGenerator->generateForm('concours', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/start.php(314): Crud\CrudFormGenerator->generateForms()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(20): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app- in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudFormGenerator.php on line 222
+[27-Nov-2016 06:16:03 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.concours WHERE Key_name = 'PRIMARY'' at line 1 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdoInfoTool.php(166): QuickPdo\QuickPdo::fetchAll('SHOW KEYS FROM ...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudListGenerator.php(76): QuickPdo\QuickPdoInfoTool::getPrimaryKey('oui.concours', 'oui')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/test.php(20): Crud\CrudListGenerator->generateList('oui.concours')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(43 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[27-Nov-2016 06:18:31 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.equipe_nom,
+e.membres_id,
+ou.pseudo as oui.membres_pseudo
+
+from oui.equipe_has_' at line 4 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php(314): QuickPdo\QuickPdo::fetchAll('select\n\ne.equip...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.equipe_has_membres.php(50): Crud\DataTable->printTable('oui.equipe_has_...', 'select\n%s\nfrom ...', '\ne.equipe_id,\no...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(38): require_once('/Volume in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[27-Nov-2016 06:18:50 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.equipe_nom,
+c.titre,
+c.url_photo,
+c.url_video,
+c.date_debut,
+c.date_fin,
+c.lots' at line 5 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php(314): QuickPdo\QuickPdo::fetchAll('select\n\nc.id,\nc...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.concours.php(80): Crud\DataTable->printTable('oui.concours', 'select\n%s\nfrom ...', '\nc.id,\nc.equipe...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(38): require_once('/Volumes/Macint...')
+# in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[27-Nov-2016 06:18:52 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.videos_titre,
+c.position
+
+from oui.coups_de_coeur c
+inner join oui.videos o on ' at line 5 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php(314): QuickPdo\QuickPdo::fetchAll('select\n\nc.id,\nc...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.coups_de_coeur.php(46): Crud\DataTable->printTable('oui.coups_de_co...', 'select\n%s\nfrom ...', '\nc.id,\nc.videos...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(38): require_once('/Volumes/M in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[27-Nov-2016 06:18:53 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.equipe_nom,
+c.titre,
+c.url_photo,
+c.url_video,
+c.date_debut,
+c.date_fin,
+c.lots' at line 5 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php(314): QuickPdo\QuickPdo::fetchAll('select\n\nc.id,\nc...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.concours.php(80): Crud\DataTable->printTable('oui.concours', 'select\n%s\nfrom ...', '\nc.id,\nc.equipe...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(38): require_once('/Volumes/Macint...')
+# in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[27-Nov-2016 06:20:17 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.equipe_nom,
+e.membres_id,
+ou.pseudo as oui.membres_pseudo
+
+from oui.equipe_has_' at line 4 in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:254
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(254): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/DataTable.php(314): QuickPdo\QuickPdo::fetchAll('select\n\ne.equip...', Array)
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.equipe_has_membres.php(50): Crud\DataTable->printTable('oui.equipe_has_...', 'select\n%s\nfrom ...', '\ne.equipe_id,\no...', Array)
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(38): require_once('/Volume in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php on line 254
+[27-Nov-2016 07:01:07 UTC] PHP Notice:  Undefined variable: installInit in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/reset.php on line 7
+[27-Nov-2016 07:17:14 UTC] PHP Fatal error:  Uncaught Exception: Was not able to handle control of type hidden (name=doit) in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php:372
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(341): QuickForm\QuickForm->displayControl('doit', Object(QuickForm\QuickFormControl))
+#1 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(285): QuickForm\QuickForm->displayControlBundle('doit', Object(QuickForm\QuickFormControl))
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/reset.php(32): QuickForm\QuickForm->play()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(18): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->inc in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php on line 372
+[27-Nov-2016 08:06:30 UTC] PHP Warning:  array_combine(): Both parameters should have an equal number of elements in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php on line 165
+[27-Nov-2016 08:06:30 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Helper::getWhereFragmentFromRic() must be of the type array, boolean given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php on line 103 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Helper.php:16
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(103): Helper::getWhereFragmentFromRic(false, Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/information_schema.COLLATIONS.php(31): Crud\Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes/Mac in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Helper.php on line 16
+[27-Nov-2016 08:07:29 UTC] PHP Warning:  array_combine(): Both parameters should have an equal number of elements in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php on line 165
+[27-Nov-2016 08:07:29 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Helper::getWhereFragmentFromRic() must be of the type array, boolean given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php on line 103 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Helper.php:16
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(103): Helper::getWhereFragmentFromRic(false, Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/information_schema.CHARACTER_SETS.php(27): Crud\Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Helper.php on line 16
+[27-Nov-2016 08:12:50 UTC] PHP Warning:  array_combine(): Both parameters should have an equal number of elements in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php on line 165
+[27-Nov-2016 08:12:50 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Helper::getWhereFragmentFromRic() must be of the type array, boolean given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php on line 103 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Helper.php:16
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(103): Helper::getWhereFragmentFromRic(false, Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/information_schema.CHARACTER_SETS.php(27): Crud\Form->display()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/table.php(53): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(78): require_once('/Volumes/Macint...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(53): Layout->includeElement('body')
+#5 /Volumes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Helper.php on line 16
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: host_summary in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 68
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: host_summary_by_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 69
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: host_summary_by_file_io_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 70
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: host_summary_by_stages in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 71
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: host_summary_by_statement_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 72
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: host_summary_by_statement_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 73
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: innodb_buffer_stats_by_schema in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 74
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: innodb_buffer_stats_by_table in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 75
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: innodb_lock_waits in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 76
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: io_by_thread_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 77
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: io_global_by_file_by_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 78
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: io_global_by_file_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 79
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: io_global_by_wait_by_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 80
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: io_global_by_wait_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 81
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: latest_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 82
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: memory_by_host_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 83
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: memory_by_thread_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 84
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: memory_by_user_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 85
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: memory_global_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 86
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: memory_global_total in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 87
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: processlist in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 88
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: ps_digest_95th_percentile_by_avg_us in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 89
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: ps_digest_avg_latency_distribution in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 90
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: ps_schema_table_statistics_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 91
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: schema_flattened_keys in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 92
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: schema_index_statistics in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 93
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: schema_table_lock_waits in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 94
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: schema_table_statistics in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 95
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: schema_table_statistics_with_buffer in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 96
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: schema_tables_with_full_table_scans in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 97
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: session in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 98
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: statement_analysis in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 99
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: statements_with_errors_or_warnings in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 100
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: statements_with_full_table_scans in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 101
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: statements_with_runtimes_in_95th_percentile in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 102
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: statements_with_sorting in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 103
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: statements_with_temp_tables in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 104
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: user_summary in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 105
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: user_summary_by_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 106
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: user_summary_by_file_io_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 107
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: user_summary_by_stages in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 108
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: user_summary_by_statement_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 109
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: user_summary_by_statement_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 110
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: wait_classes_global_by_avg_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 111
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: wait_classes_global_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 112
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: waits_by_host_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 113
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: waits_by_user_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 114
+[27-Nov-2016 08:19:47 UTC] PHP Notice:  Undefined variable: waits_global_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 115
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: host_summary in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 68
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: host_summary_by_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 69
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: host_summary_by_file_io_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 70
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: host_summary_by_stages in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 71
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: host_summary_by_statement_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 72
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: host_summary_by_statement_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 73
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: innodb_buffer_stats_by_schema in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 74
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: innodb_buffer_stats_by_table in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 75
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: innodb_lock_waits in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 76
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: io_by_thread_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 77
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: io_global_by_file_by_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 78
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: io_global_by_file_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 79
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: io_global_by_wait_by_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 80
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: io_global_by_wait_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 81
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: latest_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 82
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: memory_by_host_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 83
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: memory_by_thread_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 84
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: memory_by_user_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 85
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: memory_global_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 86
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: memory_global_total in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 87
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: processlist in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 88
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: ps_digest_95th_percentile_by_avg_us in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 89
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: ps_digest_avg_latency_distribution in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 90
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: ps_schema_table_statistics_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 91
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: schema_flattened_keys in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 92
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: schema_index_statistics in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 93
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: schema_table_lock_waits in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 94
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: schema_table_statistics in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 95
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: schema_table_statistics_with_buffer in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 96
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: schema_tables_with_full_table_scans in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 97
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: session in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 98
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: statement_analysis in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 99
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: statements_with_errors_or_warnings in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 100
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: statements_with_full_table_scans in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 101
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: statements_with_runtimes_in_95th_percentile in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 102
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: statements_with_sorting in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 103
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: statements_with_temp_tables in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 104
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: user_summary in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 105
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: user_summary_by_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 106
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: user_summary_by_file_io_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 107
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: user_summary_by_stages in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 108
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: user_summary_by_statement_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 109
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: user_summary_by_statement_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 110
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: wait_classes_global_by_avg_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 111
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: wait_classes_global_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 112
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: waits_by_host_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 113
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: waits_by_user_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 114
+[27-Nov-2016 08:19:55 UTC] PHP Notice:  Undefined variable: waits_global_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 115
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: host_summary in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 68
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: host_summary_by_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 69
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: host_summary_by_file_io_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 70
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: host_summary_by_stages in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 71
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: host_summary_by_statement_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 72
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: host_summary_by_statement_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 73
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: innodb_buffer_stats_by_schema in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 74
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: innodb_buffer_stats_by_table in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 75
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: innodb_lock_waits in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 76
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: io_by_thread_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 77
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: io_global_by_file_by_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 78
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: io_global_by_file_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 79
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: io_global_by_wait_by_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 80
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: io_global_by_wait_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 81
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: latest_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 82
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: memory_by_host_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 83
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: memory_by_thread_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 84
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: memory_by_user_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 85
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: memory_global_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 86
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: memory_global_total in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 87
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: processlist in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 88
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: ps_digest_95th_percentile_by_avg_us in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 89
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: ps_digest_avg_latency_distribution in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 90
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: ps_schema_table_statistics_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 91
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: schema_flattened_keys in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 92
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: schema_index_statistics in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 93
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: schema_table_lock_waits in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 94
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: schema_table_statistics in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 95
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: schema_table_statistics_with_buffer in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 96
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: schema_tables_with_full_table_scans in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 97
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: session in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 98
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: statement_analysis in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 99
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: statements_with_errors_or_warnings in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 100
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: statements_with_full_table_scans in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 101
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: statements_with_runtimes_in_95th_percentile in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 102
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: statements_with_sorting in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 103
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: statements_with_temp_tables in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 104
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: user_summary in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 105
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: user_summary_by_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 106
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: user_summary_by_file_io_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 107
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: user_summary_by_stages in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 108
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: user_summary_by_statement_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 109
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: user_summary_by_statement_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 110
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: wait_classes_global_by_avg_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 111
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: wait_classes_global_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 112
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: waits_by_host_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 113
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: waits_by_user_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 114
+[27-Nov-2016 08:19:57 UTC] PHP Notice:  Undefined variable: waits_global_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 115
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: host_summary in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 68
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: host_summary_by_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 69
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: host_summary_by_file_io_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 70
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: host_summary_by_stages in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 71
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: host_summary_by_statement_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 72
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: host_summary_by_statement_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 73
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: innodb_buffer_stats_by_schema in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 74
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: innodb_buffer_stats_by_table in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 75
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: innodb_lock_waits in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 76
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: io_by_thread_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 77
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: io_global_by_file_by_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 78
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: io_global_by_file_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 79
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: io_global_by_wait_by_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 80
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: io_global_by_wait_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 81
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: latest_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 82
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: memory_by_host_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 83
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: memory_by_thread_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 84
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: memory_by_user_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 85
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: memory_global_by_current_bytes in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 86
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: memory_global_total in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 87
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: processlist in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 88
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: ps_digest_95th_percentile_by_avg_us in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 89
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: ps_digest_avg_latency_distribution in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 90
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: ps_schema_table_statistics_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 91
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: schema_flattened_keys in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 92
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: schema_index_statistics in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 93
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: schema_table_lock_waits in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 94
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: schema_table_statistics in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 95
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: schema_table_statistics_with_buffer in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 96
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: schema_tables_with_full_table_scans in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 97
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: session in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 98
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: statement_analysis in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 99
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: statements_with_errors_or_warnings in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 100
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: statements_with_full_table_scans in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 101
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: statements_with_runtimes_in_95th_percentile in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 102
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: statements_with_sorting in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 103
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: statements_with_temp_tables in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 104
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: user_summary in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 105
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: user_summary_by_file_io in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 106
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: user_summary_by_file_io_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 107
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: user_summary_by_stages in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 108
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: user_summary_by_statement_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 109
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: user_summary_by_statement_type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 110
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: wait_classes_global_by_avg_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 111
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: wait_classes_global_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 112
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: waits_by_host_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 113
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: waits_by_user_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 114
+[27-Nov-2016 08:19:58 UTC] PHP Notice:  Undefined variable: waits_global_by_latency in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudConfig.php on line 115
+[27-Nov-2016 13:00:05 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Hide this in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:48
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/QuickStart/QuickStartModule.php(28): __('Hide this', 'quickstart')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Bridge.php(22): QuickStart\QuickStartModule::displayLeftMenuLinks()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(54): Bridge::displayLeftMenuBlocks()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(44): require_once('/Volumes/Macint...')
+#5 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 48
+[27-Nov-2016 13:25:53 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to __() must be of the type array, boolean given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/QuickStart/QuickStartModule.php on line 22 and defined in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:20
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/QuickStart/QuickStartModule.php(22): __('Start', 'quickstart', false)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Bridge.php(22): QuickStart\QuickStartModule::displayLeftMenuLinks()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(54): Bridge::displayLeftMenuBlocks()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(44): require_once('/Volumes/Macint...')
+#5 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 20
+[27-Nov-2016 13:26:24 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: {clickHere} to continue. in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:48
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/reset.php(65): __('{clickHere} to ...', 'quickstart', Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(19): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(83): require_once('/Volumes/Macint...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(57): Layout->includeElement('body')
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(44): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 48

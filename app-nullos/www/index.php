@@ -30,6 +30,7 @@ if (PrivilegeUser::isConnected()) {
     }
     Spirit::set('uri', $uri);
 
+
     $page = "404.php";
     if (array_key_exists($uri, $uri2pagesMap)) {
         $page = $uri2pagesMap[$uri];

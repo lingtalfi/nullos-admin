@@ -150,9 +150,9 @@ class DataTable
          *
          */
         $this->singleActions = [
-            'edit' => ['<a href="/table?name={tableName}&action=edit&ric={ric}">' . __('Edit', $this->translatorContext) . '</a>'],
+            'edit' => ['<a class="action-link" href="/table?name={tableName}&action=edit&ric={ric}">' . __('Edit', $this->translatorContext) . '</a>'],
             // :delete is a special notation to indicate that we want to use the delete method of THIS class
-            'delete' => ['<a class="postlink confirmlink" data-action="delete" data-ric="{ric}" href="#">' . __('Delete', $this->translatorContext) . '</a>', ':delete'],
+            'delete' => ['<a class="action-link postlink confirmlink" data-action="delete" data-ric="{ric}" href="#">' . __('Delete', $this->translatorContext) . '</a>', ':delete'],
         ];
 
 

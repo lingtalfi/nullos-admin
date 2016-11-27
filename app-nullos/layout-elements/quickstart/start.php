@@ -13,7 +13,7 @@ use QuickPdo\QuickPdoInfoTool;
 use QuickStart\QuickStartModule;
 
 $installInit = defined('I_AM_JUST_THE_FALLBACK_INIT');
-
+define('LL', 'quickstart'); // translation context
 
 function listify(array $items, $n = 12)
 {
@@ -24,7 +24,7 @@ function listify(array $items, $n = 12)
         } else {
             $s = str_repeat(' ', $n);
         }
-        return $s . '"' . $v . '",';
+        return $s . "'" . $v . "',";
     }, $items);
 }
 
@@ -46,14 +46,23 @@ function array_to_string(array $items)
 
 }
 
+function linkt($text, $href, $external = false)
+{
+    $target = '';
+    if (true === $external) {
+        $target = 'target="_blank"';
+    }
+    return '<a ' . $target . ' href="' . $href . '">' . __($text, LL) . '</a>';
+}
+
 ?>
 <div class="tac bignose install-page">
-    <h3>Welcome to the <?php echo WEBSITE_NAME; ?> install page</h3>
+    <h3><?php echo __("Welcome to the {website} install page", LL, ['website' => WEBSITE_NAME]); ?></h3>
     <?php if (true === $installInit): ?>
     <p>
-        This page helps you configure your <b>nullos admin</b> website.<br>
-        Please fill the form below.<br>
-        For more details about the installation process, see the <a href="#">nullos documentation</a>.
+        <?php echo __("This page helps you configure your <b>nullos admin</b> website.", LL); ?><br>
+        <?php echo __("Please fill the form below.", LL); ?><br>
+        <?php echo __("For more details about the installation process, see the {link}.", LL, ['link' => linkt("nullos documentation", wl2('nullos-doc-install'), true)]); ?>
     </p>
 
     <div>
@@ -63,25 +72,27 @@ function array_to_string(array $items)
         $form = new QuickForm();
 
 
-        $form->title = "Installation form";
+        $form->title = __("Installation form", LL);
         $form->labels = [
-            'language' => "language",
-            'dbName' => 'name',
-            'dbUser' => 'user',
-            'dbPass' => 'password',
+            'language' => __("language", LL),
+            'websiteName' => __('website name', LL),
+            'dbName' => __('name', LL),
+            'dbUser' => __('user', LL),
+            'dbPass' => __('password', LL),
         ];
+        $form->messages['submit'] = ucfirst(__("submit", LL));
         $langs = [];
-        $form->addFieldset('Website information', [
+        $form->addFieldset(__('Website information', LL), [
             'language',
             'websiteName',
         ]);
-        $form->addFieldset('Database information', [
+        $form->addFieldset(__('Database information', LL), [
             'dbName',
             'dbUser',
             'dbPass',
         ]);
         $form->defaultValues = [
-            'websiteName' => 'My Website',
+            'websiteName' => __('My Website', LL),
             'dbUser' => 'root',
             'dbPass' => 'root',
         ];
@@ -107,7 +118,7 @@ function array_to_string(array $items)
             $lang = $formattedValues['language'];
             if (array_key_exists($lang, $langs)) {
 
-                $msg = "Nice";
+                $msg = __("Nice", LL);
                 $ret = true;
                 try {
                     $dbName = (string)$formattedValues['dbName'];
@@ -132,7 +143,7 @@ function array_to_string(array $items)
 
                         ])
                     ) {
-                        $msg = "Nice";
+                        $msg = __("Nice", LL);
                         $stepIsSuccess = true;
                         $form->displayNothing = true;
                         return true;
@@ -140,13 +151,13 @@ function array_to_string(array $items)
 
                 } catch (\Exception $e) {
                     $ret = false;
-                    $msg = "The database information are incorrect, please try again";
+                    $msg = __("The database information are incorrect, please try again", LL);
                 }
                 return $ret;
 
             }
 
-            $msg = "Oops, an error occurred";
+            $msg = __("Oops, an error occurred", LL);
             return false;
         };
 
@@ -158,14 +169,14 @@ function array_to_string(array $items)
             ?>
             <div class="alert alert-success flexh">
                 <span><?php echo Icons::printIcon('done', 'green', 48); ?></span>
-                <span>Congrats! The <b>init file</b> has been created</span>
+                <span><?php echo __("Congrats! The <b>init file</b> has been created", LL); ?></span>
             </div>
             <section>
                 <p>
-                    You can stop there if you want.<br>
-                    ... or would you like to continue and generate all the tables of your website (recommended)?
+                    <?php echo __("You can stop there if you want.", LL); ?><br>
+                    <?php echo __("... or would you like to continue and generate all the tables of your website now (recommended)?", LL); ?>
                 </p>
-                <a href="/quickstart?action=start">Yes</a>
+                <?php echo linkt("Yes", QuickStartModule::getQuickStartUrl('start')); ?>
             </section>
             <?php
         endif; ?>
@@ -175,11 +186,12 @@ function array_to_string(array $items)
             ?>
             <section>
                 <p>
-                    This is the last step of the installation. It's optional, but recommended.<br>
-                    Use the form below to create the tables forms and lists for your website.
+                    <?php echo __("This is the last step of the installation. It's optional, but recommended.", LL); ?>
+                    <br>
+                    <?php echo __("Use the form below to create the tables forms and lists for your website.", LL); ?>
                 </p>
                 <p>
-                    For more details, please visit the <a href="#">nullos documentation</a>.
+                    <?php echo __("For more details, please visit the {link}.", LL, ['link' => linkt("nullos documentation", wl2('nullos-doc-install'), true)]); ?>
                 </p>
             </section>
 
@@ -193,16 +205,17 @@ function array_to_string(array $items)
                     }
                 }
                 $form2 = new QuickForm();
+                $form2->messages['submit'] = ucfirst(__("submitCreateDatabase", LL));
 
-                $form2->title = "Generate forms and lists";
-                $form2->header = "<p>
-Please select the database that your application interacts with.<br>
-<span class='warning-color'>Warning</span>, this will overwrite your configuration file<br>
- (in <span class='path'>app-nullos/class-modules/Crud/CrudConfig.php</span>).
+                $form2->title = __("Generate forms and lists", LL);
+                $form2->header = "<p>" . __("Please select the database that your application interacts with.", LL) . "<br>
+                " . __("<span class='warning-color'>Warning</span>, this will overwrite your configuration file", LL) . "
+<br>
+ (" . __("in {path}", LL, ['path' => "<span class='path'>app-nullos/class-modules/Crud/CrudConfig.php</span>"]) . ").
                 </p>
                 ";
                 $form2->labels = [
-                    'database' => "database",
+                    'database' => __("database", LL),
                 ];
                 $selectedDb = null;
                 $form2->formTreatmentFunc = function (array $formattedValues, &$msg) use ($form2, &$selectedDb, $dbs) {
@@ -226,31 +239,36 @@ Please select the database that your application interacts with.<br>
                     $dst = APP_ROOT_DIR . "/class-modules/Crud/CrudConfig.php";
 
                     $tables = QuickPdoInfoTool::getTables($selectedDb);
+                    $fullTables = array_map(function ($v) use ($selectedDb) {
+                        return $selectedDb . '.' . $v;
+                    }, $tables);
 
 
                     //{tables}
-                    $fTables = listify($tables, 16);
+                    $fTables = listify($fullTables, 16);
 
                     //{leftMenuSections}
                     // creating a "Main" and "Others" sections, just to get started
                     $sections = [];
-                    $c = count($tables);
+                    $c = count($fullTables);
                     if ($c > 1) {
                         $half = (int)floor($c / 2);
-                        $sections['Main'] = array_slice($tables, 0, $half);
-                        $sections['Others'] = array_slice($tables, $half);
+                        $sections[__('Main', LL)] = array_slice($fullTables, 0, $half);
+                        $sections[__('Others', LL)] = array_slice($fullTables, $half);
                     } else {
-                        $sections['Main'] = $tables;
-                        $sections['Others'] = [];
+                        $sections[__('Main', LL)] = $fullTables;
+                        $sections[__('Others', LL)] = [];
                     }
                     $sSections = array_to_string($sections);
 
 
                     //{prettyTableNames}
                     $prettyTables = [];
-                    foreach ($tables as $table) {
+                    foreach ($fullTables as $table) {
                         if (false !== strpos($table, '_')) {
-                            $prettyTables[$table] = str_replace('_', ' ', $table);
+                            $p = explode('.', $table, 2);
+                            $ftable = array_pop($p);
+                            $prettyTables[$table] = str_replace('_', ' ', $ftable);
                         }
                     }
 
@@ -264,7 +282,11 @@ Please select the database that your application interacts with.<br>
                         $names = QuickPdoInfoTool::getColumnNames($table, $selectedDb);
                         foreach ($names as $name) {
                             if (false !== strpos($name, '_')) {
-                                $cols[$name] = str_replace('_', ' ', $name);
+                                $cleanName = $name;
+                                if ('_id' === substr($name, -3)) {
+                                    $cleanName = substr($name, 0, -3);
+                                }
+                                $cols[$name] = str_replace('_', ' ', $cleanName);
                             }
                         }
                     }
@@ -293,7 +315,7 @@ Please select the database that your application interacts with.<br>
                         // generate lists files
                         $gen = new CrudListGenerator();
                         $gen->db = $selectedDb;
-                        $gen->foreignKeyPrettierColumns = CrudConfig::getForeignKeyPrettierColumns();
+                        $gen->foreignKeyPrettierColumns = $foreignKeyPrettierColumns;
                         $gen->prettyTableNames = CrudConfig::getPrettyTableNames();
                         $gen->fixPrettyColumnNames = CrudConfig::getPrettyColumnNames();
                         $gen->urlTransformerIf = CrudConfig::getListUrlTransformerIfCallback();
@@ -303,27 +325,25 @@ Please select the database that your application interacts with.<br>
                         // generate forms files
                         $gen = new CrudFormGenerator();
                         $gen->db = $selectedDb;
-                        $gen->foreignKeyPrettierColumns = CrudConfig::getForeignKeyPrettierColumns();
+                        $gen->foreignKeyPrettierColumns = $foreignKeyPrettierColumns;
                         $gen->prettyTableNames = CrudConfig::getPrettyTableNames();
                         $gen->fixPrettyColumnNames = CrudConfig::getPrettyColumnNames();
                         $gen->generateForms();
-
-
 
 
                         ?>
                         <div class="alert alert-success flexh">
                             <span class="icon-span"><?php echo Icons::printIcon('done', 'green', 48); ?></span>
                             <span>
-                            Yes! All the tables have been regenerated, good job.<br>
-                            Please <a href="/quickstart?action=start">refresh the page</a>.
+                            <?php echo __("Yes! All the tables have been regenerated, good job.", LL); ?><br>
+                                <?php echo linkt("Click here", QuickStartModule::getQuickStartUrl('end', ['f' => 1])); ?>
                         </span>
                         </div>
                         <?php
                     else:
                         ?>
                         <div class="alert alert-error flexh">
-                            An error occurred, sorry.
+                            <?php echo __("", LL); ?>
                         </div>
                         <?php
                     endif;

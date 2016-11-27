@@ -2,6 +2,7 @@
 
 use BumbleBee\Autoload\ButineurAutoloader;
 use Crud\CrudModule;
+use Lang\LangModule;
 use Privilege\Privilege;
 use Privilege\PrivilegeUser;
 use QuickPdo\QuickPdo;
@@ -15,7 +16,6 @@ if (null !== $sessionTimeout) { // or session expires when browser quits
     ini_set('session.cookie_lifetime', $sessionTimeout);
 }
 session_start();
-
 
 
 //------------------------------------------------------------------------------/
@@ -94,7 +94,8 @@ Privilege::setProfiles([
 //--------------------------------------------
 // TRANSLATION
 //--------------------------------------------
-define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/en");
+define('APP_DICTIONARY_PATH', APP_ROOT_DIR . "/lang/" . LangModule::getLang());
+
 
 define('I_AM_JUST_THE_FALLBACK_INIT', true);
 

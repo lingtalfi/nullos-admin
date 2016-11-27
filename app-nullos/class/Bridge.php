@@ -2,6 +2,7 @@
 
 
 use Crud\CrudModule;
+use Lang\LangModule;
 use Privilege\Privilege;
 use Privilege\PrivilegeUser;
 use QuickStart\QuickStartModule;
@@ -23,7 +24,10 @@ class Bridge
     }
 
 
-
+    public static function displayTopBar()
+    {
+        LangModule::displayTopBar();
+    }
 
 
 

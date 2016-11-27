@@ -114,7 +114,7 @@ class CrudFormGenerator extends AbstractCrudGenerator
         $autoFormDir = CrudConfig::getCrudGenFormDir();
         FileSystemTool::mkdir($autoFormDir);
         foreach ($tables as $table) {
-            $this->generateForm($table, $autoFormDir . "/" . $table . '.php');
+            $this->generateForm($table, $autoFormDir . "/" . $db . '.' . $table . '.php');
         }
     }
 
@@ -156,12 +156,16 @@ class CrudFormGenerator extends AbstractCrudGenerator
         //--------------------------------------------
         // INSTANTIATION
         //--------------------------------------------
+        if(0 === count($primaryKey)){
+            $primaryKey = $columnNames;
+        }
+
         $ric = array_map(function ($v) {
             return "'" . $v . "'";
         }, $primaryKey);
 
 
-        $this->line('$form = CrudModule::getForm("' . $table . '", [' . implode(', ', $ric) . ']);');
+        $this->line('$form = CrudModule::getForm("' . $db . '.' . $table . '", [' . implode(', ', $ric) . ']);');
         $this->line('');
         $this->line('');
         $this->line('');
@@ -215,12 +219,13 @@ class CrudFormGenerator extends AbstractCrudGenerator
         // fks
         foreach ($fkInfo as $column => $info) {
             $prettyColumn = null;
-            if (array_key_exists($info[1], $foreignKeyPrettierColumns)) {
-                $prettyColumn = $foreignKeyPrettierColumns[$info[1]];
+            $ftable = $info[0] . '.' . $info[1];
+            if (array_key_exists($ftable, $foreignKeyPrettierColumns)) {
+                $prettyColumn = $foreignKeyPrettierColumns[$ftable];
             } else {
-                throw new \Exception("Please provide an entry for the foreignKeyPrettierColumns with the key " . $info[1] . '.' . $info[2] . ', table is ' . $table);
+                throw new \Exception("Please provide an entry for the foreignKeyPrettierColumns with the key " . $info[1] . '.' . $info[2] . ', table is ' . $ftable);
             }
-            $this->line('$form->addControl("' . $column . '")->type("selectByRequest", "select ' . $info[2] . ', ' . $prettyColumn . ' from ' . $info[1] . '");');
+            $this->line('$form->addControl("' . $column . '")->type("selectByRequest", "select ' . $info[2] . ', ' . $prettyColumn . ' from ' . $info[0] . '.' . $info[1] . '");');
         }
 
         // other fields
