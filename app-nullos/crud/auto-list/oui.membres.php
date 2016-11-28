@@ -22,6 +22,9 @@ $table = CrudModule::getDataTable();
 $table->title = "Membres";
 
 
+$table->actionColumnsPosition = "right";
+
+
 $table->columnHeaders = [
     "id" => "id",
     "pseudo" => "pseudo",

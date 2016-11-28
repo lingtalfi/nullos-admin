@@ -21,6 +21,10 @@ class DataTable
     public $sortColumn;
     public $sortColumnDir;
 
+    // null|left|right
+    // default is null, and resolves to right
+    public $actionColumnsPosition;
+
 
     // likely to change
     /**
@@ -109,6 +113,7 @@ class DataTable
         $this->nbItemsPerPage = 50;
         $this->sortColumn = null;
         $this->sortColumnDir = null;
+        $this->actionColumnsPosition = null;
         $this->nbItemsPerPageList = [5, 10, 25, 50, 100, 250, 'all']; // all is a special value
 
 
@@ -325,6 +330,10 @@ class DataTable
         //--------------------------------------------
         // PRINT THE TABLE
         //--------------------------------------------
+        $actionColumnsPosition = $this->actionColumnsPosition;
+        if ('left' !== $actionColumnsPosition) {
+            $actionColumnsPosition = 'right';
+        }
         $i = 0;
         ?>
         <section id="<?php echo $tableId; ?>" class="datatable-section freepage">
@@ -335,10 +344,10 @@ class DataTable
 
 
             <?php if ($this->hasWidget('newItemLink')): ?>
-            <p class="create-new-item-container">
-                <a href="<?php echo CrudHelper::getInsertFormUrl($table); ?>&action=insert"><?php \Icons::printIcon('add', 'blue'); ?>
-                    <span><?php echo __("Create a new item", $this->translatorContext); ?></span></a>
-            </p>
+                <p class="create-new-item-container">
+                    <a href="<?php echo CrudHelper::getInsertFormUrl($table); ?>&action=insert"><?php \Icons::printIcon('add', 'blue'); ?>
+                        <span><?php echo __("Create a new item", $this->translatorContext); ?></span></a>
+                </p>
             <?php endif; ?>
 
 
@@ -401,6 +410,15 @@ class DataTable
                         <thead>
                         <tr class="headerrow">
                             <td></td>
+
+
+                            <?php
+                            if ('left' === $actionColumnsPosition) {
+                                $this->displayExtraColumnHeaders($extraCols);
+                            }
+                            ?>
+
+
                             <?php
 
                             $labels = [];
@@ -412,7 +430,8 @@ class DataTable
                                 $_hid = ($this->isHidden($k)) ? ' style="display: none"' : "";
 
                                 $dir = ('asc' === $sortColumnDir) ? 'desc' : 'asc';
-                                $link = url("/table", [
+                                $link = url(null, [
+                                    'name' => $table,
                                     $this->pageGetKey => 1,
                                     $this->sortColumnGetKey => $k,
                                     $this->sortColumnDirGetKey => $dir,
@@ -428,10 +447,11 @@ class DataTable
                             <?php endforeach; ?>
 
 
-                            <?php foreach ($extraCols as $extraCol): ?>
-                                <td></td>
-                            <?php endforeach; ?>
-
+                            <?php
+                            if ('right' === $actionColumnsPosition) {
+                                $this->displayExtraColumnHeaders($extraCols);
+                            }
+                            ?>
                         </tr>
                         </thead>
                         <tbody>
@@ -444,6 +464,15 @@ class DataTable
                                     <input class="checkbox" type="checkbox" name="ids[]"
                                            value="<?php echo htmlspecialchars($rowUniqueIdentifier); ?>">
                                 </td>
+
+
+                                <?php
+                                if ('left' === $actionColumnsPosition) {
+                                    $this->displayExtraColumns($extraCols, $table, $rowUniqueIdentifier);
+                                }
+                                ?>
+
+
 
                                 <?php foreach ($item as $k => $v):
                                     $_hid = ($this->isHidden($k)) ? ' style="display: none"' : "";
@@ -461,21 +490,11 @@ class DataTable
                                 <?php endforeach; ?>
 
 
-                                <?php foreach ($extraCols as $extraCol): ?>
-                                    <td>
-                                        <?php
-                                        $link = str_replace([
-                                            '{tableName}',
-                                            '{ric}',
-                                        ], [
-                                            $table,
-                                            $rowUniqueIdentifier,
-                                        ], $extraCol);
-
-                                        echo $link;
-                                        ?>
-                                    </td>
-                                <?php endforeach; ?>
+                                <?php
+                                if ('right' === $actionColumnsPosition) {
+                                    $this->displayExtraColumns($extraCols, $table, $rowUniqueIdentifier);
+                                }
+                                ?>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
@@ -510,10 +529,13 @@ class DataTable
 
                     <?php if ($this->hasWidget('multipleActions')): ?>
                         <div class="multiple-actions">
-                            <button class="checkall-btn"><?php echo __("Check all rows", $this->translatorContext); ?></button>
-                            <button class="uncheckall-btn hidden"><?php echo __("Uncheck all rows", $this->translatorContext); ?></button>
+                            <button
+                                class="checkall-btn"><?php echo __("Check all rows", $this->translatorContext); ?></button>
+                            <button
+                                class="uncheckall-btn hidden"><?php echo __("Uncheck all rows", $this->translatorContext); ?></button>
                             <select class="multiple-action-selector" name="multiple-action">
-                                <option value="0"><?php echo __("For all selected rows", $this->translatorContext); ?></option>
+                                <option
+                                    value="0"><?php echo __("For all selected rows", $this->translatorContext); ?></option>
                                 <?php foreach ($this->multipleActions as $k => $v):
                                     $confirm = (array_key_exists(2, $v) && true === $v[2]) ? ' data-confirm="true"' : '';
                                     ?>
@@ -814,5 +836,33 @@ class DataTable
     private function isHidden($col)
     {
         return (in_array($col, $this->hiddenColumns, true));
+    }
+
+
+    private function displayExtraColumnHeaders(array $extraCols)
+    {
+        foreach ($extraCols as $extraCol): ?>
+            <td></td>
+        <?php endforeach;
+    }
+
+
+    private function displayExtraColumns(array $extraCols, $table, $rowUniqueIdentifier)
+    {
+        foreach ($extraCols as $extraCol): ?>
+            <td>
+                <?php
+                $link = str_replace([
+                    '{tableName}',
+                    '{ric}',
+                ], [
+                    $table,
+                    $rowUniqueIdentifier,
+                ], $extraCol);
+
+                echo $link;
+                ?>
+            </td>
+        <?php endforeach;
     }
 }

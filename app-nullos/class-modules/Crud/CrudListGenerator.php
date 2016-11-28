@@ -17,6 +17,7 @@ class CrudListGenerator extends AbstractCrudGenerator
     public $foreignKeyPrettierColumns;
     public $prettyTableNames;
     public $fixPrettyColumnNames;
+    public $actionColumnsPosition;
     public $urlTransformerIf;
     public $db;
 
@@ -29,6 +30,7 @@ class CrudListGenerator extends AbstractCrudGenerator
         $this->foreignKeyPrettierColumns = [];
         $this->prettyTableNames = [];
         $this->fixPrettyColumnNames = [];
+        $this->actionColumnsPosition = 'right';
         $this->db = null;
     }
 
@@ -67,7 +69,6 @@ class CrudListGenerator extends AbstractCrudGenerator
         if (null === $db) {
             $db = QuickPdoInfoTool::getDatabase();
         }
-
 
 
         $fullTable = $db . '.' . $table;
@@ -111,7 +112,6 @@ class CrudListGenerator extends AbstractCrudGenerator
                         $cleanedForeignTable = $foreignTable;
                         $cleanedForeignTable = explode('.', $cleanedForeignTable);
                         $cleanedForeignTable = array_pop($cleanedForeignTable);
-
 
 
                         $foreignKeyAlias = $cleanedForeignTable . '_' . $prettyColumnName;
@@ -161,12 +161,20 @@ class CrudListGenerator extends AbstractCrudGenerator
         if (array_key_exists($fullTable, $prettyTableNames)) {
             $title = $prettyTableNames[$fullTable];
         } else {
-            $p=explode('.', $fullTable,2);
-            $t=array_pop($p);
+            $p = explode('.', $fullTable, 2);
+            $t = array_pop($p);
             $title = str_replace('_', ' ', $t);
         }
         $title = ucfirst($title);
         $this->line('$table->title = "' . $this->dqe($title) . '";');
+        $this->line('');
+        $this->line('');
+
+
+        //--------------------------------------------
+        // WRITE ACTION COLUMNS POSITION
+        //--------------------------------------------
+        $this->line('$table->actionColumnsPosition = "' . $this->actionColumnsPosition . '";');
         $this->line('');
         $this->line('');
 
@@ -284,7 +292,7 @@ class CrudListGenerator extends AbstractCrudGenerator
         //--------------------------------------------
         // PRINT TABLE
         //--------------------------------------------
-        if(0 === count($primaryKey)){
+        if (0 === count($primaryKey)) {
             $primaryKey = $columnNames;
         }
 

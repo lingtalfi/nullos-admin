@@ -23,6 +23,9 @@ $table = CrudModule::getDataTable();
 $table->title = "Messages";
 
 
+$table->actionColumnsPosition = "right";
+
+
 $table->columnHeaders = [
     "id" => "id",
     "objet" => "objet",

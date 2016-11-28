@@ -22,6 +22,6 @@ class Logger
     public static function log($msg, $targetIdentifier = null)
     {
         a("LOGGER");
-        a(func_get_args());
+        az(func_get_args());
     }
 }

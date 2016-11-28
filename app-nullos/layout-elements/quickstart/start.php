@@ -316,8 +316,8 @@ function linkt($text, $href, $external = false)
                         $gen = new CrudListGenerator();
                         $gen->db = $selectedDb;
                         $gen->foreignKeyPrettierColumns = $foreignKeyPrettierColumns;
-                        $gen->prettyTableNames = CrudConfig::getPrettyTableNames();
-                        $gen->fixPrettyColumnNames = CrudConfig::getPrettyColumnNames();
+                        $gen->prettyTableNames = $prettyTables;
+                        $gen->fixPrettyColumnNames = $cols;
                         $gen->urlTransformerIf = CrudConfig::getListUrlTransformerIfCallback();
                         $gen->generateLists();
 
@@ -326,8 +326,8 @@ function linkt($text, $href, $external = false)
                         $gen = new CrudFormGenerator();
                         $gen->db = $selectedDb;
                         $gen->foreignKeyPrettierColumns = $foreignKeyPrettierColumns;
-                        $gen->prettyTableNames = CrudConfig::getPrettyTableNames();
-                        $gen->fixPrettyColumnNames = CrudConfig::getPrettyColumnNames();
+                        $gen->prettyTableNames = $prettyTables;
+                        $gen->fixPrettyColumnNames = $cols;
                         $gen->generateForms();
 
 

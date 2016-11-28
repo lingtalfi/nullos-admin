@@ -30,9 +30,12 @@ $table = CrudModule::getDataTable();
 $table->title = "Concours";
 
 
+$table->actionColumnsPosition = "right";
+
+
 $table->columnHeaders = [
     "id" => "id",
-    "equipe_nom" => "equipe id",
+    "equipe_nom" => "equipe",
     "titre" => "titre",
     "url_photo" => "url photo",
     "url_video" => "url video",

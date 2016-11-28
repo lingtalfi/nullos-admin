@@ -68,6 +68,12 @@ class CrudConfig
     }
 
 
+    public static function getActionColumnsPosition()
+    {
+        return 'right';
+    }
+
+
     //--------------------------------------------
     //
     //--------------------------------------------

@@ -9,7 +9,7 @@ $form = CrudModule::getForm("oui.concours", ['id']);
 
 $form->labels = [
     "id" => "id",
-    "equipe_id" => "equipe id",
+    "equipe_id" => "equipe",
     "titre" => "titre",
     "url_photo" => "url photo",
     "url_video" => "url video",

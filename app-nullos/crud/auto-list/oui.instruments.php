@@ -20,6 +20,9 @@ $table = CrudModule::getDataTable();
 $table->title = "Instruments";
 
 
+$table->actionColumnsPosition = "right";
+
+
 $table->columnHeaders = [
     "id" => "id",
     "nom" => "nom",

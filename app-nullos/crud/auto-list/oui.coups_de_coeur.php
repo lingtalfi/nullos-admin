@@ -23,9 +23,12 @@ $table = CrudModule::getDataTable();
 $table->title = "Coups de coeur";
 
 
+$table->actionColumnsPosition = "right";
+
+
 $table->columnHeaders = [
     "id" => "id",
-    "videos_titre" => "videos id",
+    "videos_titre" => "videos",
     "position" => "position",
 ];
 

@@ -8,8 +8,8 @@ $form = CrudModule::getForm("oui.users_has_styles_musicaux", ['users_id', 'style
 
 
 $form->labels = [
-    "users_id" => "users id",
-    "styles_musicaux_id" => "styles musicaux id",
+    "users_id" => "users",
+    "styles_musicaux_id" => "styles musicaux",
 ];
 
 

@@ -20,6 +20,9 @@ $table = CrudModule::getDataTable();
 $table->title = "Configuration";
 
 
+$table->actionColumnsPosition = "right";
+
+
 $table->columnHeaders = [
     "cle" => "cle",
     "valeur" => "valeur",

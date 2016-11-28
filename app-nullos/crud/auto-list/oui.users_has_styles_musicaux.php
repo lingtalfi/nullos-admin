@@ -24,9 +24,12 @@ $table = CrudModule::getDataTable();
 $table->title = "Users has styles musicaux";
 
 
+$table->actionColumnsPosition = "right";
+
+
 $table->columnHeaders = [
-    "users_email" => "users id",
-    "styles_musicaux_nom" => "styles musicaux id",
+    "users_email" => "users",
+    "styles_musicaux_nom" => "styles musicaux",
 ];
 
 

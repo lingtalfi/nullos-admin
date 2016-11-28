@@ -67,6 +67,7 @@ class CrudModule
     {
         // generate lists files
         $gen = new CrudListGenerator();
+        $gen->actionColumnsPosition = CrudConfig::getActionColumnsPosition();
         $gen->foreignKeyPrettierColumns = CrudConfig::getForeignKeyPrettierColumns();
         $gen->prettyTableNames = CrudConfig::getPrettyTableNames();
         $gen->fixPrettyColumnNames = CrudConfig::getPrettyColumnNames();

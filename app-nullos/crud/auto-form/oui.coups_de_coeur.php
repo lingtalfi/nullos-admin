@@ -9,7 +9,7 @@ $form = CrudModule::getForm("oui.coups_de_coeur", ['id']);
 
 $form->labels = [
     "id" => "id",
-    "videos_id" => "videos id",
+    "videos_id" => "videos",
     "position" => "position",
 ];
 

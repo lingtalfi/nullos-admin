@@ -44,6 +44,9 @@ $table = CrudModule::getDataTable();
 $table->title = "Users";
 
 
+$table->actionColumnsPosition = "right";
+
+
 $table->columnHeaders = [
     "id" => "id",
     "active" => "active",
@@ -57,8 +60,8 @@ $table->columnHeaders = [
     "date_naissance" => "date naissance",
     "code_postal" => "code postal",
     "ville" => "ville",
-    "pays_nom" => "pays id",
-    "niveaux_nom" => "niveaux id",
+    "pays_nom" => "pays",
+    "niveaux_nom" => "niveaux",
     "biographie" => "biographie",
     "influences" => "influences",
     "prochains_concerts" => "prochains concerts",

@@ -32,11 +32,14 @@ $table = CrudModule::getDataTable();
 $table->title = "Videos";
 
 
+$table->actionColumnsPosition = "right";
+
+
 $table->columnHeaders = [
     "id" => "id",
     "active" => "active",
-    "users_email" => "users id",
-    "concours_titre" => "concours id",
+    "users_email" => "users",
+    "concours_titre" => "concours",
     "titre" => "titre",
     "url" => "url",
     "url_photo" => "url photo",
