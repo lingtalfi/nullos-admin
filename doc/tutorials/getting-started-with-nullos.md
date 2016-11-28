@@ -154,9 +154,9 @@ Crud files are the files responsible for displaying the lists and forms in nullo
 
 Let's briefly discuss the interface here.
 
-- At the top, on the right, you have the lang module with the available languages. Feel free to change language
+- At the top, on the right, you have the lang module with the available languages. Feel free to change language at any moment by clicking on your language (for now fr and en are available)
 - On the left, you have the left menu  
-    - on the right of the title "Nullos Admin", there is the log out icon
+    - on the right of the title "Nullos Admin", there is the **log out** icon
     - then below you have the Quickstart menu with its items: "Start", "Reset" and "Hide this"
 - On the right, you have the main content, which is currently an installation form
 - Note that you can drag the split between the left and right panes
@@ -180,7 +180,7 @@ Okay, let's continue the installation.
 
 
 - Click the Yes link
-- You should now be on the page to generate the tables and lists for your application (see screenshot below)
+- You should now be on the page that can generate the tables and lists for your application (see screenshot below)
 
 
 
@@ -194,7 +194,7 @@ In this tutorial, we will not focus on all the items of the Quickstart menu, bec
 But if you are interested, check out the <-QuickStart module documentation page->
     
     
-- In the form, choose the oui database and click the "Submit" button. This will take a while (5 seconds or so)
+- In the form, choose the oui database (or your own) and click the "Submit" button. This will take a while (5 seconds or so, depending on the size of your database)
     - this will generate all the crud files for the selected database
 - If successful, you should see the "All tables have been generated" notification (see screenshot below)
  
@@ -209,15 +209,15 @@ But if you are interested, check out the <-QuickStart module documentation page-
 
 
 
-Look on the left, the tables of the oui database have been generated.
+Look on the left, the tables of the oui database have been generated! Hooray!
 
-Nullos has created two arbitraries sections: "Main" and "Others", and we will change them in the next section.
+Nullos has created two arbitrary sections on the left menu: "Main" and "Others"; we will change them in the next section.
 
-But for now, let's have a quick look at what nullos has generated.
+For now, let's have a quick look at what nullos has generated.
  
 - Click the "Main > Concours" item in the left menu
-    - it opens the list for "Concours" in the right page (see the screenshot below)
-        - Concours is french for "Challenge", or "Competition", but it's not important in this tutorial 
+    - it opens the list for "Concours" in the right pane (see the screenshot below)
+        - (Concours is french for "Challenge", or "Competition", but it's not important in this tutorial) 
 
 [![concours-list.png](https://s19.postimg.org/7xay6gr8j/concours_list.png)](https://postimg.org/image/mt9he22n3/)
 
@@ -225,17 +225,17 @@ But for now, let's have a quick look at what nullos has generated.
 
 - We will not cover all the aspects of the list here, but if you are interested, check out the dedicated <-list page->
 - For the time being, we will just focus on the general aspect
-    - at the top, there is a "Create a new item" link, which points to the insert form
+    - on the right pane, at the top, there is a "Create a new item" link, which points to the insert form for the "concours" table
     - below, we have the list
-        - from left to right, we have: the checkbox column, the list columns, the action columns (Edit, Delete)
-        - the "Edit" link points to the update form for a given row 
+        - from left to right, we have: the checkbox column, the list columns, and the action columns (Edit, Delete)
+        - the "Edit" link redirects to the update form for the "concours" table (and for the selected row)
         - the "Delete" link deletes a row
-        - the "equipe" column displays links (aka foreign key links) to the update form for a particular entry of the "equipe" table
+        - the "equipe" column displays links (aka foreign key links) to the update forms for the "equipe" table
         - the "url photo" and "url video" are links to the related media
             - the links in the "url photo" column don't work yet, we will fix that in a next tutorial            
 
 - Click the "Create a new item" link at the top of the list
-    - it opens the insert form for the concours table (see screenshot below)
+    - it opens the insert form for the "concours" table (see screenshot below)
 
 
 [![concours-form.png](https://s19.postimg.org/4cf2n8moz/concours_form.png)](https://postimg.org/image/9b2l1rqhr/)
@@ -262,7 +262,7 @@ In the next section, we dive into the code and customize the left menu of the nu
 Configure the left menu
 ==================================
 
-In this section, we start thinking about our client and customize the nullos admin gui so that it looks exactly like we want (the screenshot at the top of this page).
+In this section, we start thinking about our client and customize the nullos admin gui so that it looks exactly how we want (the screenshot at the top of this page).
 
 We will do the following:
 
@@ -279,32 +279,32 @@ Hide the Quickstart section from the left menu
 
 So now we want to hide the Quickstart section on the left menu.
 
-Well, there is something you need to know: the Quickstart section by default only shows up if you are logged 
-with the root account.
+Well, there is something you need to know: the Quickstart section by default only shows up if you are logged as root (which is the case if you have
+followed this tutorial from the beginning).
 
-IF you remember well, we are currently logged with the root account.
+But nullos has another account named "admin", which is not allowed to see/access the Quickstart menu.
 
-Now, let's do the following:
+So, let's try this:
 
 - Click the log out icon, at the top of the left menu
     - this will log you out and you will see the login screen again
-    - now log in with the admin account (pseudo: admin, password: admin)
-    - tadaaa! No more QuickStart menu. That's because the admin user is not allowed to see the Quickstart menu
+    - now log back in, but this time with the admin account (pseudo: admin, password: admin)
+    - tadaaa! No more QuickStart menu. 
 
 
-Now in the real world, you would give to your client access to the admin account, not the root account.
+Now in the real world, you would only give your client access to the admin account, not the root account.
 
-So I guess it could be the end of this section, but just for fun, let me show you another way.
+Therefore this could be the end of this section; but, just for fun, let me show you another way.
 
 - log out again
 - log in again as root (pseudo: root, password: root)
     - you will see the Quickstart menu again
-    - open the **app-nullos/class-modules/QuickStart/QuickStartConfig.php** file
+    - now open the **app-nullos/class-modules/QuickStart/QuickStartConfig.php** file
         - most modules have such a configuration file that you can tweak
         - you will see the showLeftMenuLinks public static method, which currently returns true
         - make it return false and refresh your page
-        - tadaaa! Again we did it.
-        - when this tutorial is finished, don't forget to put it back to true again 
+        - tadaaa! Again we did it: no more Quickstart menu
+        - when this tutorial is finished, don't forget to display the menu again 
         
 
 
@@ -313,12 +313,14 @@ So I guess it could be the end of this section, but just for fun, let me show yo
 Organize the sections on the left menu
 -----------------------------------
 
-So now the Quickstart menu is hidden, and there are currently two sections on the left menu: "Main" and "Others".
+So now the Quickstart menu is hidden, good.
+ 
+But there are currently two sections on the left menu that don't look so good: "Main" and "Others".
 
 Let's change those.
 
 - Open the **app-nullos/class-modules/Crud/CrudConfig.php** file and search for the **getLeftMenuSections** method. 
-- Replace the content of this method by the following code (don't worry if it's french, it's just to have some data to work with):
+- Replace the content of this method by the following code (don't mind the french words, it's just an example for you to understand the mechanism:
 
 
 ```php
@@ -356,17 +358,16 @@ Let's change those.
     }
 ```
 
-- Save and refresh your page, you should see the different sections on the left menu
-    - as you can guess the getLeftMenuSections returns an array of label => (array of) full table names
-        - note: it also can return a one dimension array of full table names
+- Save and refresh your page, you should see the different sections on the left menu (see screenshot below)
 
+[![leftmenu-sections-organized.png](https://s19.postimg.org/rhph98rtv/leftmenu_sections_organized.png)](https://postimg.org/image/ltj6icnhb/)
 
 
 
 Adding colors to the sections on the left menu
 --------------------------------------
 
-Our last step for this tutorial will be to change the colors of the sections that we've just created.
+Our last step for this tutorial will be to change the colors of the sections that we've just created in the left menu.
 
 - Open the **app-nullos/class-modules/Crud/CrudConfig.php** file and search for the **getLeftMenuSectionsClasses** method. 
 - Replace the content of this method by the following code
@@ -389,11 +390,11 @@ Our last step for this tutorial will be to change the colors of the sections tha
 
 - The getLeftMenuSectionsClasses method returns an array of section label => css class
 - save and refresh the page
-    - tadaaa! now we have the look that we want
+    - tadaaa! now we have exactly the look that we want
 
 
 If you wonder where those colors come from, that's because I've secretly added them in advance 
-in the css at the bottom of the file.
+at the bottom of the **app-nullos/www/style/style.css** file (I'm that kind of cheater).
 
 
 
