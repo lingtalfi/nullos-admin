@@ -21,7 +21,6 @@ $installInit = defined('I_AM_JUST_THE_FALLBACK_INIT');
 define('LL', 'quickstart'); // translation context
 
 
-
 function linkt($text, $href, $external = false)
 {
     $target = '';
@@ -34,11 +33,11 @@ function linkt($text, $href, $external = false)
 
 if (false === $isIncluded): ?>
 <div class="tac bignose install-page">
-    <h3>Configuration page</h3>
+    <h3><?php echo __("Configuration page", LL); ?></h3>
 
     <?php endif; ?>
     <p>
-        Use this page to configure the <b>nullos admin</b> application.
+        <?php echo __("Use this page to configure the <b>nullos admin</b> application.", LL); ?>
     </p>
     <p>
         <?php echo linkt("Need help?", doclink('official/modules/quickstart-module/configure-page.md'), true); ?>
@@ -49,7 +48,9 @@ if (false === $isIncluded): ?>
     <div class="technical-note icon-box">
         <div>
             <span><?php Icons::printIcon('build'); ?></span>
-            <span class="text">This will create/overwrite the <span class="path">app-nullos/init.php</span> file.</span>
+            <span class="text">
+                <?php echo __("This will create/overwrite the {path} file.", LL, ['path' => '<span class="path">app-nullos/init.php</span>']); ?>
+            </span>
         </div>
     </div>
     <?php $note = ob_get_clean(); ?>
@@ -58,7 +59,7 @@ if (false === $isIncluded): ?>
         <?php
 
 
-        $form = new QuickForm();
+        $form = QuickFormZ::create();
 
 
         $form->title = __("Configuration form", LL);
@@ -107,9 +108,6 @@ if (false === $isIncluded): ?>
 
             $lang = $formattedValues['language'];
             if (array_key_exists($lang, $langs)) {
-
-                $msg = __("Nice", LL);
-                $ret = true;
                 try {
                     $dbName = (string)$formattedValues['dbName'];
                     $dbUser = (string)$formattedValues['dbUser'];
@@ -139,10 +137,9 @@ if (false === $isIncluded): ?>
                     }
 
                 } catch (\Exception $e) {
-                    $ret = false;
                     $msg = __("The database information are incorrect, please try again", LL);
+                    return false;
                 }
-                return $ret;
 
             }
 

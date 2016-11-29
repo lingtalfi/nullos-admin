@@ -18,9 +18,9 @@ function linkt($text, $href, $external = false)
 
 ?>
 <div class="tac bignose install-page">
-    <h3>Crud generators page</h3>
+    <h3><?php echo __("Crud generators page", LL); ?></h3>
     <p>
-        Use this page to generate your crud generator preferences and/or your crud files.
+        <?php echo __("Use this page to generate your crud generator preferences and/or your crud files.", LL); ?>
     </p>
     <p>
         <?php echo linkt("Need help?", doclink('official/modules/quickstart-module/crud-generators-page.md'), true); ?>
@@ -39,7 +39,7 @@ function linkt($text, $href, $external = false)
                     $dbs[$db] = $db;
                 }
             }
-            $form2 = new QuickForm();
+            $form2 = QuickFormZ::create();
             $form2->messages['submit'] = ucfirst(__("submitCreateDatabase", LL));
 
             $form2->title = __("Generate forms and lists", LL);
@@ -87,8 +87,8 @@ function linkt($text, $href, $external = false)
 
             $form2->addControl('database')->type('select', $dbs)->addConstraint('required');
             $form2->addControl('options')->type('checkboxList', [
-                'prefs' => 'create the crud generator preferences',
-                'files' => 'create the crud files',
+                'prefs' => __('create the crud generator preferences', LL),
+                'files' => __('create the crud files', LL),
             ])->addConstraint('minChecked', 1);
             $form2->play();
 
@@ -100,12 +100,12 @@ function linkt($text, $href, $external = false)
                     <div class="alert alert-success flexh">
                         <span class="icon-span"><?php echo Icons::printIcon('done', 'green', 48); ?></span>
                         <span><?php echo __("Yes! All the tables have been regenerated, good job.", LL); ?><br>
-                            <a href="<?php echo QuickStartModule::getQuickStartUrl("crud-generators"); ?>">Click here</a> to refresh the page.
+                            <?php echo __("{clickHere} to refresh the page.", LL, ['clickHere' => linkt("Click here", QuickStartModule::getQuickStartUrl("crud-generators"))]); ?>
                         </span>
                     </div>
                 <?php else: ?>
                     <div class="alert alert-error flexh">
-                        Oops, an error occurred.
+                        <?php echo __("Oops, an error occurred.", LL); ?>
                     </div>
                     <?php
                 endif;
@@ -114,10 +114,11 @@ function linkt($text, $href, $external = false)
         } else {
             ?>
             <p>
-                Your application currently is not configured to work with a database.<br>
-                You can configure your application using the <a
-                        href="<?php echo QuickStartModule::getQuickStartUrl('configure'); ?>">Configure page</a><br>
-                (or click the "Configure" item on the left menu in the Quickstart section).
+                <?php echo __("Your application is currently not configured to work with a database.", LL); ?>
+                <br>
+                <?php echo __("You can configure your application using the {configurePage}", LL, ['configurePage' => linkt("Configure page", QuickStartModule::getQuickStartUrl('configure'))]); ?>
+                <br>
+                <?php echo __("(or click the \"Configure\" item on the left menu in the Quickstart section).", LL); ?>
 
             </p>
             <?php

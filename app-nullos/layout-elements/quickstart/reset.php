@@ -12,13 +12,13 @@ function linkt($text, $href, $external = false)
 
 ?>
 <div class="tac bignose install-page">
-    <h3>Reset page</h3>
+    <h3><?php echo __("Reset page", LL); ?></h3>
 
     <p>
-        Use this page to reset your <b>nullos admin</b> application.
+        <?php echo __("Use this page to reset your <b>nullos admin</b> application.", LL); ?>
     </p>
     <p>
-        <?php echo linkt("Need help?", wl2('nullos-doc-install'), true); ?>
+        <?php echo linkt("Need help?", doclink('official/modules/quickstart-module/reset-page.md'), true); ?>
     </p>
     <?php
 
@@ -26,7 +26,8 @@ function linkt($text, $href, $external = false)
     use QuickStart\QuickStartModule;
 
 
-    $form = new QuickForm();
+    $form = QuickFormZ::create();
+
 
     $success = false;
     $form->formTreatmentFunc = function (array $formattedValues, &$msg) use ($form, &$success) {
@@ -46,7 +47,7 @@ function linkt($text, $href, $external = false)
         }
     };
 
-    $form->title = "Reset form";
+    $form->title = __("Reset form", LL);
     $form->defaultValues = [
         'options' => [
             'init',
@@ -56,9 +57,9 @@ function linkt($text, $href, $external = false)
     ];
 
     $form->addControl('options')->type('checkboxList', [
-        'init' => 'remote the init file',
-        'crudConfig' => 'empty the CrudConfig.php file',
-        'crudFiles' => 'remove all the auto-generated crud files',
+        'init' => __('remove the init file', LL),
+        'crudConfig' => __('empty the CrudConfig.php file', LL),
+        'crudFiles' => __('remove all the auto-generated crud files', LL),
     ])->addConstraint('minChecked', 1);
 
 

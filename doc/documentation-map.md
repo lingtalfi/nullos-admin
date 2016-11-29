@@ -39,7 +39,7 @@ This is what the documentation is supposed to look like when it's finished.
             - the "Configure" page
             - the "Crud Generators" page
             - the "Reset" page
-            - Hide the QuickStart section on the left menu
+            - hide the Quickstart section on the left menu
                             
     - core concepts  
         - local vs distant website

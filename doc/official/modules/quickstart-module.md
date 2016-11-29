@@ -13,8 +13,8 @@ In this section we discuss the following topics:
 
 - [The "Configure" page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/configure-page.md)
 - [The "Crud Generators" page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/crud-generators-page.md)
-- The "Reset" page
-- Hide the QuickStart section on the left menu
+- [The "Reset" page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/reset-page.md)
+- [Hide the Quickstart section on the left menu](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/hide-quickstart-section.md)
 
 
 

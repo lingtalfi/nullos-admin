@@ -1,11 +1,10 @@
 Getting started with nullos
 =======================
-2016-11-27
+2016-11-27 -- 2016-11-29
 
 
-DISCLAIMER: THIS TUTORIAL IS DEPRECATED AND WILL BE UPDATED SOON...
 
-Welcome to the this **nullos admin** tutorial.
+Welcome to the **nullos admin** tutorial.
 
 
 In this tutorial, we install the nullos package on our machine, we install a test database, 
@@ -34,7 +33,7 @@ Table of content
   * [Adding colors to the sections on the left menu](#adding-colors-to-the-sections-on-the-left-menu)
 - [Conclusion](#conclusion)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 
@@ -142,7 +141,7 @@ Install the crud files
 
 In this section, we will use the nullos crud generators to create the **crud files**.
 
-Crud files are the files responsible for displaying the lists and forms in nullos.
+Crud files are basically the files responsible for displaying the lists and forms in nullos.
 
 
 - Open the [http://nullos-admin](http://nullos-admin) url in your browser (back to the login screen)
@@ -151,7 +150,7 @@ Crud files are the files responsible for displaying the lists and forms in nullo
     - you should see the install page screen (see screenshot below)
   
 
-[![install-page-welcome.png](https://s19.postimg.org/vj1z15uqr/install_page_welcome.png)](https://postimg.org/image/rzg1bcs0v/)
+[![quickstart-module-configure-page.png](https://s19.postimg.org/sj83hc2cj/quickstart_module_configure_page.png)](https://postimg.org/image/7z39iumlb/)
 
 
 Let's briefly discuss the interface here.
@@ -159,7 +158,7 @@ Let's briefly discuss the interface here.
 - At the top, on the right, you have the lang module with the available languages. Feel free to change language at any moment by clicking on your language (for now fr and en are available)
 - On the left, you have the left menu  
     - on the right of the title "Nullos Admin", there is the **log out** icon
-    - then below you have the Quickstart menu with its items: "Start", "Reset" and "Hide this"
+    - then below you have the Quickstart menu with its items: "Configure", "Crud Generators" and "Reset"
 - On the right, you have the main content, which is currently an installation form
 - Note that you can drag the split between the left and right panes
     - this is provided by the nice [Split.js](https://github.com/nathancahill/Split.js) library 
@@ -176,38 +175,35 @@ Okay, let's continue the installation.
     - Password: root
     
 - The process will try to create the **app-nullos/init.php** file, filled with the data you've just provided    
-- If successful, you should the congratulation alert (see screenshot below)
+- If successful, you should the congratulations alert (see screenshot below)
     
-[![init-created-congrats.png](https://s19.postimg.org/top4jf7qb/init_created_congrats.png)](https://postimg.org/image/xxtullazj/)
+[![quickstart-module-configure-page-success.png](https://s19.postimg.org/5vsub6msj/quickstart_module_configure_page_success.png)](https://postimg.org/image/5j1g504in/)
 
 
-- Click the Yes link
-- You should now be on the page that can generate the tables and lists for your application (see screenshot below)
+- Click the Ok link
+- You should now be on the "Crud Generators" page, which can generate the tables and lists for your application (see screenshot below)
 
 
 
-[![install-generate-forms-lists.png](https://s19.postimg.org/pgucao6ar/install_generate_forms_lists.png)](https://postimg.org/image/8gbg1zt9b/)
+[![quickstart-module-crud-generator-with-init-two-b.png](https://s19.postimg.org/p9yq7zkkj/quickstart_module_crud_generator_with_init_two_b.png)](https://postimg.org/image/5fcolv5cv/)
     
-
-Notice that a new item appeared on the left menu: "Customize".
-    
-In this tutorial, we will not focus on all the items of the Quickstart menu, because we have a lot to learn already.
-    
-But if you are interested, check out the <-QuickStart module documentation page->
-    
-    
-- In the form, choose the oui database (or your own) and click the "Submit" button. This will take a while (5 seconds or so, depending on the size of your database)
-    - this will generate all the crud files for the selected database
+      
+- In the form, choose the oui database (or your own)
+- Make sure the two checkboxes are checked:
+    - create the crud generator preferences
+    - create the crud files
+- Click the "Submit" button. This will take a while (5 seconds or so, depending on the size of your database)
+    - this will generate the generators preferences, and then all the crud files for the selected database
 - If successful, you should see the "All tables have been generated" notification (see screenshot below)
  
-[![all-tables-generated.png](https://s19.postimg.org/xrg5ii1ur/all_tables_generated.png)](https://postimg.org/image/wp5yzyj1b/)
+[![quickstart-module-crud-generator-with-init-succe.png](https://s19.postimg.org/4xch8w9gj/quickstart_module_crud_generator_with_init_succe.png)](https://postimg.org/image/r9aa2a8kf/)
 
 
 - Click the "Click here" link
-- You should be redirected to the final congratulations page (see screenshot below)
+- This will refresh the page (see screenshot below)
 
 
-[![final-congratulations.png](https://s19.postimg.org/bjc65d883/final_congratulations.png)](https://postimg.org/image/nxyy5ozq7/)
+[![quickstart-module-crud-generator-with-init-and-l.png](https://s19.postimg.org/m4e4hs1yb/quickstart_module_crud_generator_with_init_and_l.png)](https://postimg.org/image/cjuhuwcm7/)
 
 
 
@@ -215,13 +211,13 @@ Look on the left, the tables of the oui database have been generated! Hooray!
 
 Nullos has created two arbitrary sections on the left menu: "Main" and "Others"; we will change them in the next section.
 
-For now, let's have a quick look at what nullos has generated.
+For now, let's have a quick look at what nullos has generated: the lists and the forms.
  
 - Click the "Main > Concours" item in the left menu
     - it opens the list for "Concours" in the right pane (see the screenshot below)
         - (Concours is french for "Challenge", or "Competition", but it's not important in this tutorial) 
 
-[![concours-list.png](https://s19.postimg.org/7xay6gr8j/concours_list.png)](https://postimg.org/image/mt9he22n3/)
+[![concours_list.png](https://s19.postimg.org/7z8bfyswz/concours_list.png)](https://postimg.org/image/lswo50li7/)
 
 
 
@@ -240,7 +236,7 @@ For now, let's have a quick look at what nullos has generated.
     - it opens the insert form for the "concours" table (see screenshot below)
 
 
-[![concours-form.png](https://s19.postimg.org/4cf2n8moz/concours_form.png)](https://postimg.org/image/9b2l1rqhr/)
+[![concours-form.png](https://s19.postimg.org/wh0f3uvhf/concours_form.png)](https://postimg.org/image/sxehe1srj/)
 
 
 - The form is just a basic form
@@ -251,7 +247,7 @@ Ok, we are done with the installation.
 
 
 If you want to redo the tutorial with another database, you should use the "Quickstart > Reset" link from the left menu.
-More details in the <-QuickStart Reset documentation page->.
+More details in the [QuickStart Reset documentation page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/reset-page.md).
 
 
 
@@ -309,6 +305,9 @@ Therefore this could be the end of this section; but, just for fun, let me show 
         - when this tutorial is finished, don't forget to display the menu again 
         
 
+
+
+Note: the procedure of hiding the Quickstart section from the left menu is also explained in the [documentation of the QuickStart module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/hide-quickstart-section.md)
 
 
 
@@ -413,8 +412,7 @@ So far, we have customized the left part of the site: the menu.
 But what about the right part: the list and the forms?   
     
     
-I'm working on it...
-TODO...
+I'm working on it, stay tuned...
     
     
   

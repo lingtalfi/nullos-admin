@@ -1542,3 +1542,22 @@ Stack trace:
 #4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(44): require_once('/Volumes/Macint...')
 #5 {main}
   thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/reset.php on line 65
+[29-Nov-2016 20:24:44 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: Quickstart in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:48
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/QuickStart/QuickStartModule.php(20): __('Quickstart', 'quickstart')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Bridge.php(22): QuickStart\QuickStartModule::displayLeftMenuLinks()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(55): Bridge::displayLeftMenuBlocks()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/quickstart.php(6): Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(44): require_once('/Volumes/Macint...')
+#5 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 48
+[29-Nov-2016 20:51:11 UTC] PHP Parse error:  syntax error, unexpected 'create' (T_STRING), expecting variable (T_VARIABLE) or '$' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/reset.php on line 29
+[29-Nov-2016 20:57:12 UTC] PHP Fatal error:  Uncaught Exception: __ error: dictionary term not found: you must select at least {minChecked} option(s) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:48
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/QuickFormZ.php(14): __('you must select...')
+#1 [internal function]: QuickFormZ::{closure}('you must select...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(141): call_user_func(Object(Closure), 'you must select...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart/reset.php(67): QuickForm\QuickForm->play()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(21): require_once('/Volumes/Macint...')
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macint...')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layou in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 48

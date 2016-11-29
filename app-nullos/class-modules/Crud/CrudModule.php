@@ -102,11 +102,11 @@ class CrudModule
             $c = count($fullTables);
             if ($c > 1) {
                 $half = (int)floor($c / 2);
-                $sections[__('Main', LL)] = array_slice($fullTables, 0, $half);
-                $sections[__('Others', LL)] = array_slice($fullTables, $half);
+                $sections[__('Main', 'quickstart')] = array_slice($fullTables, 0, $half);
+                $sections[__('Others', 'quickstart')] = array_slice($fullTables, $half);
             } else {
-                $sections[__('Main', LL)] = $fullTables;
-                $sections[__('Others', LL)] = [];
+                $sections[__('Main', 'quickstart')] = $fullTables;
+                $sections[__('Others', 'quickstart')] = [];
             }
             $sSections = self::arrayToString($sections);
 

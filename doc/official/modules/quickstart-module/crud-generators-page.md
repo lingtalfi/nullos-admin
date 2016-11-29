@@ -48,7 +48,8 @@ If you are not familiar with the terms crud generator preferences and **crud fil
     
     
     
+Once you have successfully submitted the form, it will take a while (5 sec, depending on the size of your database and the options that you have chosen) and eventually you will see the congratulations screen (see screenshot below).
 
 
 
-
+[![quickstart-module-crud-generator-with-init-succe.png](https://s19.postimg.org/4xch8w9gj/quickstart_module_crud_generator_with_init_succe.png)](https://postimg.org/image/r9aa2a8kf/)
