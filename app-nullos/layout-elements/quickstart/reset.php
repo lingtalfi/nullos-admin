@@ -12,28 +12,14 @@ function linkt($text, $href, $external = false)
 
 ?>
 <div class="tac bignose install-page">
-    <h3><?php echo __("Welcome to the Reset Utility", LL); ?></h3>
+    <h3>Reset page</h3>
 
     <p>
-        <span class="warning-color"><?php echo __("Warning!", LL); ?></span><br>
-        <?php echo __("This is a tool for expert users only, don't use it if you don't know what you are doing.", LL); ?><br>
-        <?php echo __("More information in the {link}.", LL, ['link' => linkt("nullos documentation", wl2('nullos-doc-quickstart-reset'))]); ?>
+        Use this page to reset your <b>nullos admin</b> application.
     </p>
     <p>
-        <?php echo __("If you press the ok button below, it will do the following", LL); ?>
+        <?php echo linkt("Need help?", wl2('nullos-doc-install'), true); ?>
     </p>
-    <ul class="centered-ul">
-        <li><?php echo __("Remove your init file", LL); ?> (<span class="path">init.php</span>)</li>
-        <li><?php echo __("Empty the configuration in CrudConfig", LL); ?> (<span class="path">class-modules/Crud/CrudConfig.php</span>)</li>
-        <li>
-            <?php echo __("Remove all the crud files in {path} and {path2}", LL, [
-                'path' => '<span class="path">crud/auto-form</span>',
-                'path2' => '<span class="path">crud/auto-list</span>',
-            ]); ?>
-        </li>
-    </ul>
-
-
     <?php
 
     use QuickForm\QuickForm;
@@ -44,17 +30,41 @@ function linkt($text, $href, $external = false)
 
     $success = false;
     $form->formTreatmentFunc = function (array $formattedValues, &$msg) use ($form, &$success) {
-        if (array_key_exists('doit', $formattedValues)) {
-            QuickStartModule::reset();
+        if (array_key_exists('options', $formattedValues) && is_array($formattedValues['options'])) {
+
+            $options = $formattedValues['options'];
+
+            $useInit = (in_array('init', $options, true));
+            $useCrudConfig = (in_array('crudConfig', $options, true));
+            $useCrudFiles = (in_array('crudFiles', $options, true));
+
+
+            QuickStartModule::reset($useInit, $useCrudConfig, $useCrudFiles);
             $form->displayNothing = true;
             $success = true;
             return true;
         }
     };
 
-    $form->addControl('doit')->type('hidden')->value('any')->label("");
+    $form->title = "Reset form";
+    $form->defaultValues = [
+        'options' => [
+            'init',
+            'crudConfig',
+            'crudFiles',
+        ],
+    ];
+
+    $form->addControl('options')->type('checkboxList', [
+        'init' => 'remote the init file',
+        'crudConfig' => 'empty the CrudConfig.php file',
+        'crudFiles' => 'remove all the auto-generated crud files',
+    ])->addConstraint('minChecked', 1);
+
+
     $form->messages['submit'] = __("Ok", LL);
     $form->play();
+
 
     if (true === $success):
         ?>

@@ -2,6 +2,13 @@
 
 
 $defs = [
+    "Need help?" => "Besoin d'aide ?",
+    // left menu links
+    "Configure" => "Configurer",
+    "Crud Generators" => "Générer (Crud)",
+    //--------------------------------------------
+    //
+    //--------------------------------------------
     // left menu links
     "Quickstart" => "Quickstart",
     "Start" => "Installer",
@@ -14,7 +21,7 @@ $defs = [
     "Please fill the form below." => "Veuillez remplir le formulaire ci-dessous.",
     "nullos documentation" => "documentation de nullos",
     "For more details about the installation process, see the {link}." => "Pour plus d'information à propos de l'installation, veuillez consulter le page {link}.",
-    "Installation form" => "Formulaire d'installation",
+    "Configuration form" => "Formulaire de configuration",
     //
     "language" => "langue",
     "website name" => "nom du site",
@@ -60,7 +67,6 @@ $defs = [
     "If you don't know how to customize your generators, check out the {link}." => "Si vous ne savez pas comment configurer vos générateurs, consultez la page {link}.",
     "nullos documentation" => "documentation de nullos",
     "The crud generators have been successfully executed." => "Les générateurs crud ont bien été exécutés.",
-
 
 
     // reset

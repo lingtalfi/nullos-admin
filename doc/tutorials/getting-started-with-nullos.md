@@ -3,6 +3,8 @@ Getting started with nullos
 2016-11-27
 
 
+DISCLAIMER: THIS TUTORIAL IS DEPRECATED AND WILL BE UPDATED SOON...
+
 Welcome to the this **nullos admin** tutorial.
 
 

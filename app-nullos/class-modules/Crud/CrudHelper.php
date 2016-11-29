@@ -3,6 +3,8 @@
 
 namespace Crud;
 
+use QuickPdo\QuickPdo;
+
 class CrudHelper
 {
 

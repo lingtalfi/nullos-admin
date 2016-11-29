@@ -35,8 +35,8 @@ $table->actionColumnsPosition = "right";
 
 $table->columnHeaders = [
     "id" => "id",
-    "equipe_nom" => "equipe",
-    "titre" => "titre",
+    "equipe_nom" => "team",
+    "titre" => "title",
     "url_photo" => "url photo",
     "url_video" => "url video",
     "date_debut" => "date debut",
@@ -50,6 +50,8 @@ $table->columnHeaders = [
 $table->hiddenColumns = [
     "id",
     "equipe_id",
+    "reglement",
+    "description",
 ];
 
 

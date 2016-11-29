@@ -72,6 +72,15 @@ function wl2($identifier)
 }
 
 
+/**
+ * relPath
+ * currently originates from https://github.com/lingtalfi/nullos-admin/tree/master/doc
+ */
+function doclink($relPath)
+{
+    return "https://github.com/lingtalfi/nullos-admin/tree/master/doc/" . $relPath;
+}
+
 //------------------------------------------------------------------------------/
 // BONUS FUNCTIONS, SO HANDFUL... (a huge time saver in the end)
 //------------------------------------------------------------------------------/

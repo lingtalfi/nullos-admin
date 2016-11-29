@@ -4,15 +4,15 @@ use Privilege\Privilege;
 
 if (Privilege::has('quickstart.access')):
 
-    $actions = ['start', 'customize', 'reset', 'end'];
+    $actions = ['configure', 'crud-generators', 'reset'];
 
 
-    $action = 'start';
+    $action = 'configure';
     if (array_key_exists('action', $_GET)) {
         $action = (string)$_GET['action'];
     }
     if (!in_array($action, $actions, true)) {
-        $action = 'start';
+        $action = 'configure';
     }
 
 

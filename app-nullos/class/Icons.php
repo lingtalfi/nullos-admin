@@ -39,6 +39,22 @@ class Icons
                                 </g>
                                 <?php
                                 break;
+                            case 'announcement':
+                                ?>
+                                <g id="announcement">
+                                    <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z"/>
+                                    <path d="M0 0h24v24H0z" fill="none"/>
+                                </g>
+                                <?php
+                                break;
+                            case 'build':
+                                ?>
+                                <g id="build">
+                                    <path clip-rule="evenodd" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                                </g>
+                                <?php
+                                break;
                             case 'done':
                                 ?>
                                 <g id="done">

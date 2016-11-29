@@ -26,6 +26,9 @@ class DataTable
     public $actionColumnsPosition;
 
 
+    public $showCheckboxes;
+
+
     // likely to change
     /**
      * searchColumns: null(default)|array,
@@ -119,6 +122,8 @@ class DataTable
 
         //
         $this->title = null;
+        $this->actionColumnsPosition = 'right';
+        $this->showCheckboxes = true;
 
         $this->widgets = [
             'newItemLink' => true,
@@ -409,7 +414,10 @@ class DataTable
                     <table class="datatable">
                         <thead>
                         <tr class="headerrow">
-                            <td></td>
+
+                            <?php if (true === $this->showCheckboxes): ?>
+                                <td></td>
+                            <?php endif; ?>
 
 
                             <?php
@@ -460,10 +468,12 @@ class DataTable
                             ?>
                             <tr class="<?php echo (0 === $i++ % 2) ? 'even' : 'odd'; ?>">
 
-                                <td>
-                                    <input class="checkbox" type="checkbox" name="ids[]"
-                                           value="<?php echo htmlspecialchars($rowUniqueIdentifier); ?>">
-                                </td>
+                                <?php if (true === $this->showCheckboxes): ?>
+                                    <td>
+                                        <input class="checkbox" type="checkbox" name="ids[]"
+                                               value="<?php echo htmlspecialchars($rowUniqueIdentifier); ?>">
+                                    </td>
+                                <?php endif; ?>
 
 
                                 <?php

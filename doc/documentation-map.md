@@ -13,6 +13,7 @@ This is what the documentation is supposed to look like when it's finished.
 
 - Tutorials
     - getting started with nullos
+    - Customizing list in nullos admin tutorial
     - creating a new page
 - Official
     - nomenclature and general concepts
@@ -34,12 +35,11 @@ This is what the documentation is supposed to look like when it's finished.
             - the translation function
         - QuickStart module
             // a gui for creating a basic nullos admin configuration 
-            - trigger the QuickStart menu 
                 // init.php? + showQuickStartMenu()
-            - the "Start" page
+            - the "Configure" page
+            - the "Crud Generators" page
             - the "Reset" page
-            - the "Customize" page
-            - show/hide the QuickStart section on the left menu
+            - Hide the QuickStart section on the left menu
                             
     - core concepts  
         - local vs distant website

@@ -2,6 +2,13 @@
 
 
 $defs = [
+    "Need help?" => "Need help?",
+    // left menu links
+    "Configure" => "Configure",
+    "Crud Generators" => "Crud Generators",
+    //--------------------------------------------
+    //
+    //--------------------------------------------
     // left menu links
     "Quickstart" => "Quickstart",
     "Start" => "Start",
@@ -14,7 +21,7 @@ $defs = [
     "Please fill the form below." => "Please fill the form below.",
     "nullos documentation" => "nullos documentation",
     "For more details about the installation process, see the {link}." => "For more details about the installation process, see the {link}.",
-    "Installation form" => "Installation form",
+    "Configuration form" => "Configuration form",
     //
     "language" => "language",
     "website name" => "website name",

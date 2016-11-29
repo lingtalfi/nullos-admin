@@ -9,6 +9,6 @@ class QuickStartConfig
 
     public static function showLeftMenuLinks()
     {
-        return false;
+        return true;
     }
 }

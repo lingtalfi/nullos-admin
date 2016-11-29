@@ -4,6 +4,7 @@
 namespace QuickStart;
 
 use Bat\FileSystemTool;
+use Crud\CrudModule;
 use Privilege\Privilege;
 
 class QuickStartModule
@@ -19,18 +20,13 @@ class QuickStartModule
                     <h3><?php echo __("Quickstart", "quickstart"); ?></h3>
                     <ul class="linkslist">
                         <li>
-                            <a href="<?php echo self::getQuickStartUrl('start'); ?>"><?php echo __("Start", "quickstart"); ?></a>
+                            <a href="<?php echo self::getQuickStartUrl('configure'); ?>"><?php echo __("Configure", "quickstart"); ?></a>
                         </li>
-                        <?php if(false===defined("I_AM_JUST_THE_FALLBACK_INIT")): ?>
                         <li>
-                            <a href="<?php echo self::getQuickStartUrl('customize'); ?>"><?php echo __("Customize", "quickstart"); ?></a>
+                            <a href="<?php echo self::getQuickStartUrl('crud-generators'); ?>"><?php echo __("Crud Generators", "quickstart"); ?></a>
                         </li>
-                        <?php endif; ?>
                         <li>
                             <a href="<?php echo self::getQuickStartUrl('reset'); ?>"><?php echo __("Reset", "quickstart"); ?></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo self::getQuickStartUrl('end'); ?>"><?php echo __("Hide this", "quickstart"); ?></a>
                         </li>
                     </ul>
                 </section>
@@ -87,30 +83,24 @@ class QuickStartModule
     }
 
 
-    public static function reset()
+    public static function reset($removeInit = true, $resetCrudConfig = true, $emptyCrudFilesDir = true)
     {
 
-
         // remove init file
-        $init = __DIR__ . "/../../init.php";
-        if (file_exists($init)) {
-            unlink($init);
+        if (true === $removeInit) {
+            $init = __DIR__ . "/../../init.php";
+            if (file_exists($init)) {
+                unlink($init);
+            }
         }
 
-        // reset CrudConfig
-        $src = __DIR__ . "/template/CrudConfigBlank-tmp.php";
-        $dst = __DIR__ . "/../Crud/CrudConfig.php";
-        $s = file_get_contents($src);
-        file_put_contents($dst, $s);
+        if (true === $resetCrudConfig) {
+            CrudModule::resetCrudConfig();
+        }
 
-
-        // empty crud dirs
-        $autoform = __DIR__ . "/../../crud/auto-form";
-        $autolist = __DIR__ . "/../../crud/auto-list";
-        FileSystemTool::clearDir($autoform);
-        FileSystemTool::clearDir($autolist);
-
-
+        if ($emptyCrudFilesDir) {
+            CrudModule::emptyCrudFilesDirectories();
+        }
     }
 
 }

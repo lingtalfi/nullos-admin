@@ -4,113 +4,13 @@ Crud: Configure a list
 
 
 
-The Crud module provides the Datatable object, which is responsible for displaying a list (like the one in the screenshot below).
+The Crud module provides the Datatable object which is responsible for displaying a list (like one in the screenshot below).
  
  
 [![concours-list.png](https://s19.postimg.org/7xay6gr8j/concours_list.png)](https://postimg.org/image/mt9he22n3/) 
  
  
 
-
-So the big question is: what can we customize?
-
-
-Let's first have a closest look at a list.
-
-A list is a table with columns and rows, surrounded by widgets.
-
-The figure below shows the widgets surrounding the table.
-
-[![crud-list-widgets.jpg](https://s19.postimg.org/ip8ilk6oz/crud_list_widgets.jpg)](https://postimg.org/image/hzpq9765b/)
-
-The widgets are:
-
-- title
-- page selector
-- search 
-- new item link
-- nipp selector (number of items per page selector)
-- pagination
-- multiple actions
-
-
-And below is a figure representing the table alone, without the widgets.
-
-
-
-[![crud-list-anatomy.jpg](https://s19.postimg.org/8dw5swezn/crud_list_anatomy.jpg)](https://postimg.org/image/6m36xzvmn/)
-
-
-The table is composed of two parts stacked on top of each other:
-
-- the column headers
-- the list body (aka rows)
-
-
-If we read the list from left to right, we have the following columns disposition:
-
-- the checkboxes column
-- the list columns (containing the fields from the database)
-- the action columns (containing the "Edit" and "Delete" links)
-
-
-
-Ok. Time for some configuration.
-
-
-I figured a tutorial would be more useful than a boring technical documentation.
-So I moved the rest of this page to the  <-Customizing list in nullos admin tutorial->
-
-
-
-Open any **list crud file** (discussed in <-crud page->) and warm up your fingers.
-
-For the rest of this section I will be using the **app-nullos/crud/auto-list/oui.videos.php** file from the [getting started with nullos tutorial](https://github.com/lingtalfi/nullos-admin/blob/master/doc/tutorials/getting-started-with-nullos.md).
-
-
-
- 
-
-
-
-
-- show/hide a widget
-    - customize the title 
-- move the actions columns to the left or to the right
-- rewrite the column labels
-- hide columns
-- hide the checkboxes
-- transform the value of a column
-- add your own single actions
-- add your own multiple actions
-- ...?
-
-
-
-
-Show/Hide a widget
----------------------
-
-Let's start with the widgets.
-
-
-
-
-
-
-
-
-
-Tackle the list
-------------
-
-IDEA...Configure the list: perhaps the most important part of configuring the list
-is the sql query. The sql query is split in two parts:
- 
- - fields
- - query
- END IDEA...
- 
 
 
 

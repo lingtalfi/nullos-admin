@@ -223,7 +223,8 @@ class CrudFormGenerator extends AbstractCrudGenerator
             if (array_key_exists($ftable, $foreignKeyPrettierColumns)) {
                 $prettyColumn = $foreignKeyPrettierColumns[$ftable];
             } else {
-                throw new \Exception("Please provide an entry for the foreignKeyPrettierColumns with the key " . $info[1] . '.' . $info[2] . ', table is ' . $ftable);
+                $prettyColumn = $info[2];
+//                throw new \Exception("Please provide an entry for the foreignKeyPrettierColumns with the key " . $info[1] . '.' . $info[2] . ', table is ' . $ftable);
             }
             $this->line('$form->addControl("' . $column . '")->type("selectByRequest", "select ' . $info[2] . ', ' . $prettyColumn . ' from ' . $info[0] . '.' . $info[1] . '");');
         }

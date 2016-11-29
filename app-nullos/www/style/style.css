@@ -192,8 +192,8 @@ body.holygrail {
 }
 
 .bignose {
-    font-size: 1.2em;
-    line-height: 1.6em;
+    /*font-size: 1.2em;*/
+    /*line-height: 1.6em;*/
 }
 
 .flexh {
@@ -217,6 +217,13 @@ body.holygrail {
     color: #3c763d;
 }
 
+.alert-error
+{
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+}
+
 .congrats{
     padding: 10px;
     display: flex;
@@ -236,6 +243,39 @@ body.holygrail {
     display: inline-block;
 }
 
+/*
+* The icon box is a div containing a container div which itself contains two spans.
+* - The first span contains an svg icon.
+* - The second span has .text and contains the informative text.
+*/
+.icon-box{
+    display: inline-block;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+    background: #ddd;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.icon-box > div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon-box span.text{
+    margin-left: 10px;
+}
+
+.icon-box.technical-note{
+    background: #f9e0b1;
+    border: 1px solid orange;
+}
+
+.icon-box.technical-note .icon{
+    fill: #ca6310;
+}
 /*------------------------------------
 - DATATABLE
 ------------------------------------*/
@@ -506,6 +546,15 @@ body.holygrail {
     margin-left: 20px;
 }
 
+
+.checkbox-label{
+    display: block;
+    text-align: left;
+}
+.checkbox-label input{
+    width: auto;
+}
+
 .dynamic-items li {
     display: flex;
     justify-content: space-between;
@@ -566,13 +615,14 @@ body.holygrail {
 
 .install-page .path {
     font-family: monospace;
-    background: #ddd;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 3px;
 }
 .install-page .code {
     font-family: monospace;
     background: black;
-    color: white;
     padding: 3px;
+    color: white;
 }
 
 

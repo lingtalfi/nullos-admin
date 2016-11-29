@@ -37,6 +37,7 @@ class Layout
             <meta charset="UTF-8">
             <title><?php echo ucfirst(WEBSITE_NAME); ?></title>
             <link rel="stylesheet" href="<?php echo url('/style/style.css'); ?>">
+            <link rel="stylesheet" href="<?php echo url('/style/pastel-theme.css'); ?>">
             <script src="<?php echo url('/libs/split/split.js'); ?>"></script>
         </head>
 
