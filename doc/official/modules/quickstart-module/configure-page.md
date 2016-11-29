@@ -1,4 +1,4 @@
-Quickstart: the Configure page
+Quickstart: the "Configure" page
 ============================
 2016-11-29
 
@@ -20,7 +20,9 @@ of your application, and most importantly the database credentials (if you use a
 
 To create the init file, fill the form on the "Configure" page and press the submit button.
 
-This will create the init file at **app-nullos/init.php**.
+This will create the init file at **app-nullos/init.php**, and display a congratulation screen (see screenshot below).
+
+[![quickstart-module-configure-page-success.png](https://s19.postimg.org/5vsub6msj/quickstart_module_configure_page_success.png)](https://postimg.org/image/5j1g504in/)
 
 
 If for some reasons the init file already exist, the "Configure" page will overwrite it.

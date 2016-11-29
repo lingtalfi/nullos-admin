@@ -21,6 +21,7 @@ Table of contents
     - modules
         - [QuickStart module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module.md)
             - [the "Configure" page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/configure-page.md)  
+            - [the "Crud Generators" page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/crud-generators-page.md)  
 - Tutorials
     - [getting started with nullos](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/getting-started-with-nullos.md)
 - [documentation map](https://github.com/lingtalfi/nullos-admin/tree/master/doc/documentation-map.md)

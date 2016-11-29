@@ -23,7 +23,7 @@ function linkt($text, $href, $external = false)
         Use this page to generate your crud generator preferences and/or your crud files.
     </p>
     <p>
-        <?php echo linkt("Need help?", wl2('nullos-doc-install'), true); ?>
+        <?php echo linkt("Need help?", doclink('official/modules/quickstart-module/crud-generators-page.md'), true); ?>
     </p>
 
     <div>
