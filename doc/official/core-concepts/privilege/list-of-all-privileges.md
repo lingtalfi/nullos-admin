@@ -10,4 +10,4 @@ using the module names as the namespace.
 
 
 
-- quickstart.access: access to the QuickStart module features and to the "Quickstart" section in the left menu of nullos main layout
+- **quickstart.access**: access to the QuickStart module features and to the "Quickstart" section in the left menu of nullos main layout

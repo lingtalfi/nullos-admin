@@ -19,9 +19,9 @@ Table of contents
 
 - Official
     - [nomenclature and general concepts](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts.md)
-    - [overview of the tree structure](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/overview-of-the-tree-structure.md)
         - [nullos account](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/nullos-account.md)
         - [ric](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/ric.md)
+    - [overview of the tree structure](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/overview-of-the-tree-structure.md)
     - [modules](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules.md)
         - [Crud module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/crud-module.md)
             - [the crud file](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/crud-module/crud-file.md)
