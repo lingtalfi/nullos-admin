@@ -14,12 +14,18 @@ This is what the documentation is supposed to look like when it's finished.
 - Tutorials
     - getting started with nullos
     - Customizing list in nullos admin tutorial
-    - creating a new page
+    - Create your first page
+    - Create your own layout
+        - create layout elements    
 - Official
     - nomenclature and general concepts
+        - nullos account
+        - ric
     - overview of the tree structure
     - modules
         - Crud module
+            - the crud config //controls which tables to show in the menu...
+            - the crud file
             - the crud page
             - configure a list 
             - configure a form
@@ -27,9 +33,7 @@ This is what the documentation is supposed to look like when it's finished.
             - configure the form generator
         - Authentication module
             - configuring the nullos accounts
-                // map a nullos account to a (privilege) profile
             - the login page
-                // Entry point of a nullos session
         - Lang module
             - translation files
             - the translation function
@@ -44,21 +48,20 @@ This is what the documentation is supposed to look like when it's finished.
     - core concepts  
         - local vs distant website
         - Routing
-            + create a page
+            - create a page
         - Layout
             // A helper to display a page
-            - Nullos Layout
-                - add 
-                - create layout elements
+            - nullos layout            
         - Privilege        
-            // A framework to grant permissions to a nullos account
-            - configuring the profiles
+            - the Privilege profile
+            - configuring the Privilege profiles
             - list of all privileges
         - Logger
             // When something was not supposed to happen
-            - list of all log calls
         - Bridge
             // A communication model for nullos core and its modules    
+        - Spirit
+
             
             
 - Wish list

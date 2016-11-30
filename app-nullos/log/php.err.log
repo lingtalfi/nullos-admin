@@ -1561,3 +1561,43 @@ Stack trace:
 #4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/quickstart.php(21): require_once('/Volumes/Macint...')
 #5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macint...')
 #6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layou in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 48
+[30-Nov-2016 05:55:02 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:55:02 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:51 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:51 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:52 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:52 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:52 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:52 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:52 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:52 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:55 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:55 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:57 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:56:57 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:57:03 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 05:58:22 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 74
+[30-Nov-2016 05:58:40 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 74
+[30-Nov-2016 06:00:11 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 06:00:18 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 06:00:19 UTC] PHP Notice:  Undefined index: privileges_profile in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 06:01:03 UTC] PHP Fatal error:  Uncaught Exception: k in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php:73
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/Privilege.php(19): Privilege\PrivilegeUser::getProfile()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/QuickStart/QuickStartModule.php(17): Privilege\Privilege::has('quickstart.acce...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Bridge.php(22): QuickStart\QuickStartModule::displayLeftMenuLinks()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(55): Bridge::displayLeftMenuBlocks()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(53): require_once('/Volumes/Macint...')
+#6 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Privilege/PrivilegeUser.php on line 73
+[30-Nov-2016 06:21:13 UTC] PHP Notice:  Undefined variable: sessionTimeout in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/init-fallback.php on line 80
+[30-Nov-2016 06:21:13 UTC] PHP Notice:  Undefined variable: sessionTimeout in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/init-fallback.php on line 80
+[30-Nov-2016 14:33:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php on line 34
+[30-Nov-2016 14:34:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php on line 34
+[30-Nov-2016 14:34:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php on line 34
+[30-Nov-2016 14:34:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php on line 34
+[30-Nov-2016 14:34:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php on line 34
+[30-Nov-2016 14:34:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php on line 34
+[30-Nov-2016 14:34:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php on line 34
+[30-Nov-2016 14:34:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php on line 34

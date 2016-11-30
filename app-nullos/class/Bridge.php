@@ -17,13 +17,20 @@ class Bridge
     //--------------------------------------------
     // APPLICATION SERVICES
     //--------------------------------------------
+    /**
+     * Owned by:
+     * - class/Layout
+     */
     public static function displayLeftMenuBlocks()
     {
         QuickStartModule::displayLeftMenuLinks();
         CrudModule::displayLeftMenuLinks();
     }
 
-
+    /**
+     * Owned by:
+     * - class/Layout
+     */
     public static function displayTopBar()
     {
         LangModule::displayTopBar();

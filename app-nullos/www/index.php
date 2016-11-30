@@ -17,6 +17,11 @@ ob_start(); // ob start gives us the ability to do redirect from php "view" code
 if (PrivilegeUser::isConnected()) {
 
 
+    /**
+     * THIS IS THE ROUTER MAP.
+     * Add your page routes here...
+     *
+     */
     $uri2pagesMap = [
         '/' => 'home.php',
         '/table' => 'table.php',
@@ -24,6 +29,10 @@ if (PrivilegeUser::isConnected()) {
         '/test' => 'test.php',
     ];
 
+
+    /**
+     * This is the router code, you shouldn't edit below this line
+     */
     $uri = explode('?', $_SERVER['REQUEST_URI'])[0];
     if ('' !== URL_PREFIX && URL_PREFIX === substr($uri, 0, strlen(URL_PREFIX))) {
         $uri = substr($uri, strlen(URL_PREFIX));

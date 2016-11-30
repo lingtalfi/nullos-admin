@@ -21,7 +21,11 @@ class Logger
      */
     public static function log($msg, $targetIdentifier = null)
     {
-        a("LOGGER");
-        az(func_get_args());
+        if (true === Helper::isLocal()) {
+            a("LOGGER");
+            az(func_get_args());
+        } else {
+            // put your logging code here...
+        }
     }
 }

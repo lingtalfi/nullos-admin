@@ -1,4 +1,4 @@
-QuickStart Module
+QuickStart module
 ===================
 2016-11-29
 

@@ -10,7 +10,7 @@ class Layout
 
     private function __construct()
     {
-        $this->elementsDir = APP_ROOT_DIR . "/layout-elements";
+        $this->elementsDir = APP_ROOT_DIR . "/layout-elements/nullos";
     }
 
     public static function create()
