@@ -201,6 +201,12 @@ body.holygrail {
     align-items: center;
 }
 
+.flexc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .alert {
     border: 1px solid transparent;
     border-radius: 4px;

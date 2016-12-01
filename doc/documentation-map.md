@@ -12,8 +12,9 @@ This is what the documentation is supposed to look like when it's finished.
 
 
 - Tutorials
-    - getting started with nullos
-    - Customizing list in nullos admin tutorial
+    - Install nullos on your machine
+    - Install the "oui" test database
+    - Getting started with nullos
     - Create your first page
     - Create your own layout
         - create layout elements    

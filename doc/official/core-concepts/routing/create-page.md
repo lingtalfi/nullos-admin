@@ -17,4 +17,4 @@ In order to create a page in nullos, do the following steps:
 
 Related
 -------------
-If you want your page to look like another nullos admin page, please check out the <-nullos layout-> page.
+If you want your page to look like another **nullos admin** page, please check out the [nullos layout](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/layout/nullos-layout.md) page.

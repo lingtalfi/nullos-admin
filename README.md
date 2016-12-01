@@ -53,7 +53,10 @@ Table of contents
         - [Bridge](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/bridge.md)
         - [Spirit](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/spirit.md)
 - Tutorials
+    - [install nullos on your machine](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/install-nullos-on-your-machine.md)
+    - [install the "oui" test database](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/install-oui-database.md)
     - [getting started with nullos](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/getting-started-with-nullos.md)
+    - [create your first page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/create-your-first-page.md)
 - [documentation map](https://github.com/lingtalfi/nullos-admin/tree/master/doc/documentation-map.md)
 
 

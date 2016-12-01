@@ -5,3 +5,4 @@ Nomenclature and general concepts
 
 
 - [Nullos account](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/nullos-account.md)
+- [Ric](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/ric.md)

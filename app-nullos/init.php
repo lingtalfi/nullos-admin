@@ -29,8 +29,6 @@ require_once __DIR__ . "/functions/main-functions.php";
 //--------------------------------------------
 // LOCAL VS PROD
 //--------------------------------------------
-ini_set('error_log', __DIR__ . "/log/php.err.log");
-
 if (true === Helper::isLocal()) {
     // php
     ini_set('display_errors', 1);
@@ -57,8 +55,9 @@ if (true === Helper::isLocal()) {
 
 
 //--------------------------------------------
-// PHP TOP CONFIG
+// PHP
 //--------------------------------------------
+ini_set('error_log', __DIR__ . "/log/php.err.log");
 if (null !== $privilegeSessionTimeout) { // or session expires when browser quits
     ini_set('session.cookie_lifetime', $privilegeSessionTimeout);
 }

@@ -160,7 +160,7 @@ class DataTable
          *
          */
         $this->singleActions = [
-            'edit' => ['<a class="action-link" href="/table?name={tableName}&action=edit&ric={ric}">' . __('Edit', $this->translatorContext) . '</a>'],
+            'edit' => ['<a class="action-link" href="' . CrudHelper::getUpdateFormUrl('{tableName}', '{ric}') . '">' . __('Edit', $this->translatorContext) . '</a>'],
             // :delete is a special notation to indicate that we want to use the delete method of THIS class
             'delete' => ['<a class="action-link postlink confirmlink" data-action="delete" data-ric="{ric}" href="#">' . __('Delete', $this->translatorContext) . '</a>', ':delete'],
         ];
@@ -401,7 +401,7 @@ class DataTable
                                         ?>
                                         <option
                                             <?php echo $sel; ?>
-                                            value="<?php echo $value; ?>"><?php echo ucfirst((string)$value); ?></option>
+                                                value="<?php echo $value; ?>"><?php echo ucfirst((string)$value); ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </form>
@@ -529,7 +529,7 @@ class DataTable
                                         }
                                         ?>
                                         <li<?php echo $id; ?>><a <?php echo $sel; ?>
-                                                href="<?php echo $link; ?>"><?php echo $i; ?></a></li>
+                                                    href="<?php echo $link; ?>"><?php echo $i; ?></a></li>
                                     <?php endfor; ?>
                                 </ul>
                             <?php endif; ?>
@@ -540,17 +540,17 @@ class DataTable
                     <?php if ($this->hasWidget('multipleActions')): ?>
                         <div class="multiple-actions">
                             <button
-                                class="checkall-btn"><?php echo __("Check all rows", $this->translatorContext); ?></button>
+                                    class="checkall-btn"><?php echo __("Check all rows", $this->translatorContext); ?></button>
                             <button
-                                class="uncheckall-btn hidden"><?php echo __("Uncheck all rows", $this->translatorContext); ?></button>
+                                    class="uncheckall-btn hidden"><?php echo __("Uncheck all rows", $this->translatorContext); ?></button>
                             <select class="multiple-action-selector" name="multiple-action">
                                 <option
-                                    value="0"><?php echo __("For all selected rows", $this->translatorContext); ?></option>
+                                        value="0"><?php echo __("For all selected rows", $this->translatorContext); ?></option>
                                 <?php foreach ($this->multipleActions as $k => $v):
                                     $confirm = (array_key_exists(2, $v) && true === $v[2]) ? ' data-confirm="true"' : '';
                                     ?>
                                     <option <?php echo $confirm; ?>
-                                        value="<?php echo $k; ?>"><?php echo $v[0]; ?></option>
+                                            value="<?php echo $k; ?>"><?php echo $v[0]; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -569,37 +569,38 @@ class DataTable
 
             var tableSection = document.getElementById('<?php echo $tableId ?>');
             var pageSelector = tableSection.querySelector('.page-selector');
-            if (pageSelector) { // ensure there is at least one result...
-                /**
-                 * toolbar
-                 */
-                var nippSelector = tableSection.querySelector('.nipp-selected');
-
-                var toolbarSubmit = function () {
-                    this.parentNode.submit();
-                };
-
-                pageSelector.addEventListener('change', toolbarSubmit);
-                nippSelector.addEventListener('change', toolbarSubmit);
+            var toolbarSubmit = function () {
+                this.parentNode.submit();
+            };
+            pageSelector && pageSelector.addEventListener('change', toolbarSubmit);
 
 
-                /**
-                 * Pagination: scroll to the selected element
-                 */
-                var selected = document.getElementById('<?php echo $paginationSelectedId ?>');
-                if (selected) {
-                    document.addEventListener('DOMContentLoaded', function () {
-                        selected.parentNode.scrollLeft = selected.offsetLeft - 100; // 100 is a safe margin, so that we can click the links on the left.
-                    });
-                }
+            /**
+             * toolbar
+             */
+            var nippSelector = tableSection.querySelector('.nipp-selected');
+            nippSelector && nippSelector.addEventListener('change', toolbarSubmit);
 
-                /**
-                 * Check all button
-                 */
-                var checkAllBtn = tableSection.querySelector('.checkall-btn');
-                var uncheckAllBtn = tableSection.querySelector('.uncheckall-btn');
 
-                var table = tableSection.querySelector(".datatable");
+            /**
+             * Pagination: scroll to the selected element
+             */
+            var selected = document.getElementById('<?php echo $paginationSelectedId ?>');
+            if (selected) {
+                document.addEventListener('DOMContentLoaded', function () {
+                    selected.parentNode.scrollLeft = selected.offsetLeft - 100; // 100 is a safe margin, so that we can click the links on the left.
+                });
+            }
+
+            /**
+             * Check all button
+             */
+            var checkAllBtn = tableSection.querySelector('.checkall-btn');
+            var uncheckAllBtn = tableSection.querySelector('.uncheckall-btn');
+            var table = tableSection.querySelector(".datatable");
+
+            if (checkAllBtn) {
+
                 checkAllBtn.addEventListener('click', function (e) {
                     e.preventDefault();
                     [].forEach.call(table.querySelectorAll(".checkbox"), function (el) {
@@ -608,6 +609,8 @@ class DataTable
                     checkAllBtn.classList.add('hidden');
                     uncheckAllBtn.classList.remove('hidden');
                 });
+
+
                 uncheckAllBtn.addEventListener('click', function (e) {
                     e.preventDefault();
                     [].forEach.call(table.querySelectorAll(".checkbox"), function (el) {
@@ -616,73 +619,73 @@ class DataTable
                     checkAllBtn.classList.remove('hidden');
                     uncheckAllBtn.classList.add('hidden');
                 });
+            }
 
+            /**
+             * Multiple action
+             */
+            var tableForm = tableSection.querySelector('.datatable-form');
+            var multiActionSelector = tableSection.querySelector(".multiple-action-selector");
+            multiActionSelector && multiActionSelector.addEventListener('change', function () {
 
-                /**
-                 * Multiple action
-                 */
-                var tableForm = tableSection.querySelector('.datatable-form');
-                var multiActionSelector = tableSection.querySelector(".multiple-action-selector");
-                multiActionSelector.addEventListener('change', function () {
-
-                    var option = multiActionSelector.options[multiActionSelector.selectedIndex];
-                    if (option.hasAttribute('data-confirm') && 'true' === option.getAttribute('data-confirm')) {
-                        if (true === window.confirm("<?php echo \Helper::jsQuote(__("Are you sure you want to execute this action on all the selected rows?", $this->translatorContext)); ?>")) {
-                            tableForm.submit();
-                        }
-                    }
-                    else {
+                var option = multiActionSelector.options[multiActionSelector.selectedIndex];
+                if (option.hasAttribute('data-confirm') && 'true' === option.getAttribute('data-confirm')) {
+                    if (true === window.confirm("<?php echo \Helper::jsQuote(__("Are you sure you want to execute this action on all the selected rows?", $this->translatorContext)); ?>")) {
                         tableForm.submit();
                     }
-                });
-
-                /**
-                 * Handling datatable single actions
-                 */
-                var blackhole = tableSection.querySelector(".blackhole");
-                table.addEventListener('click', function (e) {
-
-                    if (e.target.classList.contains("confirmlink")) {
-                        if (false === window.confirm("<?php echo \Helper::jsQuote(__("Are you sure you want to execute this action?", $this->translatorContext)); ?>")) {
-                            e.preventDefault();
-                            return; // prevent postlink to execute (delete link for instance)
-                        }
-                    }
+                }
+                else {
+                    tableForm.submit();
+                }
+            });
 
 
-                    if (e.target.classList.contains('postlink')) {
+            /**
+             * Handling datatable single actions
+             */
+            var blackhole = tableSection.querySelector(".blackhole");
+            table.addEventListener('click', function (e) {
 
-
-                        var action = e.target.getAttribute('data-action');
-                        var ric = e.target.getAttribute('data-ric');
-
-
-                        var tmpForm = document.createElement('form');
-                        tmpForm.setAttribute('method', 'post');
-
-
-                        var inputAction = document.createElement('input');
-                        inputAction.setAttribute('type', 'hidden');
-                        inputAction.setAttribute('name', 'action');
-                        inputAction.setAttribute('value', action);
-
-                        var inputRic = document.createElement('input');
-                        inputRic.setAttribute('type', 'hidden');
-                        inputRic.setAttribute('name', 'ric');
-                        inputRic.setAttribute('value', ric);
-
-                        tmpForm.appendChild(inputAction);
-                        tmpForm.appendChild(inputRic);
-
-                        blackhole.appendChild(tmpForm);
-                        tmpForm.submit();
-
-
+                if (e.target.classList.contains("confirmlink")) {
+                    if (false === window.confirm("<?php echo \Helper::jsQuote(__("Are you sure you want to execute this action?", $this->translatorContext)); ?>")) {
                         e.preventDefault();
+                        return; // prevent postlink to execute (delete link for instance)
                     }
-                });
+                }
 
-            }
+
+                if (e.target.classList.contains('postlink')) {
+
+
+                    var action = e.target.getAttribute('data-action');
+                    var ric = e.target.getAttribute('data-ric');
+
+
+                    var tmpForm = document.createElement('form');
+                    tmpForm.setAttribute('method', 'post');
+
+
+                    var inputAction = document.createElement('input');
+                    inputAction.setAttribute('type', 'hidden');
+                    inputAction.setAttribute('name', 'action');
+                    inputAction.setAttribute('value', action);
+
+                    var inputRic = document.createElement('input');
+                    inputRic.setAttribute('type', 'hidden');
+                    inputRic.setAttribute('name', 'ric');
+                    inputRic.setAttribute('value', ric);
+
+                    tmpForm.appendChild(inputAction);
+                    tmpForm.appendChild(inputRic);
+
+                    blackhole.appendChild(tmpForm);
+                    tmpForm.submit();
+
+
+                    e.preventDefault();
+                }
+            });
+
         </script>
         <?php
     }
@@ -718,6 +721,7 @@ class DataTable
         $this->singleActions[$id] = [$html, $function];
     }
 
+
     public function registerMultipleAction($id, $label, $function, $confirmation = false)
     {
         $this->multipleActions[$id] = [
@@ -726,6 +730,30 @@ class DataTable
             $confirmation,
         ];
     }
+
+    public function dropSingleActions(array $names = null)
+    {
+        if (null === $names) {
+            $this->singleActions = [];
+        } else {
+            foreach ($names as $name) {
+                unset($this->singleActions[$name]);
+            }
+        }
+    }
+
+
+    public function dropMultipleActions(array $names = null)
+    {
+        if (null === $names) {
+            $this->multipleActions = [];
+        } else {
+            foreach ($names as $name) {
+                unset($this->multipleActions[$name]);
+            }
+        }
+    }
+
 
     public function setTransformer($column, $function)
     {
