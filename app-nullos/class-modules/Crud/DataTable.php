@@ -101,7 +101,7 @@ class DataTable
 
     public function __construct()
     {
-        $this->translatorContext = CrudModule::$langDir . '/datatable';
+        $this->translatorContext = CrudConfig::getLangDir() . '/datatable';
 
 
         $this->tableGetKey = "name";

@@ -340,3 +340,72 @@ CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
 #10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(62): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/sqltools/sqltools.php')
 #11 {main}
 
+crud.page.table -- 2016-12-03 13:42:08
+----------
+not a valid table: oui.concours
+
+crud.page.table -- 2016-12-03 13:42:09
+----------
+not a valid table: oui.configuration
+
+crud.page.table -- 2016-12-03 13:42:10
+----------
+not a valid table: oui.coups_de_coeur
+
+crud.page.table -- 2016-12-03 13:42:12
+----------
+not a valid table: oui.equipe
+
+crud.page.table -- 2016-12-03 13:44:34
+----------
+not a valid table: oui.equipe
+
+crud.page.table -- 2016-12-03 13:45:36
+----------
+not a valid table: oui.equipe
+
+boot.page -- 2016-12-03 15:05:51
+----------
+exception 'Exception' with message '__ error: dictionary term not found: Click here' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:52
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Goofy.php(44): __('Click here', 'form')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/boot.php(125): Goofy::alertSuccess('Congrats! The <b>init file</b> has been created', true, true)
+#2 unknown file(unknown line): Layout->{closure}(Array, 'Oops, an error occurred, please check the logs.')
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(210): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/boot.php(145): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(89): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/boot.php')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(63): Layout->includeElement('body')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/boot/boot.php(14): Layout->display()
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(67): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/boot/boot.php')
+#9 {main}
+
+boot.page -- 2016-12-03 15:07:16
+----------
+exception 'Exception' with message '__ error: dictionary term not found: Click here' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:52
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Goofy.php(44): __('Click here', 'form')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/boot.php(125): Goofy::alertSuccess('Congrats! The <b>init file</b> has been created', true, true)
+#2 unknown file(unknown line): Layout->{closure}(Array, 'Oops, an error occurred, please check the logs.')
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(210): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/boot.php(145): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(89): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/boot.php')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(63): Layout->includeElement('body')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/boot/boot.php(14): Layout->display()
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(67): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/boot/boot.php')
+#9 {main}
+
+boot.page -- 2016-12-03 15:10:23
+----------
+exception 'Exception' with message '__ error: dictionary term not found: Click here' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:52
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Goofy.php(44): __('Click here', 'form')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/boot.php(125): Goofy::alertSuccess('Congrats! The <b>init file</b> has been created', true, true)
+#2 unknown file(unknown line): Layout->{closure}(Array, 'Oops, an error occurred, please check the logs.')
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(210): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/boot.php(145): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(89): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/boot.php')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(63): Layout->includeElement('body')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/boot/boot.php(14): Layout->display()
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(67): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/boot/boot.php')
+#9 {main}
+

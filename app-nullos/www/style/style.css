@@ -562,6 +562,12 @@ body.holygrail {
     width: auto;
 }
 
+
+.tac .row{
+    text-align: left;
+}
+
+
 .dynamic-items li {
     display: flex;
     justify-content: space-between;

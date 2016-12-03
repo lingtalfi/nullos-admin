@@ -1,26 +1,29 @@
 Layout
 ===============
-2016-11-30
+2016-11-30 -- 2016-12-03
+
+
+The Layout object is a helper object.
+
+It helps creating the <-nullos main layout-> todo.
+
+It is used by most **nullos admin** pages and therefore gives a general consistent look to the **nullos admin** website.
+
+
+The code for the Layout object can be found in **app-nullos/class/Layout.php**.
 
 
 
-In nullos, the Layout is a helper to display a [page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/routing/create-page.md).
+Layout elements
+---------------------
 
+Elements of the layout that are common to every page are coded directly inside the Layout object.
 
-Using a Layout helps creating pages that look consistent across the website.
+Elements that vary from page to page are called **layout-elements** and are provided by the developer who uses the Layout object.
 
+In other words, when you use a Layout object, you also need to provide all the **layout-elements** defined by this Layout object.
 
-A Layout is composed of **layout elements**, each of which containing a part of the html that might 
-vary from page to page.
+By convention, the **layout-elements** are files located in the **app-nullos/layout-elements** directory.
 
-The Layout itself contains the html that doesn't vary at all.
+Therefore, when you use the Layout object, you only need to provide the paths to the layout-elements files that you want to use.
 
-
-A **layout element** is a php file included by the layout.
-
-All the **layout elements** files are in the **app-nullos/layout-elements** directory.
-
-
-
-
-- [Nullos Layout](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/layout/nullos-layout.md)

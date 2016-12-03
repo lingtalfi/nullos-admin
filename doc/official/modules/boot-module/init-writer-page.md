@@ -1,11 +1,13 @@
-The boot page
+The "Init writer" page
 =====================
-2016-12-02
+2016-12-02 -- 2016-12-03
+
+
+[![boot-page.png](https://s19.postimg.org/3xdg52wgz/boot_page.png)](https://postimg.org/image/u5okuggkf/)
 
 
 
-
-The boot page provides the gui to create/recreate the "user" [init file](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/init-file.md).
+The "Init writer" page's goal is to create/recreate the "user" [init file](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/init-file.md).
 
 It is part of the [Boot module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/boot-module.md).
 

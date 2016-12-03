@@ -57,7 +57,7 @@ class Form
 
         $this->allowMultipleErrorsPerControl = true;
         $this->qform = new QuickForm();
-        $this->_translatorContext = CrudModule::$langDir . '/form';
+        $this->_translatorContext = CrudConfig::getLangDir() . '/form';
         $this->title = __("{table} form", $this->_translatorContext, ['table' => ucfirst($table)]);
     }
 

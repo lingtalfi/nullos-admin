@@ -26,4 +26,33 @@ class Goofy
             return ob_get_clean();
         }
     }
+
+    public static function alertSuccess($msg, $return = false, $clickHereToContinue = true)
+    {
+        if (true === $return) {
+            ob_start();
+        }
+
+        ?>
+        <div class="alert alert-success flexh">
+            <span class="icon-span"><?php echo Icons::printIcon('done', 'green', 48); ?></span>
+            <div>
+                <span class="text"><?php echo $msg; ?></span>
+                <?php if (true === $clickHereToContinue): ?>
+                    <br>
+                    <span>
+                <?php
+                echo __("{ClickHere} to continue.", "form", [
+                    'ClickHere' => '<a href="' . htmlspecialchars($_SERVER['REQUEST_URI']) . '">' . __("ClickHere", "form") . '</a>',
+                ]);
+                ?>
+            </span>
+                <?php endif; ?>
+            </div>
+        </div>
+        <?php
+        if (true === $return) {
+            return ob_get_clean();
+        }
+    }
 }

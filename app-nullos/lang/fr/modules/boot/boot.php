@@ -6,6 +6,7 @@ $defs = [
     // LEFT MENU LINKS
     //--------------------------------------------
     "Init writer" => "création Init",
+    "Reset" => "Réinitialiser",
     //--------------------------------------------
     // BOOT
     //--------------------------------------------
@@ -30,4 +31,16 @@ $defs = [
     "Oops, an error occurred" => "Oops, une erreur est survenue",
     "Congrats! The <b>init file</b> has been created" => "Congrats! The <b>init file</b> has been created",
     "Ok" => "Ok",
+    //--------------------------------------------
+    // RESET
+    //--------------------------------------------
+    "Reset page" => "page Réinitialiser",
+    "Use this page to reset your <b>nullos admin</b> application." => "Cette page permet de réinitialiser votre application <b>nullos admin</b>.",
+    "Need help?" => "Besoin d'aide?",
+    "Reset form" => "formulaire Reset",
+    "The website has been successfully reset." => "L'application a bien été réinitialisée.",
+    //--------------------------------------------
+    // RESET OPTION
+    //--------------------------------------------
+    "remove the init file" => "remove the init file",
 ];

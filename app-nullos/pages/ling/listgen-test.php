@@ -1,7 +1,7 @@
 <?php
 
 
-use Crud\Util\CrudMainGenerator;
+use Crud\Util\CrudFilesGenerator;
 
-CrudMainGenerator::generateCrudListsFromPreferences();
+CrudFilesGenerator::generateCrudListsFromPreferences();
 

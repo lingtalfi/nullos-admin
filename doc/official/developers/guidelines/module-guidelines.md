@@ -44,7 +44,15 @@ and then hook it into the Bridge::makePizza method.
 Privileges
 --------------
 
-A module named MyPizza's privileges should start with the "myPizza" namespace, which is the camelCase of the MyPizza module's class name. 
+A privilege is composed of dot separated components (like.this.for.instance).
+
+Each component uses camelCase case style.
+
+- the first component is the module name
+- the second component is the privilege type
+    - a common type is access, which grants the displaying of a link to a given page, and allows to access the content of the page
+        - the page is specified using the third component (only if the module deals with more than one page) 
+
 
 
 
@@ -54,6 +62,10 @@ Pages
 Page files for a MyPizza module should be located in **app-nullos/pages/modules/{myPizza}/{myPizza}.php**.
 
 {myPizza} should be replaced by the camelCase for the module class name.
+
+
+Create only one page if possible, using get parameters to differentiate between pages, and using internal layout-elements branching;
+so that we don't waste the set of available urls.
 
 
 
@@ -74,6 +86,8 @@ If there is only one translation file, or the main translation file (if there is
 be located in the **app-nullos/lang/{lang}/modules/{myPizza}/{myPizza}.php** file.
 
 {myPizza} should be replaced by the camelCase for the module class name.
+
+When calling the __ method, the identifier can be hardcoded, no need to put the identifier or part of the identifier in the Config of the module: we can "safely" rely on the convention just described above.
 
 
 

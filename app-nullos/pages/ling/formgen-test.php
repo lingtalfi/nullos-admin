@@ -10,7 +10,7 @@ use Crud\Util\CrudFormGenerator;
 // SCRIPT
 //--------------------------------------------
 $prefs = [];
-require_once CrudConfig::getCrudGeneratorsPreferencesAutoFile();
+require_once CrudConfig::getCrudFilesPreferencesAutoFile();
 
 
 $gen = new CrudFormGenerator();

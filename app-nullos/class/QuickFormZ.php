@@ -4,15 +4,21 @@
  * A translated version of the QuickForm.
  *
  */
-class QuickFormZ {
+class QuickFormZ
+{
 
     public static function create()
     {
         $form = new QuickForm\QuickForm();
-        $form->validationTranslateFunc = function($msg){
-
-            return __($msg, 'form-validation');
+        $form->validationTranslateFunc = function ($msg) {
+            return __($msg, 'form');
         };
+        $form->messages = [
+            'formSubmittedOk' => __('The form data have been successfully treated', 'form'),
+            'formHasControlErrors' => __('The form has the following errors, please fix them and resubmit the form', 'form'),
+            'submit' => __('Submit', 'form'),
+            'formNotDisplayed' => __('Oops, there was a problem with the form', 'form'),
+        ];
         return $form;
     }
 }

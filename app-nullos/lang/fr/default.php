@@ -1,6 +1,5 @@
 <?php
 
 
-$defs=[
-    'boris' => 'BhorrIsse',
+$defs = [
 ];

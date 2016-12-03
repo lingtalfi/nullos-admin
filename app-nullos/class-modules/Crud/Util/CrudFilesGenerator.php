@@ -6,7 +6,7 @@ namespace Crud\Util;
 
 use Crud\CrudConfig;
 
-class CrudMainGenerator
+class CrudFilesGenerator
 {
 
     public static function generateCrudListsFromPreferences()
@@ -41,9 +41,12 @@ class CrudMainGenerator
     private static function getPreferences()
     {
         $prefs = [];
-        require CrudConfig::getCrudGeneratorsPreferencesAutoFile();
+        $f = CrudConfig::getCrudFilesPreferencesAutoFile();
+        if (file_exists($f)) {
+            require $f;
+        }
         $autoPrefs = $prefs;
-        $f = CrudConfig::getCrudGeneratorsPreferencesUserFile();
+        $f = CrudConfig::getCrudFilesPreferencesUserFile();
         $userPrefs = [];
         if (file_exists($f)) {
             require $f;

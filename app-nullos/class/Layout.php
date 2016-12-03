@@ -7,8 +7,10 @@ class Layout
     private $elementFiles;
     private $elementsDir;
 
+    protected $onDisplayBefore;
 
-    private function __construct()
+
+    protected function __construct()
     {
         $this->elementsDir = APP_ROOT_DIR . "/layout-elements/nullos";
     }
@@ -30,6 +32,9 @@ class Layout
 
     public function display()
     {
+        if (is_callable($this->onDisplayBefore)) {
+            call_user_func($this->onDisplayBefore, $this);
+        }
         ?>
         <!DOCTYPE html>
         <html lang="en">

@@ -121,7 +121,7 @@ define('LL', $ll); // translation context
 
                         ])
                     ) {
-                        $msg = __("Congrats! The <b>init file</b> has been created", LL);
+                        $msg = Goofy::alertSuccess(__("Congrats! The <b>init file</b> has been created", LL), true, true);
                         return true;
                     }
 

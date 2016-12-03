@@ -12,7 +12,7 @@ use QuickPdo\QuickPdoInfoTool;
 /**
  * This class generates crud generators preferences for a given database.
  */
-class CrudGeneratorsPreferencesGenerator
+class CrudFilesPreferencesGenerator
 {
 
 
@@ -22,7 +22,7 @@ class CrudGeneratorsPreferencesGenerator
     public static function generate($db = null)
     {
 
-        $dst = CrudConfig::getCrudGeneratorsPreferencesAutoFile();
+        $dst = CrudConfig::getCrudFilesPreferencesAutoFile();
 
 
         if (null === $db) {

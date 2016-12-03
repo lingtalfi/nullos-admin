@@ -15,7 +15,7 @@ List of Log calls
     - app-nullos/layout-elements/nullos//modules/crud/crud.php
         - crud.page.table: when a file is not found, or the table name invalid
     - app-nullos/layout-elements/nullos//modules/quickstart/sub/crud-generators.php
-        - crud.page.generators: when something wrong happens with the crud generators
+        - crud.page.generators: when something wrong happens with the crud generators page
 	
 - SqlTools			
     - app-nullos/layout-elements/nullos/modules/sqltools/sqltools.php

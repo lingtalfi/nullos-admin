@@ -1,6 +1,14 @@
-Crud file
+Crud file(s)
 ===============
-2016-11-30
+2016-11-30 -- 2016-12-03
+
+
+
+**Crud files** are part of the [Crud module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/crud-module.md).
+
+They help interacting with the front website(s) database(s).
+
+
 
 
 The **crud file** is the php file which displays the form or the list for a given table.

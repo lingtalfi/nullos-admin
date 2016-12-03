@@ -3,6 +3,8 @@
 
 namespace Crud;
 
+use Crud\Auto\LeftMenuPreferences;
+
 class CrudConfig
 {
 
@@ -24,63 +26,28 @@ class CrudConfig
 
     public static function getLeftMenuSections()
     {
-        return [
-
-        ];
+        return LeftMenuPreferences::getLeftMenuSectionBlocks();
     }
 
     public static function getLeftMenuSectionsClasses()
     {
-        return [
-
-        ];
+        return [];
     }
 
-    public static function getPrettyTableNames()
+    public static function getLeftMenuTableLabels()
     {
-        return [
-        ];
-    }
-
-
-    //--------------------------------------------
-    // CRUD GEN
-    //--------------------------------------------
-    public static function getForeignKeyPrettierColumns()
-    {
-        return [
-        ];
-    }
-
-    public static function getPrettyColumnNames()
-    {
-        /**
-         * If you want to be truly mutli language,
-         * you need to translate the values as well,
-         * but my client is french and she is the only one to use the admin,
-         * so I didn't bother translating in other languages...
-         */
-        return [
-        ];
-    }
-
-    public static function getListUrlTransformerIfCallback()
-    {
-        return function ($c) {
-            return (false !== strpos($c, 'url_'));
-        };
-    }
-
-
-    public static function getActionColumnsPosition()
-    {
-        return 'right';
+        return LeftMenuPreferences::getTableLabels();
     }
 
 
     //--------------------------------------------
     //
     //--------------------------------------------
+    public static function getLangDir()
+    {
+        return "modules/crud";
+    }
+
     public static function getCrudUri()
     {
         return "/table";
@@ -106,6 +73,7 @@ class CrudConfig
     {
         return APP_ROOT_DIR . "/crud";
     }
+
 
     public static function getCrudGenListDir()
     {
@@ -133,20 +101,19 @@ class CrudConfig
     //--------------------------------------------
     // CRUD GENERATORS PREFERENCES
     //--------------------------------------------
-    public static function getCrudGeneratorsPreferencesDir()
+    public static function getCrudFilesPreferencesDir()
     {
         return APP_ROOT_DIR . '/assets/modules/crud';
     }
 
-    public static function getCrudGeneratorsPreferencesAutoFile()
+    public static function getCrudFilesPreferencesAutoFile()
     {
-        return self::getCrudGeneratorsPreferencesDir() . '/auto-crud-generators-preferences.php';
+        return self::getCrudFilesPreferencesDir() . '/auto-crud-files-preferences.php';
     }
 
-    public static function getCrudGeneratorsPreferencesUserFile()
+    public static function getCrudFilesPreferencesUserFile()
     {
-        return self::getCrudGeneratorsPreferencesDir() . '/crud-generators-preferences.php';
+        return self::getCrudFilesPreferencesDir() . '/crud-files-preferences.php';
     }
-
 
 }

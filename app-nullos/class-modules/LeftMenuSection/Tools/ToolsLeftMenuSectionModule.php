@@ -11,7 +11,7 @@ class ToolsLeftMenuSectionModule
     {
         if (Privilege::has('toolsLeftMenuSection.access')):
             ?>
-            <section class="section-block table-links">
+            <section class="section-block tools">
                 <h3>Tools</h3>
                 <ul class="linkslist">
                     <?php \Bridge::displayToolsLeftMenuLinks(); ?>

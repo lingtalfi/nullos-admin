@@ -1,6 +1,6 @@
 <?php
 
 
-use Crud\Util\CrudGeneratorsPreferencesGenerator;
+use Crud\Util\CrudFilesPreferencesGenerator;
 
-a(CrudGeneratorsPreferencesGenerator::generate());
+a(CrudFilesPreferencesGenerator::generate());

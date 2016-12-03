@@ -25,7 +25,6 @@ class Bridge
     public static function decorateUri2PagesMap(array &$uri2pagesMap)
     {
         BootModule::decorateUri2PagesMap($uri2pagesMap);
-        QuickStartModule::decorateUri2PagesMap($uri2pagesMap);
         SqlToolsModule::decorateUri2PagesMap($uri2pagesMap);
         CrudModule::decorateUri2PagesMap($uri2pagesMap);
     }
@@ -36,7 +35,6 @@ class Bridge
      */
     public static function displayLeftMenuBlocks()
     {
-        QuickStartModule::displayLeftMenuBlocks();
         ToolsLeftMenuSectionModule::displayLeftMenuBlocks();
         CrudModule::displayLeftMenuBlocks();
     }
@@ -63,6 +61,16 @@ class Bridge
     public static function displayTopBar()
     {
         LangModule::displayTopBar();
+    }
+
+    /**
+     * Owned by:
+     * - class-modules/Boot
+     */
+    public static function registerBootResetOptions(array &$options)
+    {
+        BootModule::registerBootResetOptions($options);
+        CrudModule::registerBootResetOptions($options);
     }
 
 

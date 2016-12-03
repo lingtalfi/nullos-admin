@@ -1,6 +1,6 @@
 Documentation map
 ======================
-2016-11-28
+2016-11-28 -- 2016-12-03
 
 
 
@@ -34,7 +34,10 @@ This is what the documentation is supposed to look like when it's finished.
             - create a page
         - Layout
             // A helper to display a page
-            - nullos layout            
+            - nullos main layout
+            - left menu
+                - section
+            - IfLayout                 
         - Privilege        
             - the Privilege profile
             - configuring the Privilege profiles
@@ -53,15 +56,19 @@ This is what the documentation is supposed to look like when it's finished.
             - configuring the nullos accounts
             - the login page
         - Boot module
-            - the boot page
+            - the "Init writer" page
+            - the "Reset" page
         - Crud module
             - the crud config //controls which tables to show in the menu...
             - the crud file
             - the crud page
+            - the "Crud Generators" page
             - configure a list 
             - configure a form
             - configure the list generator
             - configure the form generator
+            - left menu preferences
+            - crud files preferences
         - Lang module
             - translation files
             - the translation function
@@ -72,7 +79,6 @@ This is what the documentation is supposed to look like when it's finished.
                 // init.php? + showQuickStartMenu()
             - the "Configure" page
             - the "Crud Generators" page
-            - the "Reset" page
             - hide the Quickstart section on the left menu
         - SqlTools module
             - the "Execute SQL" page

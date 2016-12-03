@@ -64,6 +64,5 @@ if (PrivilegeUser::isConnected()) {
     $page = 'login.php';
 }
 
-
 require_once APP_ROOT_DIR . "/pages/" . $page;
 echo ob_get_clean();
