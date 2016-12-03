@@ -24,7 +24,7 @@ All the pages are located in the **app-nullos/pages** directory.
 
 
 
-To be more concrete, here is the $uri2pagesMap array as of 2016-11-30:
+To be more concrete, here is the $uri2pagesMap array as of 2016-11-30 (it has been updated since, but the principle remains the same):
 
 ```php
 $uri2pagesMap = [

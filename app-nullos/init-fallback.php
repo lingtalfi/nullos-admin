@@ -41,6 +41,7 @@ if (true === Helper::isLocal()) {
 //--------------------------------------------
 // PHP
 //--------------------------------------------
+date_default_timezone_set('Europe/Paris');
 ini_set('error_log', __DIR__ . "/log/php.err.log");
 if (null !== $privilegeSessionTimeout) { // or session expires when browser quits
     ini_set('session.cookie_lifetime', $privilegeSessionTimeout);

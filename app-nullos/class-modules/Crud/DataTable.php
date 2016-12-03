@@ -101,7 +101,7 @@ class DataTable
 
     public function __construct()
     {
-        $this->translatorContext = 'datatable';
+        $this->translatorContext = CrudModule::$langDir . '/datatable';
 
 
         $this->tableGetKey = "name";
@@ -350,7 +350,7 @@ class DataTable
 
             <?php if ($this->hasWidget('newItemLink')): ?>
                 <p class="create-new-item-container">
-                    <a href="<?php echo CrudHelper::getInsertFormUrl($table); ?>&action=insert"><?php \Icons::printIcon('add', 'blue'); ?>
+                    <a href="<?php echo CrudHelper::getInsertFormUrl($table); ?>"><?php \Icons::printIcon('add', 'blue'); ?>
                         <span><?php echo __("Create a new item", $this->translatorContext); ?></span></a>
                 </p>
             <?php endif; ?>

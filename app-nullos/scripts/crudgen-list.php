@@ -5,7 +5,7 @@ require_once __DIR__ . "/../init.php";
 
 
 use Crud\CrudConfig;
-use Crud\CrudListGenerator;
+use Crud\Util\CrudListGenerator;
 
 
 $gen = new CrudListGenerator();

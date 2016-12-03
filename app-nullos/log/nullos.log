@@ -1,0 +1,342 @@
+pdoException.form.insert
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'active' at row 1' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:114
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(114): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(135): QuickPdo\QuickPdo::insert('oui.users', Array)
+#2 unknown file(unknown line): Crud\Form->Crud\{closure}(Array, 'Oops, something went wrong with the database, sorry...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(153): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(151): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php(62): Crud\Form->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php(53): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php')
+#11 {main}
+pdoException.form.insert
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'active' at row 1' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:114
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(114): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(135): QuickPdo\QuickPdo::insert('oui.users', Array)
+#2 unknown file(unknown line): Crud\Form->Crud\{closure}(Array, 'Oops, something went wrong with the database, sorry...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(153): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(151): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php(62): Crud\Form->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php(53): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php')
+#11 {main}
+pdoException.form.insert
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'active' at row 1' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:114
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(114): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(135): QuickPdo\QuickPdo::insert('oui.users', Array)
+#2 unknown file(unknown line): Crud\Form->Crud\{closure}(Array, 'Oops, something went wrong with the database, sorry...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(153): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(151): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php(62): Crud\Form->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php(53): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php')
+#11 {main}
+
+pdoException.form.insert
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'active' at row 1' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:114
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(114): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(135): QuickPdo\QuickPdo::insert('oui.users', Array)
+#2 unknown file(unknown line): Crud\Form->Crud\{closure}(Array, 'Oops, something went wrong with the database, sorry...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(153): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(151): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php(62): Crud\Form->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php(53): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php')
+#11 {main}
+
+pdoException.form.insert--2016-12-01 08:07:48
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'active' at row 1' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:114
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(114): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(135): QuickPdo\QuickPdo::insert('oui.users', Array)
+#2 unknown file(unknown line): Crud\Form->Crud\{closure}(Array, 'Oops, something went wrong with the database, sorry...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(153): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(151): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php(62): Crud\Form->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php(53): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php')
+#11 {main}
+
+pdoException.form.insert -- 2016-12-01 08:08:01
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'active' at row 1' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:114
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(114): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(135): QuickPdo\QuickPdo::insert('oui.users', Array)
+#2 unknown file(unknown line): Crud\Form->Crud\{closure}(Array, 'Oops, something went wrong with the database, sorry...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(153): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(151): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php(62): Crud\Form->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php(53): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.users.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php')
+#11 {main}
+
+pdoException.form.insert -- 2016-12-01 13:24:25
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'position' at row 1' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:114
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(114): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(135): QuickPdo\QuickPdo::insert('oui.coups_de_coeur', Array)
+#2 unknown file(unknown line): Crud\Form->Crud\{closure}(Array, 'Oops, something went wrong with the database, sorry...')
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(153): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/Form.php(151): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.coups_de_coeur.php(24): Crud\Form->display()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php(53): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/crud/auto-form/oui.coups_de_coeur.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/table.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php(7): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/table.php')
+#11 {main}
+
+pdoException.form.executeSql -- 2016-12-02 04:52:47
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1007 Can't create database 'oui'; database exists' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDO->exec('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/SqlTools/SqlToolsModule.php(43): QuickPdo\QuickPdo::freeExec('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(53): SqlTools\SqlToolsModule::executeSqlStatements('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#3 unknown file(unknown line): Layout->{closure}(Array, 'SQLSTATE[HY000]: General error: 1007 Can't create database 'oui'; database exists')
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(74): QuickForm\QuickForm->play()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php(6): Layout->display()
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php')
+#10 {main}
+
+pdoException.form.executeSql -- 2016-12-02 05:54:45
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1007 Can't create database 'oui'; database exists' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDO->exec('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/SqlTools/SqlToolsModule.php(43): QuickPdo\QuickPdo::freeExec('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(53): SqlTools\SqlToolsModule::executeSqlStatements('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#3 unknown file(unknown line): Layout->{closure}(Array, 'SQLSTATE[HY000]: General error: 1007 Can't create database 'oui'; database exists')
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(74): QuickForm\QuickForm->play()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php(6): Layout->display()
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php')
+#10 {main}
+
+pdoException.form.executeSql -- 2016-12-02 05:57:55
+----------
+exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Tamère' at line 1' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDO->exec('Tamère')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/SqlTools/SqlToolsModule.php(43): QuickPdo\QuickPdo::freeExec('Tamère')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(53): SqlTools\SqlToolsModule::executeSqlStatements('Tamère')
+#3 unknown file(unknown line): Layout->{closure}(Array, 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Tamère' at line 1')
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(74): QuickForm\QuickForm->play()
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php(6): Layout->display()
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php')
+#10 {main}
+
+pdoException.form.executeSql -- 2016-12-02 06:04:00
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1007 Can't create database 'oui'; database exists' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDO->exec('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/SqlTools/SqlToolsModule.php(43): QuickPdo\QuickPdo::freeExec('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(21): SqlTools\SqlToolsModule::executeSqlStatements('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(90): processSql('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+', true, 'SQLSTATE[HY000]: General error: 1007 Can't create database 'oui'; database exists')
+#4 unknown file(unknown line): Layout->{closure}(Array, 'SQLSTATE[HY000]: General error: 1007 Can't create database 'oui'; database exists')
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(99): QuickForm\QuickForm->play()
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php(6): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php')
+#11 {main}
+
+pdoException.form.executeSql -- 2016-12-02 06:20:07
+----------
+exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tamere' at line 1' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDO->exec('tamere')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/SqlTools/SqlToolsModule.php(43): QuickPdo\QuickPdo::freeExec('tamere')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(22): SqlTools\SqlToolsModule::executeSqlStatements('tamere')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(139): processSql('tamere', NULL, 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tamere' at line 1')
+#4 unknown file(unknown line): Layout->{closure}(Array, 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tamere' at line 1')
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(143): QuickForm\QuickForm->play()
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php(6): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php')
+#11 {main}
+
+pdoException.form.executeSql -- 2016-12-02 06:21:10
+----------
+exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1049 Unknown database 'jf'' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDO->exec('use jf')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/SqlTools/SqlToolsModule.php(43): QuickPdo\QuickPdo::freeExec('use jf')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(22): SqlTools\SqlToolsModule::executeSqlStatements('use jf')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(139): processSql('use jf', NULL, 'SQLSTATE[42000]: Syntax error or access violation: 1049 Unknown database 'jf'')
+#4 unknown file(unknown line): Layout->{closure}(Array, 'SQLSTATE[42000]: Syntax error or access violation: 1049 Unknown database 'jf'')
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(144): QuickForm\QuickForm->play()
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php(6): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php')
+#11 {main}
+
+pdoException.form.executeSql -- 2016-12-02 06:43:23
+----------
+exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tjrttjr' at line 1' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDO->exec('tjrttjr')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/SqlTools/SqlToolsModule.php(43): QuickPdo\QuickPdo::freeExec('tjrttjr')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(16): SqlTools\SqlToolsModule::executeSqlStatements('tjrttjr')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(133): processSql('tjrttjr', NULL, 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tjrttjr' at line 1')
+#4 unknown file(unknown line): Layout->{closure}(Array, 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tjrttjr' at line 1')
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php(138): QuickForm\QuickForm->play()
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/sql-module/execute-sql.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php(6): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/sql-module/execute-sql.php')
+#11 {main}
+
+crud.page.generators -- 2016-12-02 09:59:18
+----------
+exception 'Exception' with message 'translation file not found: /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/en/quickstart.php' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:32
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php(113): __('Main', 'quickstart')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php(75): Crud\CrudModule::triggerGenerators('oui', true, true)
+#2 unknown file(unknown line): Layout->{closure}(Array, NULL)
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php(93): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/quickstart.php(21): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/quickstart.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickstart/quickstart.php(6): Layout->display()
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickstart/quickstart.php')
+#10 {main}
+
+crud.page.generators -- 2016-12-02 12:04:34
+----------
+exception 'Exception' with message 'translation file not found: /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/en/quickstart.php' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:32
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php(113): __('Main', 'quickstart')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php(75): Crud\CrudModule::triggerGenerators('oui', true, true)
+#2 unknown file(unknown line): Layout->{closure}(Array, NULL)
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php(93): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/quickstart.php(21): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/quickstart.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickstart/quickstart.php(6): Layout->display()
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickstart/quickstart.php')
+#10 {main}
+
+crud.page.generators -- 2016-12-02 12:14:51
+----------
+exception 'Exception' with message 'translation file not found: /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/en/modules/crud/quickstart.php' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:32
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php(115): __('Main', 'modules/crud/quickstart')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php(75): Crud\CrudModule::triggerGenerators('oui', true, true)
+#2 unknown file(unknown line): Layout->{closure}(Array, NULL)
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php(93): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/quickstart.php(21): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/quickstart.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickstart/quickstart.php(6): Layout->display()
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickstart/quickstart.php')
+#10 {main}
+
+crud.page.generators -- 2016-12-02 12:16:44
+----------
+exception 'Exception' with message 'translation file not found: /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/en/modules/crud/quickstart.php' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:32
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Crud/CrudModule.php(115): __('Main', 'modules/crud/quickstart')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php(75): Crud\CrudModule::triggerGenerators('oui', true, true)
+#2 unknown file(unknown line): Layout->{closure}(Array, NULL)
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php(93): QuickForm\QuickForm->play()
+#5 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/quickstart.php(21): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/sub/crud-generators.php')
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickstart/quickstart.php')
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickstart/quickstart.php(6): Layout->display()
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(54): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickstart/quickstart.php')
+#10 {main}
+
+sqltools.pdoException -- 2016-12-02 15:01:18
+----------
+exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1007 Can't create database 'oui'; database exists' in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDO->exec('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/SqlTools/SqlToolsModule.php(39): QuickPdo\QuickPdo::freeExec('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/sqltools/sqltools.php(16): SqlTools\SqlToolsModule::executeSqlStatements('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/sqltools/sqltools.php(85): processSql('
+CREATE SCHEMA `oui` DEFAULT CHARACTER SET utf8 ;
+', true, 'SQLSTATE[HY000]: General error: 1007 Can't create database 'oui'; database exists')
+#4 unknown file(unknown line): Layout->{closure}(Array, 'SQLSTATE[HY000]: General error: 1007 Can't create database 'oui'; database exists')
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/QuickForm/QuickForm.php(181): call_user_func_array(Closure, Array)
+#6 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/sqltools/sqltools.php(94): QuickForm\QuickForm->play()
+#7 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(84): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/sqltools/sqltools.php')
+#8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout.php(58): Layout->includeElement('body')
+#9 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/sqltools/sqltools.php(6): Layout->display()
+#10 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(62): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/sqltools/sqltools.php')
+#11 {main}
+

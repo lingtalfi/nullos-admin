@@ -27,7 +27,11 @@ function __($identifier, $context = 'default', array $tags = [])
         $defs = $terms[$context];
     } else {
         $defs = [];
-        require_once APP_DICTIONARY_PATH . '/' . $context . '.php';
+        $file = APP_DICTIONARY_PATH . '/' . $context . '.php';
+        if (false === file_exists($file)) {
+            throw new \Exception("translation file not found: " . $file);
+        }
+        require_once $file;
         $terms[$context] = $defs;
     }
 
@@ -53,6 +57,16 @@ function __($identifier, $context = 'default', array $tags = [])
 function ___()
 {
     return htmlspecialchars(call_user_func_array('__', func_get_args()));
+}
+
+
+function linkt($text, $href, $external = false)
+{
+    $target = '';
+    if (true === $external) {
+        $target = 'target="_blank"';
+    }
+    return '<a ' . $target . ' href="' . $href . '">' . __($text, Spirit::get('ll')) . '</a>';
 }
 
 

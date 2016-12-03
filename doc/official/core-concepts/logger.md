@@ -10,19 +10,15 @@ In nullos, logging is used to intercept error messages that are not supposed to 
 The class responsible for the logging is Logger (**app-nullos/class/Logger.php**).
 
 
-**Logger** has one method: log, which looks like this:
+**Logger** has one method: log, in which you can hook into your own log strategy.
 
-```php
-public static function log($msg, $targetIdentifier = null)
-    {
-        if (true === Helper::isLocal()) {
-            a("LOGGER");
-            az(func_get_args());
-        } else {
-            // put your logging code here...
-        }
-    }
-```
+By default, Logger uses a [module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules.md) named ApplicationLogModule (**app-nullos/class-modules/ApplicationLog**), which basically
+logs quietly every message to the **app-nullos/log/nullos.log** file.
 
-As you can see, its default behavior is to complain out loud in development, but the production implementation
-is left to you.
+
+
+
+Related
+-------------
+- [List of log calls](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/logger/list-of-log-calls.md)
+- [Nullos aliases](https://github.com/lingtalfi/nullos-admin/tree/master/doc/bonus/nullos-aliases.md)

@@ -1,9 +1,12 @@
 <?php
 
 
+use Boot\BootModule;
 use Crud\CrudModule;
 use Lang\LangModule;
+use LeftMenuSection\Tools\ToolsLeftMenuSectionModule;
 use QuickStart\QuickStartModule;
+use SqlTools\SqlToolsModule;
 
 class Bridge
 {
@@ -17,13 +20,41 @@ class Bridge
     //--------------------------------------------
     /**
      * Owned by:
+     * - router in www/index.php
+     */
+    public static function decorateUri2PagesMap(array &$uri2pagesMap)
+    {
+        BootModule::decorateUri2PagesMap($uri2pagesMap);
+        QuickStartModule::decorateUri2PagesMap($uri2pagesMap);
+        SqlToolsModule::decorateUri2PagesMap($uri2pagesMap);
+        CrudModule::decorateUri2PagesMap($uri2pagesMap);
+    }
+
+    /**
+     * Owned by:
      * - class/Layout
      */
     public static function displayLeftMenuBlocks()
     {
-        QuickStartModule::displayLeftMenuLinks();
-        CrudModule::displayLeftMenuLinks();
+        QuickStartModule::displayLeftMenuBlocks();
+        ToolsLeftMenuSectionModule::displayLeftMenuBlocks();
+        CrudModule::displayLeftMenuBlocks();
     }
+
+
+
+    /**
+     * Owned by:
+     * - class-modules/LeftMenuSection/Tools/ToolsLeftMenuSectionModule
+     */
+    public static function displayToolsLeftMenuLinks()
+    {
+        BootModule::displayToolsLeftMenuLinks();
+        CrudModule::displayToolsLeftMenuLinks();
+        SqlToolsModule::displayToolsLeftMenuLinks();
+    }
+
+
 
     /**
      * Owned by:

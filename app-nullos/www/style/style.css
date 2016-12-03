@@ -31,32 +31,32 @@ body.holygrail {
     justify-content: flex-end;
 }
 
-
 /*------------------------------------
 - LANG MODULE
 ------------------------------------*/
-.topbar .lang-tool{
+.topbar .lang-tool {
     display: flex;
     color: #999;
 }
 
-.topbar .lang-tool a
-{
+.topbar .lang-tool a {
     color: #356a9a;
 }
-.topbar .lang-list{
+
+.topbar .lang-list {
     display: flex;
     list-style-type: none;
     margin-left: 20px;
 }
-.topbar .lang-list li{
+
+.topbar .lang-list li {
     padding: 0 10px;
     border-right: 1px solid #c3c3c3;
 }
-.topbar .lang-list .last{
+
+.topbar .lang-list .last {
     border-right: none;
 }
-
 
 /*------------------------------------
 - PANES CODE
@@ -216,27 +216,26 @@ body.holygrail {
 }
 
 .alert-success,
-.congrats
-{
+.congrats {
     background-color: #dff0d8;
     border-color: #d6e9c6;
     color: #3c763d;
 }
 
-.alert-error
-{
+.alert-error {
     background-color: #f2dede;
     border-color: #ebccd1;
     color: #a94442;
 }
 
-.congrats{
+.congrats {
     padding: 10px;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
-.congrats .text{
+
+.congrats .text {
     margin-left: 20px;
 }
 
@@ -254,7 +253,7 @@ body.holygrail {
 * - The first span contains an svg icon.
 * - The second span has .text and contains the informative text.
 */
-.icon-box{
+.icon-box {
     display: inline-block;
     margin: 0 auto;
     justify-content: flex-start;
@@ -264,24 +263,25 @@ body.holygrail {
     border: 1px solid black;
 }
 
-.icon-box > div{
+.icon-box > div {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.icon-box span.text{
+.icon-box span.text {
     margin-left: 10px;
 }
 
-.icon-box.technical-note{
+.icon-box.technical-note {
     background: #f9e0b1;
     border: 1px solid orange;
 }
 
-.icon-box.technical-note .icon{
+.icon-box.technical-note .icon {
     fill: #ca6310;
 }
+
 /*------------------------------------
 - DATATABLE
 ------------------------------------*/
@@ -552,12 +552,13 @@ body.holygrail {
     margin-left: 20px;
 }
 
-
-.checkbox-label{
+.checkbox-label {
     display: block;
     text-align: left;
 }
-.checkbox-label input{
+
+.checkbox-label input,
+.radio-label input {
     width: auto;
 }
 
@@ -624,6 +625,7 @@ body.holygrail {
     background: rgba(255, 255, 255, 0.5);
     padding: 3px;
 }
+
 .install-page .code {
     font-family: monospace;
     background: black;
@@ -631,22 +633,24 @@ body.holygrail {
     color: white;
 }
 
-
 /*------------------------------------
 - YOUR STYLES...
 ------------------------------------*/
-.table-links.blue h3{
+.table-links.blue h3 {
     background: #454565;
     color: #bbb;
 }
-.table-links.purple h3{
+
+.table-links.purple h3 {
     background: #70317d;
     color: #bbb;
 }
-.table-links.yellow h3{
+
+.table-links.yellow h3 {
     background: #a59723;
 }
-.table-links.gray h3{
+
+.table-links.gray h3 {
     background: #444;
     color: #bbb;
 }

@@ -4,6 +4,10 @@ Getting started with nullos
 
 
 
+
+DEPRECATED...coming back soon...
+
+
 Welcome to the **nullos admin** tutorial.
 
 

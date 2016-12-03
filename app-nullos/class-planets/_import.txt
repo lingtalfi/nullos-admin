@@ -4,3 +4,5 @@ Bat
 QuickForm
 Privilege
 ArrayToString
+ArrayExport
+DirScanner

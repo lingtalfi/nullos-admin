@@ -15,6 +15,8 @@ class Form
     public $title; // string(default="$table form")|null, null means no title
     public $labels;
     public $allowMultipleErrorsPerControl;
+    public $messages;
+    public $validationTranslatorContext;
 
 
     private $table;
@@ -23,7 +25,7 @@ class Form
     //
     private $controls;
     private $ricSeparator;
-    private $translatorContext;
+    private $_translatorContext;
 
     //
     private $qform;
@@ -40,6 +42,9 @@ class Form
         $this->labels = [];
         $this->insertDefaults = [];
 
+
+        $this->messages = [];
+
         /**
          * if this class ever sets the ricSeparator, it should also update the property in the Spirit object,
          * so that both are synced.
@@ -47,12 +52,13 @@ class Form
          * transiting via the http url.
          */
         $this->ricSeparator = \Spirit::get('ricSeparator');
-        $this->translatorContext = "form-validation";
+        $this->validationTranslatorContext = "form-validation";
         $this->controlErrorLocation = "local";
-        $this->title = __("{table} form", "form", ['table' => ucfirst($table)]);
 
         $this->allowMultipleErrorsPerControl = true;
         $this->qform = new QuickForm();
+        $this->_translatorContext = CrudModule::$langDir . '/form';
+        $this->title = __("{table} form", $this->_translatorContext, ['table' => ucfirst($table)]);
     }
 
 
@@ -73,19 +79,17 @@ class Form
         $this->qform->validationTranslateFunc = function ($v) {
             return __($v, $this->translatorContext);
         };
+
+        $messages = $this->messages;
         $this->qform->messages = [
-            'formHasControlErrors' => __('The form has the following errors, please fix them and resubmit the form', 'form'),
-            'submit' => __('Submit', 'form'), // submit btn value
-            'formNotDisplayed' => __('Oops, something went wrong with the database, sorry...', 'form'),
+            'formHasControlErrors' => (array_key_exists('formHasControlErrors', $messages)) ? $messages['formHasControlErrors'] : __('The form has the following errors, please fix them and resubmit the form', $this->_translatorContext),
+            'submit' => (array_key_exists('submit', $messages))?$messages['submit']:__('Submit', $this->_translatorContext), // submit btn value
+            'formNotDisplayed' => (array_key_exists('formNotDisplayed', $messages))?$messages['formNotDisplayed']:__('Oops, something went wrong with the database, sorry...', $this->_translatorContext),
         ];
         $this->qform->allowMultipleErrorsPerControl = $this->allowMultipleErrorsPerControl;
         $this->qform->controlErrorLocation = $this->controlErrorLocation;
         $this->qform->labels = $this->labels;
         $this->qform->title = $this->title;
-
-
-
-
 
 
         //--------------------------------------------
@@ -109,7 +113,6 @@ class Form
         }
 
 
-
         //--------------------------------------------
         // FORM SUBMITTED
         //--------------------------------------------
@@ -128,22 +131,19 @@ class Form
                     }
                     QuickPdo::update($this->table, $formattedValues, $where);
                     $dbInteractionIsSuccess = true;
-                    $msg = __("The data has been successfully updated", "form");
+                    $msg = __("The data has been successfully updated", $this->_translatorContext);
 
                 } else {
                     QuickPdo::insert($this->table, $formattedValues);
                     $dbInteractionIsSuccess = true;
-                    $msg = __("The data has been successfully inserted", "form");
+                    $msg = __("The data has been successfully inserted", $this->_translatorContext);
                 }
             } catch (\Exception $e) {
-                $msg = __("Oops, something went wrong with the database, sorry...", "form");
-                \Logger::log($e);
+                $msg = __("Oops, something went wrong with the database, sorry...", $this->_translatorContext);
+                \Logger::log($e, 'crud.pdoException.form.' . $this->mode);
             }
             return $dbInteractionIsSuccess;
         };
-
-
-
 
 
         $displayForm = ('update' !== $this->mode || ('update' === $this->mode && true === $updateRowFound));

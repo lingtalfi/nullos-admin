@@ -1,6 +1,8 @@
 <?php
 
 
+use Privilege\Privilege;
+
 class Helper
 {
 
@@ -12,6 +14,17 @@ class Helper
         return false;
     }
 
+
+    public static function layoutElementIf($fileName, $privilege, $default = null)
+    {
+        if (true === Privilege::has($privilege)) {
+            return $fileName;
+        }
+        if(null===$default){
+            $default = "page-denied.php";
+        }
+        return $default;
+    }
 
     public static function getWhereFragmentFromRic(array $ric, array &$markers)
     {

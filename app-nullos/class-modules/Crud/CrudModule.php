@@ -7,19 +7,41 @@ namespace Crud;
 use ArrayToString\ArrayToStringUtil;
 use ArrayToString\SymbolManager\PhpArrayToStringSymbolManager;
 use Bat\FileSystemTool;
+use Privilege\Privilege;
 use QuickPdo\QuickPdoInfoTool;
 
 class CrudModule
 {
 
-    private static $tables = [];
+    public static $langDir = "modules/crud";
 
-    public static function registerTables(array $tables)
+
+    public static function decorateUri2PagesMap(array &$uri2pagesMap)
     {
-        self::$tables = $tables;
+        $uri2pagesMap[CrudConfig::getCrudUri()] = CrudConfig::getCrudPage();
+        $uri2pagesMap[CrudConfig::getCrudGeneratorsUri()] = CrudConfig::getCrudGeneratorsPage();
     }
 
-    public static function displayLeftMenuLinks()
+
+    public static function displayToolsLeftMenuLinks()
+    {
+        $ll = "modules/crud/crud";
+        if (Privilege::has('crud.generator.access')):
+            ?>
+            <li>
+                <a href="<?php echo self::getUrl(); ?>"><?php echo __("Crud Generators", $ll); ?></a>
+            </li>
+            <?php
+        endif;
+    }
+
+    public static function getUrl()
+    {
+        return CrudConfig::getCrudGeneratorsUri();
+    }
+
+
+    public static function displayLeftMenuBlocks()
     {
         $prettyTables = CrudConfig::getPrettyTableNames();
         $sections = CrudConfig::getLeftMenuSections();
@@ -100,13 +122,14 @@ class CrudModule
             // creating a "Main" and "Others" sections, just to get started
             $sections = [];
             $c = count($fullTables);
+            $ll = self::$langDir . '/quickstart';
             if ($c > 1) {
                 $half = (int)floor($c / 2);
-                $sections[__('Main', 'quickstart')] = array_slice($fullTables, 0, $half);
-                $sections[__('Others', 'quickstart')] = array_slice($fullTables, $half);
+                $sections[__('Main', $ll)] = array_slice($fullTables, 0, $half);
+                $sections[__('Others', $ll)] = array_slice($fullTables, $half);
             } else {
-                $sections[__('Main', 'quickstart')] = $fullTables;
-                $sections[__('Others', 'quickstart')] = [];
+                $sections[__('Main', $ll)] = $fullTables;
+                $sections[__('Others', $ll)] = [];
             }
             $sSections = self::arrayToString($sections);
 

@@ -1,6 +1,8 @@
 <?php
 
 
+use ApplicationLog\ApplicationLogModule;
+
 class Logger
 {
 
@@ -21,11 +23,6 @@ class Logger
      */
     public static function log($msg, $targetIdentifier = null)
     {
-        if (true === Helper::isLocal()) {
-            a("LOGGER");
-            az(func_get_args());
-        } else {
-            // put your logging code here...
-        }
+        ApplicationLogModule::log($msg, $targetIdentifier); // quietly log to the log/nullos.log file
     }
 }
