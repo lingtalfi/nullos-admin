@@ -1,5 +1,7 @@
 <?php
 
+namespace Layout;
+
 
 use QuickPdo\QuickPdo;
 

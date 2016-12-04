@@ -1,10 +1,23 @@
 Crud page
 ===============
-2016-11-30
+2016-11-30 -- 2016-12-04
 
 
-The crud page displays a form or a list for a given table.
+A **crud page** is a <-page-> with two views:
 
+- a list view, which is the default view
+- a form view
+
+
+todo: images of list and forms views
+
+
+
+
+
+
+Nullos power user
+----------------------
 It is part of the [Crud module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/crud-module.md).
 
 The crud page is by default mapped to the **/table** uri (see the [Router](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/routing.md) for more information).

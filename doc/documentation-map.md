@@ -17,31 +17,81 @@ This is what the documentation is supposed to look like when it's finished.
     - Getting started with nullos
     - Create your first page
     - Create your own layout
-        - create layout elements    
+        - create layout elements
+            
 - Official
-    - nomenclature and general concepts
+    - what is nullos admin
+    - nullos protagonists
+        - front user
+        - nullos user
+        - nullos power user
+        - nullos developer
+    - glossary
         - nullos account
         - ric
         - left menu organization
         - different types of configuration
-            
-    - overview of the tree structure
-    
-    - core concepts  
+                           
+                       
+- Nullos user    
+    - log in page
+    - the nullos admin interface
+        - change the language 
+        - the left menu 
+            - the "Tools" section
+                - the "Init writer" page
+                - the "Reset" page
+                - the "Crud Generators" page
+                - the "Execute SQL" page
+            - the "Website" section
+                - crud link
+                - the crud file
+                - the crud page
+            - the "Plugins" section
+        - log out 
+    - the crud page
+        - the crud list
+        - the crud form
+        
+     
+- Nullos power user
+    - learning
+        - overview of the tree structure
         - init file
-        - local vs distant website
-        - Routing
-            - create a page
+        - Router
         - Layout
-            // A helper to display a page
             - nullos main layout
-            - left menu
-                - section
             - IfLayout                 
         - Privilege        
             - the Privilege profile
-            - configuring the Privilege profiles
             - list of all privileges
+        - Crud module            
+            - the crud config
+            - left menu preferences
+            - crud files preferences            
+        - Lang module            
+            - translation files      
+    - tutorials
+        - create a page
+        - configure the generators
+            - configure the list generator
+            - configure the form generator
+        - add a language
+        - configure the lists
+        - configure the forms
+        - configure the left menu
+        - configuring the Privilege profiles
+        - configuring the nullos accounts
+    
+    
+- Nullos developer
+    
+    - guidelines
+        - module guidelines
+    - things to be aware of    
+        - local vs distant website
+    
+    - core classes
         - Logger
             // When something was not supposed to happen
             - list of log calls
@@ -53,41 +103,19 @@ This is what the documentation is supposed to look like when it's finished.
         - ApplicationLog module
             - configuring the log path
         - Authentication module
-            - configuring the nullos accounts
-            - the login page
         - Boot module
-            - the "Init writer" page
-            - the "Reset" page
         - Crud module
-            - the crud config //controls which tables to show in the menu...
-            - the crud file
-            - the crud page
-            - the "Crud Generators" page
-            - configure a list 
-            - configure a form
-            - configure the list generator
-            - configure the form generator
-            - left menu preferences
-            - crud files preferences
         - Lang module
-            - translation files
-            - the translation function
+            - the translation function  
         - LeftMenuSection
             - ToolsLeftMenuSection module
-        - QuickStart module
-            // a gui for creating a basic nullos admin configuration 
-                // init.php? + showQuickStartMenu()
-            - the "Configure" page
-            - the "Crud Generators" page
-            - hide the Quickstart section on the left menu
         - SqlTools module
-            - the "Execute SQL" page
-    - developers
-        - guidelines
-            - module guidelines
                             
-- Bonus
-    - nullos aliases
+    - bonus
+        - nullos aliases
+            
+            
+            
             
             
 - Wish list

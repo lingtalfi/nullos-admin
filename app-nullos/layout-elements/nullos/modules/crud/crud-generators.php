@@ -3,6 +3,7 @@
 use Crud\Util\CrudFilesPreferencesGenerator;
 use Crud\Util\CrudFilesGenerator;
 use Crud\Util\LeftMenuPreferencesGenerator;
+use Layout\Goofy;
 use QuickForm\ControlFactory\MagicControlFactory;
 use QuickPdo\QuickPdo;
 use QuickPdo\QuickPdoInfoTool;

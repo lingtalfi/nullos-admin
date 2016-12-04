@@ -4,6 +4,7 @@
 use Boot\BootConfig;
 use Boot\BootModule;
 use Privilege\PrivilegeUser;
+use Router\RouterBridge;
 
 if (file_exists(__DIR__ . "/../init.php")) {
     require_once __DIR__ . "/../init.php";
@@ -39,7 +40,7 @@ if (PrivilegeUser::isConnected()) {
         ];
 
 
-        Bridge::decorateUri2PagesMap($uri2pagesMap);
+        RouterBridge::decorateUri2PagesMap($uri2pagesMap);
 
         /**
          * This is the router code, you shouldn't edit below this line

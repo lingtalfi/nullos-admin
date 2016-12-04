@@ -9,9 +9,7 @@ The **left menu** is the left part of the [nullos main layout](https://github.co
 
 It contains the navigation links organized in sections:
 
-- Tools: this section...todo
-    - <-link1->
-    - <-link2->
+- [the "Tools" section](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/layout/left-menu/tools-section.md)
 - Website: this section contains links to the <-crud lists-> and <-crud forms->, which allow interaction with the <-front website(s)-> database(s)
 - Plugins: todo
 

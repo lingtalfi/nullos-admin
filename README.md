@@ -18,9 +18,19 @@ The doc (below) is not up to date, some parts need to be revisited.
 
 Table of contents
 --------------------
-
+- Tutorials
+    - [install nullos on your machine](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/install-nullos-on-your-machine.md)
+    - [install the "oui" test database](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/install-oui-database.md)
+    - [getting started with nullos](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/getting-started-with-nullos.md)
+    - [create your first page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/create-your-first-page.md)
 - Official
     - [nomenclature and general concepts](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts.md)
+        - [what is nullos](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/nullos-admin.md)
+        - [nullos protagonists](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/nullos-protagonists.md)
+            - [the front user](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/nullos-protagonists/front-user.md)
+            - [the nullos user](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/nullos-protagonists/nullos-user.md)
+            - [the nullos power user](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/nullos-protagonists/nullos-power-user.md)
+            - [the nullos developer](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/nullos-protagonists/nullos-developer.md)
         - [nullos account](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/nullos-account.md)
         - [ric](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/ric.md)
         - [left menu organization](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/nomenclature-and-general-concepts/left-menu-organization.md)
@@ -35,7 +45,8 @@ Table of contents
             - [nullos main layout](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/layout/nullos-main-layout.md)
             - [layout element](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/layout-element.md)
             - [left menu](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/layout/left-menu.md)
-                - section            
+                - [the "Tools" section](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/layout/left-menu/tools-section.md)            
+                - [the "Website" section](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/layout/left-menu/website-section.md)            
             - [IfLayout](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/layout/iflayout.md)
         - [Privilege](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/privilege.md)
             - [the Privilege profile](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/core-concepts/privilege/privilege-profile.md)
@@ -56,6 +67,7 @@ Table of contents
             - [the "Reset" page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/boot-module/reset-page.md)  
         - [Crud module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/crud-module.md)
             - [the crud file](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/crud-module/crud-file.md)
+            - [crud link](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/crud-module/crud-link.md)
             - [the crud page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/crud-module/crud-page.md)
             - [the "Crud Generators" page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/crud-module/crud-generators-page.md)
             - [configure a list](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/crud-module/configure-a-list.md)
@@ -66,21 +78,13 @@ Table of contents
             - [translation files](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/lang-module/translation-files.md)
             - [the translation function](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/lang-module/translation-function.md)            
         - LeftMenuSection
-            - [ToolsLeftMenuSection module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/leftmenusection/toolsleftmenusection-module.md)  
-        - [QuickStart module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module.md)
-            - [the "Configure" page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/configure-page.md)  
-            - [the "Crud Generators" page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/crud-generators-page.md)  
-            - [hide the Quickstart section in the left menu](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/quickstart-module/hide-quickstart-section.md)  
+            - [ToolsLeftMenuSection module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/leftmenusection/toolsleftmenusection-module.md)    
         - [SqlTools module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/sqltools-module.md)
             - [the "Execute SQL" page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/sqltools-module/execute-sql-page.md)
     - developers
         - [guidelines](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/developers/guidelines.md)
             - [module guidelines](https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/developers/guidelines/module-guidelines.md)
-- Tutorials
-    - [install nullos on your machine](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/install-nullos-on-your-machine.md)
-    - [install the "oui" test database](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/install-oui-database.md)
-    - [getting started with nullos](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/getting-started-with-nullos.md)
-    - [create your first page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/create-your-first-page.md)
+
 - Bonus
     - [nullos aliases](https://github.com/lingtalfi/nullos-admin/tree/master/doc/bonus/nullos-aliases.md)    
 - [documentation map](https://github.com/lingtalfi/nullos-admin/tree/master/doc/documentation-map.md)

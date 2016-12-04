@@ -9,6 +9,7 @@ use Crud\CrudFormGenerator;
 use Crud\CrudGenHelper;
 use Crud\CrudListGenerator;
 use Crud\CrudModule;
+use Layout\Goofy;
 use QuickForm\QuickForm;
 use QuickPdo\QuickPdo;
 use QuickPdo\QuickPdoInfoTool;

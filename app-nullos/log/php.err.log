@@ -2204,3 +2204,70 @@ Stack trace:
 [03-Dec-2016 22:46:54 Europe/Paris] PHP Notice:  Undefined index: uri in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Spirit.php on line 22
 [03-Dec-2016 22:46:57 Europe/Paris] PHP Notice:  Undefined index: uri in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Spirit.php on line 22
 [03-Dec-2016 22:46:57 Europe/Paris] PHP Notice:  Undefined index: uri in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Spirit.php on line 22
+[04-Dec-2016 15:23:42 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to undefined method Bridge::decorateUri2PagesMap() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php:42
+Stack trace:
+#0 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php on line 42
+[04-Dec-2016 15:23:57 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'Layout' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php:4
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once()
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php on line 4
+[04-Dec-2016 15:25:04 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to undefined method Bridge::displayToolsLeftMenuLinks() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/LeftMenuSection/Tools/ToolsLeftMenuSectionModule.php:17
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/LayoutBridge.php(30): LeftMenuSection\Tools\ToolsLeftMenuSectionModule::displayLeftMenuBlocks()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(62): Layout\LayoutBridge::displayLeftMenuBlocks()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php(8): Layout\Layout->display()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Volumes/Macint...')
+#4 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/LeftMenuSection/Tools/ToolsLeftMenuSectionModule.php on line 17
+[04-Dec-2016 15:26:03 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to undefined method Bridge::registerBootResetOptions() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/reset.php:30
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(91): require_once()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(65): Layout\Layout->includeElement('body')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/boot/boot.php(16): Layout\Layout->display()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Volumes/Macint...')
+#4 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/reset.php on line 30
+[04-Dec-2016 15:28:23 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to undefined method Bridge::registerBootResetOptions() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/reset.php:30
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(91): require_once()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(65): Layout\Layout->includeElement('body')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/boot/boot.php(16): Layout\Layout->display()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Volumes/Macint...')
+#4 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/boot/reset.php on line 30
+[04-Dec-2016 20:35:14 Europe/Paris] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Bat\StringTool::htmlAttributes() must be of the type array, string given, called in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/AssetsList.php on line 64 and defined in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Bat/StringTool.php:64
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/AssetsList.php(64): Bat\StringTool::htmlAttributes('css')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(92): Layout\AssetsList->displayList()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php(8): Layout\Layout->display()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Volumes/Macint...')
+#4 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Bat/StringTool.php on line 64
+[04-Dec-2016 20:37:00 Europe/Paris] PHP Fatal error:  Uncaught Exception: joi in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Body/Tabby.php:19
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/quickDoc.php(5): Layout\Body\Tabby::demo()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(105): require_once('/Volumes/Macint...')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(59): Layout\Layout->includeElement('body')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php(8): Layout\Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Volumes/Macint...')
+#5 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Body/Tabby.php on line 19
+[04-Dec-2016 21:56:52 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'Key2ValueForm' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/quickDoc.php:75
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(117): require_once()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(62): Layout\Layout->includeElement('body')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php(8): Layout\Layout->display()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Volumes/Macint...')
+#4 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/quickDoc.php on line 75
+[04-Dec-2016 22:17:13 Europe/Paris] PHP Notice:  Undefined variable: c in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Body/Tabby/TabbyTabs.php on line 84
+[04-Dec-2016 22:17:13 Europe/Paris] PHP Notice:  Undefined variable: c in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Body/Tabby/TabbyTabs.php on line 84
+[04-Dec-2016 22:17:13 Europe/Paris] PHP Notice:  Undefined variable: c in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Body/Tabby/TabbyTabs.php on line 84
+[04-Dec-2016 22:35:41 Europe/Paris] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/config.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/quickDoc.php on line 52
+[04-Dec-2016 22:35:41 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/config.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/quickDoc.php on line 52
+[04-Dec-2016 22:45:06 Europe/Paris] PHP Notice:  Undefined index: scrDir in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/tabs/config.php on line 9
+[04-Dec-2016 22:50:59 Europe/Paris] PHP Warning:  file_put_contents(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/assets/module/quickDoc/prefs.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/QuickDoc/QuickDocUtil.php on line 30
+[04-Dec-2016 22:59:23 Europe/Paris] PHP Notice:  Undefined variable: srcDir in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/tabs/config.php on line 35
+[04-Dec-2016 22:59:23 Europe/Paris] PHP Notice:  Undefined variable: dstDir in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/tabs/config.php on line 36

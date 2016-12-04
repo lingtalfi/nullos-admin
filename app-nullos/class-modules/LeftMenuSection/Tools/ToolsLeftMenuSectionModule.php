@@ -3,6 +3,7 @@
 namespace LeftMenuSection\Tools;
 
 
+use Layout\LayoutBridge;
 use Privilege\Privilege;
 
 class ToolsLeftMenuSectionModule
@@ -14,7 +15,7 @@ class ToolsLeftMenuSectionModule
             <section class="section-block tools">
                 <h3>Tools</h3>
                 <ul class="linkslist">
-                    <?php \Bridge::displayToolsLeftMenuLinks(); ?>
+                    <?php LayoutBridge::displayToolsLeftMenuLinks(); ?>
                 </ul>
             </section>
             <?php

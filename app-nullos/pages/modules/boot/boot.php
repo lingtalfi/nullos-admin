@@ -1,5 +1,7 @@
 <?php
 
+use Layout\Layout;
+
 if (true === defined('I_AM_JUST_THE_FALLBACK_INIT')) {
     $action = "boot";
 } else {

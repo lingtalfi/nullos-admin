@@ -6,3 +6,4 @@ Privilege
 ArrayToString
 ArrayExport
 DirScanner
+DirTransformer

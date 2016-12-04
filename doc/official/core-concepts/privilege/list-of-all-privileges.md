@@ -19,6 +19,7 @@ using the module names as the namespace.
 TODO
 - **crud.access.table**: access to the crud generated item links in the "Website" section of the left menu (nullos main layout), and to the corresponding pages
 - **crud.access.generator**: access to the "Crud Generators" item link in the "Tools" section of the left menu (nullos main layout), and to the corresponding page
+- **quickDoc.access**: access to the "QuickDoc" item link in the "Tools" section of the left menu (nullos main layout), and to the corresponding page
 
 
 

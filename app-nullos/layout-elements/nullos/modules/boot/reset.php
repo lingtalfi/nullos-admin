@@ -1,7 +1,8 @@
 <?php
 
 
-use QuickForm\ControlFactory\InertControlFactory;
+use Boot\BootBridge;
+use Layout\Goofy;
 use QuickForm\ControlFactory\MagicControlFactory;
 
 $ll = 'modules/boot/boot';
@@ -27,7 +28,7 @@ define('LL', $ll);
 
     $_resetOptions = [];
     $resetOptions = [];
-    Bridge::registerBootResetOptions($_resetOptions);
+    BootBridge::registerBootResetOptions($_resetOptions);
 
     foreach ($_resetOptions as $option) {
         $resetOptions[$option->getIdentifier()] = $option;

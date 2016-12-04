@@ -228,6 +228,10 @@ body.holygrail {
     color: #a94442;
 }
 
+.alert-error .icon-span {
+    margin-right: 10px;
+}
+
 .congrats {
     padding: 10px;
     display: flex;
@@ -562,11 +566,9 @@ body.holygrail {
     width: auto;
 }
 
-
-.tac .row{
+.tac .row {
     text-align: left;
 }
-
 
 .dynamic-items li {
     display: flex;

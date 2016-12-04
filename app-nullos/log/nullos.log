@@ -409,3 +409,25 @@ Stack trace:
 #8 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(67): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/boot/boot.php')
 #9 {main}
 
+layout.body -- 2016-12-04 21:06:46
+----------
+exception 'Exception' with message 'joi' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Body/Tabby.php:23
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/quickDoc.php(5): Layout\Body\Tabby::demo()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(116): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/quickDoc.php')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(62): Layout\Layout->includeElement('body')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php(8): Layout\Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php')
+#5 {main}
+
+layout.body -- 2016-12-04 21:46:36
+----------
+exception 'Exception' with message 'jj' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Body/Tabby.php:19
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/quickDoc.php(5): Layout\Body\Tabby::demo()
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(117): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/quickDoc.php')
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(62): Layout\Layout->includeElement('body')
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php(8): Layout\Layout->display()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php')
+#5 {main}
+
