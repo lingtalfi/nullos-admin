@@ -95,6 +95,8 @@ The documentation is currently under development.
 
 I use the <-temporary notation-> when I know that I want to write a link, but I don't know the url yet.
 
+For images, I use the <!-my_image.png-> notation.
+
 
 
 

@@ -5,6 +5,7 @@ namespace Layout;
 
 use Boot\BootModule;
 use Crud\CrudModule;
+use IconsViewer\IconsViewerModule;
 use Lang\LangModule;
 use LayoutDynamicHead\LayoutDynamicHeadModule;
 use LeftMenuSection\Tools\ToolsLeftMenuSectionModule;
@@ -44,6 +45,7 @@ class LayoutBridge
         CrudModule::displayToolsLeftMenuLinks();
         SqlToolsModule::displayToolsLeftMenuLinks();
         QuickDocModule::displayToolsLeftMenuLinks();
+        IconsViewerModule::displayToolsLeftMenuLinks();
     }
 
 

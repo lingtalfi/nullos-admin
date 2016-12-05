@@ -21,6 +21,18 @@ class QuickDocConfig
         return APP_ROOT_DIR . "/assets/modules/quickDoc/prefs.php";
     }
 
+    public static function getAllowedMappings()
+    {
+        return ['links', 'images'];
+    }
+
+
+    public static function getMappingsDir()
+    {
+        return APP_ROOT_DIR . "/assets/modules/quickDoc";
+    }
+
+
     public static function getDefaultPreferences()
     {
         /**
@@ -38,14 +50,14 @@ class QuickDocConfig
             'srcDir' => null,
             'dstDir' => null,
             'links' => [
-                'mode' => 'unresolved',
+                'mode' => 'all',
                 'alpha' => true,
-                'group' => true,
+                'group' => false,
             ],
             'images' => [
-                'mode' => 'unresolved',
+                'mode' => 'all',
                 'alpha' => true,
-                'group' => true,
+                'group' => false,
             ],
         ];
     }

@@ -5,9 +5,10 @@ $defs = [
     //--------------------------------------------
     // LEFT MENU ITEM
     //--------------------------------------------
-    "QuickDoc" => "QuickDoc",
+    "IconsViewer" => "Visualisateur d'icônes",
     //--------------------------------------------
-    // QuickDocUtil
+    // ICONS VIEWER PAGE
     //--------------------------------------------
-    "The source dir or destination dir is not set. Please update your configuration first." => "The source dir or destination dir is not set. Please update your configuration first.",
+    "Identifier" => "Identifiant",
+    "Icon" => "Icône",
 ];

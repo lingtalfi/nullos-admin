@@ -1,4 +1,6 @@
 <?php
+
+
 use DirTransformer\Scanner\Scanner;
 use DirTransformer\Transformer\TrackingMapRegexTransformer;
 
@@ -10,7 +12,7 @@ $dstDir = "/pathto/php/projects/nullos-admin/doc2";
 
 
 $t = TrackingMapRegexTransformer::create()
-    ->regex('!<-(.*)->!')
+    ->regex('/<!-\s*(.*)\s*->/U')
     ->map([
         'another link' => 'http://mydoc.com/another-link.md',
     ])
@@ -19,11 +21,13 @@ $t = TrackingMapRegexTransformer::create()
     });
 Scanner::create()
     ->allowedExtensions(['md'])
-    ->dryRun()
-    ->limit(10)
+    ->limit(1)
     ->addTransformer($t)
     ->copy($srcDir, $dstDir);
 
 
 a($t->getFoundList());
 a($t->getUnfoundList());
+
+
+

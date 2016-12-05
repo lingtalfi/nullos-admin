@@ -36,7 +36,7 @@ class Goofy
         }
 
         ?>
-        <div class="alert alert-success flexh">
+        <div class="alert alert-success flexc">
             <span class="icon-span"><?php echo \Icons::printIcon('done', 'green', 48); ?></span>
             <div>
                 <span class="text"><?php echo $msg; ?></span>

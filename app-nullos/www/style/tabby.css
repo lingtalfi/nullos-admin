@@ -11,6 +11,7 @@
 .tabby .tabs {
     background: #b4d4c9;
     display: flex;
+    flex-shrink: 0;
 }
 
 .tabby .tabs .badge {
@@ -89,7 +90,9 @@
     flex-direction: column;
 }
 
-.tabby .body .body-top {
+.tabby .body .body-top,
+.tabby .body .body-top > form
+{
     background: #d6abd6;
     display: flex;
 }

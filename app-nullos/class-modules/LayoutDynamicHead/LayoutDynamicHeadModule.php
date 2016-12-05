@@ -37,4 +37,12 @@ class LayoutDynamicHeadModule
     {
         self::$list[$url] = 'js';
     }
+
+
+    public static function registerCssIf($url, $uri)
+    {
+        if ($uri === \Spirit::get('uri')) {
+            self::registerCss($url);
+        }
+    }
 }

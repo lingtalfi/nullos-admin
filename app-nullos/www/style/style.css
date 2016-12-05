@@ -29,6 +29,7 @@ body.holygrail {
     background: #ddd;
     display: flex;
     justify-content: flex-end;
+    flex-shrink: 0;
 }
 
 /*------------------------------------
@@ -194,6 +195,35 @@ body.holygrail {
 .bignose {
     /*font-size: 1.2em;*/
     /*line-height: 1.6em;*/
+}
+
+.pad {
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.bigtable {
+    width: 100%;
+    text-align: left;
+}
+
+.bigtable.withlines {
+    border-collapse: collapse;
+}
+
+.bigtable.padded td,
+.bigtable.padded th {
+    padding: 10px;
+}
+
+.bigtable.withlines tr,
+.bigtable.withlines td,
+.bigtable.withlines th {
+    border: 1px solid #aaa;
+}
+
+.bigtable.lastcolumnbigger th:last-child {
+    width: 100%;
 }
 
 .flexh {

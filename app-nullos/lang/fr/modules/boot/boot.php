@@ -5,7 +5,7 @@ $defs = [
     //--------------------------------------------
     // LEFT MENU LINKS
     //--------------------------------------------
-    "Init writer" => "création Init",
+    "Init writer" => "Écriture du fichier init",
     "Reset" => "Réinitialiser",
     //--------------------------------------------
     // BOOT

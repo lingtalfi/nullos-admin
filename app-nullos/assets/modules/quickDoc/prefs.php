@@ -1,16 +1,16 @@
 <?php
 
-$prefs = [
+$store = [
     'srcDir' => '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/doc',
     'dstDir' => '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/doc2',
     'links' => [
-        'mode' => 'unresolved',
+        'mode' => 'all',
         'alpha' => true,
-        'group' => true,
+        'group' => false,
     ],
     'images' => [
-        'mode' => 'unresolved',
+        'mode' => 'all',
         'alpha' => true,
-        'group' => true,
+        'group' => false,
     ],
 ];

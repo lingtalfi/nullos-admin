@@ -1,17 +1,41 @@
-<h3>I'm the links</h3>
+<?php
 
 
-<form action="" method="post" class="key2value-form">
-    <table>
-        <tr>
-            <th>Keys</th>
-            <th>Values</th>
-        </tr>
-        <?php for ($i = 0; $i < 5; $i++): ?>
-            <tr>
-                <td>crud</td>
-                <td><input type="text" name="links[crud]" value="http://crud.com"></td>
-            </tr>
-        <?php endfor; ?>
-    </table>
-</form>
+use Layout\Goofy;
+use QuickDoc\QuickDocUtil;
+use QuickDoc\Util\Key2ValueListForm;
+
+
+$type = "links";
+
+
+$prefs = QuickDocUtil::getPreferences();
+
+$mappings = QuickDocUtil::getMappings($type);
+
+$defaultMode = $prefs[$type]['mode'];
+$defaultAlpha = $prefs[$type]['alpha'];
+$defaultGroup = $prefs[$type]['group'];
+
+
+$form = Key2ValueListForm::create();
+$form->handlePost(function (array $foundList, array $unfoundList) use ($type) {
+    $mappings = [
+        "found" => $foundList,
+        "unfound" => $unfoundList,
+    ];
+    if (true === QuickDocUtil::setMappings($type, $mappings)) {
+        return Goofy::alertSuccess("The definitions of the dictionary have been successfully updated", true);
+    } else {
+        return Goofy::alertError("Couldn't write the definitions in the dictionary. Are your file permissions correct?", true);
+    }
+});
+
+
+$form
+    ->mode($defaultMode)
+    ->alpha($defaultAlpha)
+    ->groupByFiles($defaultGroup)
+    ->mappings($mappings)
+    ->titles("Unresolved links", "Resolved links", "All links")
+    ->display();

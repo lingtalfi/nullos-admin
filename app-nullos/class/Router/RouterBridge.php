@@ -5,6 +5,7 @@ namespace Router;
 
 use Boot\BootModule;
 use Crud\CrudModule;
+use IconsViewer\IconsViewerModule;
 use QuickDoc\QuickDocModule;
 use SqlTools\SqlToolsModule;
 
@@ -20,6 +21,7 @@ class RouterBridge
         SqlToolsModule::decorateUri2PagesMap($uri2pagesMap);
         CrudModule::decorateUri2PagesMap($uri2pagesMap);
         QuickDocModule::decorateUri2PagesMap($uri2pagesMap);
+        IconsViewerModule::decorateUri2PagesMap($uri2pagesMap);
     }
 
 }
