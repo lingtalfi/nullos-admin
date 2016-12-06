@@ -3602,3 +3602,281 @@ Stack trace:
 #5 {main}
   thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/quickDoc/tabs/action.php on line 9
 [05-Dec-2016 23:13:42 Europe/Paris] PHP Parse error:  syntax error, unexpected '' => [' (T_CONSTANT_ENCAPSED_STRING) in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/assets/modules/quickDoc/links.php on line 4
+[06-Dec-2016 06:22:39 Europe/Paris] PHP Notice:  Undefined variable: srcD in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php on line 17
+[06-Dec-2016 06:22:39 Europe/Paris] PHP Fatal error:  Uncaught Linguist\LinguistException: srcDir does not exist:  in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php:31
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php(17): Linguist\Util\Equalizer->equalize(NULL, '/Volumes/Macint...')
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 31
+[06-Dec-2016 09:09:39 Europe/Paris] PHP Fatal error:  Uncaught LogicException: This case should have never happened, sorry, I've no clue what this is btw... (good luck). Maybe you are not using this object like you should? in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/ReplacementSequence.php:89
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/TokenRepresentation.php(43): Tokens\TokenRepresentation\ReplacementSequence->nextTokenIdentifier(16, Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php(39): Tokens\TokenRepresentation\TokenRepresentation->getTokens()
+#2 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/ReplacementSequence.php on line 89
+[06-Dec-2016 09:11:58 Europe/Paris] PHP Fatal error:  Uncaught LogicException: This case should have never happened, sorry, I've no clue what this is btw... (good luck). Maybe you are not using this object like you should? in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/ReplacementSequence.php:90
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/TokenRepresentation.php(43): Tokens\TokenRepresentation\ReplacementSequence->nextTokenIdentifier(16, Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php(39): Tokens\TokenRepresentation\TokenRepresentation->getTokens()
+#2 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/ReplacementSequence.php on line 90
+[06-Dec-2016 09:14:13 Europe/Paris] PHP Warning:  token_name() expects parameter 1 to be integer, array given in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/Tokens.php on line 33
+[06-Dec-2016 09:14:13 Europe/Paris] PHP Notice:  Undefined offset: 2 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/Tokens.php on line 35
+[06-Dec-2016 09:31:53 Europe/Paris] PHP Fatal error:  Uncaught Error: Unsupported operand types in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/TokenRepresentation.php:62
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/TokenRepresentation.php(46): Tokens\TokenRepresentation\TokenRepresentation->replaceProcess(Array, Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php(58): Tokens\TokenRepresentation\TokenRepresentation->getTokens()
+#2 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/TokenRepresentation.php on line 62
+[06-Dec-2016 09:32:31 Europe/Paris] PHP Fatal error:  Uncaught Error: Unsupported operand types in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/TokenRepresentation.php:62
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/TokenRepresentation.php(46): Tokens\TokenRepresentation\TokenRepresentation->replaceProcess(Array, Array)
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php(58): Tokens\TokenRepresentation\TokenRepresentation->getTokens()
+#2 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRepresentation/TokenRepresentation.php on line 62
+[06-Dec-2016 14:13:50 Europe/Paris] PHP Fatal error:  Uncaught Linguist\LinguistException: dstDir does not exist: /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/ch in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php:64
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php(21): Linguist\Util\Equalizer->equalize('/Volumes/Macint...', '/Volumes/Macint...')
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 64
+[06-Dec-2016 14:14:32 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 91
+[06-Dec-2016 14:14:32 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 91
+[06-Dec-2016 14:14:32 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 91
+[06-Dec-2016 14:14:32 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 91
+[06-Dec-2016 14:14:32 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 91
+[06-Dec-2016 14:14:32 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 91
+[06-Dec-2016 14:14:32 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 91
+[06-Dec-2016 14:14:32 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 91
+[06-Dec-2016 14:14:32 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 91
+[06-Dec-2016 14:14:32 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'Linguist\Util\Tokens' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php:130
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php(56): Linguist\Util\Equalizer->copyWithComments('/Volumes/Macint...', '/Volumes/Macint...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php(21): Linguist\Util\Equalizer->equalize('/Volumes/Macint...', '/Volumes/Macint...')
+#2 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 130
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 14:15:41 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 88
+[06-Dec-2016 19:32:40 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 89
+[06-Dec-2016 19:32:40 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 89
+[06-Dec-2016 19:32:40 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 89
+[06-Dec-2016 19:32:40 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 89
+[06-Dec-2016 19:32:40 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 89
+[06-Dec-2016 19:32:40 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 89
+[06-Dec-2016 19:32:40 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 89
+[06-Dec-2016 19:32:40 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 89
+[06-Dec-2016 19:32:40 Europe/Paris] PHP Notice:  Uninitialized string offset: 1 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/Equalizer.php on line 89
+[06-Dec-2016 19:41:26 Europe/Paris] PHP Parse error:  syntax error, unexpected 'logguer' (T_STRING), expecting ']' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/ch/authentication.php on line 6
+[06-Dec-2016 19:41:39 Europe/Paris] PHP Parse error:  syntax error, unexpected 'unexpected' (T_STRING), expecting ']' in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/ch/default.php on line 8
+[06-Dec-2016 20:56:59 Europe/Paris] PHP Warning:  require_once(/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php): failed to open stream: No such file or directory in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php on line 41
+[06-Dec-2016 20:56:59 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php' (include_path='.:/Volumes/Macintosh HD 2/it/php/projects/universe:/Volumes/Macintosh HD 2/it/web/Komin&gt;/service création/projets/bee/developer/bee') in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php on line 41
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Notice:  Undefined variable: lang in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 17
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Notice:  Undefined variable: refLang in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 17
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Notice:  Undefined index: translate in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 19
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Notice:  Undefined index: translate in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 20
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Notice:  Undefined index: translate in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 21
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Notice:  Undefined index: unfound in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 151
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Notice:  Undefined index: found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 152
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Notice:  Undefined index:  in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 264
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Notice:  Undefined index: found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 296
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Notice:  Undefined index: unfound in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 297
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 438
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 443
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 487
+[06-Dec-2016 21:26:13 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 490
+[06-Dec-2016 21:54:29 Europe/Paris] PHP Notice:  Undefined index: translateTab in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 13
+[06-Dec-2016 21:54:29 Europe/Paris] PHP Notice:  Undefined index: translateTab in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 14
+[06-Dec-2016 21:54:29 Europe/Paris] PHP Notice:  Undefined index: translateTab in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 15
+[06-Dec-2016 21:54:29 Europe/Paris] PHP Notice:  Undefined index: translateTab in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 16
+[06-Dec-2016 21:54:29 Europe/Paris] PHP Notice:  Undefined index: translateTab in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 17
+[06-Dec-2016 21:54:29 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 26
+[06-Dec-2016 21:54:29 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 39
+[06-Dec-2016 21:54:29 Europe/Paris] PHP Notice:  Undefined index:  in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 265
+[06-Dec-2016 21:54:52 Europe/Paris] PHP Notice:  Undefined index: translateTab in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 13
+[06-Dec-2016 21:54:52 Europe/Paris] PHP Notice:  Undefined index: translateTab in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 14
+[06-Dec-2016 21:54:52 Europe/Paris] PHP Notice:  Undefined index: translateTab in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 15
+[06-Dec-2016 21:54:52 Europe/Paris] PHP Notice:  Undefined index: translateTab in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 16
+[06-Dec-2016 21:54:52 Europe/Paris] PHP Notice:  Undefined index: translateTab in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 17
+[06-Dec-2016 21:54:52 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 26
+[06-Dec-2016 21:54:52 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 39
+[06-Dec-2016 21:54:52 Europe/Paris] PHP Notice:  Undefined index:  in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistKey2ValueListForm.php on line 265
+[06-Dec-2016 21:55:07 Europe/Paris] PHP Notice:  Undefined index: curLang in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 13
+[06-Dec-2016 21:55:07 Europe/Paris] PHP Notice:  Undefined index: refLang in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 14
+[06-Dec-2016 21:55:07 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 26
+[06-Dec-2016 21:55:07 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 39
+[06-Dec-2016 21:56:58 Europe/Paris] PHP Notice:  Undefined index: curLang in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 13
+[06-Dec-2016 21:56:58 Europe/Paris] PHP Notice:  Undefined index: refLang in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 14
+[06-Dec-2016 21:56:58 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 26
+[06-Dec-2016 21:56:58 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 39
+[06-Dec-2016 21:57:44 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 24
+[06-Dec-2016 21:57:44 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 37
+[06-Dec-2016 22:29:17 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 35

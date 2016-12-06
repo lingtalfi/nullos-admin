@@ -1,26 +1,25 @@
 <?php
 
 
-namespace QuickDoc\Util;
+namespace Linguist\Util;
 
 
 /**
- * This helper uses Key2ValueForm's style to display QuickDoc lists for links|images.
+ * This helper uses Key2ValueForm's style to display Linguist translate lists
  */
-class Key2ValueListForm
+class LinguistKey2ValueListForm
 {
 
 
+    private $_lang;
     private $_mode;
     private $_alpha;
     private $_groupByFiles;
     private $_titles;
     /**
-     * array:
-     *      - 0: foundList
-     *      - 1: unfoundList
+     * array of file => items
      */
-    private $_mappings;
+    private $_definitionItems;
     private $onPostAfterMsg;
 
 
@@ -29,17 +28,25 @@ class Key2ValueListForm
 
     private function __construct()
     {
-        $this->_mode = 'unresolved';
+        $this->_lang = 'en';
+        $this->_mode = 'modified'; // modified|unmodified|all
         $this->_alpha = true;
         $this->_groupByFiles = false;
         $this->onPostAfterMsg = null;
         $this->key = 'tag';
         $this->displayTopSubmitBtn = false;
+        $this->_definitionItems = null;
     }
 
     public static function create()
     {
         return new self();
+    }
+
+    public function lang($lang)
+    {
+        $this->_lang = $lang;
+        return $this;
     }
 
     public function mode($mode)
@@ -60,17 +67,21 @@ class Key2ValueListForm
         return $this;
     }
 
-    public function mappings(array $mappings)
+    /**
+     * func takes the curLang as parameter
+     * and returns the definitionItems array.
+     */
+    public function definitionItems($func)
     {
-        $this->_mappings = $mappings;
+        $this->_definitionItems = $func;
         return $this;
     }
 
-    public function titles($unresolved, $resolved, $all)
+    public function titles($modified, $unmodified, $all)
     {
         $this->_titles = [
-            'unresolved' => $unresolved,
-            'resolved' => $resolved,
+            'modified' => $modified,
+            'unmodified' => $unmodified,
             'all' => $all,
         ];
         return $this;
@@ -83,18 +94,7 @@ class Key2ValueListForm
     {
         if (array_key_exists($this->key, $_POST)) {
             $all = $_POST[$this->key];
-            $foundList = [];
-            $unfoundList = [];
-            foreach ($all as $file => $items) {
-                foreach ($items as $capture => $value) {
-                    if ('' === trim($value)) {
-                        $unfoundList[$file][] = [$capture];
-                    } else {
-                        $foundList[$file][] = [$capture, $value];
-                    }
-                }
-            }
-            $this->onPostAfterMsg = call_user_func($func, $foundList, $unfoundList);
+            $this->onPostAfterMsg = call_user_func($func, $this->_lang, $all);
         }
     }
 
@@ -102,6 +102,7 @@ class Key2ValueListForm
     public function onPreferencesChange($func)
     {
         if (array_key_exists("mode", $_GET)) {
+            $lang = (array_key_exists('curlang', $_GET)) ? $_GET['curlang'] : $this->_lang;
             $mode = (array_key_exists('mode', $_GET)) ? $_GET['mode'] : $this->_mode;
             $alpha = (array_key_exists('alpha', $_GET)) ? (bool)$_GET['alpha'] : $this->_alpha;
             $group = (array_key_exists('group', $_GET)) ? (bool)$_GET['group'] : $this->_groupByFiles;
@@ -110,21 +111,22 @@ class Key2ValueListForm
                 'alpha' => $alpha,
                 'group' => $group,
             ];
-            call_user_func($func, $newPrefs);
+            call_user_func($func, $lang, $newPrefs);
         }
     }
 
     public function display()
     {
 
-        $lists = $this->_mappings;
 
 
+        $lang = (array_key_exists('curlang', $_GET)) ? $_GET['curlang'] : $this->_lang;
         $mode = (array_key_exists('mode', $_GET)) ? $_GET['mode'] : $this->_mode;
         $alpha = (array_key_exists('alpha', $_GET)) ? (bool)$_GET['alpha'] : $this->_alpha;
         $group = (array_key_exists('group', $_GET)) ? (bool)$_GET['group'] : $this->_groupByFiles;
 
         $cssId = 'quickdoc_k2v_' . rand(0, 10000);
+        $langId = $cssId . '_k';
         $modeId = $cssId . '_s';
         $alphaId = $cssId . '_a';
         $groupId = $cssId . '_f';
@@ -136,28 +138,36 @@ class Key2ValueListForm
         $checked = 'checked="checked"';
 
 
+
+        $definitionItems = call_user_func($this->_definitionItems, $lang);
+
         // empty?
         $isEmpty = true;
-        $countUnfound = count($lists['unfound']);
-        $countFound = count($lists['found']);
-        $countAll = $countFound + $countUnfound;
-        if (
-            ('unresolved' === $mode && $countUnfound > 0) ||
-            ('resolved' === $mode && $countFound > 0) ||
-            ('all' === $mode && $countAll > 0)
-        ) {
-            $isEmpty = false;
+        foreach ($definitionItems as $items) {
+            if (count($items) > 0) {
+                $isEmpty = false;
+                break;
+            }
         }
+        $langs = LinguistScanner::getLangNames();
 
         ?>
         <div class="body-top">
             <form action="" method="get" id="<?php echo $cssId; ?>">
                 <div class="box">
+                    <select name="curlang" id="<?php echo $langId; ?>">
+                        <?php foreach ($langs as $name): ?>
+                            <option <?php echo ($lang === $name) ? $sel : ''; ?>
+                                    value="<?php echo htmlspecialchars($name); ?>"><?php echo $name; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="box">
                     <select name="mode" id="<?php echo $modeId; ?>">
-                        <option <?php echo ('unresolved' === $mode) ? $sel : ''; ?> value="unresolved">Show unresolved
+                        <option <?php echo ('unmodified' === $mode) ? $sel : ''; ?> value="unmodified">Show unmodified
                             only
                         </option>
-                        <option <?php echo ('resolved' === $mode) ? $sel : ''; ?> value="resolved">Show resolved only
+                        <option <?php echo ('modified' === $mode) ? $sel : ''; ?> value="modified">Show modified only
                         </option>
                         <option <?php echo ('all' === $mode) ? $sel : ''; ?> value="all">Show all</option>
                     </select>
@@ -182,7 +192,7 @@ class Key2ValueListForm
                 </div>
                 <div id="<?php echo $blackBoxId; ?>" style="display: none">
                     <?php
-                    $getLeftOver = array_diff(array_keys($_GET), ['mode', 'alpha', 'group']);
+                    $getLeftOver = array_diff(array_keys($_GET), ['curlang', 'mode', 'alpha', 'group']);
                     foreach ($getLeftOver as $name) {
                         $value = $_GET[$name];
                         ?>
@@ -198,12 +208,17 @@ class Key2ValueListForm
         </div>
         <script>
             var form = document.getElementById("<?php echo $cssId; ?>");
+            var langSelector = document.getElementById("<?php echo $langId; ?>");
             var modeSelector = document.getElementById("<?php echo $modeId; ?>");
             var alphaCheckbox = document.getElementById("<?php echo $alphaId; ?>");
             var groupCheckbox = document.getElementById("<?php echo $groupId; ?>");
             var alphaInput = document.getElementById("<?php echo $alphaInputId; ?>");
             var groupInput = document.getElementById("<?php echo $groupInputId; ?>");
 
+
+            langSelector.addEventListener('change', function () {
+                form.submit();
+            });
 
             modeSelector.addEventListener('change', function () {
                 form.submit();
@@ -243,7 +258,7 @@ class Key2ValueListForm
             <?php
             // cache this to know whether or not to display the top submit button
             ob_start();
-            $this->displayList($lists, $mode, $alpha, $group);
+            $this->displayList($definitionItems, $mode, $alpha, $group);
             $listHtml = ob_get_clean();
             ?>
 
@@ -267,18 +282,16 @@ class Key2ValueListForm
     //--------------------------------------------
     //
     //--------------------------------------------
-    private function displayList(array $lists, $mode, $alpha, $groupByFiles)
+    private function displayList(array $definitionItems, $mode, $alpha, $groupByFiles)
     {
-        $foundList = $lists['found'];
-        $unfoundList = $lists['unfound'];
-        $theList = $this->getTheList($foundList, $unfoundList, $mode, $groupByFiles, $alpha);
+        $theList = $this->getTheList($definitionItems, $mode, $groupByFiles, $alpha);
 
         if ('all' === $mode) {
             $selected = $theList;
         } else {
-            $foundList = $theList[0];
-            $unfoundList = $theList[1];
-            $selected = ('unresolved' === $mode) ? $unfoundList : $foundList;
+            $modifiedList = $theList[0];
+            $unmodifiedList = $theList[1];
+            $selected = ('unmodified' === $mode) ? $unmodifiedList : $modifiedList;
         }
 
 
@@ -352,32 +365,18 @@ class Key2ValueListForm
         return $m;
     }
 
-    private function displayHeaderRow()
-    {
-        ?>
-        <tr>
-            <th>Keys</th>
-            <th>Values</th>
-        </tr>
-        <?php
-    }
 
-
-    private function getTheList($foundList, $unfoundList, $mode, $groupByFiles, $alpha)
+    private function getTheList($definitionItems, $mode, $groupByFiles, $alpha)
     {
         /**
          * Nomenclature
          * ---------------
          *
-         * item: <foundItem>|<unfoundItem>
-         * foundItem: array containing 5 entries;
+         * item: array containing 4 entries;
          *      - 0: file path
-         *      - 1: capture
+         *      - 1: key
          *      - 2: value
-         *
-         * unfoundItem: array containing 3 entries;
-         *      - 0: file path
-         *      - 1: capture
+         *      - 3: isSameAsRefLang
          *
          *
          *
@@ -394,11 +393,11 @@ class Key2ValueListForm
          *
          * - if mode != all
          *      - if files=false
-         *              - one array containing 2 entries (found and unfound):
+         *              - one array containing 2 entries (modified and unmodified):
          *                   0: <item>s
          *                   1: <item>s
          *      - if files=true
-         *              - one array containing 2 entries (found and unfound):
+         *              - one array containing 2 entries (modified and unmodified):
          *                   0: array of file => <item>s
          *                   1: array of file => <item>s
          *
@@ -406,38 +405,26 @@ class Key2ValueListForm
          *
          *
          * alpha sorting operates only within the smallest container array (either a file, or the
-         * unfound/found category).
+         * unmodified/modified category).
          *
          *
          */
         $theList = [];
-        foreach ($foundList as $file => &$_items) {
-            foreach ($_items as &$_item) {
-                array_unshift($_item, $file);
-            }
-        }
-        foreach ($unfoundList as $file => &$_items2) {
-            foreach ($_items2 as &$_item2) {
-                array_unshift($_item2, $file);
-            }
-        }
+
         $itemSort = function ($item1, $item2) {
             return ($item1[1] > $item2[1]);
         };
 
         if ('all' === $mode) {
             if (true === $groupByFiles) {
-                $theList = array_merge_recursive($foundList, $unfoundList);
+                $theList = $definitionItems;
                 if (true === $alpha) {
                     foreach ($theList as $file => &$items) {
                         usort($items, $itemSort);
                     }
                 }
             } else {
-                foreach ($foundList as $items) {
-                    $theList = array_merge($theList, $items);
-                }
-                foreach ($unfoundList as $items) {
+                foreach ($definitionItems as $items) {
                     $theList = array_merge($theList, $items);
                 }
                 if (true === $alpha) {
@@ -445,39 +432,55 @@ class Key2ValueListForm
                 }
             }
         } else {
-            $theFound = [];
-            $theUnfound = [];
+            $theModified = [];
+            $theUnmodified = [];
+
             if (true === $groupByFiles) {
-                $theFound = $foundList;
-                $theUnfound = $unfoundList;
+
+
+                foreach ($definitionItems as $file => $items) {
+                    foreach ($items as $item) {
+                        if (true === $item[3]) {
+                            $theUnmodified[$file][] = $item;
+                        } else {
+                            $theModified[$file][] = $item;
+                        }
+                    }
+                }
+
 
                 if (true === $alpha) {
-                    foreach ($theFound as $file => &$items) {
+                    foreach ($theModified as $file => &$items) {
                         usort($items, $itemSort);
                     }
-                    foreach ($theUnfound as $file => &$items2) {
+                    foreach ($theUnmodified as $file => &$items2) {
                         usort($items2, $itemSort);
                     }
                 }
             } else {
-                foreach ($foundList as $items) {
-                    $theFound = array_merge($theFound, $items);
+                foreach ($definitionItems as $items) {
+                    foreach ($items as $item) {
+                        if (true === $item[3]) {
+                            $theUnmodified[] = $item;
+                        } else {
+                            $theModified[] = $item;
+                        }
+                    }
                 }
-                foreach ($unfoundList as $items) {
-                    $theUnfound = array_merge($theUnfound, $items);
-                }
+
                 if (true === $alpha) {
-                    usort($theFound, $itemSort);
-                    usort($theUnfound, $itemSort);
+                    usort($theModified, $itemSort);
+                    usort($theUnmodified, $itemSort);
                 }
             }
             $theList = [
-                $theFound,
-                $theUnfound,
+                $theModified,
+                $theUnmodified,
             ];
 
         }
         return $theList;
     }
+
 
 }

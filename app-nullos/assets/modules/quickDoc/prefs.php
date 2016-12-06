@@ -1,8 +1,8 @@
 <?php
 
 $store = [
-    'srcDir' => '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/doc',
-    'dstDir' => '/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/doc2',
+    'srcDir' => NULL,
+    'dstDir' => NULL,
     'links' => [
         'mode' => 'all',
         'alpha' => true,

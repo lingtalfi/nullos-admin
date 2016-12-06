@@ -116,9 +116,6 @@ class QuickDocUtil
             ->copy($srcDir, $dstDir);
 
 
-        /**
-         * Todo: fix scanning empties the mappings...
-         */
         // links
         $found = self::cleanFound($linksTransformer->getFoundList());
         $unfound = self::cleanUnfound($linksTransformer->getUnfoundList());
@@ -203,7 +200,7 @@ class QuickDocUtil
 
 
             $transformer = null;
-            if ('links' === $name) {
+            if ('links' === $name) {;
                 $transformer = TrackingMapRegexTransformer::create()
                     ->regex('/<-\s*(.*)\s*->/U')
                     ->map(self::getFoundMapByName($name))
@@ -239,8 +236,15 @@ class QuickDocUtil
 
     private static function getFoundMapByName($name)
     {
+        $map = [];
         $mappings = self::getMappings($name);
-        return $mappings['found'];
+        $found = $mappings['found'];
+        foreach ($found as $file => $items) {
+            foreach ($items as $item) {
+                $map[$item[0]] = $item[1];
+            }
+        }
+        return $map;
     }
 
 }

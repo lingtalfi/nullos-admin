@@ -19,18 +19,24 @@ $defaultGroup = $prefs[$type]['group'];
 
 
 $form = Key2ValueListForm::create();
-$form->handlePost(function (array $foundList, array $unfoundList) use ($type) {
+$form->onSubmit(function (array $foundList, array $unfoundList) use ($type) {
     $mappings = [
         "found" => $foundList,
         "unfound" => $unfoundList,
     ];
     if (true === QuickDocUtil::setMappings($type, $mappings)) {
-        return Goofy::alertSuccess("The definitions of the dictionary have been successfully updated", true);
+        return Goofy::alertSuccess("The mappings have been successfully updated", true);
     } else {
-        return Goofy::alertError("Couldn't write the definitions in the dictionary. Are your file permissions correct?", true);
+        return Goofy::alertError("Couldn't write the mappings. Are your file permissions correct?", true);
     }
 });
 
+
+$form->onPreferencesChange(function (array $newPrefs) use ($type) {
+    QuickDocUtil::setPreferences([
+        $type => $newPrefs,
+    ]);
+});
 
 $form
     ->mode($defaultMode)

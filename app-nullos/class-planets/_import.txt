@@ -8,3 +8,4 @@ DirTransformer
 QuickPdo
 Privilege
 QuickForm
+Tokens

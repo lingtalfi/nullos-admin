@@ -9,6 +9,7 @@ use IconsViewer\IconsViewerModule;
 use Lang\LangModule;
 use LayoutDynamicHead\LayoutDynamicHeadModule;
 use LeftMenuSection\Tools\ToolsLeftMenuSectionModule;
+use Linguist\LinguistModule;
 use QuickDoc\QuickDocModule;
 use SqlTools\SqlToolsModule;
 
@@ -46,6 +47,7 @@ class LayoutBridge
         SqlToolsModule::displayToolsLeftMenuLinks();
         QuickDocModule::displayToolsLeftMenuLinks();
         IconsViewerModule::displayToolsLeftMenuLinks();
+        LinguistModule::displayToolsLeftMenuLinks();
     }
 
 
