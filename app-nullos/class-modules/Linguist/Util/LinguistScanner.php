@@ -23,7 +23,7 @@ class LinguistScanner
      * - 0: file, relative path to the file containing the $defs
      * - 1: key (the identifier of the message)
      * - 2: value (the translated message)
-     * - 3: isLikeRefLang, a boolean indicating whether or not the value is the same as the refLang's value
+     * - 3: isSameRefLang, a boolean indicating whether or not the value is the same as the refLang's value
      *          - if the value (for some reasons), only exist in the dst dir, but not in the refLang dir,
      *                  then isLikeRefLang will be false, to point out differences between both directories
      *

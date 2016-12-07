@@ -14,11 +14,11 @@ $defs = [
     "Need help?" => "Need help?",
     // forms...
     "From file" => "From file",
-    'Choose a file' => 'Choose a file',
+    'Choose a file' => "Choose a file",
     "From favorites" => "From favorites",
     "The file {file} does not exist" => "The file {file} does not exist",
     "From url" => "From url",
-    'url' => 'url',
+    'url' => "url",
     "Cannot access external url. To fix the problem, you can either enable the php allow_url_fopen directive, or install curl." => "Cannot access external url. To fix the problem, you can either enable the php allow_url_fopen directive, or install curl.",
     "From code" => "From code",
     "Type your sql directly" => "Type your sql directly",

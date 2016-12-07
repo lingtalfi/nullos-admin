@@ -3880,3 +3880,10 @@ Stack trace:
 [06-Dec-2016 21:57:44 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 24
 [06-Dec-2016 21:57:44 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 37
 [06-Dec-2016 22:29:17 Europe/Paris] PHP Notice:  Undefined variable: type in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 35
+[07-Dec-2016 05:25:00 Europe/Paris] PHP Fatal error:  Uncaught Exception: translation file not found: /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/en/modules/linguist/linguist.php in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php:32
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/Linguist/LinguistModule.php(26): __('Linguist', 'modules/linguis...')
+#1 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/LayoutBridge.php(50): Linguist\LinguistModule::displayToolsLeftMenuLinks()
+#2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/LeftMenuSection/Tools/ToolsLeftMenuSectionModule.php(18): Layout\LayoutBridge::displayToolsLeftMenuLinks()
+#3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/LayoutBridge.php(34): LeftMenuSection\Tools\ToolsLeftMenuSectionModule::displayLeftMenuBlocks()
+#4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(5 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 32

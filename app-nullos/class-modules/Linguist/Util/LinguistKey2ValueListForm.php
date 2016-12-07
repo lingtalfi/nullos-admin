@@ -94,7 +94,8 @@ class LinguistKey2ValueListForm
     {
         if (array_key_exists($this->key, $_POST)) {
             $all = $_POST[$this->key];
-            $this->onPostAfterMsg = call_user_func($func, $this->_lang, $all);
+            $lang = (array_key_exists('curlang', $_GET)) ? $_GET['curlang'] : $this->_lang;
+            $this->onPostAfterMsg = call_user_func($func, $lang, $all);
         }
     }
 

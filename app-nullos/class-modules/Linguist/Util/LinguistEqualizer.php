@@ -11,17 +11,10 @@ use Tokens\TokenRepresentation\ReplacementSequence;
 use Tokens\TokenRepresentation\ReplacementSequenceToken;
 use Tokens\TokenRepresentation\TokenRepresentation;
 use Tokens\Tokens;
+use Tokens\Util\TokenUtil;
 
 class LinguistEqualizer
 {
-
-    private $_key;
-
-
-    public static function create()
-    {
-        return new self();
-    }
 
     /**
      *
@@ -41,7 +34,7 @@ class LinguistEqualizer
      * If your dst dir contains extra definitions that are NOT in the src dir, they will be removed.
      *
      */
-    public function equalize($srcDir, $dstDir)
+    public static function equalize($srcDir, $dstDir)
     {
         if (file_exists($srcDir)) {
             if (file_exists($dstDir)) {
@@ -54,7 +47,7 @@ class LinguistEqualizer
                     $dstFile = $dstDir . "/" . $relPath;
 
                     if (file_exists($dstFile)) {
-                        $this->copyWithComments($srcFile, $dstFile);
+                        self::copyWithComments($srcFile, $dstFile);
                     } else {
                         FileSystemTool::mkdir(dirname($dstFile), 0777, true);
                         copy($srcFile, $dstFile);
@@ -70,35 +63,27 @@ class LinguistEqualizer
     }
 
 
-    public function equalizeByFile2Definitions($refDir, $dstDir, array $file2Definitions)
+    public static function equalizeByFile2Definitions($refDir, $dstDir, array $file2Definitions)
     {
+        $ret = true;
         if (file_exists($refDir)) {
             if (file_exists($dstDir)) {
 
 
-                /**
-                 * Todo, invert the loops:
-                 * should start from file2Defs, not Yorg files
-                 */
-
-                $files = YorgDirScannerTool::getFilesWithExtension($refDir, 'php', false, true, true);
-
-                foreach ($files as $relPath) {
+                foreach ($file2Definitions as $relPath => $defs) {
 
                     $srcFile = $refDir . "/" . $relPath;
                     $dstFile = $dstDir . "/" . $relPath;
-                    $defs = null;
-                    if (array_key_exists($relPath, $file2Definitions)) {
 
-                        $defs = $file2Definitions[$relPath];
-                        a($defs);
-                    } else {
-                        a($refDir, $dstDir);
-                        a($relPath);
-                        a($file2Definitions);
-                        az("no");
+
+                    // file2Definitionss comes from $_POST, just do basic checking...
+                    if (FileSystemTool::existsUnder($srcFile, $refDir)) {
+                        if (FileSystemTool::existsUnder($dstFile, $dstDir)) {
+                            if (false === self::copyWithComments($srcFile, $dstFile, $defs)) {
+                                $ret = false;
+                            }
+                        }
                     }
-                    $this->copyWithComments($srcFile, $dstFile, $defs);
                 }
             } else {
                 throw new LinguistException("dstDir does not exist: $dstDir");
@@ -106,89 +91,83 @@ class LinguistEqualizer
         } else {
             throw new LinguistException("refDir does not exist: $refDir");
         }
+        return $ret;
     }
 
 
-    //--------------------------------------------
-    //
-    //--------------------------------------------
-    private function copyWithComments($srcFile, $dstFile, array $defs = null)
+    /**
+     *
+     * Will copy the srcFile's definitions into the dstFile, keeping comments.
+     *
+     *      - definitions is an array of key (identifier) => value (translated string)
+     *
+     *
+     * The third parameter, defs, can be used to replace parts or all
+     * of the dstFile definitions.
+     *
+     *
+     * If a srcFile's definition is not present in the dstFile's definitions nor passed
+     * with the defs parameter, then the original srcFile's definition value will
+     * be used.
+     *
+     */
+    public static function copyWithComments($srcFile, $dstFile, array $defs = [])
     {
-        if (null === $defs) {
-            $defs = [];
-            require $dstFile;
-        }
+        $_defs = $defs;
+        $defs = [];
+        require $dstFile;
+        $defs = array_replace($defs, $_defs);
 
 
         $tokenIdentifiers = token_get_all(file_get_contents($srcFile));
         $representation = TokenRepresentation::create($tokenIdentifiers);
-        $this->_key = null;
 
-        $representation->addReplacementSequence(
-            ReplacementSequence::create()
-                ->addToken(
-                    ReplacementSequenceToken::create()
-                        ->matchIf(function (&$tokenIdentifier) {
-                            $ret = false;
-                            if (is_array($tokenIdentifier)) {
-                                if (T_CONSTANT_ENCAPSED_STRING === $tokenIdentifier[0]) {
-                                    $ret = true;
-                                    $this->_key = $tokenIdentifier[1];
-                                }
-                            }
-                            return $ret;
-                        })
-                )
-                ->addToken(
-                    ReplacementSequenceToken::create()
-                        ->optional()
-                        ->matchIf(function ($tokenIdentifier) {
-                            return (is_array($tokenIdentifier) && T_WHITESPACE === $tokenIdentifier[0]);
-                        })
-                )
-                ->addToken(
-                    ReplacementSequenceToken::create()
-                        ->matchIf(function ($tokenIdentifier) {
-                            return (is_array($tokenIdentifier) && T_DOUBLE_ARROW === $tokenIdentifier[0]);
-                        })
-                )
-                ->addToken(
-                    ReplacementSequenceToken::create()
-                        ->optional()
-                        ->matchIf(function ($tokenIdentifier) {
-                            return (is_array($tokenIdentifier) && T_WHITESPACE === $tokenIdentifier[0]);
-                        })
-                )
-                ->addToken(
-                    ReplacementSequenceToken::create()
-                        ->matchIf(function (&$tokenIdentifier) use ($defs) {
-                            $ret = (is_array($tokenIdentifier) && T_CONSTANT_ENCAPSED_STRING === $tokenIdentifier[0]);
-                            if (true === $ret) {
-                                $trueKey = $this->deEncapsulate($this->_key);
-                                if (array_key_exists($trueKey, $defs)) {
-                                    $tokenIdentifier[1] = $this->encapsulate($defs[$trueKey]);
-                                }
-                            }
-                            return $ret;
-                        })
-                )
-        );
+        $representation
+            ->addReplacementSequence(
+                ReplacementSequence::create()
+                    ->addToken(
+                        ReplacementSequenceToken::create()
+                            ->matchIf(function (&$tokenIdentifier) {
+                                return (is_array($tokenIdentifier) && T_CONSTANT_ENCAPSED_STRING === $tokenIdentifier[0]);
+                            })
+                    )
+                    ->addToken(
+                        ReplacementSequenceToken::create()
+                            ->optional()
+                            ->matchIf(function ($tokenIdentifier) {
+                                return (is_array($tokenIdentifier) && T_WHITESPACE === $tokenIdentifier[0]);
+                            })
+                    )
+                    ->addToken(
+                        ReplacementSequenceToken::create()
+                            ->matchIf(function ($tokenIdentifier) {
+                                return (is_array($tokenIdentifier) && T_DOUBLE_ARROW === $tokenIdentifier[0]);
+                            })
+                    )
+                    ->addToken(
+                        ReplacementSequenceToken::create()
+                            ->optional()
+                            ->matchIf(function ($tokenIdentifier) {
+                                return (is_array($tokenIdentifier) && T_WHITESPACE === $tokenIdentifier[0]);
+                            })
+                    )
+                    ->addToken(
+                        ReplacementSequenceToken::create()
+                            ->matchIf(function (&$tokenIdentifier) use ($defs) {
+                                return (is_array($tokenIdentifier) && T_CONSTANT_ENCAPSED_STRING === $tokenIdentifier[0]);
+                            })
+                    )
+            )
+            ->onSequenceMatch(function ($newSeq) use ($defs) {
+                $key = $newSeq[0][1];
+                $trueKey = TokenUtil::deEncapsulate($key);
+                if (array_key_exists($trueKey, $defs)) {
+                    $newSeq[4][1] = TokenUtil::encapsulate($defs[$trueKey]);
+                }
+                return $newSeq;
+            });
         $newTokens = $representation->getTokens();
-        Tokens::toFile($newTokens, $dstFile);
-
-    }
-
-
-    private function deEncapsulate($string)
-    {
-        $quoteType = substr($string, 0, 1);
-        $inner = substr($string, 1, -1);
-        return str_replace('\\' . $quoteType, $quoteType, $inner);
-    }
-
-    private function encapsulate($string)
-    {
-        return '"' . str_replace('"', '\"', $string) . '"';
+        return Tokens::toFile($newTokens, $dstFile);
     }
 
 

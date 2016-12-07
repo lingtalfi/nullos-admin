@@ -13,14 +13,14 @@ $defs = [
     //--------------------------------------------
     // QUICKFORM -- MAGIC CONTROL
     //--------------------------------------------
-    'Check all' => 'Check all',
-    'Uncheck all' => 'Uncheck all',
+    'Check all' => "Check all",
+    'Uncheck all' => "Uncheck all",
     //--------------------------------------------
     // FORM VALIDATION
     //--------------------------------------------
-    'this field cannot be empty' => 'this field cannot be empty',
-    'this field must contain at least {minChar} characters' => 'this field must contain at least {minChar} characters',
-    'you must select at least {minChecked} option(s)' => 'you must select at least {minChecked} option(s)',
+    'this field cannot be empty' => "this field cannot be empty",
+    'this field must contain at least {minChar} characters' => "this field must contain at least {minChar} characters",
+    'you must select at least {minChecked} option(s)' => "you must select at least {minChecked} option(s)",
     //--------------------------------------------
     // GOOFY
     //--------------------------------------------
