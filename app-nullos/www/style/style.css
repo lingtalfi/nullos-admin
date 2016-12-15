@@ -231,11 +231,19 @@ body.holygrail {
     align-items: center;
 }
 
+.flexhe {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
 .flexc {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+
 
 .alert {
     border: 1px solid transparent;

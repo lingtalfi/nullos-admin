@@ -3887,3 +3887,72 @@ Stack trace:
 #2 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-modules/LeftMenuSection/Tools/ToolsLeftMenuSectionModule.php(18): Layout\LayoutBridge::displayToolsLeftMenuLinks()
 #3 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/LayoutBridge.php(34): LeftMenuSection\Tools\ToolsLeftMenuSectionModule::displayLeftMenuBlocks()
 #4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(5 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 32
+[07-Dec-2016 06:27:20 Europe/Paris] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php:41
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php(41): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/init.php(91): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/www/index.php(10): require_once('/Users/pierrela...')
+#3 {main}
+  thrown in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php on line 41
+[07-Dec-2016 06:27:20 Europe/Paris] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php:41
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php(41): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/init.php(91): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/www/index.php(10): require_once('/Users/pierrela...')
+#3 {main}
+  thrown in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php on line 41
+[07-Dec-2016 06:27:21 Europe/Paris] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php:41
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php(41): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/init.php(91): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/www/index.php(10): require_once('/Users/pierrela...')
+#3 {main}
+  thrown in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php on line 41
+[07-Dec-2016 06:30:41 Europe/Paris] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php:41
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php(41): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/init.php(91): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/www/index.php(10): require_once('/Users/pierrela...')
+#3 {main}
+  thrown in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php on line 41
+[07-Dec-2016 06:37:31 Europe/Paris] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php:41
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php(41): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/init.php(91): QuickPdo\QuickPdo::setConnection('mysql:host=loca...', 'root', 'root', Array)
+#2 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/www/index.php(10): require_once('/Users/pierrela...')
+#3 {main}
+  thrown in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-planets/QuickPdo/QuickPdo.php on line 41
+[07-Dec-2016 07:41:04 Europe/Paris] PHP Fatal error:  Uncaught exception 'Linguist\LinguistException' with message 'refDir does not exist: /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/lang/ch' in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-modules/Linguist/Util/LinguistEqualizer.php:48
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/www/index.tmp.php(16): Linguist\Util\LinguistEqualizer::countMissingDefinitions('/Volumes/Macint...', '/Volumes/Macint...')
+#1 {main}
+  thrown in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-modules/Linguist/Util/LinguistEqualizer.php on line 48
+[07-Dec-2016 07:42:03 Europe/Paris] PHP Fatal error:  Call to undefined function Linguist\Util\array_diff_keys() in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class-modules/Linguist/Util/LinguistEqualizer.php on line 37
+[07-Dec-2016 07:42:03 Europe/Paris] PHP Stack trace:
+[07-Dec-2016 07:42:03 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/www/index.tmp.php:0
+[07-Dec-2016 07:42:03 Europe/Paris] PHP   2. Linguist\Util\LinguistEqualizer::countMissingDefinitions() /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/www/index.tmp.php:16
+[07-Dec-2016 07:57:24 Europe/Paris] PHP Parse error:  syntax error, unexpected '$curLang' (T_VARIABLE) in /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/layout-elements/nullos/modules/linguist/tabs/translate.php on line 31
+[07-Dec-2016 07:57:24 Europe/Paris] PHP Stack trace:
+[07-Dec-2016 07:57:24 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/www/index.php:0
+[07-Dec-2016 07:57:24 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/www/index.php:68
+[07-Dec-2016 07:57:24 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/pages/modules/linguist/linguist.php:8
+[07-Dec-2016 07:57:24 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class/Layout/Layout.php:62
+[07-Dec-2016 07:57:24 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/app-nullos/class/Layout/Layout.php:118
+[08-Dec-2016 20:24:15 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'TokenRegex\TokenRegex' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php:11
+Stack trace:
+#0 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php on line 11
+[08-Dec-2016 20:24:24 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'TokenRegex\TokenRegex' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php:11
+Stack trace:
+#0 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php on line 11
+[08-Dec-2016 20:25:46 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'TokenRegex\TokenRegexEngine' not found in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php:34
+Stack trace:
+#0 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php on line 34
+[13-Dec-2016 22:26:24 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to undefined method Tokens\TokenRegex\RegexEngine::matchModel() in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRegex/RegexEngine.php:48
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.tmp.php(29): Tokens\TokenRegex\RegexEngine->match(Array, Object(Tokens\TokenRegex\TokenModel), Object(Closure))
+#1 {main}
+  thrown in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRegex/RegexEngine.php on line 48
+[13-Dec-2016 22:51:39 Europe/Paris] PHP Notice:  Undefined offset: 8 in /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/class-planets/Tokens/TokenRegex/RegexEngine.php on line 91

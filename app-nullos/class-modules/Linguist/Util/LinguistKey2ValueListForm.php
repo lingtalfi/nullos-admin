@@ -87,6 +87,13 @@ class LinguistKey2ValueListForm
         return $this;
     }
 
+
+    public function getLang()
+    {
+        $lang = (array_key_exists('curlang', $_GET)) ? $_GET['curlang'] : $this->_lang;
+        return $lang;
+    }
+
     //--------------------------------------------
     //
     //--------------------------------------------
@@ -94,7 +101,7 @@ class LinguistKey2ValueListForm
     {
         if (array_key_exists($this->key, $_POST)) {
             $all = $_POST[$this->key];
-            $lang = (array_key_exists('curlang', $_GET)) ? $_GET['curlang'] : $this->_lang;
+            $lang = $this->getLang();
             $this->onPostAfterMsg = call_user_func($func, $lang, $all);
         }
     }
@@ -103,7 +110,7 @@ class LinguistKey2ValueListForm
     public function onPreferencesChange($func)
     {
         if (array_key_exists("mode", $_GET)) {
-            $lang = (array_key_exists('curlang', $_GET)) ? $_GET['curlang'] : $this->_lang;
+            $lang = $this->getLang();
             $mode = (array_key_exists('mode', $_GET)) ? $_GET['mode'] : $this->_mode;
             $alpha = (array_key_exists('alpha', $_GET)) ? (bool)$_GET['alpha'] : $this->_alpha;
             $group = (array_key_exists('group', $_GET)) ? (bool)$_GET['group'] : $this->_groupByFiles;
@@ -116,15 +123,15 @@ class LinguistKey2ValueListForm
         }
     }
 
-    public function display()
+
+    public function displayHead()
     {
 
-
-
-        $lang = (array_key_exists('curlang', $_GET)) ? $_GET['curlang'] : $this->_lang;
+        $lang = $this->getLang();
         $mode = (array_key_exists('mode', $_GET)) ? $_GET['mode'] : $this->_mode;
         $alpha = (array_key_exists('alpha', $_GET)) ? (bool)$_GET['alpha'] : $this->_alpha;
         $group = (array_key_exists('group', $_GET)) ? (bool)$_GET['group'] : $this->_groupByFiles;
+
 
         $cssId = 'quickdoc_k2v_' . rand(0, 10000);
         $langId = $cssId . '_k';
@@ -139,17 +146,6 @@ class LinguistKey2ValueListForm
         $checked = 'checked="checked"';
 
 
-
-        $definitionItems = call_user_func($this->_definitionItems, $lang);
-
-        // empty?
-        $isEmpty = true;
-        foreach ($definitionItems as $items) {
-            if (count($items) > 0) {
-                $isEmpty = false;
-                break;
-            }
-        }
         $langs = LinguistScanner::getLangNames();
 
         ?>
@@ -159,7 +155,7 @@ class LinguistKey2ValueListForm
                     <select name="curlang" id="<?php echo $langId; ?>">
                         <?php foreach ($langs as $name): ?>
                             <option <?php echo ($lang === $name) ? $sel : ''; ?>
-                                    value="<?php echo htmlspecialchars($name); ?>"><?php echo $name; ?></option>
+                                value="<?php echo htmlspecialchars($name); ?>"><?php echo $name; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -200,8 +196,8 @@ class LinguistKey2ValueListForm
                         <input type="hidden"
                                name="<?php echo htmlspecialchars($name); ?>"
                                value="<?php echo htmlspecialchars($value); ?>"
-                        />
-                        <?php
+                            />
+                    <?php
                     }
                     ?>
                 </div>
@@ -247,6 +243,29 @@ class LinguistKey2ValueListForm
 
 
         </script>
+    <?php
+    }
+
+    public function display()
+    {
+
+        $lang = $this->getLang();
+        $mode = (array_key_exists('mode', $_GET)) ? $_GET['mode'] : $this->_mode;
+        $alpha = (array_key_exists('alpha', $_GET)) ? (bool)$_GET['alpha'] : $this->_alpha;
+        $group = (array_key_exists('group', $_GET)) ? (bool)$_GET['group'] : $this->_groupByFiles;
+
+
+        $definitionItems = call_user_func($this->_definitionItems, $lang);
+
+        // empty?
+        $isEmpty = true;
+        foreach ($definitionItems as $items) {
+            if (count($items) > 0) {
+                $isEmpty = false;
+                break;
+            }
+        }
+        ?>
         <div class="body-content">
             <?php
             if (null !== $this->onPostAfterMsg) {
@@ -277,7 +296,7 @@ class LinguistKey2ValueListForm
                 <p>no results</p>
             <?php endif; ?>
         </div>
-        <?php
+    <?php
     }
 
     //--------------------------------------------
@@ -344,11 +363,11 @@ class LinguistKey2ValueListForm
                                value="<?php echo htmlspecialchars($value); ?>">
                     </td>
                 </tr>
-                <?php
+            <?php
             endforeach;
             ?>
         </table>
-        <?php
+    <?php
     }
 
     private function displayFile2ItemsTable(array $file2items)

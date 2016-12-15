@@ -2,5 +2,5 @@
 
 
 $defs=[
-    'Welcome to {website}' => 'Bienvenue dans {website}',
+    'Welcome to {website}' => "Bienvenue dans {website}",
 ];

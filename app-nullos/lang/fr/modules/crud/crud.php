@@ -2,7 +2,7 @@
 
 
 $defs = [
-    'Website data' => 'Données du site',
+    'Website data' => "Données du site",
     //--------------------------------------------
     // CRUD GENERATORS
     //--------------------------------------------

@@ -16,6 +16,41 @@ use Tokens\Util\TokenUtil;
 class LinguistEqualizer
 {
 
+    public static function countMissingDefinitions($dstDir, $refDir)
+    {
+        $n = 0;
+        if (file_exists($refDir)) {
+            if (file_exists($dstDir)) {
+                $files = YorgDirScannerTool::getFilesWithExtension($refDir, 'php', false, true, true);
+                foreach ($files as $relPath) {
+
+                    $refFile = $refDir . "/" . $relPath;
+                    $dstFile = $dstDir . "/" . $relPath;
+
+                    $defs = [];
+                    require $refFile;
+                    $refDefs = $defs;
+
+                    if (file_exists($dstFile)) {
+                        $defs = [];
+                        require $dstFile;
+                        $diff = array_diff_key($refDefs, $defs);
+                        $n += count($diff);
+
+                    } else {
+                        $n += count($refDefs);
+                    }
+                }
+            } else {
+                throw new LinguistException("dstDir does not exist: $dstDir");
+            }
+        } else {
+            throw new LinguistException("refDir does not exist: $refDir");
+        }
+        return $n;
+    }
+
+
     /**
      *
      * Basically, it's used as an "import from en" button in a gui.
@@ -33,11 +68,16 @@ class LinguistEqualizer
      * Note: the src dir is considered as THE ONLY reference.
      * If your dst dir contains extra definitions that are NOT in the src dir, they will be removed.
      *
+     * Returns false if at least one file couldn't be imported, true otherwise, true otherwise (if all files
+     * have been successfully imported).
+     *
      */
     public static function equalize($srcDir, $dstDir)
     {
+        $ret = false;
         if (file_exists($srcDir)) {
             if (file_exists($dstDir)) {
+                $ret = true;
 
                 $files = YorgDirScannerTool::getFilesWithExtension($srcDir, 'php', false, true, true);
 
@@ -47,10 +87,14 @@ class LinguistEqualizer
                     $dstFile = $dstDir . "/" . $relPath;
 
                     if (file_exists($dstFile)) {
-                        self::copyWithComments($srcFile, $dstFile);
+                        if (false === self::copyWithComments($srcFile, $dstFile)) {
+                            $ret = false;
+                        }
                     } else {
                         FileSystemTool::mkdir(dirname($dstFile), 0777, true);
-                        copy($srcFile, $dstFile);
+                        if (false === copy($srcFile, $dstFile)) {
+                            $ret = false;
+                        }
                     }
 
                 }
@@ -60,6 +104,7 @@ class LinguistEqualizer
         } else {
             throw new LinguistException("srcDir does not exist: $srcDir");
         }
+        return $ret;
     }
 
 

@@ -42,5 +42,5 @@ $defs = [
     //--------------------------------------------
     // RESET OPTION
     //--------------------------------------------
-    "remove the init file" => "remove the init file",
+    "remove the init file" => "Supprimer le fichier init",
 ];

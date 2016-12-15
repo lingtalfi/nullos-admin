@@ -26,6 +26,9 @@ if (null === $prefs['srcDir']) {
     $tab = "config";
 }
 
+$nMissingLinks = QuickDocUtil::countUnfoundItemsByName("links");
+$nMissingImages = QuickDocUtil::countUnfoundItemsByName("images");
+
 
 LayoutDynamicHeadModule::registerCssIf("/style/modules/quickDoc/quickDoc.css", QuickDocConfig::getUri());
 
@@ -33,8 +36,8 @@ LayoutDynamicHeadModule::registerCssIf("/style/modules/quickDoc/quickDoc.css", Q
 <div class="tabby quickdoc">
     <?php
     $tabs = TabbyTabs::create();
-    $tabs->addLeftTab("Links", QuickDocUtil::getTabUri("links"))->icon('link');
-    $tabs->addLeftTab("Images", QuickDocUtil::getTabUri("images"))->icon('image');
+    $tabs->addLeftTab("Links", QuickDocUtil::getTabUri("links"))->icon('link')->badge($nMissingLinks, 'error');
+    $tabs->addLeftTab("Images", QuickDocUtil::getTabUri("images"))->icon('image')->badge($nMissingImages, 'error');
     $tabs->addLeftTab("Action", QuickDocUtil::getTabUri("action"))->icon('play');
     $tabs->addRightTab("Help", QuickDocUtil::getTabUri("help"))->icon("help");
     $tabs->addRightTab("Config", QuickDocUtil::getTabUri("config"))->icon("settings");

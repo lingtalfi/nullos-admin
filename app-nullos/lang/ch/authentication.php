@@ -6,8 +6,8 @@ $defs=[
     //--------------------------------------------
     // KOOL
     //--------------------------------------------
-    'Log In' => "Log In",
+    'Log In' => "CH: Log In",
     'This credentials are invalid' => "This credentials are invalid",
     'Pseudo' => "Pseudo",
-    'Password' => "Password",
+    'Password' => "CH: Password",
 ];

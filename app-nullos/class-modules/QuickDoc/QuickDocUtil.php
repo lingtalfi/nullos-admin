@@ -32,7 +32,6 @@ class QuickDocUtil
     }
 
 
-
     //--------------------------------------------
     // Preferences
     public static function getPreferences()
@@ -72,6 +71,16 @@ class QuickDocUtil
         return self::getStoreByName($name)->store($mappings);
     }
 
+    public static function countUnfoundItemsByName($name)
+    {
+        $n = 0;
+        $mappings = self::getMappings($name);
+        $found = $mappings['unfound'];
+        foreach ($found as $items) {
+            $n += count($items);
+        }
+        return $n;
+    }
 
     //--------------------------------------------
     //
@@ -200,7 +209,8 @@ class QuickDocUtil
 
 
             $transformer = null;
-            if ('links' === $name) {;
+            if ('links' === $name) {
+                ;
                 $transformer = TrackingMapRegexTransformer::create()
                     ->regex('/<-\s*(.*)\s*->/U')
                     ->map(self::getFoundMapByName($name))

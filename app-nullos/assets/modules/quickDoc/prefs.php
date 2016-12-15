@@ -1,10 +1,10 @@
 <?php
 
 $store = [
-    'srcDir' => NULL,
-    'dstDir' => NULL,
+    'srcDir' => '/Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/doc',
+    'dstDir' => '/Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/doc2',
     'links' => [
-        'mode' => 'all',
+        'mode' => 'unresolved',
         'alpha' => true,
         'group' => false,
     ],
