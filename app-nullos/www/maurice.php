@@ -1,9 +1,15 @@
 <?php
 
-function __(){
-    return "oo";
-}
+echo __("j");
 
-$defs = 3;
-echo __("pou", "default");
-echo __("pf");
+
+
+
+?>
+    <p>coucou<?php echo __("kkoj", "default"); ?></p>
+<?php
+
+if (6 !== 7 || 5 > 4 && 3 == 8) {
+    echo "pou";
+    $defs = 4;
+}

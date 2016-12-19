@@ -1,37 +1,21 @@
 <?php
 
 
-use Tokens\TokenRegex\Element\AtomElement;
-use Tokens\TokenRegex\RegexEngine;
-use Tokens\TokenRegex\TokenModel;
+use Linguist\Util\LinguistScanner;
+use SequenceMatcher\Element\Group;
+use SequenceMatcher\Model;
+use SequenceMatcher\SequenceMatcher;
+use Tokens\SequenceMatcher\Element\TokenEntity;
+use Tokens\SequenceMatcher\Util\TokensSequenceMatcherUtil;
+use Tokens\Tokens;
 
 require_once __DIR__ . "/../init.php";
 
 
-$model = TokenModel::create()
-    ->addAtom(AtomElement::create()->symbol('c'))
-    ->addAtom(AtomElement::create()->symbol('h'))
-    ->addAtom(AtomElement::create()->symbol('i'))
-    ->addAtom(AtomElement::create()->symbol('e'))
-    ->addAtom(AtomElement::create()->symbol('n'));
+ini_set('display_errors', 1);
 
 
-$tokenIdentifiers = [
-    'a',
-    'b',
-    'c',
-    'h',
-    'i',
-    'e',
-    'n',
-    'c',
-];
-$s = '';
-RegexEngine::create()->match($tokenIdentifiers, $model, function (array $match, array $markers = null) use (&$s) {
-    foreach ($match as $element) {
-        $s .= $element;
-    }
-});
-a($s);
+
+
 
 

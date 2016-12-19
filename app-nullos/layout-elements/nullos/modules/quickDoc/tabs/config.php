@@ -5,7 +5,7 @@ use Bat\FileSystemTool;
 use QuickDoc\QuickDocUtil;
 
 $form = QuickFormZ::create();
-$form->title = "Configuration";
+$form->title = __("Configuration", LL);
 
 
 $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
@@ -22,11 +22,11 @@ $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
             ]);
             return true;
         } else {
-            $msg = "The destination directory must exist";
+            $msg = __("The destination directory must exist", LL);
             return false;
         }
     } else {
-        $msg = "The source directory must exist";
+        $msg = __("The source directory must exist", LL);
         return false;
     }
 };

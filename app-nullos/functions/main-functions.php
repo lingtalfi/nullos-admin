@@ -31,7 +31,7 @@ function __($identifier, $context = 'default', array $tags = [])
         if (false === file_exists($file)) {
             throw new \Exception("translation file not found: " . $file);
         }
-        require_once $file;
+        require $file;
         $terms[$context] = $defs;
     }
 
@@ -50,7 +50,7 @@ function __($identifier, $context = 'default', array $tags = [])
     } else {
         // error?
         throw new \Exception("__ error: dictionary term not found: " . $identifier);
-//                return $identifier;
+        return $identifier;
     }
 }
 
@@ -81,6 +81,7 @@ function wl2($identifier)
         'nullos-doc-quickstart-reset' => '#',
         'nullos-doc-install-customize' => '#',
         'nullos-doc-hide-quickstart-menu' => '#',
+        'nullos-doc-linguist-module' => '#',
     ];
     return htmlspecialchars($links[$identifier]);
 }

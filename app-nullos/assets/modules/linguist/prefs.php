@@ -1,10 +1,10 @@
 <?php
 
 $store = [
-    'curLang' => 'ch',
+    'curLang' => 'fr',
     'refLang' => 'en',
     'translateTab' => [
-        'mode' => 'unmodified',
+        'mode' => 'all',
         'group' => true,
         'alpha' => true,
         'lang' => 'en',

@@ -25,7 +25,7 @@ $form = LinguistKey2ValueListForm::create()
     ->definitionItems(function ($curLang) use ($refLang) {
         return LinguistScanner::getDefinitionItems($curLang, $refLang);
     })
-    ->titles("Modified translations", "Unmodified translations", "All translations");
+    ->titles(__("Modified translations", LL), __("Unmodified translations", LL), __("All translations", LL));
 
 
 $curLang = $form->getLang();
@@ -47,9 +47,11 @@ $form->onSubmit(function ($curLang, array $file2Defs) use ($refLang) {
     $refDir = $langDir . "/" . $refLang;
     $curDir = $langDir . "/" . $curLang;
     if (true === LinguistEqualizer::equalizeByFile2Definitions($refDir, $curDir, $file2Defs)) {
-        return Goofy::alertSuccess("The translations for lang '$curLang' have been successfully updated", true);
+        return Goofy::alertSuccess(__("The translations for lang {lang} have been successfully updated", LL, [
+            'lang' => "'$curLang'",
+        ]), true);
     } else {
-        return Goofy::alertError("Couldn't write the translations. Are your file permissions correct?", true);
+        return Goofy::alertError(__("Couldn't write the translations. Are your file permissions correct?", LL), true);
     }
 });
 
@@ -66,7 +68,7 @@ $form
 
 
 if (true === $importSuccess) {
-    Goofy::alertSuccess("Missing translations have been successfully imported");
+    Goofy::alertSuccess(__("Missing translations have been successfully imported", LL));
 }
 
 $countMissing = LinguistEqualizer::countMissingDefinitions($dstDir, $refDir);
@@ -74,10 +76,13 @@ $countMissing = LinguistEqualizer::countMissingDefinitions($dstDir, $refDir);
 ?>
 <?php if ($countMissing > 0): ?>
     <div class="flexhe pad">
-        <span>There are <?php echo $countMissing; ?> missing translation strings.</span>
+        <span><?php echo __("There are {count} missing translation strings.", LL, [
+                'count' => $countMissing,
+            ]); ?></span>
+
         <form action="" method="post">
             <input type="hidden" name="import" value="1">
-            <button type="submit" class="marl">Import from en</button>
+            <button type="submit" class="marl"><?php echo __("Import from en", LL); ?></button>
         </form>
     </div>
 <?php endif; ?>

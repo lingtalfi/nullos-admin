@@ -8,6 +8,6 @@ $defs=[
     //--------------------------------------------
     'Log In' => "Connexion",
     'This credentials are invalid' => "Ces identifiants sont invalides",
-    'Pseudo' => "Pseudotte",
+    'Pseudo' => "Pseudo",
     'Password' => "Mot de passe",
 ];

@@ -12,7 +12,7 @@ class QuickForm
 {
 
 
-    public $controlErrorLocation; // local(default)|top|bottom
+    public $controlErrorLocation; // local(default)|top
     public $title; // string(default="$table form")|null, null means no title
     public $header; // string|null, null means no header
     public $labels;
@@ -187,7 +187,7 @@ class QuickForm
                         }
                         $atLeastOneControlError = true;
                         if (is_string($res)) {
-                            $errMsg = call_user_func($this->validationTranslateFunc, $res, $columnName);
+                            $errMsg = call_user_func($this->validationTranslateFunc, $res);
                         } else {
                             $err = $res[0];
                             $tags = $res[1];
@@ -273,7 +273,29 @@ class QuickForm
 
                 <?php if (true === $atLeastOneControlError && 'top' === $this->controlErrorLocation): ?>
                     <div class="top-control-errors">
-                        <?php $this->displayGroupedErrors(); ?>
+                        <p>
+                            <?php echo $this->messages["formHasControlErrors"]; ?>
+                        </p>
+
+                        <?php foreach ($this->controls as $name => $c):
+                            $errors = $c->getErrorMessages();
+                            $n = count($errors);
+                            if ($n > 0): ?>
+                                <ul>
+                                    <li><?php echo ucfirst($this->label($name, $c)) . ': ';
+                                        if (1 === $n): ?>
+                                            <?php echo $errors[0]; ?>
+                                        <?php else: ?>
+                                            <ul>
+                                                <?php foreach ($errors as $err): ?>
+                                                    <li><?php echo $err; ?></li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </li>
+                                </ul>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
 
@@ -345,14 +367,6 @@ class QuickForm
                         <?php echo $this->messages['formNotDisplayed']; ?>
                     </p>
                 <?php endif; ?>
-
-
-                <?php if (true === $atLeastOneControlError && 'bottom' === $this->controlErrorLocation): ?>
-                    <div class="bottom-control-errors">
-                        <?php $this->displayGroupedErrors(); ?>
-                    </div>
-                <?php endif; ?>
-
             </section>
 
 
@@ -437,36 +451,5 @@ class QuickForm
             return $this->labels[$name];
         }
         return $name;
-    }
-
-
-    private function displayGroupedErrors()
-    {
-        ?>
-        <p>
-            <?php echo $this->messages["formHasControlErrors"]; ?>
-        </p>
-
-        <?php foreach ($this->controls as $name => $c):
-        $errors = $c->getErrorMessages();
-        $n = count($errors);
-        if ($n > 0): ?>
-            <ul>
-                <li><?php
-                    $label = ucfirst($this->label($name, $c));
-                    echo ("" !== $label) ? $label . ': ' : "";
-                    if (1 === $n): ?>
-                        <?php echo $errors[0]; ?>
-                    <?php else: ?>
-                        <ul>
-                            <?php foreach ($errors as $err): ?>
-                                <li><?php echo $err; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    <?php endif; ?>
-                </li>
-            </ul>
-        <?php endif; ?>
-    <?php endforeach;
     }
 }

@@ -6,6 +6,12 @@ namespace Linguist\Util;
 
 use DirScanner\YorgDirScannerTool;
 use Linguist\LinguistConfig;
+use SequenceMatcher\Element\Group;
+use SequenceMatcher\Model;
+use SequenceMatcher\SequenceMatcher;
+use Tokens\SequenceMatcher\Element\TokenEntity;
+use Tokens\SequenceMatcher\Element\TokenGreedyEntity;
+use Tokens\SequenceMatcher\Util\TokensSequenceMatcherUtil;
 
 class LinguistScanner
 {
@@ -70,5 +76,64 @@ class LinguistScanner
         return $ret;
     }
 
+
+    public static function scanTranslationsByDir($dir)
+    {
+        $ret = [];
+        $files = YorgDirScannerTool::getFiles($dir, true, true);
+        foreach ($files as $file) {
+            $absFile = $dir . '/' . $file;
+            $translations = self::scanTranslationsByFile($absFile);
+            foreach ($translations as $trans) {
+                $ret[] = $trans;
+            }
+        }
+        return $ret;
+    }
+
+
+    public static function scanTranslationsByFile($file)
+    {
+
+        $ret = [];
+
+        $tokens = token_get_all(file_get_contents($file));
+
+        $model = Model::create()
+            ->addElement(TokenEntity::create(T_STRING, '__'))
+            ->addElement(TokenEntity::create(T_WHITESPACE, null), '?')
+            ->addElement(TokenEntity::create(null, '('))
+            ->addElement(TokenEntity::create(T_WHITESPACE, null), '?')
+            ->addElement(TokenEntity::create(T_CONSTANT_ENCAPSED_STRING, null), null, 'id')
+            ->addElement(TokenEntity::create(T_WHITESPACE, null), '?')
+            ->addElement(Group::create(null)
+                    ->addElement(TokenEntity::create(null, ','))
+                    ->addElement(TokenEntity::create(T_WHITESPACE, null), '?')
+                    ->addElement(TokenEntity::create(T_CONSTANT_ENCAPSED_STRING, null), null, 'context')
+                    ->addElement(TokenEntity::create(T_WHITESPACE, null), '?')
+                , '?'
+            )
+            ->addElement(TokenGreedyEntity::create(null, ')'), '*')
+            ->addElement(TokenEntity::create(null, ')'));
+
+        $sequence = $tokens;
+
+        $markers = [];
+        SequenceMatcher::create()
+            ->match($sequence, $model, function (array $matchedElements, array $matchedThings, array $_markers = null) use (&$markers) {
+                $markers[] = TokensSequenceMatcherUtil::detokenizeMarkers($_markers);
+            });
+
+        foreach ($markers as $info) {
+            $arr = [
+                'id' => array_shift($info['id']),
+            ];
+            if (array_key_exists('context', $info)) {
+                $arr['context'] = array_shift($info['context']);
+            }
+            $ret[] = $arr;
+        }
+        return $ret;
+    }
 
 }

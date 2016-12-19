@@ -8,7 +8,7 @@ use Linguist\Util\LinguistScanner;
 use QuickDoc\QuickDocUtil;
 
 $form = QuickFormZ::create();
-$form->title = "Configuration";
+$form->title = __("Configuration", LL);
 
 
 $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
@@ -24,7 +24,7 @@ $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
         ]);
         return true;
     } else {
-        $msg = "The reference lang directory must exist";
+        $msg = __("The reference lang directory must exist", LL);
         return false;
     }
 };

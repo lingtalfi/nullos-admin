@@ -357,7 +357,7 @@ class LinguistKey2ValueListForm
 
                 ?>
                 <tr>
-                    <td><?php echo $item[1]; ?></td>
+                    <td><?php echo htmlspecialchars($item[1]); ?></td>
                     <td>
                         <input type="text" name="<?php echo htmlspecialchars($name); ?>"
                                value="<?php echo htmlspecialchars($value); ?>">

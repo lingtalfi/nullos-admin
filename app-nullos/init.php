@@ -35,18 +35,18 @@ if (true === Helper::isLocal()) {
 
     // db
     $dbUser = 'root';
-    $dbPass = 'root';
+    $dbPass = '';
     $dbName = 'oui';
 
     // privilege
     $privilegeSessionTimeout = null; // unlimited session
 } else {
     // php
-    ini_set('display_errors', 0);
+    ini_set('display_errors', 1);
 
     // db
     $dbUser = 'root';
-    $dbPass = 'root';
+    $dbPass = '';
     $dbName = 'oui';
 
     // privilege

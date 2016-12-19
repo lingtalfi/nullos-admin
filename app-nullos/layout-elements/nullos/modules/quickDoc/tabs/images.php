@@ -25,9 +25,9 @@ $form->onSubmit(function (array $foundList, array $unfoundList) use ($type) {
         "unfound" => $unfoundList,
     ];
     if (true === QuickDocUtil::setMappings($type, $mappings)) {
-        return Goofy::alertSuccess("The mappings have been successfully updated", true);
+        return Goofy::alertSuccess(__("The mappings have been successfully updated", LL), true);
     } else {
-        return Goofy::alertError("Couldn't write the mappings. Are your file permissions correct?", true);
+        return Goofy::alertError(__("Couldn't write the mappings. Are your file permissions correct?", LL), true);
     }
 });
 
@@ -43,5 +43,5 @@ $form
     ->alpha($defaultAlpha)
     ->groupByFiles($defaultGroup)
     ->mappings($mappings)
-    ->titles("Unresolved images", "Resolved images", "All images")
+    ->titles(__("Unresolved images", LL), __("Resolved images", LL), __("All images", LL))
     ->display();

@@ -10,6 +10,8 @@ use QuickDoc\QuickDocUtil;
 LayoutDynamicHeadModule::registerCss('/style/tabby.css');
 LayoutDynamicHeadModule::registerCss('/style/key2value-form.css');
 
+define('LL', 'modules/quickDoc/quickDoc');
+Spirit::set('ll', LL);
 
 $prefs = QuickDocUtil::getPreferences();
 
@@ -36,11 +38,11 @@ LayoutDynamicHeadModule::registerCssIf("/style/modules/quickDoc/quickDoc.css", Q
 <div class="tabby quickdoc">
     <?php
     $tabs = TabbyTabs::create();
-    $tabs->addLeftTab("Links", QuickDocUtil::getTabUri("links"))->icon('link')->badge($nMissingLinks, 'error');
-    $tabs->addLeftTab("Images", QuickDocUtil::getTabUri("images"))->icon('image')->badge($nMissingImages, 'error');
-    $tabs->addLeftTab("Action", QuickDocUtil::getTabUri("action"))->icon('play');
-    $tabs->addRightTab("Help", QuickDocUtil::getTabUri("help"))->icon("help");
-    $tabs->addRightTab("Config", QuickDocUtil::getTabUri("config"))->icon("settings");
+    $tabs->addLeftTab(__("Links", LL), QuickDocUtil::getTabUri("links"))->icon('link')->badge($nMissingLinks, 'error');
+    $tabs->addLeftTab(__("Images", LL), QuickDocUtil::getTabUri("images"))->icon('image')->badge($nMissingImages, 'error');
+    $tabs->addLeftTab(__("Action", LL), QuickDocUtil::getTabUri("action"))->icon('play');
+    $tabs->addRightTab(__("Help", LL), QuickDocUtil::getTabUri("help"))->icon("help");
+    $tabs->addRightTab(__("Config", LL), QuickDocUtil::getTabUri("config"))->icon("settings");
     $tabs->display();
     ?>
 

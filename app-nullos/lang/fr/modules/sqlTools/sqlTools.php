@@ -14,7 +14,7 @@ $defs = [
     "Need help?" => "Besoin d'aide?",
     // forms...
     "From file" => "D'un fichier",
-    'Choose a file' => "Choose a file",
+    'Choose a file' => "Choisissez un fichier",
     "From favorites" => "De mes favoris",
     "The file {file} does not exist" => "Le fichier {file} n'existe pas",
     "From url" => "D'une url",

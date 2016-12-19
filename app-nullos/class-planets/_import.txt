@@ -5,7 +5,9 @@ Bat
 BumbleBee
 DirScanner
 DirTransformer
-QuickPdo
+PhpBeast
 Privilege
 QuickForm
+QuickPdo
+SequenceMatcher
 Tokens

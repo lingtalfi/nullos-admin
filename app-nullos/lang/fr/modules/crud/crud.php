@@ -15,6 +15,6 @@ $defs = [
     // RESET OPTIONS
     //--------------------------------------------
     "empty the left menu preferences" => "vider les préférences du menu de gauche",
-    "remove the crud files" => "Supprimer les fichiers crud",
-    "empty the crud files preferences" => "Vider les préférences des fichiers crud",
+    "remove the crud files" => "supprimer les fichiers crud",
+    "empty the crud files preferences" => "vider les préférences des fichiers crud",
 ];

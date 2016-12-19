@@ -22,22 +22,22 @@ if (array_key_exists('regenerate', $_POST)) {
     <section class="boxy">
         <?php
         if (true === $success) {
-            Goofy::alertSuccess("The dictionary has been successfully rescanned", false, false);
+            Goofy::alertSuccess(__("The dictionary has been successfully rescanned", LL), false, false);
         } elseif (true === $success2) {
-            Goofy::alertSuccess("The doc has been successfully regenerated", false, false);
+            Goofy::alertSuccess(__("The doc has been successfully regenerated", LL), false, false);
         }
         ?>
-        Click the button below to rescan the dictionary
+        <?php echo __("Click the button below to rescan the dictionary", LL); ?>
         <br>
         <form action="" method="post">
-            <button type="submit" class="big" name="rescan">Rescan</button>
+            <button type="submit" class="big" name="rescan"><?php echo __("Rescan", LL); ?></button>
         </form>
     </section>
     <section class="boxy">
-        Click the button below to generate the doc
+        <?php echo __("Click the button below to generate the doc", LL); ?>
         <br>
         <form action="" method="post">
-            <button type="submit" class="big" name="regenerate">Regenerate</button>
+            <button type="submit" class="big" name="regenerate"><?php echo __("Regenerate", LL); ?></button>
         </form>
     </section>
 </div>

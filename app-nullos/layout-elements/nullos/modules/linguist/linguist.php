@@ -9,15 +9,19 @@ use QuickDoc\QuickDocConfig;
 use QuickDoc\QuickDocException;
 use QuickDoc\QuickDocUtil;
 
+
 LayoutDynamicHeadModule::registerCss('/style/tabby.css');
 LayoutDynamicHeadModule::registerCss('/style/key2value-form.css');
 
+
+define('LL', 'modules/linguist/linguist');
+Spirit::set('ll', LL);
 
 
 $tab = "translate";
 if (array_key_exists("tab", $_GET)) {
     $tab = $_GET['tab'];
-    if (false === in_array($tab, ['translate', 'help', 'config'])) {
+    if (false === in_array($tab, ['translate', 'tools', 'help', 'config'])) {
         $tab = "translate";
     }
 }
@@ -25,7 +29,7 @@ if (array_key_exists("tab", $_GET)) {
 
 LayoutDynamicHeadModule::registerCssIf("/style/modules/linguist/linguist.css", LinguistConfig::getUri());
 
-if(false === file_exists(LinguistConfig::getPreferencesFile())){
+if (false === file_exists(LinguistConfig::getPreferencesFile())) {
     $tab = "config";
 }
 
@@ -37,9 +41,10 @@ if(false === file_exists(LinguistConfig::getPreferencesFile())){
 <div class="tabby quickdoc">
     <?php
     $tabs = TabbyTabs::create();
-    $tabs->addLeftTab("Translate", LinguistUtil::getTabUri("links"))->icon('translate');
-    $tabs->addRightTab("Help", LinguistUtil::getTabUri("help"))->icon("help");
-    $tabs->addRightTab("Config", LinguistUtil::getTabUri("config"))->icon("settings");
+    $tabs->addLeftTab(__("Translate", LL), LinguistUtil::getTabUri("links"))->icon('translate');
+    $tabs->addLeftTab(__("Tools", LL), LinguistUtil::getTabUri("tools"))->icon('build');
+    $tabs->addRightTab(__("Help", LL), LinguistUtil::getTabUri("help"))->icon("help");
+    $tabs->addRightTab(__("Config", LL), LinguistUtil::getTabUri("config"))->icon("settings");
     $tabs->display();
     ?>
 
