@@ -110,7 +110,7 @@ class TocUtil
     //------------------------------------------------------------------------------/
     private static function getAnchor($title)
     {
-        return strtolower(preg_replace('![^a-zA-Z0-9]+!', '-', $title));
+        return trim(strtolower(preg_replace('![^a-zA-Z0-9]+!', '-', $title)), '-');
     }
 
 }

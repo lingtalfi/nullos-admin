@@ -13,8 +13,8 @@ Table of contents
 ---------------------
 - [Nullos Admin](#nullos-admin)
  * [Table of contents](#table-of-contents)
-- [What is nullos?](#what-is-nullos-)
-- [Where to start?](#where-to-start-)
+- [What is nullos?](#what-is-nullos)
+- [Where to start?](#where-to-start)
 - [Nullos Admin: the website](#nullos-admin-the-website)
 - [Nullos admin: the cms](#nullos-admin-the-cms)
  * [The Privileges](#the-privileges)
