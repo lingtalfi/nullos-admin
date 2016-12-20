@@ -47,4 +47,5 @@ $defs = [
     "srcDir" => "source directory",
     "dstDir" => "destination directory",
     "linksUrlPrefix" => "links url prefix",
+    "linksAbsoluteUrlPrefix" => "links absolute url prefix",
 ];

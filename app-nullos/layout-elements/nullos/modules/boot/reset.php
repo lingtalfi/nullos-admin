@@ -18,7 +18,7 @@ define('LL', $ll);
         <?php echo __("Use this page to reset your <b>nullos admin</b> application.", LL); ?>
     </p>
     <p>
-        <?php echo linkt("Need help?", doclink('official/modules/boot-module/reset-page.md'), true); ?>
+        <?php echo linkt("Need help?", doclink('modules/boot-module/reset-page.md'), true); ?>
     </p>
     <?php
 

@@ -10,6 +10,7 @@ use Lang\LangModule;
 use LayoutDynamicHead\LayoutDynamicHeadModule;
 use LeftMenuSection\Tools\ToolsLeftMenuSectionModule;
 use Linguist\LinguistModule;
+use NullosInfo\NullosInfoModule;
 use QuickDoc\QuickDocModule;
 use SqlTools\SqlToolsModule;
 
@@ -48,6 +49,7 @@ class LayoutBridge
         QuickDocModule::displayToolsLeftMenuLinks();
         IconsViewerModule::displayToolsLeftMenuLinks();
         LinguistModule::displayToolsLeftMenuLinks();
+        NullosInfoModule::displayToolsLeftMenuLinks();
     }
 
 

@@ -4,6 +4,7 @@
 namespace Layout\Body\Tabby;
 
 
+use Layout\Body\GroupedItems\GroupedItems;
 use Layout\Body\Key2ValueForm\Key2ValueForm;
 use LayoutDynamicHead\LayoutDynamicHeadModule;
 
@@ -86,6 +87,53 @@ class Tabby
                     Key2ValueForm::demo();
                     ?>
                 </div>
+            </div>
+        </div>
+        <?php
+    }
+
+
+    public static function demo2()
+    {
+        LayoutDynamicHeadModule::registerCss('/style/tabby.css');
+        ?>
+        <div class="tabby">
+            <div class="tabs">
+                <div class="tab">
+                    <a href="#">
+                        <?php \Icons::printIcon("link"); ?>
+                        <span>Link</span>
+                    </a>
+                </div>
+                <div class="tab">
+                    <a href="#">
+                        <?php \Icons::printIcon("image"); ?>
+                        <span>Images</span>
+                        <span class="badge badge-error">6</span>
+                    </a>
+                </div>
+                <div class="tab">
+                    <a href="#">
+                        <span>Others</span>
+                        <span class="badge badge">new</span>
+                    </a>
+                </div>
+                <div class="tab">
+                    <a href="#">
+                        <span>Fun</span>
+                        <span class="badge badge-success">4</span>
+                    </a>
+                </div>
+                <div class="tab spacer"></div>
+                <div class="tab">
+                    <a href="#">
+                        <?php \Icons::printIcon("settings"); ?>
+                        <span>Config</span>
+                    </a>
+                </div>
+            </div>
+            <div class="body">
+                <?php GroupedItems::demo(); ?>
             </div>
         </div>
         <?php

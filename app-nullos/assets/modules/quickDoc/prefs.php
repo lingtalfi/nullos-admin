@@ -14,4 +14,5 @@ $store = [
         'group' => true,
     ],
     'linksUrlPrefix' => 'https://github.com/lingtalfi/nullos-admin/tree/master/doc/',
+    'linksAbsoluteUrlPrefix' => 'https://github.com/lingtalfi/nullos-admin/tree/master',
 ];

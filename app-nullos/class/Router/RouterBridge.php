@@ -7,6 +7,7 @@ use Boot\BootModule;
 use Crud\CrudModule;
 use IconsViewer\IconsViewerModule;
 use Linguist\LinguistModule;
+use NullosInfo\NullosInfoModule;
 use QuickDoc\QuickDocModule;
 use SqlTools\SqlToolsModule;
 
@@ -24,6 +25,7 @@ class RouterBridge
         QuickDocModule::decorateUri2PagesMap($uri2pagesMap);
         IconsViewerModule::decorateUri2PagesMap($uri2pagesMap);
         LinguistModule::decorateUri2PagesMap($uri2pagesMap);
+        NullosInfoModule::decorateUri2PagesMap($uri2pagesMap);
     }
 
 }

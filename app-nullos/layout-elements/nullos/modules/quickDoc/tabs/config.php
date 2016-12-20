@@ -12,6 +12,7 @@ $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
     $srcDir = $formattedValues['srcDir'];
     $dstDir = $formattedValues['dstDir'];
     $linksUrlPrefix = $formattedValues['linksUrlPrefix'];
+    $linksAbsoluteUrlPrefix = $formattedValues['linksAbsoluteUrlPrefix'];
 
 
     if (file_exists($srcDir)) {
@@ -21,6 +22,7 @@ $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
                 'srcDir' => $srcDir,
                 'dstDir' => $dstDir,
                 'linksUrlPrefix' => $linksUrlPrefix,
+                'linksAbsoluteUrlPrefix' => $linksAbsoluteUrlPrefix,
             ]);
             return true;
         } else {
@@ -39,18 +41,21 @@ $form->defaultValues = [
     'srcDir' => $prefs['srcDir'],
     'dstDir' => $prefs['dstDir'],
     'linksUrlPrefix' => $prefs['linksUrlPrefix'],
+    'linksAbsoluteUrlPrefix' => $prefs['linksAbsoluteUrlPrefix'],
 ];
 
 $form->labels = [
     'srcDir' => __('srcDir', LL),
     'dstDir' => __('dstDir', LL),
     'linksUrlPrefix' => __('linksUrlPrefix', LL),
+    'linksAbsoluteUrlPrefix' => __('linksAbsoluteUrlPrefix', LL),
 ];
 
 
 $form->addControl("srcDir")->type('text')->addConstraint("required");
 $form->addControl("dstDir")->type('text')->addConstraint("required");
 $form->addControl("linksUrlPrefix")->type('text');
+$form->addControl("linksAbsoluteUrlPrefix")->type('text');
 
 
 $form->play();

@@ -70,23 +70,6 @@ function linkt($text, $href, $external = false)
 }
 
 
-//--------------------------------------------
-//
-//--------------------------------------------
-// will link to, experimental function against memory lost used during development...
-function wl2($identifier)
-{
-    $links = [
-        'nullos-doc-install' => '#',
-        'nullos-doc-quickstart-reset' => '#',
-        'nullos-doc-install-customize' => '#',
-        'nullos-doc-hide-quickstart-menu' => '#',
-        'nullos-doc-linguist-module' => '#',
-    ];
-    return htmlspecialchars($links[$identifier]);
-}
-
-
 /**
  * relPath
  * currently originates from https://github.com/lingtalfi/nullos-admin/tree/master/doc

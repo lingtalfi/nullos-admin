@@ -24,6 +24,8 @@ List of Log calls
 
 	
 Note: it seems that modules put their name as the namespace
+
+Note2: if you want to see the live list of the log calls of the nullos application, check out the <-Nullos info module->.
 	
 	
-todo: tool to list all log calls	
+		

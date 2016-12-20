@@ -2,6 +2,7 @@
 
 
 use Linguist\Util\LinguistScanner;
+use NullosInfo\Util\InfoScanner;
 use QuickDoc\Util\TocUtil;
 use QuickDoc\Util\TodoUtil;
 use SequenceMatcher\Element\Group;
@@ -17,7 +18,6 @@ require_once __DIR__ . "/../init.php";
 ini_set('display_errors', 1);
 
 
-
-a(TodoUtil::getTodos());
+a(InfoScanner::getLogCalls());
 
 

@@ -47,4 +47,5 @@ $defs = [
     "srcDir" => "dossier source",
     "dstDir" => "dossier de destination",
     "linksUrlPrefix" => "préfixe d'url pour les liens",
+    "linksAbsoluteUrlPrefix" => "Préfixe pour les urls absolues",
 ];

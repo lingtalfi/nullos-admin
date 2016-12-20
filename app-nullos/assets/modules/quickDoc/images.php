@@ -56,6 +56,12 @@ $store = [
                 '[![linguist.png](https://s19.postimg.org/it030hbz7/linguist.png)](https://postimg.org/image/vke96zlr3/)',
             ],
         ],
+        '/modules/nullosinfo-module.md' => [
+            [
+                'nullos-info-module',
+                '[![nullos-info-module.png](https://s19.postimg.org/baq4jbzdv/nullos_info_module.png)](https://postimg.org/image/wx550cxy7/)',
+            ],
+        ],
         '/modules/quickdoc-module.md' => [
             [
                 'quickdoc',

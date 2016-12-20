@@ -276,6 +276,7 @@ class QuickDocUtil
 
 
                 $linksUrlPrefix = $prefs['linksUrlPrefix'];
+                $linksAbsoluteUrlPrefix = $prefs['linksAbsoluteUrlPrefix'];
 
                 $transformer = TrackingMapRegexTransformer::create()
                     ->regex('/<-\s*(.*)\s*->/U')
@@ -286,8 +287,12 @@ class QuickDocUtil
                         }
                         return $file;
                     })
-                    ->onFound(function ($match, $value) use ($linksUrlPrefix) {
-                        return '[' . $match . '](' . $linksUrlPrefix . $value . ')';
+                    ->onFound(function ($match, $value) use ($linksUrlPrefix, $linksAbsoluteUrlPrefix) {
+                        $prefix = $linksUrlPrefix;
+                        if ('/' === substr($value, 0, 1)) {
+                            $prefix = $linksAbsoluteUrlPrefix;
+                        }
+                        return '[' . $match . '](' . $prefix . $value . ')';
                     });;
             } elseif ('images' === $name) {
                 $transformer = TrackingMapRegexTransformer::create()

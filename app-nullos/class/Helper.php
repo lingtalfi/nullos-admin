@@ -20,7 +20,7 @@ class Helper
         if (true === Privilege::has($privilege)) {
             return $fileName;
         }
-        if(null===$default){
+        if (null === $default) {
             $default = "page-denied.php";
         }
         return $default;
@@ -62,4 +62,5 @@ class Helper
     {
         return str_replace('"', '\"', $m);
     }
+
 }

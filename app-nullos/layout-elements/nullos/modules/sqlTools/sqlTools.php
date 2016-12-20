@@ -34,7 +34,8 @@ if (Privilege::has('sqlTools.access')):
         <h3><?php echo __("Execute SQL page", LL); ?></h3>
         <p><?php echo __("Use this page to execute sql from a file, an url or directly from code", LL); ?></p>
         <p>
-            <a target="_blank" href="https://github.com/lingtalfi/nullos-admin/tree/master/doc/official/modules/sqltools-module/execute-sql-page.md"><?php echo __("Need help?", LL); ?></a>
+            <a target="_blank"
+               href="<?php echo doclink('modules/sqltools-module/execute-sql-page.md'); ?>"><?php echo __("Need help?", LL); ?></a>
         </p>
         <div>
             <?php if (true === QuickPdo::hasConnection()): ?>

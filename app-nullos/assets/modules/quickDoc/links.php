@@ -40,6 +40,10 @@ $store = [
                 'modules/linguist-module.md',
             ],
             [
+                'NullosInfo',
+                'modules/nullosinfo-module.md',
+            ],
+            [
                 'kif application',
                 'https://github.com/lingtalfi/kif',
             ],
@@ -92,6 +96,12 @@ $store = [
                 'https://github.com/lingtalfi/kif',
             ],
         ],
+        '/core/logger/list-of-log-calls.md' => [
+            [
+                'Nullos info module',
+                'modules/nullosinfo-module.md',
+            ],
+        ],
         '/core/logger.md' => [
             [
                 'ApplicationLogModule',
@@ -116,6 +126,10 @@ $store = [
             [
                 'Privilege framework\'s namespace convention',
                 'https://github.com/lingtalfi/Privilege#namespace-convention-and-wildcards',
+            ],
+            [
+                'NullosInfo module',
+                'modules/nullosinfo-module.md',
             ],
             [
                 'modules guidelines',

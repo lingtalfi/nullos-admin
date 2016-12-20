@@ -89,6 +89,7 @@ that you have at your disposal so far:
 - <-QuickDoc->
 - <-IconsViewer->
 - <-Linguist->
+- <-NullosInfo->
 
 
 
@@ -196,8 +197,12 @@ Tutorials section
 
 
 
+History Log
+===============
 
+- 1.0.0 - 2016-12-20
 
+    - First release    
 
 
 

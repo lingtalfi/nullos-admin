@@ -25,6 +25,10 @@ Doing so, I discovered other benefits of having an abstract doc:
 - easier to write the doc (you don't need to fetch a link somewhere else, so you stay focus)
 
 
+I then added a few more tools: the toc converter, and a todo scanner.
+
+
+
 General concept
 =================
 2016-12-19
@@ -34,10 +38,13 @@ When you write your documentation, if you need to write:
 
 - a link
     - use the <-link-> notation
-- an îmage
+- an image
     - use the <!-image-> notation
 - a todo item
     - use the todo: anything notation
+    
+- a table of contents
+    - use the &#91;TOC] notation 
 
 
 This allows you to stay focused on the writing of the documentation.
@@ -60,7 +67,11 @@ QuickDoc uses the <-tabby layout->.
 There are 6 tabs:
 
 - config
-    - you start there, defining the path to your abstract doc and the path to your concrete doc 
+    - you start there, defining the path to your abstract doc and the path to your concrete doc
+    - linksUrlPrefix: this is a prefix applied when the symbol is a relative path (without a leading slash)
+    - linksAbsoluteUrlPrefix: this is a prefix applied when the symbol is an absolute path (starts with a slash)
+    - note: either the linksUrlPrefix OR the linksAbsoluteUrlPrefix will be applied, but not both at the same time
+    
 - help
     - contains a link to the quickdoc documentation (this page)
 - action
@@ -78,6 +89,20 @@ There are 6 tabs:
 
 
 
+The nullos documentation
+---------------------------
+2016-12-20
+
+Actually, you are currently reading a product example of the QuickDoc module.
+
+If you look in the nullos repository, you will find two documentation directories:
+
+- doc-abstract: which is my working directory, containing only symbols (no github specific things)
+- doc: which is the current doc you are reading, and which contains resolved symbols (links, images, TOC)
+
+
+
+ 
 
 
 

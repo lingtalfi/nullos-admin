@@ -50,6 +50,7 @@ class QuickDocConfig
             'srcDir' => null,
             'dstDir' => null,
             'linksUrlPrefix' => '',
+            'linksUrlAbsolutePrefix' => '',
             'links' => [
                 'mode' => 'all',
                 'alpha' => true,

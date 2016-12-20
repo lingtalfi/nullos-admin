@@ -20,7 +20,7 @@ define('LL', $ll);
         <?php echo __("Use this page to generate various files and objects.", LL); ?>
     </p>
     <p>
-        <?php echo linkt("Need help?", doclink('official/modules/quickstart-module/crud-generators-page.md'), true); ?>
+        <?php echo linkt("Need help?", doclink('modules/crud-module/crud-generators-page.md'), true); ?>
     </p>
 
     <div>

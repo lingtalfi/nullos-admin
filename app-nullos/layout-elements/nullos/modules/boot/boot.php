@@ -26,10 +26,10 @@ define('LL', $ll); // translation context
     <h3><?php echo __("Boot page", LL); ?></h3>
     <p>
         <?php echo __("Use this page to create {theInitLink}.", LL,
-            ['theInitLink' => linkt("the init file", doclink('official/core-concepts/init-file.md'), true)]); ?>
+            ['theInitLink' => linkt("the init file", doclink('core/init-file.md'), true)]); ?>
     </p>
     <p>
-        <?php echo linkt("Need help?", doclink('official/modules/boot-module/boot-page.md'), true); ?>
+        <?php echo linkt("Need help?", doclink('modules/boot-module/init-writer-page.md'), true); ?>
     </p>
 
 

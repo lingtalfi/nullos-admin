@@ -23,7 +23,7 @@ TODO: check the following
 - **linguist.access**: access to the "Linguist" item link in the "Tools" section of the left menu (nullos main layout), and to the corresponding page
 
 
-todo: tools to list all privileges
+Note: if you want to see the privileges calls in live, check out the <-NullosInfo module->.
 
 
 If you're a nullos developer and you're looking for a naming convention for privileges, check out the 
