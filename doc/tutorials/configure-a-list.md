@@ -16,12 +16,31 @@ The configuration of a list is done by opening and editing a list [crud file](ht
 
 
 
-[TOC]
-
-
-
-
-
+- [Configure a list](#configure-a-list)
+- [Preparation](#preparation)
+- [First step: choose your view with the Fields and the Query](#first-step-choose-your-view-with-the-fields-and-the-query)
+ * [Add a title](#add-a-title)
+ * [Move the "action" columns to the left with](#move-the-action-columns-to-the-left-with)
+ * [Change the column labels](#change-the-column-labels)
+ * [Hide columns](#hide-columns)
+ * [Transform the column content](#transform-the-column-content)
+- [Widgets](#widgets)
+ * [Hide the page selector widget](#hide-the-page-selector-widget)
+ * [Hide the search widget](#hide-the-search-widget)
+ * [Hide the "new item link" widget](#hide-the-new-item-link-widget)
+ * [Hide the nipp selector widget](#hide-the-nipp-selector-widget)
+ * [Hide the pagination widget](#hide-the-pagination-widget)
+ * [Hide the multiple actions widget](#hide-the-multiple-actions-widget)
+- [Customize your actions](#customize-your-actions)
+ * [Hide the checkboxes](#hide-the-checkboxes)
+ * [Get rid of the single action columns](#get-rid-of-the-single-action-columns)
+ * [Recreate the "Edit" action](#recreate-the-edit-action)
+ * [Recreate the "Delete" action with the postlink trick](#recreate-the-delete-action-with-the-postlink-trick)
+ * [Create a "Debug row" action with the postlink trick](#create-a-debug-row-action-with-the-postlink-trick)
+ * [Get rid of the multiple actions](#get-rid-of-the-multiple-actions)
+ * [Recreate the "Delete all" multiple action](#recreate-the-delete-all-multiple-action)
+ * [Create a "Debug rows" multiple action](#create-a-debug-rows-multiple-action)
+- [Related](#related)
 
 
 Preparation

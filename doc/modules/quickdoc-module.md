@@ -4,7 +4,10 @@ QuickDoc module
 
 
 
-[TOC]
+- [QuickDoc module](#quickdoc-module)
+- [General concept](#general-concept)
+ * [Using the QuickDoc Gui](#using-the-quickdoc-gui)
+
 
 The QuickDoc module is a tool which helps creating a documentation.
 

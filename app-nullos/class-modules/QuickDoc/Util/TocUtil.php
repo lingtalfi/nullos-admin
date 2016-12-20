@@ -6,10 +6,9 @@ namespace QuickDoc\Util;
 class TocUtil
 {
 
-    public static function hasToc($file)
+    public static function hasToc($content)
     {
         $hasToc = false;
-        $content = file_get_contents($file);
         if (preg_match('!^\\[TOC\\]\s*$!m', $content)) {
             $hasToc = true;
         }
@@ -20,22 +19,20 @@ class TocUtil
     /**
      * @return false|string
      */
-    public static function getTocSymbolReplacedContent($file)
+    public static function getTocSymbolReplacedContent($content)
     {
-        if (true === self::hasToc($file)) {
-            $toc = self::getTocHtml($file);
-            $content = file_get_contents($file);
-            $content .= PHP_EOL;
+        if (true === self::hasToc($content)) {
+            $toc = self::getTocHtml($content);
+            $toc .= PHP_EOL;
             return preg_replace('!^\\[TOC\\]\s*$!m', $toc, $content);
         }
         return false;
     }
 
-    public static function getTocHtml($file)
+    public static function getTocHtml($content)
     {
         $s = '';
         $allTitles = [];
-        $content = file_get_contents($file);
 
 
         //------------------------------------------------------------------------------/

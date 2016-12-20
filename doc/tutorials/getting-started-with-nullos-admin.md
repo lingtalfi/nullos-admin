@@ -14,8 +14,13 @@ go straight to the point.
 
 Table of contents
 ---------------------
-[TOC]
-
+- [Getting started with nullos admin](#getting-started-with-nullos-admin)
+ * [Table of contents](#table-of-contents)
+- [Install the nullos admin app](#install-the-nullos-admin-app)
+- [First login](#first-login)
+- [The "Boot" page](#the-boot-page)
+- [Creating the database](#creating-the-database)
+- [Create the crud files](#create-the-crud-files)
 
 
 Install the nullos admin app

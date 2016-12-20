@@ -9,6 +9,7 @@ use ArrayStore\ArrayStore;
 use Bat\FileSystemTool;
 use DirTransformer\Scanner\Scanner;
 use DirTransformer\Transformer\TrackingMapRegexTransformer;
+use QuickDoc\DirTransformer\Transformer\TocTransformer;
 
 class QuickDocUtil
 {
@@ -181,6 +182,7 @@ class QuickDocUtil
         $scanner->allowedExtensions(['md'])
             ->addTransformer($linksTransformer)
             ->addTransformer($imagesTransformer)
+            ->addTransformer(new TocTransformer())
             ->copy($srcDir, $dstDir);
 
 

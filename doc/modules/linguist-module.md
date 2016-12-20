@@ -4,7 +4,9 @@ Linguist module
 
 
 
-[TOC]
+- [Linguist module](#linguist-module)
+- [The Linguist gui](#the-linguist-gui)
+
 
 The Linguist module is a tool which helps creating a multi-language **nullos admin** website.
 
