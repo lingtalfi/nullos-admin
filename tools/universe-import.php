@@ -75,21 +75,12 @@ require "bigbang.php";
  */
 
 
-
-
-
-
 //--------------------------------------------
 // CONFIG
 //--------------------------------------------
-$planetsDir = "/pathto/php/projects/universe/planets";
+$planetsDirWithGit = "/pathto/php/projects/universe/planets"; // working planets dir (with .git)
+$planetsDirWithoutGit = "/pathto/php/projects/universe-snapshots/planets"; // exportable planets dir (without .git)
 $destDir = __DIR__ . "/../app-nullos/class-planets";
-
-
-
-
-
-
 
 
 //--------------------------------------------
@@ -105,17 +96,18 @@ if ("cli" !== php_sapi_name()) {
 //--------------------------------------------
 $options = getopt("d");
 $mode = "symlink";
+$sourceDir = $planetsDirWithGit;
 if (array_key_exists("d", $options)) {
     $mode = "dir";
+    $sourceDir = $planetsDirWithoutGit;
 }
-
 
 
 //--------------------------------------------
 // DO THE MAIN LOOP...
 //--------------------------------------------
 if (file_exists($destDir)) {
-    if (file_exists($planetsDir)) {
+    if (file_exists($sourceDir)) {
         $files = file($destDir . "/_import.txt", \FILE_IGNORE_NEW_LINES);
 
         foreach ($files as $dir) {
@@ -132,7 +124,7 @@ if (file_exists($destDir)) {
             }
 
 
-            $planetDir = $planetsDir . "/$dir";
+            $planetDir = $sourceDir . "/$dir";
 
             if ('symlink' === $mode) {
                 symlink($planetDir, $oldFile);
@@ -141,7 +133,7 @@ if (file_exists($destDir)) {
             }
         }
     } else {
-        throw new \Exception("planets directory does not exist: $planetsDir");
+        throw new \Exception("planets directory does not exist: $sourceDir");
     }
 
 } else {

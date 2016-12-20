@@ -122,6 +122,20 @@ $store = [
                 'modules/authentication-module/configuring-nullos-accounts.md',
             ],
         ],
+        '/core/nullos-permissions.md' => [
+            [
+                'linguist module',
+                'modules/linguist-module.md',
+            ],
+            [
+                'crud module',
+                'modules/crud-module.md',
+            ],
+            [
+                'application log module',
+                'modules/applicationlog-module.md',
+            ],
+        ],
         '/core/privilege/list-of-all-privileges.md' => [
             [
                 'Privilege framework\'s namespace convention',
@@ -339,6 +353,10 @@ $store = [
             ],
         ],
         '/tutorials/getting-started-with-nullos-admin.md' => [
+            [
+                'nullos permissions',
+                'core/nullos-permissions.md',
+            ],
             [
                 'oui-schema',
                 'assets/oui-schema.png',

@@ -32,9 +32,7 @@ Install the nullos admin app
             - there is already a **app-nullos/www/.htaccess** file for you if you use apache
     - in the examples for this tutorial, I will be using a server name of nullos (http://nullos)            
             
-- Give write permissions to the **app-nullos/log** directory (which contains the application and php logs)
            
-
                        
 nginx config example:
 ```nginx
@@ -54,6 +52,14 @@ nginx config example:
 	}
  }            
 ```            
+
+
+Permissions
+---------------
+2016-12-20 
+
+Nullos permissions setup is explained in the <-nullos permissions-> document.
+
 
 
 
