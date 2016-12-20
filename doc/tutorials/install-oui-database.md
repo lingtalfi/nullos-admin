@@ -8,12 +8,12 @@ as a starting point for the tutorials.
 
 
 
-I have this nice database in [oui.sql](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/assets/oui.sql).
+I have this nice database in [oui.sql](https://github.com/lingtalfi/nullos-admin/tree/master/doc//fixtures/oui.sql).
 
 
 To install it, open phpMyAdmin and paste the content of **oui.sql** in the SQL tab and press the Go button (see screenshot below).
 
-[![phpmyadmin-import.png](https://s19.postimg.org/8k9uvzo4j/phpmyadmin_import.png)](https://postimg.org/image/ng8e3kzj3/)
+[![phpmyadmin-import.png](https://s19.postimg.org/4b2vshko3/phpmyadmin_import.png)](https://postimg.org/image/ttv85i47z/)
 
 
 Another way to do it, perhaps faster, is to use the following command line:
@@ -22,13 +22,11 @@ Another way to do it, perhaps faster, is to use the following command line:
 mysql -uroot -proot < oui.sql
 ```
 
-If you are curious, here is what it looks like, using the MysqlWorkBench software: [oui schema](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/assets/db.png)
+If you are curious, here is what it looks like, using the MysqlWorkBench software: [oui schema](https://github.com/lingtalfi/nullos-admin/tree/master/doc/assets/oui-schema.png)
 
 
 
 
 Related
 ==============
-- [Install nullos on your machine](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/install-nullos-on-your-machine.md)
-- [Install the "oui" test database](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/install-oui-database.md)
-- [Getting started with nullos](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/getting-started-with-nullos.md)
+- [Getting started with nullos](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials/getting-started-with-nullos-admin.md)

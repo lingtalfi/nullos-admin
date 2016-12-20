@@ -12,8 +12,7 @@ class SqlToolsConfig
     public static function getFavoriteDirs()
     {
         return [
-            APP_ROOT_DIR . "/assets/sqltools/favorites",
-            APP_ROOT_DIR . '/../doc/tutorials/assets',
+            APP_ROOT_DIR . "/fixtures",
         ];
     }
 

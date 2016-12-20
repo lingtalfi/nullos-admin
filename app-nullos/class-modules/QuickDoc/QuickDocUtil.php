@@ -71,6 +71,65 @@ class QuickDocUtil
         return self::getStoreByName($name)->store($mappings);
     }
 
+    public static function mergeMappings($name, array $mappings)
+    {
+        $actualMappings = self::getMappings($name);
+        $actualFound = $actualMappings['found'];
+        $actualUnfound = $actualMappings['unfound'];
+        $found = $mappings['found'];
+        $unfound = $mappings['unfound'];
+
+
+        $removeFromUnfound = [];
+        foreach ($found as $file => $maps) {
+            if (false === array_key_exists($file, $actualFound)) {
+                $actualFound[$file] = $maps;
+                $removeFromUnfound[$file] = $maps;
+            } else {
+                foreach ($maps as $map) {
+                    $label = $map[0];
+                    $alreadyExist = false;
+                    foreach ($actualFound[$file] as $_map) {
+                        if ($label === $_map[0]) {
+                            $alreadyExist = true;
+                            break;
+                        }
+                    }
+                    if (false === $alreadyExist) {
+                        $actualFound[$file][] = $map;
+                        $removeFromUnfound[$file][] = $map;
+                    }
+                }
+            }
+        }
+
+        foreach ($removeFromUnfound as $file => $maps) {
+            foreach ($maps as $map) {
+                $label = $map[0];
+                if (array_key_exists($file, $actualUnfound)) {
+                    $_maps = $actualUnfound[$file];
+                    foreach ($_maps as $k => $_map) {
+                        if ($label === $_map[0]) {
+                            unset($_maps[$k]);
+                        }
+                    }
+                    if (0 === count($_maps)) {
+                        unset($actualUnfound[$file]);
+                    } else {
+                        $actualUnfound[$file] = $_maps;
+                    }
+                }
+            }
+        }
+
+        $mappings = [
+            'found' => $actualFound,
+            'unfound' => $actualUnfound,
+        ];
+
+        return self::getStoreByName($name)->store($mappings);
+    }
+
     public static function countUnfoundItemsByName($name)
     {
         $n = 0;
@@ -132,6 +191,7 @@ class QuickDocUtil
             'found' => $found,
             'unfound' => $unfound,
         ];
+        $mappings = self::filterMappings($mappings);
         self::setMappings("links", $mappings);
 
 
@@ -142,6 +202,7 @@ class QuickDocUtil
             'found' => $found,
             'unfound' => $unfound,
         ];
+        $mappings = self::filterMappings($mappings);
         self::setMappings("images", $mappings);
 
 
@@ -210,7 +271,10 @@ class QuickDocUtil
 
             $transformer = null;
             if ('links' === $name) {
-                ;
+
+
+                $linksUrlPrefix = $prefs['linksUrlPrefix'];
+
                 $transformer = TrackingMapRegexTransformer::create()
                     ->regex('/<-\s*(.*)\s*->/U')
                     ->map(self::getFoundMapByName($name))
@@ -220,8 +284,8 @@ class QuickDocUtil
                         }
                         return $file;
                     })
-                    ->onFound(function ($match, $value) {
-                        return '[' . $match . '](' . $value . ')';
+                    ->onFound(function ($match, $value) use ($linksUrlPrefix) {
+                        return '[' . $match . '](' . $linksUrlPrefix . $value . ')';
                     });;
             } elseif ('images' === $name) {
                 $transformer = TrackingMapRegexTransformer::create()
@@ -234,7 +298,8 @@ class QuickDocUtil
                         return $file;
                     })
                     ->onFound(function ($match, $value) {
-                        return '![' . $match . '](' . $value . ')';
+                        return $value; // actually, I found it easier to return the whole value, your mileage may vary...
+//                        return '![' . $match . '](' . $value . ')';
                     });
             } else {
                 throw new \Exception("No store bound to the name $name");
@@ -255,6 +320,45 @@ class QuickDocUtil
             }
         }
         return $map;
+    }
+
+
+    private static function filterMappings(array $mappings)
+    {
+        $ret = [];
+        $found = $mappings['found'];
+        $unfound = $mappings['unfound'];
+        $newFound = [];
+        $newUnfound = [];
+
+        $cache = [];
+        foreach ($found as $file => $maps) {
+            foreach ($maps as $k => $map) {
+                $id = $map[0];
+                if (false === array_key_exists($id, $cache)) {
+                    $cache[$id] = true;
+                    $newFound[$file][$k] = $map;
+                }
+            }
+        }
+
+
+        $cache = [];
+        foreach ($unfound as $file => $maps) {
+            foreach ($maps as $k => $map) {
+                $id = $map[0];
+                if (false === array_key_exists($id, $cache)) {
+                    $cache[$id] = true;
+                    $newUnfound[$file][$k] = $map;
+                }
+            }
+        }
+
+        $ret = [
+            'found' => $newFound,
+            'unfound' => $newUnfound,
+        ];
+        return $ret;
     }
 
 }

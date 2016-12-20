@@ -28,5 +28,5 @@ $defs = [
     "Missing translations have been successfully imported" => "Les traductions manquantes ont bien été importées",
     "There are {count} missing translation strings." => "Il y a {count} traductions manquantes",
     "Import from en" => "Importer depuis en",
-    "Linguist module documentation" => "Linguist module documentation",
+    "Linguist module documentation" => "documentation du module Linguist",
 ];

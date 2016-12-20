@@ -24,7 +24,7 @@ $form->onSubmit(function (array $foundList, array $unfoundList) use ($type) {
         "found" => $foundList,
         "unfound" => $unfoundList,
     ];
-    if (true === QuickDocUtil::setMappings($type, $mappings)) {
+    if (true === QuickDocUtil::mergeMappings($type, $mappings)) {
         return Goofy::alertSuccess(__("The mappings have been successfully updated", LL), true);
     } else {
         return Goofy::alertError(__("Couldn't write the mappings. Are your file permissions correct?", LL), true);

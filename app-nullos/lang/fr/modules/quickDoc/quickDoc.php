@@ -15,6 +15,7 @@ $defs = [
     //------------------------------------------------------------------------------/
     "Links" => "Liens",
     "Images" => "Images",
+    "Todo" => "Todo",
     "Action" => "Action",
     "Help" => "Aide",
     "Config" => "Configuration",
@@ -38,4 +39,12 @@ $defs = [
     "Unresolved links" => "Liens non résolus",
     "Resolved links" => "Liens résolus",
     "All links" => "Tous les liens",
+    "QuickDoc module documentation" => "documentation du module QuickDoc",
+
+    //------------------------------------------------------------------------------/
+    // CONFIG FORM
+    //------------------------------------------------------------------------------/
+    "srcDir" => "dossier source",
+    "dstDir" => "dossier de destination",
+    "linksUrlPrefix" => "préfixe d'url pour les liens",
 ];

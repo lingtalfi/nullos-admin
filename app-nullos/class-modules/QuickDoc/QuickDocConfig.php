@@ -49,17 +49,19 @@ class QuickDocConfig
         return [
             'srcDir' => null,
             'dstDir' => null,
+            'linksUrlPrefix' => '',
             'links' => [
                 'mode' => 'all',
                 'alpha' => true,
-                'group' => false,
+                'group' => true,
             ],
             'images' => [
                 'mode' => 'all',
                 'alpha' => true,
-                'group' => false,
+                'group' => true,
             ],
         ];
     }
+
 
 }

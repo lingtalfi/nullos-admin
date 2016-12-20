@@ -82,7 +82,7 @@ require "bigbang.php";
 //--------------------------------------------
 // CONFIG
 //--------------------------------------------
-$planetsDir = "/pathto/php/projects/universe-snapshots/planets";
+$planetsDir = "/pathto/php/projects/universe/planets";
 $destDir = __DIR__ . "/../app-nullos/class-planets";
 
 

@@ -155,6 +155,14 @@ class LinguistEqualizer
      * with the defs parameter, then the original srcFile's definition value will
      * be used.
      *
+     *
+     * Note: this technique doesn't work in some cases where the translation spans multiple lines,
+     * for instance with a long line:
+     *          "oops, something wrong happened with the form, please fix the form errors then submit again"
+     *          => "oops, something wrong happened with the form, please fix the form errors then submit again",
+     *
+     * So, todo: update this technique (maybe use the new TokenSequenceMatcher?)
+     *
      */
     public static function copyWithComments($srcFile, $dstFile, array $defs = [])
     {

@@ -11,6 +11,7 @@ $form->title = __("Configuration", LL);
 $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
     $srcDir = $formattedValues['srcDir'];
     $dstDir = $formattedValues['dstDir'];
+    $linksUrlPrefix = $formattedValues['linksUrlPrefix'];
 
 
     if (file_exists($srcDir)) {
@@ -19,6 +20,7 @@ $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
             QuickDocUtil::setPreferences([
                 'srcDir' => $srcDir,
                 'dstDir' => $dstDir,
+                'linksUrlPrefix' => $linksUrlPrefix,
             ]);
             return true;
         } else {
@@ -36,11 +38,19 @@ $prefs = QuickDocUtil::getPreferences();
 $form->defaultValues = [
     'srcDir' => $prefs['srcDir'],
     'dstDir' => $prefs['dstDir'],
+    'linksUrlPrefix' => $prefs['linksUrlPrefix'],
+];
+
+$form->labels = [
+    'srcDir' => __('srcDir', LL),
+    'dstDir' => __('dstDir', LL),
+    'linksUrlPrefix' => __('linksUrlPrefix', LL),
 ];
 
 
 $form->addControl("srcDir")->type('text')->addConstraint("required");
 $form->addControl("dstDir")->type('text')->addConstraint("required");
+$form->addControl("linksUrlPrefix")->type('text');
 
 
 $form->play();

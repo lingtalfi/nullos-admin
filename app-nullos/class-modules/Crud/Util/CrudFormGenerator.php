@@ -189,7 +189,7 @@ class CrudFormGenerator extends AbstractCrudGenerator
 
         $tables = QuickPdoInfoTool::getTables($db);
         $autoFormDir = CrudConfig::getCrudGenFormDir();
-        FileSystemTool::mkdir($autoFormDir);
+        FileSystemTool::mkdir($autoFormDir, 0777, true);
         foreach ($tables as $table) {
             $this->generateForm($table, $autoFormDir . "/" . $db . '.' . $table . '.php');
         }

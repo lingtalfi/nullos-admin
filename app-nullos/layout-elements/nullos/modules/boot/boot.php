@@ -90,7 +90,7 @@ define('LL', $ll); // translation context
         $form->addControl('timezone')->type('select', $tzIdentifiers)->value("Europe/Paris");
         $form->addControl('dbName')->type('text', 'my_db')->addConstraint('required');
         $form->addControl('dbUser')->type('text')->addConstraint('required');
-        $form->addControl('dbPass')->type('text')->addConstraint('required');
+        $form->addControl('dbPass')->type('text');
 
 
         $form->formTreatmentFunc = function (array $formattedValues, &$msg) use ($langs, $form) {

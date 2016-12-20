@@ -1,16 +1,17 @@
 <?php
 
 $store = [
-    'srcDir' => '/Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/doc',
-    'dstDir' => '/Users/pierrelafitte/Desktop/mondossier/web/Komin>/service création/projets/nullos/doc2',
+    'srcDir' => '/pathto/php/projects/nullos-admin/doc-abstract',
+    'dstDir' => '/pathto/php/projects/nullos-admin/doc',
     'links' => [
         'mode' => 'unresolved',
         'alpha' => true,
-        'group' => false,
+        'group' => true,
     ],
     'images' => [
-        'mode' => 'all',
+        'mode' => 'unresolved',
         'alpha' => true,
-        'group' => false,
+        'group' => true,
     ],
+    'linksUrlPrefix' => 'https://github.com/lingtalfi/nullos-admin/tree/master/doc/',
 ];

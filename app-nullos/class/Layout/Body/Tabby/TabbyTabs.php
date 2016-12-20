@@ -9,11 +9,13 @@ class TabbyTabs
 
     private $leftTabs;
     private $rightTabs;
+    private $showEmptyBadges;
 
     private function __construct()
     {
         $this->leftTabs = [];
         $this->rightTabs = [];
+        $this->showEmptyBadges = false;
     }
 
     public static function create()
@@ -74,14 +76,21 @@ class TabbyTabs
                 <?php
 
                 if (null !== ($badge = $tab->getBadge())) {
-                    $c = '';
-                    $type = $tab->getBadgeType();
-                    if (null !== $type) {
-                        $c = "badge-$type";
+                    if (
+                        true === $this->showEmptyBadges ||
+                        (false === $this->showEmptyBadges && (int)$badge > 0)
+
+                    ) {
+
+                        $c = '';
+                        $type = $tab->getBadgeType();
+                        if (null !== $type) {
+                            $c = "badge-$type";
+                        }
+                        ?>
+                        <span class="badge <?php echo $c; ?>"><?php echo $badge; ?></span>
+                        <?php
                     }
-                    ?>
-                    <span class="badge <?php echo $c; ?>"><?php echo $badge; ?></span>
-                    <?php
                 }
                 ?>
             </a>

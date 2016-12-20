@@ -2,6 +2,8 @@
 
 
 use Linguist\Util\LinguistScanner;
+use QuickDoc\Util\TocUtil;
+use QuickDoc\Util\TodoUtil;
 use SequenceMatcher\Element\Group;
 use SequenceMatcher\Model;
 use SequenceMatcher\SequenceMatcher;
@@ -16,6 +18,6 @@ ini_set('display_errors', 1);
 
 
 
-
+a(TodoUtil::getTodos());
 
 

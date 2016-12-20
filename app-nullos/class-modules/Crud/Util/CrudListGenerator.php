@@ -44,7 +44,7 @@ class CrudListGenerator extends AbstractCrudGenerator
         }
         $tables = QuickPdoInfoTool::getTables($db);
         $autoListDir = CrudConfig::getCrudGenListDir();
-        FileSystemTool::mkdir($autoListDir);
+        FileSystemTool::mkdir($autoListDir, 0777, true);
         foreach ($tables as $table) {
             $this->generateList($table, $autoListDir . "/" . $db . '.' . $table . '.php');
         }

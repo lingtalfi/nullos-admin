@@ -71,7 +71,7 @@ class Layout
                 ?>
             </div>
         </div>
-        <div class="bottombar">I'm a bottom bar</div>
+        <div class="bottombar"></div>
 
 
         <script>

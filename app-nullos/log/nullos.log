@@ -431,3 +431,23 @@ Stack trace:
 #4 /Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Volumes/Macintosh HD 2/it/php/projects/nullos-admin/app-nullos/pages/modules/quickDoc/quickDoc.php')
 #5 {main}
 
+crud.page.table -- 2016-12-19 18:36:55
+----------
+file does not exist: /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.configuration.php
+
+crud.page.table -- 2016-12-19 18:36:59
+----------
+file does not exist: /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.coups_de_coeur.php
+
+crud.page.table -- 2016-12-19 18:37:02
+----------
+file does not exist: /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.pays.php
+
+crud.page.table -- 2016-12-19 18:37:25
+----------
+file does not exist: /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.pays.php
+
+crud.page.table -- 2016-12-19 18:37:28
+----------
+file does not exist: /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.concours.php
+
