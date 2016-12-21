@@ -146,8 +146,44 @@ body.holygrail {
 .leftmenu .section-block h3 {
     color: black;
     background: rgba(178, 114, 0, 0.82);
-    padding: 10px;
+    padding: 0px;
+    min-height: 20px;
+    font-size: 0.9em;
+    line-height: 0.9em;
     font-weight: normal;
+    box-sizing: border-box;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftmenu .section-block .expander {
+    cursor: pointer;
+}
+
+.leftmenu .section-block.closed {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
+.leftmenu .section-block.closed ul {
+    display: none;
+}
+
+.leftmenu .section-block .expand-more {
+    display: none;
+}
+.leftmenu .section-block .expand-less {
+    display: block;
+}
+
+.leftmenu .section-block.closed .expand-more {
+    display: block;
+}
+.leftmenu .section-block.closed .expand-less {
+    display: none;
 }
 
 /*------------------------------------
@@ -242,8 +278,6 @@ body.holygrail {
     align-items: center;
     justify-content: center;
 }
-
-
 
 .alert {
     border: 1px solid transparent;

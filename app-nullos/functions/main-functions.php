@@ -49,8 +49,8 @@ function __($identifier, $context = 'default', array $tags = [])
         return $value;
     } else {
         // error?
-        throw new \Exception("__ error: dictionary term not found: " . $identifier);
         return $identifier;
+        throw new \Exception("__ error: dictionary term not found: " . $identifier);
     }
 }
 

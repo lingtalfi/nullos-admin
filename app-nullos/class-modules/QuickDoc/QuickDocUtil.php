@@ -10,6 +10,7 @@ use Bat\FileSystemTool;
 use DirTransformer\Scanner\Scanner;
 use DirTransformer\Transformer\TrackingMapRegexTransformer;
 use QuickDoc\DirTransformer\Transformer\TocTransformer;
+use QuickDoc\DirTransformer\Transformer\TreeTransformer;
 
 class QuickDocUtil
 {
@@ -183,6 +184,7 @@ class QuickDocUtil
             ->addTransformer($linksTransformer)
             ->addTransformer($imagesTransformer)
             ->addTransformer(new TocTransformer())
+            ->addTransformer(new TreeTransformer($srcDir, $prefs['linksUrlPrefix']))
             ->copy($srcDir, $dstDir);
 
 

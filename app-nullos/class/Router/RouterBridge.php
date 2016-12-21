@@ -5,6 +5,7 @@ namespace Router;
 
 use Boot\BootModule;
 use Crud\CrudModule;
+use FrontOne\FrontOneModule;
 use IconsViewer\IconsViewerModule;
 use Linguist\LinguistModule;
 use NullosInfo\NullosInfoModule;
@@ -26,6 +27,7 @@ class RouterBridge
         IconsViewerModule::decorateUri2PagesMap($uri2pagesMap);
         LinguistModule::decorateUri2PagesMap($uri2pagesMap);
         NullosInfoModule::decorateUri2PagesMap($uri2pagesMap);
+        FrontOneModule::decorateUri2PagesMap($uri2pagesMap);
     }
 
 }

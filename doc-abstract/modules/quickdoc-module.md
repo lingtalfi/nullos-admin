@@ -45,6 +45,9 @@ When you write your documentation, if you need to write:
     
 - a table of contents
     - use the &#91;TOC] notation 
+    
+- the tree structure of your documentation (like the one at the bottom of the <-README.md-> file)
+    - use the &#91;TREE] notation 
 
 
 This allows you to stay focused on the writing of the documentation.

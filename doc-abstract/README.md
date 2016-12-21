@@ -193,6 +193,12 @@ Tutorials section
 - <-getting started with nullos admin->
 
 
+Documentation Tree
+======================
+2016-12-21
+
+
+[TREE]
 
 
 
@@ -200,6 +206,11 @@ Tutorials section
 History Log
 ===============
 
+- 1.1.0 - 2016-12-21
+
+    - add QuickDoc TreeTransformer
+    - add SimpleForm layout helper
+    
 - 1.0.0 - 2016-12-20
 
     - First release    

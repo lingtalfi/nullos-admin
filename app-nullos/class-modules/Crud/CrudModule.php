@@ -7,6 +7,7 @@ namespace Crud;
 use Crud\ResetOption\CrudFilesResetOption;
 use Crud\ResetOption\GeneratorsPreferencesResetOption;
 use Crud\ResetOption\LeftMenuPreferencesResetOption;
+use Layout\LayoutHelper;
 use Privilege\Privilege;
 
 class CrudModule
@@ -48,7 +49,7 @@ class CrudModule
             $class = (array_key_exists($label, $classes)) ? $classes[$label] : '';
             ?>
             <section class="section-block table-links <?php echo $class; ?>">
-                <h3><?php echo $label; ?></h3>
+                <?php LayoutHelper::displayLeftMenuExpandableTitle($label); ?>
                 <ul class="linkslist">
                     <?php foreach ($tables as $table):
                         $original = $table;

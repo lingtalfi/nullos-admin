@@ -4,6 +4,7 @@ namespace LeftMenuSection\Tools;
 
 
 use Layout\LayoutBridge;
+use Layout\LayoutHelper;
 use Privilege\Privilege;
 
 class ToolsLeftMenuSectionModule
@@ -13,7 +14,7 @@ class ToolsLeftMenuSectionModule
         if (Privilege::has('toolsLeftMenuSection.access')):
             ?>
             <section class="section-block tools">
-                <h3>Tools</h3>
+                <?php LayoutHelper::displayLeftMenuExpandableTitle(__("Tools")); ?>
                 <ul class="linkslist">
                     <?php LayoutBridge::displayToolsLeftMenuLinks(); ?>
                 </ul>

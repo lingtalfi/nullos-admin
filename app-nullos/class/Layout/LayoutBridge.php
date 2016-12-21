@@ -5,6 +5,7 @@ namespace Layout;
 
 use Boot\BootModule;
 use Crud\CrudModule;
+use FrontOne\FrontOneModule;
 use IconsViewer\IconsViewerModule;
 use Lang\LangModule;
 use LayoutDynamicHead\LayoutDynamicHeadModule;
@@ -33,6 +34,7 @@ class LayoutBridge
     public static function displayLeftMenuBlocks()
     {
         ToolsLeftMenuSectionModule::displayLeftMenuBlocks();
+        FrontOneModule::displayLeftMenuBlocks();
         CrudModule::displayLeftMenuBlocks();
     }
 

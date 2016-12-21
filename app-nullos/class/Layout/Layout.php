@@ -79,6 +79,37 @@ class Layout
                 sizes: [20, 80],
                 minSize: 20
             });
+
+            // expandable left menu sections
+            var leftPane = document.getElementById('one');
+            leftPane.addEventListener('click', function (e) {
+                var expander = e.target.closest('.expander');
+                if (null !== expander) {
+                    var section = expander.closest('.section-block');
+                    if (null !== section) {
+                        section.classList.toggle('closed');
+                        var span = section.querySelector('.expander-label');
+                        if (null !== span) {
+                            var isOpen = "1";
+                            if (section.classList.contains('closed')) {
+                                isOpen = "0";
+                            }
+                            var label = encodeURIComponent(span.textContent);
+                            z.setCookie('leftmenu-' + label, isOpen, 7);
+                        }
+                    }
+                }
+            });
+
+            [].forEach.call(leftPane.querySelectorAll('.expander-label'), function (item) {
+                var label = 'leftmenu-' + encodeURIComponent(item.textContent);
+                var cookieVal = z.getCookie(label);
+                if ('0' === cookieVal) {
+                    item.closest('.section-block').classList.add('closed');
+                }
+            });
+
+
         </script>
 
 
@@ -98,6 +129,7 @@ class Layout
             <link rel="stylesheet" href="<?php echo url('/style/style.css'); ?>">
             <link rel="stylesheet" href="<?php echo url('/style/layout.css'); ?>">
             <link rel="stylesheet" href="<?php echo url('/style/pastel-theme.css'); ?>">
+            <script src="<?php echo url('/libs/zquery/zquery.js'); ?>"></script>
             <script src="<?php echo url('/libs/split/split.js'); ?>"></script>
             <?php
             $assets = new AssetsList();

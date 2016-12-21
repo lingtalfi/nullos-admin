@@ -1,0 +1,82 @@
+[21-Dec-2016 17:26:09 Europe/Paris] PHP Warning:  file_get_contents(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/articles/content/home.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/articles/intro.php on line 7
+[21-Dec-2016 17:26:09 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:48
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/home.php:6
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   4. Layout\LayoutBridge::registerArticles() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/class/Layout/Layout.php:44
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   5. ArticleScanner\ArticleScannerModule::registerArticles() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/class/Layout/LayoutBridge.php:26
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   6. require() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/class-modules/ArticleScanner/ArticleScannerModule.php:21
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   7. file_get_contents() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/articles/intro.php:7
+[21-Dec-2016 17:26:09 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:26:09 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:26:09 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:26:09 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:26:09 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:26:09 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:26:09 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:26:09 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:09 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:41 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:41 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:41 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:41 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:41 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:26:41 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:26:41 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:33:35 Europe/Paris] PHP Fatal error:  Call to undefined method Article::setIsDisabled() in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/class-modules/ArticleScanner/ArticleScannerModule.php on line 31
+[21-Dec-2016 17:33:35 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:33:35 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:33:35 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:48
+[21-Dec-2016 17:33:35 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/home.php:6
+[21-Dec-2016 17:33:35 Europe/Paris] PHP   4. Layout\LayoutBridge::registerArticles() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/class/Layout/Layout.php:44
+[21-Dec-2016 17:33:35 Europe/Paris] PHP   5. ArticleScanner\ArticleScannerModule::registerArticles() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/class/Layout/LayoutBridge.php:26
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:33:57 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:33:57 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:33:57 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:33:57 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:33:57 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:33:57 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:33:57 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:36:40 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:36:40 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:36:40 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:36:40 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:36:40 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
+[21-Dec-2016 17:36:40 Europe/Paris] PHP Stack trace:
+[21-Dec-2016 17:36:40 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0

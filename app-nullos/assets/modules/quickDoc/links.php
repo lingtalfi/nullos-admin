@@ -332,6 +332,10 @@ $store = [
         ],
         '/modules/quickdoc-module.md' => [
             [
+                'README.md',
+                'README.md',
+            ],
+            [
                 'tabby layout',
                 'core/layout/tabby.md',
             ],

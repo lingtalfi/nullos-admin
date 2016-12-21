@@ -1,16 +1,8 @@
 <?php
 
 
-use Linguist\Util\LinguistScanner;
-use NullosInfo\Util\InfoScanner;
-use QuickDoc\Util\TocUtil;
-use QuickDoc\Util\TodoUtil;
-use SequenceMatcher\Element\Group;
-use SequenceMatcher\Model;
-use SequenceMatcher\SequenceMatcher;
-use Tokens\SequenceMatcher\Element\TokenEntity;
-use Tokens\SequenceMatcher\Util\TokensSequenceMatcherUtil;
-use Tokens\Tokens;
+use Bat\FileSystemTool;
+use QuickDoc\Util\TreeUtil;
 
 require_once __DIR__ . "/../init.php";
 
@@ -18,6 +10,16 @@ require_once __DIR__ . "/../init.php";
 ini_set('display_errors', 1);
 
 
-a(InfoScanner::getLogCalls());
+header('Content-Type: text/plain');
+$srcDir = APP_ROOT_DIR . "/../doc-abstract";
+$filter = function ($file, $realFile, $level) {
+    if (is_dir($realFile)) {
+        return true;
+    }
+    $ext = strtolower(FileSystemTool::getFileExtension($file));
+    return ('md' === $ext);
+};
+$s = TreeUtil::createTree($srcDir);
+echo $s;
 
 
