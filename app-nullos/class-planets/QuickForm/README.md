@@ -864,9 +864,31 @@ Dependencies
 History Log
 ------------------
 
+
+- 4.2.0 -- 2016-12-22
+
+    - LingControlFactory.message, now uses htmlspecialchars 
+    
+- 4.1.0 -- 2016-12-22
+
+    - add QuickFormValidator.regex constraint 
+
+- 4.0.0 -- 2016-12-22
+
+    - add ControlFactoryInterface.prepareControl
+    
+- 3.21.0 -- 2016-12-22
+
+    - add html args to LingControlFactory.message
+    
+- 3.20.0 -- 2016-12-21
+
+    - add inertSelect to inertFactory
+
 - 3.19.0 -- 2016-12-21
 
     - add hint to controls
+    
     
 - 3.18.0 -- 2016-12-07
 

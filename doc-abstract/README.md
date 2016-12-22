@@ -210,6 +210,7 @@ History Log
 
     - add QuickDoc TreeTransformer
     - add SimpleForm layout helper
+    - add ArrayDataTable in crud module, and ArrayCrud layout helper 
     
 - 1.0.0 - 2016-12-20
 

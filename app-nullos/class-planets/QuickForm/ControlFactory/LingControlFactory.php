@@ -10,6 +10,34 @@ use QuickPdo\QuickPdo;
 class LingControlFactory implements ControlFactoryInterface
 {
 
+
+    public function prepareControl($name, QuickFormControl $c)
+    {
+        $canHandle = true;
+        $type = $c->getType();
+        switch ($type) {
+            case 'text':
+            case 'hidden':
+            case 'password':
+            case 'file':
+            case 'checkbox':
+            case 'checkboxList':
+            case 'radioList':
+            case 'selectByRequest':
+            case 'select':
+            case 'selectMultiple':
+            case 'date3':
+            case 'date6':
+            case 'message':
+                break;
+            default:
+                $canHandle = false;
+                break;
+        }
+        return $canHandle;
+    }
+
+
     public function displayControl($name, QuickFormControl $c, QuickForm $f)
     {
         $canHandle = true;
@@ -388,10 +416,12 @@ class LingControlFactory implements ControlFactoryInterface
                 <?php
                 break;
             case 'message':
+                $htmlArgs = (array_key_exists(0, $args)) ? $args[0] : [];
                 ?>
                 <textarea
                         name="<?php echo htmlspecialchars($name); ?>"
-                ><?php echo $c->getValue(); ?></textarea>
+                    <?php echo StringTool::htmlAttributes($htmlArgs); ?>
+                ><?php echo htmlspecialchars($c->getValue()); ?></textarea>
                 <?php
                 break;
             default:

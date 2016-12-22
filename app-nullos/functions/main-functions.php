@@ -1,7 +1,11 @@
 <?php
 
 
-function url($url, array $params = null, $mergeParams = true)
+/**
+ * $useHttpBuildQuery: in some cases you need to pass {tags} in the uri, so not using
+ * http_build_query here is handy.
+ */
+function url($url, array $params = null, $mergeParams = true, $useHttpBuildQuery = true)
 {
     if (null === $url) {
         $url = Spirit::get('uri');
@@ -11,7 +15,19 @@ function url($url, array $params = null, $mergeParams = true)
         if (true === $mergeParams) {
             $params = array_replace($_GET, $params);
         }
-        $ret = URL_PREFIX . $url . '?' . http_build_query($params);
+        $end = '';
+        if (true === $useHttpBuildQuery) {
+            $end = http_build_query($params);
+        } else {
+            $i = 0;
+            foreach ($params as $k => $v) {
+                if (0 !== $i++) {
+                    $end .= '&';
+                }
+                $end .= $k . '=' . $v;
+            }
+        }
+        $ret = URL_PREFIX . $url . '?' . $end;
     }
     return htmlspecialchars($ret);
 }

@@ -104,7 +104,7 @@ class Form
             $ric = $this->getRicArray();
             $markers = [];
             $q = "select * from $table where ";
-            $q .= \Helper::getWhereFragmentFromRic($ric, $markers);
+            $q .= CrudHelper::getWhereFragmentFromRic($ric, $markers);
             $item = QuickPdo::fetch($q, $markers);
             if (false !== $item) {
                 $updateRowFound = true;

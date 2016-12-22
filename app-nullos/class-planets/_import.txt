@@ -3,8 +3,10 @@ ArrayStore
 ArrayToString
 Bat
 BumbleBee
+CopyDir
 DirScanner
 DirTransformer
+Installer
 PhpBeast
 Privilege
 QuickForm

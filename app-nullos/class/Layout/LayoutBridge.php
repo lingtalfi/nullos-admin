@@ -32,11 +32,10 @@ class LayoutBridge
      * - class/Layout
      */
     public static function displayLeftMenuBlocks()
-    {
+   {
         ToolsLeftMenuSectionModule::displayLeftMenuBlocks();
-        FrontOneModule::displayLeftMenuBlocks();
         CrudModule::displayLeftMenuBlocks();
-    }
+   }
 
 
     /**

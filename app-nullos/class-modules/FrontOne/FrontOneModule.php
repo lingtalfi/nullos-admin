@@ -22,6 +22,7 @@ class FrontOneModule
     {
         $uri2pagesMap[FrontOneConfig::getThemeUri()] = FrontOneConfig::getThemePage();
         $uri2pagesMap[FrontOneConfig::getArticlesUri()] = FrontOneConfig::getArticlesPage();
+        $uri2pagesMap[FrontOneConfig::getSocialUri()] = FrontOneConfig::getSocialPage();
     }
 
     public static function displayLeftMenuBlocks()
@@ -34,8 +35,8 @@ class FrontOneModule
                 <?php LayoutHelper::displayLeftMenuExpandableTitle(__("Front", $ll)); ?>
                 <ul class="linkslist">
                     <li><a href="<?php echo FrontOneConfig::getThemeUri(); ?>"><?php echo __("Theme", $ll); ?></a></li>
-                    <li><a href="<?php echo FrontOneConfig::getArticlesUri(); ?>"><?php echo __("Articles", $ll); ?></a>
-                    </li>
+                    <li><a href="<?php echo FrontOneConfig::getArticlesUri(); ?>"><?php echo __("Articles", $ll); ?></a></li>
+                    <li><a href="<?php echo FrontOneConfig::getSocialUri(); ?>"><?php echo __("Social links", $ll); ?></a></li>
                 </ul>
             </section>
             <?php

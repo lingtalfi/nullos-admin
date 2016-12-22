@@ -61,12 +61,10 @@ date_default_timezone_set('Europe/Paris');
 ini_set('error_log', __DIR__ . "/log/php.err.log");
 if (null !== $privilegeSessionTimeout) { // or session expires when browser quits
     ini_set('session.cookie_lifetime', $privilegeSessionTimeout);
-}
-else{
+} else {
     ini_set('session.cookie_lifetime', 10 * 12 * 31 * 86400); // ~10 years
 }
 session_start();
-
 
 
 //--------------------------------------------

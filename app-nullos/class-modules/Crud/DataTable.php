@@ -16,6 +16,7 @@ class DataTable
     public $searchGetKey;
 
 
+
     public $nbItemsPerPage;
     public $nbItemsPerPageList;
     public $sortColumn;
@@ -97,6 +98,12 @@ class DataTable
     private $transformers;
 
     private $translatorContext;
+    //
+    private $_query;
+    private $_fields;
+    private $_markers;
+
+
 
 
     public function __construct()
@@ -183,6 +190,14 @@ class DataTable
      */
     public function printTable($table, $query, $fields, array $ric)
     {
+        $this->_query = $query;
+        $this->_fields = $fields;
+        $this->_markers = [];
+        $this->_printTable($ric, $table);
+    }
+
+    protected function _printTable(array $ric, $table = null)
+    {
 
         //--------------------------------------------
         // HANDLING POST
@@ -205,7 +220,7 @@ class DataTable
                     if (':deleteAll' === $callback) {
                         $callback = [$this, "deleteAll"];
                     }
-                    call_user_func($callback, $table, $rics);
+                    call_user_func($callback, $table, $rics, $this);
 
                 }
             }
@@ -220,7 +235,7 @@ class DataTable
                     if (':delete' === $callback) {
                         $callback = [$this, "delete"];
                     }
-                    call_user_func($callback, $table, $_ric);
+                    call_user_func($callback, $table, $_ric, $this);
                 }
             }
         }
@@ -229,47 +244,10 @@ class DataTable
         //--------------------------------------------
         // CREATE THE QUERIES
         //--------------------------------------------
-        $markers = [];
-
-
         /**
          * Search
          */
         $search = (array_key_exists($this->searchGetKey, $_GET)) ? (string)$_GET[$this->searchGetKey] : '';
-        if ('' !== $search) {
-            if (null === $this->searchColumns) {
-                $searchColumns = $this->getSearchColumnsFromFields($fields);
-            } else {
-                $searchColumns = $this->searchColumns;
-            }
-
-
-            if (count($searchColumns) > 0) {
-
-                $hasWhere = false;
-                if (preg_match('!\swhere\s!i', $query)) {
-                    $hasWhere = true;
-                }
-
-
-                $i = 0;
-                foreach ($searchColumns as $col) {
-                    if (0 === $i) {
-                        if (true === $hasWhere) {
-                            $query .= " and (";
-                        } else {
-                            $query .= " where (";
-                        }
-                    } else {
-                        $query .= " or ";
-                    }
-                    $markerName = "_mk" . $i++;
-                    $markers[$markerName] = '%' . str_replace('%', '\%', $search) . '%';
-                    $query .= "$col like :" . $markerName;
-                }
-                $query .= ')';
-            }
-        }
 
 
         /**
@@ -277,7 +255,7 @@ class DataTable
          */
         $currentPage = (array_key_exists($this->pageGetKey, $_GET)) ? (int)$_GET[$this->pageGetKey] : 1;
         $nbItemsPerPageChoice = (array_key_exists($this->nbItemsPerPageGetKey, $_GET)) ? (int)$_GET[$this->nbItemsPerPageGetKey] : (int)$this->nbItemsPerPage;
-        $nbItemsTotal = (int)QuickPdo::fetch(sprintf($query, "count(*) as count"), $markers)['count'];
+        $nbItemsTotal = $this->getNbItems($search);
 
 
         $nbPages = 1; // if the user chooses to display all items on the same page...
@@ -299,29 +277,9 @@ class DataTable
          */
         $sortColumn = (array_key_exists($this->sortColumnGetKey, $_GET)) ? (string)$_GET[$this->sortColumnGetKey] : $this->sortColumn;
         $sortColumnDir = (array_key_exists($this->sortColumnDirGetKey, $_GET)) ? (string)$_GET[$this->sortColumnDirGetKey] : $this->sortColumnDir;
-        $allowedColumns = $this->getSortColumnsFromFields($fields);
-        if (null !== $sortColumn && in_array($sortColumn, $allowedColumns, true)) {
-            $query .= " order by " . $sortColumn;
-            if (null !== $sortColumnDir && in_array($sortColumnDir, ['asc', 'desc'])) {
-                $query .= " " . $sortColumnDir;
-            }
-        }
 
 
-        /**
-         * ...Pagination
-         */
-
-        if ($nbItemsPerPageChoice > 0) {
-            $offset = ($currentPage - 1) * $nbItemsPerPageChoice;
-            $query .= " limit $offset, " . $nbItemsPerPageChoice;
-        }
-
-
-        /**
-         * Display the table
-         */
-        $items = QuickPdo::fetchAll(sprintf($query, $fields), $markers);
+        $items = $this->getItems($sortColumn, $sortColumnDir, $nbItemsPerPageChoice, $currentPage);
 
 
         $extraCols = array_map(function ($v) {
@@ -517,7 +475,7 @@ class DataTable
                                 <ul class="pagination">
                                     <?php
                                     for ($i = 1; $i <= $nbPages; $i++):
-                                        $link = url('/table', [
+                                        $link = url(null, [
                                             $this->pageGetKey => $i,
                                         ]);
 
@@ -690,6 +648,7 @@ class DataTable
         <?php
     }
 
+
     /**
      * array of widgetName => bool,
      * by default, all widgets are set to true.
@@ -760,7 +719,76 @@ class DataTable
         $this->transformers[$column] = $function;
     }
 
+    //------------------------------------------------------------------------------/
+    //
+    //------------------------------------------------------------------------------/
+    protected function getNbItems($search)
+    {
+        $markers = $this->_markers;
+        $query = $this->_query;
+        if ('' !== $search) {
+            if (null === $this->searchColumns) {
+                $searchColumns = $this->getSearchColumnsFromFields($this->_fields);
+            } else {
+                $searchColumns = $this->searchColumns;
+            }
 
+
+            if (count($searchColumns) > 0) {
+
+                $hasWhere = false;
+                if (preg_match('!\swhere\s!i', $query)) {
+                    $hasWhere = true;
+                }
+
+
+                $i = 0;
+                foreach ($searchColumns as $col) {
+                    if (0 === $i) {
+                        if (true === $hasWhere) {
+                            $query .= " and (";
+                        } else {
+                            $query .= " where (";
+                        }
+                    } else {
+                        $query .= " or ";
+                    }
+                    $markerName = "_mk" . $i++;
+                    $markers[$markerName] = '%' . str_replace('%', '\%', $search) . '%';
+                    $query .= "$col like :" . $markerName;
+                }
+                $query .= ')';
+            }
+        }
+        $this->_query = $query;
+        $this->_markers = $markers;
+        return (int)QuickPdo::fetch(sprintf($query, "count(*) as count"), $markers)['count'];
+    }
+
+
+    protected function getItems($sortColumn, $sortColumnDir, $nbItemsPerPageChoice, $currentPage)
+    {
+        $allowedColumns = $this->getSortColumnsFromFields($this->_fields);
+        if (null !== $sortColumn && in_array($sortColumn, $allowedColumns, true)) {
+            $this->_query .= " order by " . $sortColumn;
+            if (null !== $sortColumnDir && in_array($sortColumnDir, ['asc', 'desc'])) {
+                $this->_query .= " " . $sortColumnDir;
+            }
+        }
+
+
+        /**
+         * ...Pagination
+         */
+        if ($nbItemsPerPageChoice > 0) {
+            $offset = ($currentPage - 1) * $nbItemsPerPageChoice;
+            $this->_query .= " limit $offset, " . $nbItemsPerPageChoice;
+        }
+        /**
+         * Display the table
+         */
+        return QuickPdo::fetchAll(sprintf($this->_query, $this->_fields), $this->_markers);
+    }
     //--------------------------------------------
     //
     //--------------------------------------------
@@ -867,7 +895,7 @@ class DataTable
     {
         $q = "delete from $table where ";
         $markers = [];
-        $q .= \Helper::getWhereFragmentFromRic($ric, $markers);
+        $q .= CrudHelper::getWhereFragmentFromRic($ric, $markers);
         QuickPdo::freeQuery($q, $markers);
     }
 
