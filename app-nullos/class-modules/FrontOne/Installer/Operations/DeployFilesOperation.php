@@ -11,7 +11,7 @@ class DeployFilesOperation extends DeployFileOperation
     {
         parent::__construct();
         $this
-            ->sourceDir(__DIR__ . "/../../Assets/project")
+            ->sourceDir(__DIR__ . "/../../InstallAssets/project")
             ->destDir(APP_ROOT_DIR . "/..");
     }
 

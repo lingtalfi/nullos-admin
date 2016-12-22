@@ -16,7 +16,6 @@ class DataTable
     public $searchGetKey;
 
 
-
     public $nbItemsPerPage;
     public $nbItemsPerPageList;
     public $sortColumn;
@@ -102,8 +101,6 @@ class DataTable
     private $_query;
     private $_fields;
     private $_markers;
-
-
 
 
     public function __construct()
@@ -617,6 +614,7 @@ class DataTable
 
                     var action = e.target.getAttribute('data-action');
                     var ric = e.target.getAttribute('data-ric');
+                    var value = e.target.getAttribute('data-value');
 
 
                     var tmpForm = document.createElement('form');
@@ -633,8 +631,18 @@ class DataTable
                     inputRic.setAttribute('name', 'ric');
                     inputRic.setAttribute('value', ric);
 
+
                     tmpForm.appendChild(inputAction);
                     tmpForm.appendChild(inputRic);
+
+
+                    if (null !== value) {
+                        var inputVal = document.createElement('input');
+                        inputVal.setAttribute('type', 'hidden');
+                        inputVal.setAttribute('name', 'value');
+                        inputVal.setAttribute('value', value);
+                        tmpForm.appendChild(inputVal);
+                    }
 
                     blackhole.appendChild(tmpForm);
                     tmpForm.submit();

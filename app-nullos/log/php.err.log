@@ -33,3 +33,54 @@
 [22-Dec-2016 20:20:52 Europe/Paris] PHP   3. Installer\Installer->run() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/FrontOne/FrontOneInstaller.php:61
 [22-Dec-2016 20:20:52 Europe/Paris] PHP   4. Installer\Operation\DeployFile\DeployFileOperation->execute() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Installer/Installer.php:49
 [22-Dec-2016 20:20:52 Europe/Paris] PHP   5. Bat\FileSystemTool::copyDir() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Installer/Operation/DeployFile/DeployFileOperation.php:49
+[22-Dec-2016 21:39:42 Europe/Paris] PHP Fatal error:  Uncaught exception 'Exception' with message 'translation file not found: /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/lang/en/modules/moduleInstaller/moduleInstaller.php' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/functions/main-functions.php:48
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerModule.php(25): __('Module Installe...', 'modules/moduleI...')
+#1 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/LayoutBridge.php(49): ModuleInstaller\ModuleInstallerModule::displayToolsLeftMenuLinks()
+#2 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/LeftMenuSection/Tools/ToolsLeftMenuSectionModule.php(19): Layout\LayoutBridge::displayToolsLeftMenuLinks()
+#3 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/LayoutBr in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/functions/main-functions.php on line 48
+[22-Dec-2016 21:40:27 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php on line 68
+[22-Dec-2016 21:40:27 Europe/Paris] PHP Stack trace:
+[22-Dec-2016 21:40:27 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[22-Dec-2016 21:40:27 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php on line 68
+[22-Dec-2016 21:40:28 Europe/Paris] PHP Stack trace:
+[22-Dec-2016 21:40:28 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[22-Dec-2016 21:51:08 Europe/Paris] PHP Warning:  require_once(/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php): failed to open stream: No such file or directory in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php on line 47
+[22-Dec-2016 21:51:08 Europe/Paris] PHP Stack trace:
+[22-Dec-2016 21:51:08 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[22-Dec-2016 21:51:08 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[22-Dec-2016 21:51:08 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php:8
+[22-Dec-2016 21:51:08 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[22-Dec-2016 21:51:08 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[22-Dec-2016 21:51:08 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php on line 47
+[22-Dec-2016 21:51:08 Europe/Paris] PHP Stack trace:
+[22-Dec-2016 21:51:08 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[22-Dec-2016 21:51:08 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[22-Dec-2016 21:51:08 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php:8
+[22-Dec-2016 21:51:08 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[22-Dec-2016 21:51:08 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[22-Dec-2016 22:12:16 Europe/Paris] PHP Fatal error:  Class 'FrontOne\FrontOneConfig' not found in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php on line 18
+[22-Dec-2016 22:12:16 Europe/Paris] PHP Stack trace:
+[22-Dec-2016 22:12:16 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[22-Dec-2016 22:12:16 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[22-Dec-2016 22:12:16 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php:8
+[22-Dec-2016 22:12:16 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[22-Dec-2016 22:12:16 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[22-Dec-2016 22:12:16 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php:47
+[22-Dec-2016 22:13:32 Europe/Paris] PHP Fatal error:  Class 'FrontOne\FrontOneConfig' not found in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php on line 51
+[22-Dec-2016 22:13:32 Europe/Paris] PHP Stack trace:
+[22-Dec-2016 22:13:32 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[22-Dec-2016 22:13:32 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[22-Dec-2016 22:13:32 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php:8
+[22-Dec-2016 22:13:32 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[22-Dec-2016 22:13:32 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[22-Dec-2016 22:13:32 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php:47
+[23-Dec-2016 00:02:09 Europe/Paris] PHP Notice:  Constant LL already defined in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php on line 9
+[23-Dec-2016 00:02:09 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 00:02:09 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 00:02:09 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 00:02:09 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php:8
+[23-Dec-2016 00:02:09 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 00:02:09 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 00:02:09 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php:47
+[23-Dec-2016 00:02:09 Europe/Paris] PHP   7. define() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php:9

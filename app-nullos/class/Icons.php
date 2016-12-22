@@ -104,6 +104,14 @@ class Icons
                                 </g>
                                 <?php
                                 break;
+                            case 'extension':
+                                ?>
+                                <g id="extension">
+                                    <path d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/>
+                                </g>
+                                <?php
+                                break;
                             case 'help':
                                 ?>
                                 <g id="help">
@@ -182,6 +190,14 @@ class Icons
                                 <g id="warning">
                                     <path d="M0 0h24v24H0z" fill="none"/>
                                     <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                                </g>
+                                <?php
+                                break;
+                            case 'widgets':
+                                ?>
+                                <g id="widgets">
+                                    <path d="M13 13v8h8v-8h-8zM3 21h8v-8H3v8zM3 3v8h8V3H3zm13.66-1.31L11 7.34 16.66 13l5.66-5.66-5.66-5.65z"/>
+                                    <path d="M0 0h24v24H0z" fill="none"/>
                                 </g>
                                 <?php
                                 break;

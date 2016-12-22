@@ -11,6 +11,7 @@ use Lang\LangModule;
 use LayoutDynamicHead\LayoutDynamicHeadModule;
 use LeftMenuSection\Tools\ToolsLeftMenuSectionModule;
 use Linguist\LinguistModule;
+use ModuleInstaller\ModuleInstallerModule;
 use NullosInfo\NullosInfoModule;
 use QuickDoc\QuickDocModule;
 use SqlTools\SqlToolsModule;
@@ -34,6 +35,7 @@ class LayoutBridge
     public static function displayLeftMenuBlocks()
    {
         ToolsLeftMenuSectionModule::displayLeftMenuBlocks();
+        FrontOneModule::displayLeftMenuBlocks();
         CrudModule::displayLeftMenuBlocks();
    }
 
@@ -45,6 +47,7 @@ class LayoutBridge
     public static function displayToolsLeftMenuLinks()
     {
         BootModule::displayToolsLeftMenuLinks();
+        ModuleInstallerModule::displayToolsLeftMenuLinks();
         CrudModule::displayToolsLeftMenuLinks();
         SqlToolsModule::displayToolsLeftMenuLinks();
         QuickDocModule::displayToolsLeftMenuLinks();

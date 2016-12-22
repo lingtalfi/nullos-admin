@@ -9,6 +9,7 @@ DirTransformer
 Installer
 PhpBeast
 Privilege
+PublicException
 QuickForm
 QuickPdo
 SequenceMatcher

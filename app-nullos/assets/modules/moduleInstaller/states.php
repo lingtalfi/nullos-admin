@@ -1,0 +1,5 @@
+<?php
+
+$store = [
+    'FrontOne' => 'installed',
+];

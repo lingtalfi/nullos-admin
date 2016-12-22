@@ -8,6 +8,7 @@ use Crud\CrudModule;
 use FrontOne\FrontOneModule;
 use IconsViewer\IconsViewerModule;
 use Linguist\LinguistModule;
+use ModuleInstaller\ModuleInstallerModule;
 use NullosInfo\NullosInfoModule;
 use QuickDoc\QuickDocModule;
 use SqlTools\SqlToolsModule;
@@ -27,6 +28,8 @@ class RouterBridge
         IconsViewerModule::decorateUri2PagesMap($uri2pagesMap);
         LinguistModule::decorateUri2PagesMap($uri2pagesMap);
         NullosInfoModule::decorateUri2PagesMap($uri2pagesMap);
+        ModuleInstallerModule::decorateUri2PagesMap($uri2pagesMap);
+        FrontOneModule::decorateUri2PagesMap($uri2pagesMap);
    }
 
 }
