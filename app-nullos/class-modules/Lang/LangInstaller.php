@@ -11,7 +11,7 @@ use Installer\Report\Report;
 
 class LangInstaller implements ModuleInstallerInterface
 {
-    public static function install()
+    public function install()
     {
         /**
          * Hook into:
@@ -26,7 +26,7 @@ class LangInstaller implements ModuleInstallerInterface
     }
 
 
-    public static function uninstall()
+    public function uninstall()
     {
         $installer = new Installer();
         $installer->addOperation(LayoutBridgeDisplayTopBarOperation::create()->setLocationTransformerRemoveBySubstr('LangModule'));

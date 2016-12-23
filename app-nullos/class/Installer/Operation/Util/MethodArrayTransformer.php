@@ -65,6 +65,16 @@ class MethodArrayTransformer extends ArrayTransformer
         return $this;
     }
 
+    public function setLocationTransformerByPosition($item, $pos)
+    {
+        $this->setLocationTransformer(function (array &$arr) use ($item, $pos) {
+            if (false === in_array($item, $arr, true)) {
+                array_splice($arr, $pos, 0, $item);
+            }
+        });
+        return $this;
+    }
+
     public function setLocationTransformerRemoveBySubstr($item)
     {
         $this->setLocationTransformer(function (array &$arr) use ($item) {

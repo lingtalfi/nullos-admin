@@ -1,6 +1,5 @@
 <?php
 
-
 use FrontOne\FileArticle;
 
 $article = new FileArticle();

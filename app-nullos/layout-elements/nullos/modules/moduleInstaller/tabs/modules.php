@@ -63,14 +63,14 @@ $table->dropSingleActions(['edit', 'delete']);
 
 
 $table->setTransformer('installer', function ($v, $item) {
-    if (1 === $v) {
+    if ($v >= 1) {
         $s = '
 <div style="display: flex; justify-content: center">
 <a href="#" data-action="" data-value="uninstall" data-ric="' . $item['name'] . '"  class="action-link postlink confirmlink">' . __("Uninstall", LL) . '</a> 
 <span style="margin:0 10px">-</span> 
 <a href="#" data-action="" data-value="install" data-ric="' . $item['name'] . '"  class="action-link postlink confirmlink">' . __("Install", LL) . '</a>';
 
-        if ('isDeveloper') {
+        if (2 === $v) {
             $s .= '
 <span style="margin:0 10px">-</span> 
 <a href="#" data-action="" data-value="pack" data-ric="' . $item['name'] . '"  class="action-link postlink confirmlink">' . __("Pack", LL) . '</a>

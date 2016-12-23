@@ -46,13 +46,13 @@ class LayoutBridge
      */
     public static function displayToolsLeftMenuLinks()
    {
-        QuickDocModule::displayToolsLeftMenuLinks();
         BootModule::displayToolsLeftMenuLinks();
-        SqlToolsModule::displayToolsLeftMenuLinks();
-        CrudModule::displayToolsLeftMenuLinks();
         ModuleInstallerModule::displayToolsLeftMenuLinks();
-        NullosInfoModule::displayToolsLeftMenuLinks();
+        CrudModule::displayToolsLeftMenuLinks();
+        SqlToolsModule::displayToolsLeftMenuLinks();
+        QuickDocModule::displayToolsLeftMenuLinks();
         LinguistModule::displayToolsLeftMenuLinks();
+        NullosInfoModule::displayToolsLeftMenuLinks();
         IconsViewerModule::displayToolsLeftMenuLinks();
    }
 

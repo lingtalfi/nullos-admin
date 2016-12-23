@@ -1,23 +1,42 @@
 <?php
 
+
+use Bat\FileSystemTool;
 use DirScanner\YorgDirScannerTool;
+use Layout\Goofy;
+use Linguist\Util\LinguistModuleScanner;
 use Linguist\Util\LinguistScanner;
+use ModuleInstaller\ModuleInstallerUtil;
 
 
 $dir = APP_ROOT_DIR;
 $files = YorgDirScannerTool::getFiles($dir, true, true);
 $dirs = YorgDirScannerTool::getDirs($dir, true, true);
-
+$modules = ModuleInstallerUtil::getModuleNames();
 
 $messages = [];
 $thefile = "";
 $thedir = "";
-if (array_key_exists('file', $_POST)) {
-    $thefile = $_POST['file'];
-    $messages = LinguistScanner::scanTranslationsByFile($thefile);
-} elseif (array_key_exists('dir', $_POST)) {
-    $thedir = $_POST['dir'];
-    $messages = LinguistScanner::scanTranslationsByDir($thedir);
+$themodule = "";
+$useDeflat = true;
+try {
+
+    if (array_key_exists('file', $_POST)) {
+        $thefile = $_POST['file'];
+        $messages = LinguistScanner::scanTranslationsByFile($thefile);
+    } elseif (array_key_exists('dir', $_POST)) {
+        $thedir = $_POST['dir'];
+        $messages = LinguistScanner::scanTranslationsByDir($thedir);
+    } elseif (array_key_exists('module', $_POST)) {
+        $themodule = $_POST['module'];
+        $tmpDir = FileSystemTool::tempDir();
+        $allMessages = LinguistModuleScanner::getTranslationsByModule($themodule, $tmpDir);
+        $messages = $allMessages['module'];
+        $useDeflat = false;
+    }
+} catch (\Exception $e) {
+    Goofy::alertError(Helper::defaultLogMsg());
+    Logger::log($e, "linguist.gui.tools");
 }
 
 
@@ -56,6 +75,21 @@ if (array_key_exists('file', $_POST)) {
             </form>
         </div>
 
+        <div>
+            <?php echo __("Or choose a module to display all its translations", LL); ?>
+
+            <form method="post" action="" id="theformmodule">
+                <select name="module" id="theselectmodule">
+                    <option value="0"><?php echo __("Choose a module...", LL); ?></option>
+                    <?php foreach ($modules as $module):
+                        $sel = ($themodule === $module) ? ' selected="selected"' : '';
+                        ?>
+                        <option <?php echo $sel; ?> value="<?php echo $module; ?>"><?php echo $module; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </form>
+        </div>
+
 
         <script>
             var form = document.getElementById('theform');
@@ -70,13 +104,25 @@ if (array_key_exists('file', $_POST)) {
             selectDir.addEventListener('change', function () {
                 formDir.submit();
             });
+
+
+            var formModule = document.getElementById('theformmodule');
+            var selectModule = document.getElementById('theselectmodule');
+            selectModule.addEventListener('change', function () {
+                formModule.submit();
+            });
         </script>
 
 
         <div class="results">
             <?php
+
             foreach ($messages as $info) {
-                $id = str_replace('"', '\\"', $info['id']);
+                if (true === $useDeflat) {
+                    $id = str_replace('"', '\\"', $info['id']);
+                } else {
+                    $id = $info;
+                }
 
                 echo '"' . $id . '" => "' . $id . '",';
                 echo '<br>';

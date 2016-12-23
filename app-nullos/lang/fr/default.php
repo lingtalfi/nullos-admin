@@ -9,5 +9,5 @@ $defs = [
     //--------------------------------------------
     // LAYOUT BODY
     //--------------------------------------------
-    "Oops, an unexpected error occurred, please check the logs" => "Oops, une erreur est survenue, veuillez vérifier les logs",
+    "Oops, an error occurred, please check the logs" => "Oops, une erreur est survenue, veuillez vérifier les logs",
 ];

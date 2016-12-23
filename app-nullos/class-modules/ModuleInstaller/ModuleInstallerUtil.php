@@ -5,6 +5,7 @@ namespace ModuleInstaller;
 
 
 use Bat\FileSystemTool;
+use Installer\PackableModuleInstallerInterface;
 use PublicException\PublicException;
 
 class ModuleInstallerUtil
@@ -18,7 +19,23 @@ class ModuleInstallerUtil
 
     public static function getModuleDir($name)
     {
-        return ModuleInstallerConfig::getModulesDir() . '/' . $name;
+        return ModuleInstallerConfig::getModulesDir() . '/' . str_replace('.', '', $name);
+    }
+
+    public static function getModuleNames()
+    {
+        $ret = [];
+        $dir = ModuleInstallerConfig::getModulesDir();
+        $files = scandir($dir);
+        foreach ($files as $f) {
+            if ('.' !== $f && '..' !== $f) {
+                $file = $dir . '/' . $f;
+                if (is_dir($file)) {
+                    $ret[] = $f;
+                }
+            }
+        }
+        return $ret;
     }
 
     public static function getModulesList()
@@ -33,10 +50,16 @@ class ModuleInstallerUtil
                 $file = $dir . '/' . $f;
                 if (is_dir($file)) {
 
-                    $hasInstaller = false;
+                    $hasInstaller = 0;
                     $installerFile = $file . "/$f" . "Installer.php";
                     if (file_exists($installerFile)) {
-                        $hasInstaller = true;
+                        $hasInstaller = 1;
+                        $class = '\\' . $f . '\\' . $f . 'Installer';
+                        $object = new $class;
+                        if ($object instanceof PackableModuleInstallerInterface) {
+                            $hasInstaller++;
+                        }
+
                     }
 
                     $state = 'unknown'; // unknown|installed|uninstalled
@@ -163,26 +186,4 @@ class ModuleInstallerUtil
         }
     }
 
-//    private static function getModuleInstallerClass($name, $method)
-//    {
-//        $dir = self::getModuleDir($name);
-//        if (true === FileSystemTool::existsUnder($dir, ModuleInstallerConfig::getModulesDir())) {
-//            $installerFile = $dir . "/$name" . "Installer.php";
-//            if (file_exists($installerFile)) {
-//                $class = '\\' . $name . '\\' . $name . 'Installer';
-//                if (method_exists($class, $method)) {
-//                    return $class;
-//                } else {
-//                    throw new PublicException(__("Oops, module installer for {name} does not contain a {method} method", "modules/moduleInstaller/moduleInstaller", [
-//                        'name' => $name,
-//                        'method' => $method,
-//                    ]));
-//                }
-//            } else {
-//                throw new PublicException(__("Oops, module installer not found", "modules/moduleInstaller/moduleInstaller"));
-//            }
-//        } else {
-//            throw new PublicException(__("Oops, module installer not found", "modules/moduleInstaller/moduleInstaller"));
-//        }
-//    }
 }

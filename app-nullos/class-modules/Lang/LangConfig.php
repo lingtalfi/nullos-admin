@@ -2,8 +2,8 @@
 
 namespace Lang;
 
-class LangConfig{
-
+class LangConfig
+{
 
     public static $allowedLangs = [
         'en',

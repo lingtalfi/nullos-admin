@@ -14,6 +14,11 @@ class Helper
         return false;
     }
 
+    public static function defaultLogMsg()
+    {
+        return __("Oops, an error occurred, please check the logs");
+    }
+
 
     public static function layoutElementIf($fileName, $privilege, $default = null)
     {
@@ -25,7 +30,6 @@ class Helper
         }
         return $default;
     }
-
 
 
     /**

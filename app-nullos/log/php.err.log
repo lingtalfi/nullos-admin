@@ -233,3 +233,241 @@ Stack trace:
 [23-Dec-2016 05:55:35 Europe/Paris] PHP   8. call_user_func:{/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php:84}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php:84
 [23-Dec-2016 05:55:35 Europe/Paris] PHP   9. Installer\WithToolsLeftMenuModuleInstaller->pack() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php:84
 [23-Dec-2016 05:55:35 Europe/Paris] PHP  10. copy() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Installer/WithToolsLeftMenuModuleInstaller.php:92
+[23-Dec-2016 13:42:07 Europe/Paris] PHP Fatal error:  Cannot make non static method Installer\ModuleInstallerInterface::install() static in class Boot\BootInstaller in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Boot/BootInstaller.php on line 16
+[23-Dec-2016 13:42:07 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 13:42:07 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 13:42:07 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 13:42:07 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php:8
+[23-Dec-2016 13:42:07 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 13:42:07 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 13:42:07 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php:47
+[23-Dec-2016 13:42:07 Europe/Paris] PHP   7. ModuleInstaller\ModuleInstallerUtil::getModulesList() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php:51
+[23-Dec-2016 13:42:07 Europe/Paris] PHP   8. spl_autoload_call() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php:42
+[23-Dec-2016 13:42:07 Europe/Paris] PHP   9. BumbleBee\Autoload\BeeAutoLoader->autoLoader() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php:42
+[23-Dec-2016 13:42:07 Europe/Paris] PHP  10. call_user_func_array:{/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe/planets/BumbleBee/Autoload/BeeAutoloader.php:59}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe/planets/BumbleBee/Autoload/BeeAutoloader.php:59
+[23-Dec-2016 13:42:07 Europe/Paris] PHP  11. BumbleBee\Autoload\ButineurAutoloader->butineurAutoload() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe/planets/BumbleBee/Autoload/BeeAutoloader.php:59
+[23-Dec-2016 13:42:07 Europe/Paris] PHP  12. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe/planets/BumbleBee/Autoload/ButineurAutoloader.php:76
+[23-Dec-2016 16:55:53 Europe/Paris] PHP Warning:  Illegal string offset 'id' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php on line 118
+[23-Dec-2016 16:55:53 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:55:53 Europe/Paris] PHP Warning:  Illegal string offset 'id' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php on line 118
+[23-Dec-2016 16:55:53 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:55:53 Europe/Paris] PHP Warning:  Illegal string offset 'id' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php on line 118
+[23-Dec-2016 16:55:53 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:55:53 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Notice:  Array to string conversion in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php on line 63
+[23-Dec-2016 16:57:54 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:0
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php:68
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/linguist/linguist.php:9
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   4. Layout\Layout->includeElement() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:62
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   5. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php:150
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   6. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/linguist.php:54
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   7. Linguist\Util\LinguistModuleScanner::getTranslationsByModule() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/linguist/tabs/tools.php:32
+[23-Dec-2016 16:57:54 Europe/Paris] PHP   8. array_unique() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Linguist/Util/LinguistModuleScanner.php:63

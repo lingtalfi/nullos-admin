@@ -62,7 +62,7 @@ class Layout
                     $this->includeElement('body');
                 } catch (\Exception $exception) {
                     if (false === LayoutConfig::showBodyExceptionInYourFace()) {
-                        Goofy::alertError(__("Oops, an unexpected error occurred, please check the logs"), false, false);
+                        Goofy::alertError(\Helper::defaultLogMsg(), false, false);
                         \Logger::log($exception, "layout.body");
                     } else {
                         a($exception);

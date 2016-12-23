@@ -4,26 +4,26 @@
 namespace Installer;
 
 
-use Bat\FileSystemTool;
-use Installer\Operation\DeployFile\DeployFileOperation;
-use Installer\Operation\DeployFile\RemoveFileOperation;
 use Installer\Operation\LayoutBridge\LayoutBridgeDisplayToolsLeftMenuLinksOperation;
 use Installer\Operation\RouterBridge\RouterBridgeUri2PagesOperation;
 use Installer\Report\Report;
 
-abstract class WithToolsLeftMenuModuleInstaller extends ModuleInstaller
+abstract class WithToolsLeftMenuModuleInstaller extends WithPackModuleInstaller
 {
 
     public function install()
     {
         $moduleClass = $this->getModuleClass() . 'Module';
 
+        $pos = (int)$this->getLeftMenuPosition();
+
         $this->getSourceDir();
         /**
          * Deploy Files:
-         * - /pages/modules/$$/
-         * - /layout-elements/nullos/modules/$$/
-         * - /lang/++/modules/$$/
+         * - assets/modules/$$/
+         * - pages/modules/$$/
+         * - layout-elements/nullos/modules/$$/
+         * - lang/++/modules/$$/
          *
          *
          * Hook into:
@@ -31,12 +31,13 @@ abstract class WithToolsLeftMenuModuleInstaller extends ModuleInstaller
          * - class/Layout/LayoutBridge
          */
         $installer = new Installer();
-        $installer->addOperation(LayoutBridgeDisplayToolsLeftMenuLinksOperation::create()->setLocationTransformerAppend($moduleClass . '::displayToolsLeftMenuLinks()'));
+        $this->onInstallBefore($installer);
+        $installer->addOperation(LayoutBridgeDisplayToolsLeftMenuLinksOperation::create()->setLocationTransformerByPosition($moduleClass . '::displayToolsLeftMenuLinks()', $pos));
         $installer->addOperation(RouterBridgeUri2PagesOperation::create()->setLocationTransformerAppend($moduleClass . '::decorateUri2PagesMap($uri2pagesMap)'));
-        $installer->addOperation(DeployFileOperation::create()
-            ->sourceDir($this->getSourceDir())
-            ->destDir($this->getTargetDir())
-        );
+
+
+        $this->prepareDeployFiles($installer);
+
 
         $report = new Report();
         $installer->run($report);
@@ -49,14 +50,12 @@ abstract class WithToolsLeftMenuModuleInstaller extends ModuleInstaller
         $moduleClassName = $moduleClass . 'Module';
 
 
-        $sources = $this->getSources();
-
         $installer = new Installer();
+        $this->onUninstallBefore($installer);
         $installer->addOperation(LayoutBridgeDisplayToolsLeftMenuLinksOperation::create()->setLocationTransformerRemoveBySubstr($moduleClassName));
         $installer->addOperation(RouterBridgeUri2PagesOperation::create()->setLocationTransformerRemoveBySubstr($moduleClassName));
-        $installer->addOperation(RemoveFileOperation::create()
-            ->sources($sources)
-            ->destDir($this->getTargetDir()));
+
+        $this->prepareRemoveFiles($installer);
 
 
         $report = new Report();
@@ -64,105 +63,11 @@ abstract class WithToolsLeftMenuModuleInstaller extends ModuleInstaller
         return $report;
     }
 
-
-    /**
-     * Development feature
-     */
-    public function pack()
-    {
-        $report = new Report();
-
-
-        $sources = $this->getSources();
-        $targetDir = $this->getTargetDir();
-        $sourceDir = $this->getSourceDir();
-
-        foreach ($sources as $source) {
-            $extSrc = $targetDir . '/' . $source;
-            $intDst = $sourceDir . "/" . $source;
-            if (is_dir($extSrc)) {
-                $errors = [];
-                FileSystemTool::copyDir($extSrc, $intDst, true, $errors);
-                if (count($errors) > 0) {
-                    $report->addMessage($errors);
-                }
-            } else {
-                $dirName = dirname($intDst);
-                if (!file_exists($dirName)) {
-                    mkdir($dirName, 0777, true);
-                }
-                copy($extSrc, $intDst);
-            }
-        }
-
-        return $report;
-
-    }
-
-
     //------------------------------------------------------------------------------/
     //
     //------------------------------------------------------------------------------/
-    private function getModuleClass()
+    protected function getLeftMenuPosition()
     {
-        $calledClass = get_called_class();
-        $p = explode('\\', $calledClass, 2);
-        $moduleName = $p[0];
-        return $moduleName;
-    }
-
-    //------------------------------------------------------------------------------/
-    //
-    //------------------------------------------------------------------------------/
-    protected function getLanguages()
-    {
-        return [
-            'en',
-            'fr',
-        ];
-    }
-
-    protected function hasAsset()
-    {
-        return false;
-    }
-
-
-
-    //------------------------------------------------------------------------------/
-    // getSources, getTargetDir and getSourceDir
-    // work together to implement the packing system
-    //------------------------------------------------------------------------------/
-    protected function getSources()
-    {
-        $moduleClass = $this->getModuleClass();
-        $moduleClassLower = lcfirst($moduleClass);
-
-        $sources = [
-            'layout-elements/nullos/modules/' . $moduleClassLower,
-            'pages/modules/' . $moduleClassLower,
-        ];
-
-        if (true === $this->hasAsset()) {
-            $sources[] = 'assets/modules/' . $moduleClassLower;
-        }
-
-
-        $langs = $this->getLanguages();
-        foreach ($langs as $lang) {
-            $sources[] = 'lang/' . $lang . '/modules/' . $moduleClassLower;
-        }
-        return $sources;
-    }
-
-    protected function getTargetDir()
-    {
-        return APP_ROOT_DIR;
-    }
-
-    protected function getSourceDir()
-    {
-        $inst = new \ReflectionClass($this);
-        return dirname($inst->getFileName()) . "/InstallAssets/app-nullos";
+        return 0;
     }
 }

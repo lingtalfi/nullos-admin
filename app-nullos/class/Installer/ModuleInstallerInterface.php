@@ -17,4 +17,5 @@ interface ModuleInstallerInterface
     public function install();
 
     public function uninstall();
+
 }

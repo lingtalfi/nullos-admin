@@ -1,4 +1,5 @@
 <?php
+
 $prefs = [
     'actionColumnsPosition' => 'right',
     'prettyTableNames' => [

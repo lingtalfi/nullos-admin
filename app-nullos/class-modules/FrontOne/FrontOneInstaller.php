@@ -3,16 +3,13 @@
 
 namespace FrontOne;
 
-use FrontOne\Installer\Operations\DeployFilesOperation;
-use FrontOne\Installer\Operations\Init\InstallInitAutoloadOperation;
-use FrontOne\Installer\Operations\Init\UninstallInitAutoloadOperation;
-use FrontOne\Installer\Operations\Layout\InstallLayoutBridgeDisplayLeftMenuBlockOperation;
-use FrontOne\Installer\Operations\Layout\UninstallLayoutBridgeDisplayLeftMenuBlockOperation;
-use FrontOne\Installer\Operations\RemoveFilesOperation;
-use FrontOne\Installer\Operations\Router\InstallRouterBridgeUri2PagesOperation;
-use FrontOne\Installer\Operations\Router\UninstallRouterBridgeUri2PagesOperation;
+
 use Installer\Installer;
+use Installer\Operation\Init\InitAutoloadOperation\InitAutoloadOperation;
+use Installer\Operation\LayoutBridge\LayoutBridgeDisplayLeftMenuBlocksOperation;
+use Installer\Operation\RouterBridge\RouterBridgeUri2PagesOperation;
 use Installer\Report\Report;
+use Installer\WithPackModuleInstaller;
 
 
 /**
@@ -27,9 +24,9 @@ use Installer\Report\Report;
  * to the report.
  *
  */
-class FrontOneInstaller
+class FrontOneInstaller extends WithPackModuleInstaller
 {
-    public static function install()
+    public function install()
     {
         /**
          * Deploy Files:
@@ -48,10 +45,17 @@ class FrontOneInstaller
          * - init.php (autoloader)
          */
         $installer = new Installer();
-        $installer->addOperation(InstallInitAutoloadOperation::create());
-        $installer->addOperation(InstallLayoutBridgeDisplayLeftMenuBlockOperation::create());
-        $installer->addOperation(InstallRouterBridgeUri2PagesOperation::create());
-        $installer->addOperation(DeployFilesOperation::create());
+        $installer->addOperation(InitAutoloadOperation::create()->setLocationTransformer(function (array &$locations) {
+            $loc = '__DIR__ . "/../class-shared"';
+            if (false === in_array($loc, $locations, true)) {
+                $locations[] = $loc;
+            }
+        }));
+        $installer->addOperation(LayoutBridgeDisplayLeftMenuBlocksOperation::create()->setLocationTransformerAfter('FrontOneModule::displayLeftMenuBlocks()', 'ToolsLeftMenuSectionModule'));
+        $installer->addOperation(RouterBridgeUri2PagesOperation::create()->setLocationTransformerAppend('FrontOneModule::decorateUri2PagesMap($uri2pagesMap)'));
+
+
+        $this->prepareDeployFiles($installer);
 
         $report = new Report();
         $installer->run($report);
@@ -59,17 +63,52 @@ class FrontOneInstaller
     }
 
 
-    public static function uninstall()
+    public function uninstall()
     {
         $installer = new Installer();
-        $installer->addOperation(UninstallInitAutoloadOperation::create());
-        $installer->addOperation(UninstallLayoutBridgeDisplayLeftMenuBlockOperation::create());
-        $installer->addOperation(UninstallRouterBridgeUri2PagesOperation::create());
-        $installer->addOperation(RemoveFilesOperation::create());
+        $installer->addOperation(InitAutoloadOperation::create()->setLocationTransformer(function (array &$locations) {
+            $loc = '__DIR__ . "/../class-shared"';
+            foreach ($locations as $k => $loca) {
+                if ($loca === $loc) {
+                    unset($locations[$k]);
+                }
+            }
+        }));
+        $installer->addOperation(LayoutBridgeDisplayLeftMenuBlocksOperation::create()->setLocationTransformerRemoveBySubstr('FrontOneModule::displayLeftMenuBlocks()'));
+        $installer->addOperation(RouterBridgeUri2PagesOperation::create()->setLocationTransformerRemoveBySubstr('FrontOneModule::decorateUri2PagesMap'));
 
+        $this->prepareRemoveFiles($installer);
 
         $report = new Report();
         $installer->run($report);
         return $report;
     }
+
+
+    //------------------------------------------------------------------------------/
+    // PACKER
+    //------------------------------------------------------------------------------/
+    protected function getSources()
+    {
+        return [
+            'class-shared/FrontOne',
+            'app-vitrine-one',
+            'app-nullos/lang/en/modules/frontOne',
+            'app-nullos/layout-elements/nullos/modules/frontOne',
+            'app-nullos/pages/modules/frontOne',
+            'app-nullos/www/services/modules/frontOne',
+        ];
+    }
+
+    protected function getTargetDir()
+    {
+        return APP_ROOT_DIR . "/..";
+    }
+
+    protected function getSourceDir()
+    {
+        return __DIR__ . "/InstallAssets/project";
+    }
+
+
 }
