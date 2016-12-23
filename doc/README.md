@@ -268,28 +268,15 @@ Documentation Tree
     - [install-oui-database.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/install-oui-database.md)
 
 
-
-
-Licence
-===========
-2016-12-22
-
-**Nullos admin**'s licence is the "Dead Or Alive" licence (DOA).
-
-I've just made that up, so let me explain.
-
-Basically it means you can choose either of the following option:
-
-- either you pay me 1 million us dollars
-- or you pay me nothing
-
-
-
-
-
 History Log
 ===============
 
+- 1.1.0 - 2016-12-21
+
+    - add QuickDoc TreeTransformer
+    - add SimpleForm layout helper
+    - add ArrayDataTable in crud module, and ArrayCrud layout helper 
+    
 - 1.0.0 - 2016-12-20
 
     - First release    

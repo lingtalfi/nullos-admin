@@ -45,16 +45,16 @@ class LayoutBridge
      * - class-modules/LeftMenuSection/Tools/ToolsLeftMenuSectionModule
      */
     public static function displayToolsLeftMenuLinks()
-    {
-        BootModule::displayToolsLeftMenuLinks();
-        ModuleInstallerModule::displayToolsLeftMenuLinks();
-        CrudModule::displayToolsLeftMenuLinks();
-        SqlToolsModule::displayToolsLeftMenuLinks();
+   {
         QuickDocModule::displayToolsLeftMenuLinks();
-        IconsViewerModule::displayToolsLeftMenuLinks();
-        LinguistModule::displayToolsLeftMenuLinks();
+        BootModule::displayToolsLeftMenuLinks();
+        SqlToolsModule::displayToolsLeftMenuLinks();
+        CrudModule::displayToolsLeftMenuLinks();
+        ModuleInstallerModule::displayToolsLeftMenuLinks();
         NullosInfoModule::displayToolsLeftMenuLinks();
-    }
+        LinguistModule::displayToolsLeftMenuLinks();
+        IconsViewerModule::displayToolsLeftMenuLinks();
+   }
 
 
     /**
@@ -62,8 +62,8 @@ class LayoutBridge
      * - class/Layout
      */
     public static function displayTopBar()
-    {
+   {
         LangModule::displayTopBar();
-    }
+   }
 
 }

@@ -37,7 +37,7 @@ class MethodArrayTransformer extends ArrayTransformer
     }
 
 
-    protected function setLocationTransformerAfter($item, $targetSubstr)
+    public function setLocationTransformerAfter($item, $targetSubstr)
     {
         $this->setLocationTransformer(function (array &$arr) use ($item, $targetSubstr) {
             $_item = $item;
@@ -52,18 +52,20 @@ class MethodArrayTransformer extends ArrayTransformer
                 array_splice($arr, $insertIndex, 0, $_item);
             }
         });
+        return $this;
     }
 
-    protected function setLocationTransformerAppend($item)
+    public function setLocationTransformerAppend($item)
     {
         $this->setLocationTransformer(function (array &$arr) use ($item) {
             if (false === in_array($item, $arr, true)) {
                 $arr[] = $item;
             }
         });
+        return $this;
     }
 
-    protected function setLocationTransformerRemoveBySubstr($item)
+    public function setLocationTransformerRemoveBySubstr($item)
     {
         $this->setLocationTransformer(function (array &$arr) use ($item) {
             foreach ($arr as $k => $v) {
@@ -72,5 +74,6 @@ class MethodArrayTransformer extends ArrayTransformer
                 }
             }
         });
+        return $this;
     }
 }

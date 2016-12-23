@@ -20,5 +20,10 @@ class RouterBridgeUri2PagesOperation extends MethodArrayTransformer implements O
         ]);
     }
 
+    public static function create()
+    {
+        return new self();
+    }
+
 
 }

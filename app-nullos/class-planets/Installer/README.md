@@ -128,6 +128,10 @@ History Log
 ------------------
 
 
+- 1.1.0 -- 2016-12-22
+
+    - add InstallerInterface
+
 - 1.0.0 -- 2016-12-22
 
     - initial commit 

@@ -451,3 +451,15 @@ crud.page.table -- 2016-12-19 18:37:28
 ----------
 file does not exist: /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/crud/auto-list/oui.concours.php
 
+(no identifier) -- 2016-12-23 00:31:58
+----------
+exception 'Exception' with message 'A core module cannot be removed via the gui' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php:90
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php(33): ModuleInstaller\ModuleInstallerUtil::removeModule('IconsViewer')
+#1 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php(47): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php')
+#2 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(150): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php')
+#3 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class/Layout/Layout.php(62): Layout\Layout->includeElement('body')
+#4 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php(8): Layout\Layout->display()
+#5 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php')
+#6 {main}
+

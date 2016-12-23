@@ -3,6 +3,13 @@ Module
 2016-12-21
 
 
+
+todo: experimental
+
+This is an experimental document, you shouldn't rely on the information in this document. 
+
+
+
 In nullos admin, third parties can bring new functionalities to the core by using modules.
  
 A module can be very big as well as very small: it can handle a full website, or just do a specific task,

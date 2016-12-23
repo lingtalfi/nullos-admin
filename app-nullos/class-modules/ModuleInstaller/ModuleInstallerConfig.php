@@ -23,6 +23,9 @@ class ModuleInstallerConfig
 
     public static function getCoreModules()
     {
+        /**
+         * A core module means that its functionality can be used by other modules.
+         */
         return [
             'ApplicationLog',
             'Authentication',

@@ -5,7 +5,6 @@ namespace ModuleInstaller;
 
 
 use Bat\FileSystemTool;
-use DirScanner\YorgDirScannerTool;
 use PublicException\PublicException;
 
 class ModuleInstallerUtil
@@ -61,8 +60,10 @@ class ModuleInstallerUtil
 
     public static function installModule($name)
     {
-        $class = self::getModuleInstallerClass($name, 'install');
+        $class = self::getModuleInstallerInstance($name, 'install');
         call_user_func([$class, 'install']);
+
+
         $states = self::getStates();
         $states[$name] = 'installed';
         self::setStates($states);
@@ -70,11 +71,44 @@ class ModuleInstallerUtil
 
     public static function uninstallModule($name)
     {
-        $class = self::getModuleInstallerClass($name, 'uninstall');
+        $class = self::getModuleInstallerInstance($name, 'uninstall');
         call_user_func([$class, 'uninstall']);
         $states = self::getStates();
         $states[$name] = 'uninstalled';
         self::setStates($states);
+    }
+
+    public static function packModule($name)
+    {
+        $class = self::getModuleInstallerInstance($name, 'pack');
+        call_user_func([$class, 'pack']);
+    }
+
+    public static function removeModule($name)
+    {
+        $dir = self::getModuleDir($name);
+        if (true === FileSystemTool::existsUnder($dir, ModuleInstallerConfig::getModulesDir())) {
+
+            $states = self::getStates();
+            if ('installed' === $states[$name]) {
+                self::uninstallModule($name);
+            }
+            unset($states[$name]);
+            self::setStates($states);
+
+
+            $list = self::getModulesList();
+            foreach ($list as $item) {
+                if ($name === $item['name']) {
+                    if (0 === $item['core']) {
+                        FileSystemTool::remove($dir);
+                    } else {
+                        throw new \Exception("A core module cannot be removed via the gui");
+                    }
+                }
+            }
+        }
+
     }
     //------------------------------------------------------------------------------/
     //
@@ -106,7 +140,7 @@ class ModuleInstallerUtil
     //------------------------------------------------------------------------------/
     //
     //------------------------------------------------------------------------------/
-    private static function getModuleInstallerClass($name, $method)
+    private static function getModuleInstallerInstance($name, $method)
     {
         $dir = self::getModuleDir($name);
         if (true === FileSystemTool::existsUnder($dir, ModuleInstallerConfig::getModulesDir())) {
@@ -114,7 +148,7 @@ class ModuleInstallerUtil
             if (file_exists($installerFile)) {
                 $class = '\\' . $name . '\\' . $name . 'Installer';
                 if (method_exists($class, $method)) {
-                    return $class;
+                    return new $class;
                 } else {
                     throw new PublicException(__("Oops, module installer for {name} does not contain a {method} method", "modules/moduleInstaller/moduleInstaller", [
                         'name' => $name,
@@ -128,4 +162,27 @@ class ModuleInstallerUtil
             throw new PublicException(__("Oops, module installer not found", "modules/moduleInstaller/moduleInstaller"));
         }
     }
+
+//    private static function getModuleInstallerClass($name, $method)
+//    {
+//        $dir = self::getModuleDir($name);
+//        if (true === FileSystemTool::existsUnder($dir, ModuleInstallerConfig::getModulesDir())) {
+//            $installerFile = $dir . "/$name" . "Installer.php";
+//            if (file_exists($installerFile)) {
+//                $class = '\\' . $name . '\\' . $name . 'Installer';
+//                if (method_exists($class, $method)) {
+//                    return $class;
+//                } else {
+//                    throw new PublicException(__("Oops, module installer for {name} does not contain a {method} method", "modules/moduleInstaller/moduleInstaller", [
+//                        'name' => $name,
+//                        'method' => $method,
+//                    ]));
+//                }
+//            } else {
+//                throw new PublicException(__("Oops, module installer not found", "modules/moduleInstaller/moduleInstaller"));
+//            }
+//        } else {
+//            throw new PublicException(__("Oops, module installer not found", "modules/moduleInstaller/moduleInstaller"));
+//        }
+//    }
 }

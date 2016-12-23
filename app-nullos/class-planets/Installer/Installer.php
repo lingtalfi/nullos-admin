@@ -22,7 +22,7 @@ use Installer\Report\ReportInterface;
  * to the report.
  *
  */
-class Installer
+class Installer implements InstallerInterface
 {
 
 
