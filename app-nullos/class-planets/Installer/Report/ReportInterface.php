@@ -19,4 +19,6 @@ interface ReportInterface
      * @return ReportMessageInterface[]
      */
     public function getMessages();
+
+    public function hasMessages();
 }

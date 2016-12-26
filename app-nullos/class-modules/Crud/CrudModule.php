@@ -4,6 +4,7 @@
 namespace Crud;
 
 
+use Crud\AdminTable\CrudAdminTable;
 use Crud\ResetOption\CrudFilesResetOption;
 use Crud\ResetOption\GeneratorsPreferencesResetOption;
 use Crud\ResetOption\LeftMenuPreferencesResetOption;
@@ -89,9 +90,9 @@ class CrudModule
     /**
      * default DataTable instance for all lists (configure nipp, widgets,...)
      */
-    public static function getDataTable()
+    public static function getDataTable($table, $query, $fields, array $ric)
     {
-        return new DataTable();
+        return new CrudAdminTable($table, $query, $fields, $ric);
     }
 
     /**

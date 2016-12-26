@@ -4,6 +4,9 @@
 use Bat\FileSystemTool;
 use DirScanner\YorgDirScannerTool;
 use Layout\Goofy;
+use LayoutDynamicHead\LayoutDynamicHeadModule;
+use Linguist\LinguistPreferences;
+use Linguist\LinguistUtil;
 use Linguist\Util\LinguistModuleScanner;
 use Linguist\Util\LinguistScanner;
 use ModuleInstaller\ModuleInstallerUtil;
@@ -14,11 +17,16 @@ $files = YorgDirScannerTool::getFiles($dir, true, true);
 $dirs = YorgDirScannerTool::getDirs($dir, true, true);
 $modules = ModuleInstallerUtil::getModuleNames();
 
+
+LayoutDynamicHeadModule::registerCss("style/modules/layout/blues.css");
+
+
 $messages = [];
 $thefile = "";
 $thedir = "";
 $themodule = "";
 $useDeflat = true;
+$showMessages = true;
 try {
 
     if (array_key_exists('file', $_POST)) {
@@ -31,8 +39,17 @@ try {
         $themodule = $_POST['module'];
         $tmpDir = FileSystemTool::tempDir();
         $allMessages = LinguistModuleScanner::getTranslationsByModule($themodule, $tmpDir);
-        $messages = $allMessages['module'];
+        $messages = $allMessages;
         $useDeflat = false;
+    } elseif (array_key_exists('trans', $_POST)) {
+        $themodule = $_POST['trans'];
+        $langs = LinguistModuleScanner::getModuleLangs($themodule);
+        LinguistModuleScanner::createModuleTranslationsFile($themodule, $langs);
+        $showMessages = false;
+        Goofy::alertSuccess(__("The translations file has been created successfully.", LL));
+    } elseif (array_key_exists('alltrans', $_POST)) {
+        LinguistUtil::completeAllModules();
+        Goofy::alertSuccess(__("All the translations files has been created.", LL));
     }
 } catch (\Exception $e) {
     Goofy::alertError(Helper::defaultLogMsg());
@@ -44,6 +61,9 @@ try {
 
 <section class="pad">
     <div class="tac boxy">
+        <h3 class="banner"><?php echo __("Display things", LL); ?></h3>
+
+
         <div>
             <?php echo __("Choose a file to display its translations", LL); ?>
 
@@ -75,6 +95,7 @@ try {
             </form>
         </div>
 
+
         <div>
             <?php echo __("Or choose a module to display all its translations", LL); ?>
 
@@ -90,6 +111,33 @@ try {
             </form>
         </div>
 
+
+        <h3 class="banner"><?php echo __("Complete", LL); ?></h3>
+        <div>
+
+            <?php echo __("Complete the translation file for a given module", LL); ?>
+
+            <form method="post" action="" id="theformtrans">
+                <select name="trans" id="theselecttrans">
+                    <option value="0"><?php echo __("Choose a module...", LL); ?></option>
+                    <?php foreach ($modules as $module):
+                        $sel = ($themodule === $module) ? ' selected="selected"' : '';
+                        ?>
+                        <option <?php echo $sel; ?> value="<?php echo $module; ?>"><?php echo $module; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </form>
+        </div>
+
+        <div>
+
+            <?php echo __("Click the button below to complete ALL module's translation files", LL); ?>
+
+            <form method="post" action="" id="theformalltrans">
+                <input type="hidden" name="alltrans" value="any">
+                <button type="submit" id="theselectalltrans"><?php echo __("Complete All", LL); ?></button>
+            </form>
+        </div>
 
         <script>
             var form = document.getElementById('theform');
@@ -111,21 +159,36 @@ try {
             selectModule.addEventListener('change', function () {
                 formModule.submit();
             });
+
+            var formTrans = document.getElementById('theformtrans');
+            var selectTrans = document.getElementById('theselecttrans');
+            selectTrans.addEventListener('change', function () {
+                formTrans.submit();
+            });
+
+
+            var formAllTrans = document.getElementById('theformalltrans');
+            var selectAllTrans = document.getElementById('theselectalltrans');
+            selectAllTrans.addEventListener('change', function () {
+                formAllTrans.submit();
+            });
         </script>
 
 
         <div class="results">
             <?php
 
-            foreach ($messages as $info) {
-                if (true === $useDeflat) {
-                    $id = str_replace('"', '\\"', $info['id']);
-                } else {
-                    $id = $info;
-                }
+            if (true === $showMessages) {
+                foreach ($messages as $info) {
+                    if (true === $useDeflat) {
+                        $id = str_replace('"', '\\"', $info['id']);
+                    } else {
+                        $id = $info;
+                    }
 
-                echo '"' . $id . '" => "' . $id . '",';
-                echo '<br>';
+                    echo '"' . $id . '" => "' . $id . '",';
+                    echo '<br>';
+                }
             }
 
             ?>

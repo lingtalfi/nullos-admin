@@ -145,13 +145,11 @@ Nullos admin actually uses the [Privilege framework](https://github.com/lingtalf
 
 Modules
 --------------
-2016-12-19
-
-Nullos embraces the modules system described in [kif](https://github.com/lingtalfi/nullos-admin/tree/master/doc/https://github.com/lingtalfi/kif).
+2016-12-19 -- 2016-12-25
 
 In nullos, a module contains some functionality, and can be plugged in and out the nullos application.
 
-Typically, a module is responsible for a new item (or more) in the left menu, and the corresponding page(s).
+More information in the [module page](https://github.com/lingtalfi/nullos-admin/tree/master/doc/modules/module-concepts/module.md).
 
 
 
@@ -249,18 +247,31 @@ Documentation Tree
       - [left-menu-preferences.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/left-menu-preferences.md)
       - [ric.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/ric.md)
     - [crud-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/crud-module.md)
+    - [frontone-module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/frontone-module)
+      - [articles-page.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/articles-page.md)
+      - [social-page.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/social-page.md)
+      - [theme-page.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/theme-page.md)
+    - [frontone-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/frontone-module.md)
     - [iconsviewer-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/iconsviewer-module.md)
     - [lang-module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/lang-module)
       - [translation-files.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/translation-files.md)
       - [translation-function.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/translation-function.md)
     - [lang-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/lang-module.md)
+    - [layout-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/layout-module.md)
     - [linguist-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/linguist-module.md)
-    - [module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/module.md)
+    - [logwatcher-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/logwatcher-module.md)
+    - [module-concepts](https://github.com/lingtalfi/nullos-admin/tree/master/doc/module-concepts)
+      - [module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/module.md)
+      - [saas.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/saas.md)
+    - [moduleinstaller-module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/moduleinstaller-module)
+      - [module-page.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/module-page.md)
+    - [moduleinstaller-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/moduleinstaller-module.md)
     - [nullosinfo-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/nullosinfo-module.md)
     - [quickdoc-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/quickdoc-module.md)
     - [sqltools-module](https://github.com/lingtalfi/nullos-admin/tree/master/doc/sqltools-module)
       - [execute-sql-page.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/execute-sql-page.md)
     - [sqltools-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/sqltools-module.md)
+    - [toolsleftmenusection-module.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/toolsleftmenusection-module.md)
   - [todolist.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/todolist.md)
   - [tutorials](https://github.com/lingtalfi/nullos-admin/tree/master/doc/tutorials)
     - [configure-a-list.md](https://github.com/lingtalfi/nullos-admin/tree/master/doc/configure-a-list.md)

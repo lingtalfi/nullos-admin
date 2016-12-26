@@ -4,15 +4,21 @@
 namespace IconsViewer;
 
 
-use Installer\WithToolsLeftMenuModuleInstaller;
+use Installer\BaseModuleInstaller;
+use Installer\Saas\ModuleSaasInterface;
 
 
-class IconsViewerInstaller extends WithToolsLeftMenuModuleInstaller
+class IconsViewerInstaller extends BaseModuleInstaller implements ModuleSaasInterface
 {
-    protected function getLeftMenuPosition()
+    //------------------------------------------------------------------------------/
+    // SAAS
+    //------------------------------------------------------------------------------/
+    public function getSubscriberServiceIds()
     {
-        return 100;
+        return [
+            'ToolsLeftMenuSection.displayToolsLeftMenuLinks',
+            'Router.decorateUri2PagesMap',
+        ];
     }
-
 
 }

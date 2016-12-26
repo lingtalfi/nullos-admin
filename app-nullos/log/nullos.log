@@ -463,3 +463,80 @@ Stack trace:
 #5 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php')
 #6 {main}
 
+moduleInstaller.modulesList -- 2016-12-25 02:17:16
+----------
+exception 'ReflectionException' with message 'Method LogWatcher\LogWatcherServices::decorateLogToWatchb() does not exist' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/Saas/SaasInstaller.php:35
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/Saas/SaasInstaller.php(35): ReflectionMethod->__construct('\LogWatcher\LogWatcherServices', 'decorateLogToWatchb')
+#1 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php(94): ModuleInstaller\Saas\SaasInstaller::subscribe(ApplicationLog\ApplicationLogInstaller)
+#2 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php(30): ModuleInstaller\ModuleInstallerUtil::installModule('ApplicationLog')
+#3 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php(47): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php')
+#4 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-core/Layout/Layout.php(153): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php')
+#5 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-core/Layout/Layout.php(65): Layout\Layout->includeElement('body')
+#6 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php(8): Layout\Layout->display()
+#7 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php')
+#8 {main}
+
+moduleInstaller.modulesList -- 2016-12-25 02:21:27
+----------
+exception 'ReflectionException' with message 'Method LogWatcher\LogWatcherServices::/**
+     * logs: array of label => file
+     */
+Method [ <user> static public method decorateLogToWatch ] {
+  @@ /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/LogWatcher/LogWatcherServices.php 14 - 17
+
+  - Parameters [1] {
+    Parameter #0 [ <required> array &$logs ]
+  }
+}
+() does not exist' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe/planets/Bat/ClassTool.php:19
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe/planets/Bat/ClassTool.php(19): ReflectionMethod->__construct('\LogWatcher\LogWatcherServices', '/**
+     * logs: array of label => file
+     */
+Method [ <user> static public method decorateLogToWatch ] {
+  @@ /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/LogWatcher/LogWatcherServices.php 14 - 17
+
+  - Parameters [1] {
+    Parameter #0 [ <required> array &$logs ]
+  }
+}
+')
+#1 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/Saas/SaasInstaller.php(38): Bat\ClassTool::getMethodContent('\LogWatcher\LogWatcherServices', ReflectionMethod)
+#2 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php(94): ModuleInstaller\Saas\SaasInstaller::subscribe(ApplicationLog\ApplicationLogInstaller)
+#3 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php(30): ModuleInstaller\ModuleInstallerUtil::installModule('ApplicationLog')
+#4 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php(47): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php')
+#5 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-core/Layout/Layout.php(153): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php')
+#6 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-core/Layout/Layout.php(65): Layout\Layout->includeElement('body')
+#7 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php(8): Layout\Layout->display()
+#8 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php')
+#9 {main}
+
+moduleInstaller.modulesList -- 2016-12-26 01:06:24
+----------
+exception 'Exception' with message 'module installer for ApplicationLog must implement PackableModuleInstallerInterface in order to call pack' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php:183
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php(127): ModuleInstaller\ModuleInstallerUtil::getModuleInstallerInstance('ApplicationLog', 'pack')
+#1 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php(137): ModuleInstaller\ModuleInstallerUtil::packModule('ApplicationLog')
+#2 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php(39): ModuleInstaller\ModuleInstallerUtil::packAllModules()
+#3 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php(47): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php')
+#4 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Layout/Layout.php(153): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php')
+#5 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Layout/Layout.php(65): Layout\Layout->includeElement('body')
+#6 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php(8): Layout\Layout->display()
+#7 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php')
+#8 {main}
+
+moduleInstaller.modulesList -- 2016-12-26 01:07:19
+----------
+exception 'Exception' with message 'module installer for ApplicationLog must implement PackableModuleInstallerInterface in order to call pack' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php:183
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php(127): ModuleInstaller\ModuleInstallerUtil::getModuleInstallerInstance('ApplicationLog', 'pack')
+#1 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php(137): ModuleInstaller\ModuleInstallerUtil::packModule('ApplicationLog')
+#2 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php(39): ModuleInstaller\ModuleInstallerUtil::packAllModules()
+#3 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php(47): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php')
+#4 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Layout/Layout.php(153): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php')
+#5 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Layout/Layout.php(65): Layout\Layout->includeElement('body')
+#6 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php(8): Layout\Layout->display()
+#7 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php')
+#8 {main}
+

@@ -2,6 +2,7 @@
 // contact form...
 
 use FrontOne\FrontOneUtil;
+use Mailer\AppMailer;
 
 $d = [
     'name' => '',
@@ -19,16 +20,31 @@ if (!function_exists('h')) {
     }
 }
 
-if (array_key_exists('name', $_POST)) {
-    $d = array_intersect_key($_POST, $d);
-    $email = $d['email'];
-    if (false === strpos($email, '@')) {
-        $errors[] = "The email is invalid";
+
+try {
+
+    if (array_key_exists('name', $_POST)) {
+        $d = array_intersect_key($_POST, $d);
+        $email = $d['email'];
+        if (false === strpos($email, '@')) {
+            $errors[] = "The email is invalid";
+        }
+        if (0 === count($errors)) {
+            $message = "Message sent by: " . $_POST['name'] . ' (' . $email . ')' . PHP_EOL;
+            $message .= date('Y-m-d H:i:s') . PHP_EOL;
+            $message .= $_POST['message'];
+
+            AppMailer::notif($message)
+                ->replyTo($email)
+                ->send();
+
+            $isSuccess = true;
+            $d = $originalD;
+        }
     }
-    if (0 === count($errors)) {
-        $isSuccess = true;
-        $d = $originalD;
-    }
+} catch (\Exception $e) {
+    $errors[] = Helper::defaultLogMsg();
+    Logger::log($e, 'frontOne.vitrine.contact');
 }
 
 

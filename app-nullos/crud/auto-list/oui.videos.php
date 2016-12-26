@@ -27,15 +27,12 @@ inner join oui.users ou on ou.id=v.users_id
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.videos", $query, $fields, ['id']);
 
 $table->title = "Videos";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "id" => "id",
     "active" => "active",
     "users_email" => "users",
@@ -72,4 +69,4 @@ $table->setTransformer('concours_titre', function ($v, array $item) {
 
 
 
-$table->printTable('oui.videos', $query, $fields, ['id']);
+$table->displayTable();

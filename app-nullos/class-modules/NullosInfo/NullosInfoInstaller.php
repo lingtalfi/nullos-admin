@@ -4,13 +4,20 @@
 namespace NullosInfo;
 
 
-use Installer\WithToolsLeftMenuModuleInstaller;
+use Installer\BaseModuleInstaller;
+use Installer\Saas\ModuleSaasInterface;
 
 
-class NullosInfoInstaller extends WithToolsLeftMenuModuleInstaller
+class NullosInfoInstaller extends BaseModuleInstaller implements ModuleSaasInterface
 {
-    protected function getLeftMenuPosition()
+    //------------------------------------------------------------------------------/
+    // SAAS
+    //------------------------------------------------------------------------------/
+    public function getSubscriberServiceIds()
     {
-        return -1;
+        return [
+            'ToolsLeftMenuSection.displayToolsLeftMenuLinks',
+            'Router.decorateUri2PagesMap',
+        ];
     }
 }

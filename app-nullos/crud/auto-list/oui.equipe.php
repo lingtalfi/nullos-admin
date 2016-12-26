@@ -15,15 +15,12 @@ from oui.equipe
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.equipe", $query, $fields, ['id']);
 
 $table->title = "Equipe";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "id" => "id",
     "nom" => "nom",
 ];
@@ -34,4 +31,4 @@ $table->hiddenColumns = [
 ];
 
 
-$table->printTable('oui.equipe', $query, $fields, ['id']);
+$table->displayTable();

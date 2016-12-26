@@ -10,12 +10,12 @@ define('LL', $ll); // translation context
 
 ?>
 <div class="tac bignose install-page">
-    <h3>Social links configuration</h3>
+    <h3><?php echo __("Social links configuration", LL); ?></h3>
     <p>
-        Use this page to configure your social links.
+        <?php echo __("Use this page to configure your social links.", LL); ?>
     </p>
     <p>
-        <a href="#">Need help?</a>
+        <a href="<?php echo doclink('modules/frontone-module/social-page.md'); ?>"><?php echo __("Need help?", LL); ?></a>
     </p>
     <div>
         <?php
@@ -25,16 +25,16 @@ define('LL', $ll); // translation context
 
         $form = \QuickFormZ::create();
 
-        $form->title = "Social links form";
+        $form->title = __("Social links form", LL);
         $form->labels = [
-            'icon' => "Icon",
+            'icon' => __("Icon", LL),
             // seo
-            'seoTitle' => "Seo title",
+            'seoTitle' => __("Seo title", LL),
 
             // texts
-            'title' => "Title",
-            'headerParagraph' => "Header paragraph",
-            'footerParagraph' => "Footer paragraph",
+            'title' => __("Title", LL),
+            'headerParagraph' => __("Header paragraph", LL),
+            'footerParagraph' => __("Footer paragraph", LL),
         ];
 
         $form->defaultValues = [

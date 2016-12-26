@@ -52,6 +52,10 @@ $store = [
                 'https://github.com/lingtalfi/Privilege',
             ],
             [
+                'module page',
+                'modules/module-concepts/module.md',
+            ],
+            [
                 'getting started with nullos admin',
                 'tutorials/getting-started-with-nullos-admin.md',
             ],
@@ -296,6 +300,20 @@ $store = [
                 'tutorials/configure-a-list.md',
             ],
         ],
+        '/modules/frontone-module.md' => [
+            [
+                'Theme',
+                'modules/frontone-module/theme-page.md',
+            ],
+            [
+                'Articles',
+                'modules/frontone-module/articles-page.md',
+            ],
+            [
+                'Social links',
+                'modules/frontone-module/social-page.md',
+            ],
+        ],
         '/modules/lang-module/translation-files.md' => [
             [
                 'Lang module',
@@ -330,6 +348,40 @@ $store = [
                 'modules/lang-module/translation-files.md',
             ],
         ],
+        '/modules/module-concepts/module.md' => [
+            [
+                'module installer page',
+                'modules/moduleinstaller-module.md',
+            ],
+            [
+                'saas system',
+                'modules/module-concepts/saas.md',
+            ],
+            [
+                'ModuleInstaller module',
+                'modules/moduleinstaller-module.md',
+            ],
+            [
+                'module installer module page',
+                'modules/moduleinstaller-module.md',
+            ],
+        ],
+        '/modules/moduleinstaller-module/module-page.md' => [
+            [
+                'developing your modules',
+                'modules/module-concepts/module.md',
+            ],
+        ],
+        '/modules/moduleinstaller-module.md' => [
+            [
+                'moduleinstaller page',
+                'modules/moduleinstaller-module.md',
+            ],
+            [
+                'Saas system',
+                'modules/module-concepts/saas.md',
+            ],
+        ],
         '/modules/quickdoc-module.md' => [
             [
                 'README.md',
@@ -344,6 +396,12 @@ $store = [
             [
                 'The "Execute SQL" page',
                 'modules/sqltools-module/execute-sql-page.md',
+            ],
+        ],
+        '/modules/toolsleftmenusection-module.md' => [
+            [
+                'layout module',
+                'modules/layout-module.md',
             ],
         ],
         '/tutorials/configure-a-list.md' => [
@@ -389,6 +447,11 @@ $store = [
         '/modules/crud-module/crud-files.md' => [
             [
                 'configure a form',
+            ],
+        ],
+        '/modules/layout-module.md' => [
+            [
+                'main nullos layout',
             ],
         ],
         '/modules/quickdoc-module.md' => [

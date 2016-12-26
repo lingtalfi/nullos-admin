@@ -5,7 +5,12 @@ namespace ModuleInstaller;
 
 
 use Bat\FileSystemTool;
+use Installer\ModuleInstallerInterface;
 use Installer\PackableModuleInstallerInterface;
+use Installer\Report\Report;
+use Installer\Saas\ModuleSaasInterface;
+use ModuleInstaller\Exception\ReportException;
+use ModuleInstaller\Saas\SaasInstaller;
 use PublicException\PublicException;
 
 class ModuleInstallerUtil
@@ -38,13 +43,14 @@ class ModuleInstallerUtil
         return $ret;
     }
 
+
     public static function getModulesList()
     {
         $ret = [];
         $dir = ModuleInstallerConfig::getModulesDir();
         $files = scandir($dir);
         $coreMods = ModuleInstallerConfig::getCoreModules();
-        $states = self::getStates();
+        $states = ModuleInstallerPreferences::getPreferences();
         foreach ($files as $f) {
             if ('.' !== $f && '..' !== $f) {
                 $file = $dir . '/' . $f;
@@ -69,7 +75,7 @@ class ModuleInstallerUtil
                     $isCore = (in_array($f, $coreMods, true)); // core modules cannot be deleted
 
 
-                    $ret[] = [
+                    $ret[$f] = [
                         'name' => $f,
                         'state' => $state,
                         'installer' => (int)$hasInstaller,
@@ -84,27 +90,54 @@ class ModuleInstallerUtil
     public static function installModule($name)
     {
         $class = self::getModuleInstallerInstance($name, 'install');
-        call_user_func([$class, 'install']);
+        $report = new Report();
+        call_user_func([$class, 'install'], $report);
+
+        if ($class instanceof ModuleSaasInterface) {
+            SaasInstaller::subscribe($class, $report);
+        }
+        self::throwReportIfNecessary($report);
 
 
-        $states = self::getStates();
+        $states = ModuleInstallerPreferences::getPreferences();
         $states[$name] = 'installed';
-        self::setStates($states);
+        ModuleInstallerPreferences::setPreferences($states);
+        return $report;
     }
 
     public static function uninstallModule($name)
     {
         $class = self::getModuleInstallerInstance($name, 'uninstall');
-        call_user_func([$class, 'uninstall']);
-        $states = self::getStates();
+        $report = new Report();
+        call_user_func([$class, 'uninstall'], $report);
+
+        if ($class instanceof ModuleSaasInterface) {
+            SaasInstaller::unsubscribe($class, $report);
+        }
+        self::throwReportIfNecessary($report);
+
+
+        $states = ModuleInstallerPreferences::getPreferences();
         $states[$name] = 'uninstalled';
-        self::setStates($states);
+        ModuleInstallerPreferences::setPreferences($states);
     }
 
     public static function packModule($name)
     {
         $class = self::getModuleInstallerInstance($name, 'pack');
-        call_user_func([$class, 'pack']);
+        if (method_exists($class, "pack")) {
+            call_user_func([$class, 'pack']);
+        }
+    }
+
+    public static function packAllModules()
+    {
+        $list = self::getModulesList();
+        foreach ($list as $info) {
+            if (2 === $info['installer']) {
+                self::packModule($info['name']);
+            }
+        }
     }
 
     public static function removeModule($name)
@@ -112,12 +145,12 @@ class ModuleInstallerUtil
         $dir = self::getModuleDir($name);
         if (true === FileSystemTool::existsUnder($dir, ModuleInstallerConfig::getModulesDir())) {
 
-            $states = self::getStates();
+            $states = ModuleInstallerPreferences::getPreferences();
             if ('installed' === $states[$name]) {
                 self::uninstallModule($name);
             }
             unset($states[$name]);
-            self::setStates($states);
+            ModuleInstallerPreferences::setPreferences($states);
 
 
             $list = self::getModulesList();
@@ -133,32 +166,6 @@ class ModuleInstallerUtil
         }
 
     }
-    //------------------------------------------------------------------------------/
-    //
-    //------------------------------------------------------------------------------/
-    /**
-     * states:
-     * - installed
-     * - uninstalled
-     * - unknown
-     */
-    public static function getStates()
-    {
-        $ret = ModuleInstallerServices::getStatesStore()->retrieve();
-        if (0 === count($ret)) {
-            $ret = ModuleInstallerConfig::getDefaultStates();
-        }
-        return $ret;
-    }
-
-
-    public static function setStates(array $config)
-    {
-        $prefs = self::getStates();
-        $newPrefs = array_replace_recursive($prefs, $config);
-        ModuleInstallerServices::getStatesStore()->store($newPrefs);
-    }
-
 
     //------------------------------------------------------------------------------/
     //
@@ -170,10 +177,18 @@ class ModuleInstallerUtil
             $installerFile = $dir . "/$name" . "Installer.php";
             if (file_exists($installerFile)) {
                 $class = '\\' . $name . '\\' . $name . 'Installer';
-                if (method_exists($class, $method)) {
-                    return new $class;
+                $inst = new $class;
+                if ($inst instanceof ModuleInstallerInterface) {
+
+                    if ('pack' === $method) {
+                        if (!$inst instanceof PackableModuleInstallerInterface) {
+                            throw new \Exception("module installer for $name must implement PackableModuleInstallerInterface in order to call pack");
+                        }
+                    }
+
+                    return $inst;
                 } else {
-                    throw new PublicException(__("Oops, module installer for {name} does not contain a {method} method", "modules/moduleInstaller/moduleInstaller", [
+                    throw new PublicException(__("Oops, module installer for {name} does not implement ModuleInstallerInterface", "modules/moduleInstaller/moduleInstaller", [
                         'name' => $name,
                         'method' => $method,
                     ]));
@@ -183,6 +198,15 @@ class ModuleInstallerUtil
             }
         } else {
             throw new PublicException(__("Oops, module installer not found", "modules/moduleInstaller/moduleInstaller"));
+        }
+    }
+
+    private static function throwReportIfNecessary(Report $report)
+    {
+        if (true === $report->hasMessages()) {
+            $e = new ReportException();
+            $e->setReport($report);
+            throw $e;
         }
     }
 

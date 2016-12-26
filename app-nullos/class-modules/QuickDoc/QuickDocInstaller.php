@@ -4,13 +4,22 @@
 namespace QuickDoc;
 
 
-use Installer\WithToolsLeftMenuModuleInstaller;
+use Installer\BaseModuleInstaller;
+use Installer\Saas\ModuleSaasInterface;
 
 
-class QuickDocInstaller extends WithToolsLeftMenuModuleInstaller
+class QuickDocInstaller extends BaseModuleInstaller implements ModuleSaasInterface
 {
-    protected function getLeftMenuPosition()
+
+
+    //------------------------------------------------------------------------------/
+    // SAAS
+    //------------------------------------------------------------------------------/
+    public function getSubscriberServiceIds()
     {
-        return 4;
+        return [
+            'ToolsLeftMenuSection.displayToolsLeftMenuLinks:4',
+            'Router.decorateUri2PagesMap',
+        ];
     }
 }

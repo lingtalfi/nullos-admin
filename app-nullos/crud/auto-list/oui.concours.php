@@ -25,15 +25,12 @@ inner join oui.equipe o on o.id=c.equipe_id
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.concours", $query, $fields, ['id']);
 
 $table->title = "Concours";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "id" => "id",
     "equipe_nom" => "equipe",
     "titre" => "titre",
@@ -80,4 +77,4 @@ $table->setTransformer('equipe_nom', function ($v, array $item) {
 
 
 
-$table->printTable('oui.concours', $query, $fields, ['id']);
+$table->displayTable();

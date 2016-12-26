@@ -135,13 +135,11 @@ Nullos admin actually uses the <-Privilege framework-> to handle the privileges 
 
 Modules
 --------------
-2016-12-19
-
-Nullos embraces the modules system described in <-kif->.
+2016-12-19 -- 2016-12-25
 
 In nullos, a module contains some functionality, and can be plugged in and out the nullos application.
 
-Typically, a module is responsible for a new item (or more) in the left menu, and the corresponding page(s).
+More information in the <-module page->.
 
 
 

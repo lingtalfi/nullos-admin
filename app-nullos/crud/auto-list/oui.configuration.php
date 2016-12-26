@@ -15,18 +15,15 @@ from oui.configuration
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.configuration", $query, $fields, ['cle']);
 
 $table->title = "Configuration";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "cle" => "cle",
     "valeur" => "valeur",
 ];
 
 
-$table->printTable('oui.configuration', $query, $fields, ['cle']);
+$table->displayTable();

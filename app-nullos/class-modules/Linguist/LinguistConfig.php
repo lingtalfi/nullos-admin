@@ -22,22 +22,4 @@ class LinguistConfig
         return "/linguist";
     }
 
-    public static function getPreferencesFile()
-    {
-        return APP_ROOT_DIR . "/assets/modules/linguist/prefs.php";
-    }
-
-    public static function getDefaultPreferences()
-    {
-        return [
-            'curLang' => "en",
-            'refLang' => "en",
-            'translateTab' => [
-                'mode' => 'unmodified',
-                'group' => false,
-                'alpha' => true,
-            ],
-        ];
-    }
-
 }

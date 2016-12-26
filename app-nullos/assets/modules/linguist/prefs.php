@@ -10,4 +10,8 @@ $store = [
         'lang' => 'en',
         'curlang' => 'fr',
     ],
+    'availableLang' => [
+        'fr',
+        'en',
+    ],
 ];

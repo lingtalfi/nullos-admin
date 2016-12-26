@@ -44,6 +44,28 @@ $store = [
                 '[![crud-generators.png](https://s19.postimg.org/n207owpur/crud_generators.png)](https://postimg.org/image/sdf49mbxb/)',
             ],
         ],
+        '/modules/frontone-module/articles-page.md' => [
+            [
+                'front-one-articles',
+                '[![front-one-articles.png](https://s19.postimg.org/fnybcm3tv/front_one_articles.png)](https://postimg.org/image/fb6x6fljz/)',
+            ],
+        ],
+        '/modules/frontone-module/theme-page.md' => [
+            [
+                'front-one-theme',
+                '[![front-one-theme.png](https://s19.postimg.org/a2bw8k34z/front_one_theme.png)](https://postimg.org/image/tk6joi02n/)',
+            ],
+        ],
+        '/modules/frontone-module.md' => [
+            [
+                'frontone',
+                '[![frontone.png](https://s19.postimg.org/9e31pm4f7/frontone.png)](https://postimg.org/image/ty7vo3k67/)',
+            ],
+            [
+                'front-one-social',
+                '[![front-one-social.png](https://s19.postimg.org/64omj5gbn/front_one_social.png)](https://postimg.org/image/rec8tzwm7/)',
+            ],
+        ],
         '/modules/iconsviewer-module.md' => [
             [
                 'iconsviewer',
@@ -54,6 +76,18 @@ $store = [
             [
                 'linguist',
                 '[![linguist.png](https://s19.postimg.org/it030hbz7/linguist.png)](https://postimg.org/image/vke96zlr3/)',
+            ],
+        ],
+        '/modules/logwatcher-module.md' => [
+            [
+                'logwatcher-module',
+                '[![logwatcher-module.png](https://s19.postimg.org/6l9u5l42r/logwatcher_module.png)](https://postimg.org/image/wgtkos5wf/)',
+            ],
+        ],
+        '/modules/moduleinstaller-module/module-page.md' => [
+            [
+                'module installer',
+                '[![moduleinstaller-module.png](https://s19.postimg.org/udj5h463n/moduleinstaller_module.png)](https://postimg.org/image/udj5h463j/)',
             ],
         ],
         '/modules/nullosinfo-module.md' => [

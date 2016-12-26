@@ -6,9 +6,8 @@ namespace FrontOne;
 
 use Installer\Installer;
 use Installer\Operation\Init\InitAutoloadOperation\InitAutoloadOperation;
-use Installer\Operation\LayoutBridge\LayoutBridgeDisplayLeftMenuBlocksOperation;
-use Installer\Operation\RouterBridge\RouterBridgeUri2PagesOperation;
-use Installer\Report\Report;
+use Installer\Report\ReportInterface;
+use Installer\Saas\ModuleSaasInterface;
 use Installer\WithPackModuleInstaller;
 
 
@@ -24,9 +23,9 @@ use Installer\WithPackModuleInstaller;
  * to the report.
  *
  */
-class FrontOneInstaller extends WithPackModuleInstaller
+class FrontOneInstaller extends WithPackModuleInstaller implements ModuleSaasInterface
 {
-    public function install()
+    public function install(ReportInterface $report)
     {
         /**
          * Deploy Files:
@@ -40,8 +39,8 @@ class FrontOneInstaller extends WithPackModuleInstaller
          *
          *
          * Hook into:
-         * - class/Router/RouterBridge
-         * - class/Layout/LayoutBridge
+         * - class/Router/RouterServices
+         * - class/Layout/LayoutServices
          * - init.php (autoloader)
          */
         $installer = new Installer();
@@ -51,19 +50,15 @@ class FrontOneInstaller extends WithPackModuleInstaller
                 $locations[] = $loc;
             }
         }));
-        $installer->addOperation(LayoutBridgeDisplayLeftMenuBlocksOperation::create()->setLocationTransformerAfter('FrontOneModule::displayLeftMenuBlocks()', 'ToolsLeftMenuSectionModule'));
-        $installer->addOperation(RouterBridgeUri2PagesOperation::create()->setLocationTransformerAppend('FrontOneModule::decorateUri2PagesMap($uri2pagesMap)'));
-
 
         $this->prepareDeployFiles($installer);
 
-        $report = new Report();
+
         $installer->run($report);
-        return $report;
     }
 
 
-    public function uninstall()
+    public function uninstall(ReportInterface $report)
     {
         $installer = new Installer();
         $installer->addOperation(InitAutoloadOperation::create()->setLocationTransformer(function (array &$locations) {
@@ -74,14 +69,11 @@ class FrontOneInstaller extends WithPackModuleInstaller
                 }
             }
         }));
-        $installer->addOperation(LayoutBridgeDisplayLeftMenuBlocksOperation::create()->setLocationTransformerRemoveBySubstr('FrontOneModule::displayLeftMenuBlocks()'));
-        $installer->addOperation(RouterBridgeUri2PagesOperation::create()->setLocationTransformerRemoveBySubstr('FrontOneModule::decorateUri2PagesMap'));
 
         $this->prepareRemoveFiles($installer);
 
-        $report = new Report();
+
         $installer->run($report);
-        return $report;
     }
 
 
@@ -108,6 +100,17 @@ class FrontOneInstaller extends WithPackModuleInstaller
     protected function getSourceDir()
     {
         return __DIR__ . "/InstallAssets/project";
+    }
+
+    //------------------------------------------------------------------------------/
+    // SAAS
+    //------------------------------------------------------------------------------/
+    public function getSubscriberServiceIds()
+    {
+        return [
+            'Router.decorateUri2PagesMap',
+            'Layout.displayLeftMenuBlocks',
+        ];
     }
 
 

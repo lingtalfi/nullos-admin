@@ -3,10 +3,10 @@
 $store = [
     'logCalls' => [
         'alpha' => true,
-        'group' => true,
+        'group' => false,
     ],
     'privileges' => [
         'alpha' => true,
-        'group' => true,
+        'group' => false,
     ],
 ];

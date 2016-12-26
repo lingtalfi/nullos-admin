@@ -3,13 +3,13 @@
 
 use Layout\Goofy;
 use Linguist\LinguistConfig;
-use Linguist\LinguistUtil;
+use Linguist\LinguistPreferences;
 use Linguist\Util\LinguistEqualizer;
 use Linguist\Util\LinguistKey2ValueListForm;
 use Linguist\Util\LinguistScanner;
 
 
-$prefs = LinguistUtil::getPreferences();
+$prefs = LinguistPreferences::getPreferences();
 
 
 $refLang = $prefs['refLang'];
@@ -57,7 +57,7 @@ $form->onSubmit(function ($curLang, array $file2Defs) use ($refLang) {
 
 
 $form->onPreferencesChange(function ($curLang, array $newPrefs) {
-    LinguistUtil::setPreferences([
+    LinguistPreferences::setPreferences([
         'curLang' => $curLang,
         "translateTab" => $newPrefs,
     ]);

@@ -4,7 +4,8 @@
 namespace QuickDoc\Util;
 
 use DirScanner\YorgDirScannerTool;
-use QuickDoc\QuickDocUtil;
+use QuickDoc\QuickDocPreferences;
+
 
 class TodoUtil
 {
@@ -14,7 +15,7 @@ class TodoUtil
     {
         if (null === self::$todos) {
             $ret = [];
-            $prefs = QuickDocUtil::getPreferences();
+            $prefs = QuickDocPreferences::getPreferences();
             $srcDir = $prefs['srcDir'];
             $files = YorgDirScannerTool::getFiles($srcDir, true, true);
             foreach ($files as $file) {

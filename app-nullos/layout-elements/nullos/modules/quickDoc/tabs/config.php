@@ -2,7 +2,7 @@
 
 
 use Bat\FileSystemTool;
-use QuickDoc\QuickDocUtil;
+use QuickDoc\QuickDocPreferences;
 
 $form = QuickFormZ::create();
 $form->title = __("Configuration", LL);
@@ -18,7 +18,7 @@ $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
     if (file_exists($srcDir)) {
         FileSystemTool::mkdir($dstDir, 0777, true);
         if (file_exists($dstDir)) {
-            QuickDocUtil::setPreferences([
+            QuickDocPreferences::setPreferences([
                 'srcDir' => $srcDir,
                 'dstDir' => $dstDir,
                 'linksUrlPrefix' => $linksUrlPrefix,
@@ -36,7 +36,7 @@ $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
 };
 
 
-$prefs = QuickDocUtil::getPreferences();
+$prefs = QuickDocPreferences::getPreferences();
 $form->defaultValues = [
     'srcDir' => $prefs['srcDir'],
     'dstDir' => $prefs['dstDir'],

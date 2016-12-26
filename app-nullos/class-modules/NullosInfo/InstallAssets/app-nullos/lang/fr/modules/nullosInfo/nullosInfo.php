@@ -2,26 +2,14 @@
 
 
 $defs = [
-    //------------------------------------------------------------------------------/
-    // LEFT MENU LINK
-    //------------------------------------------------------------------------------/
-    "NullosInfo" => "NullosInfo",
-    //------------------------------------------------------------------------------/
-    // TABS
-    //------------------------------------------------------------------------------/
+    "NullosInfo" => "Nullos Info",
     "Log Calls" => "Appels de Log",
-    "Privileges" => "Privileges",
+    "Privileges" => "Les Privileges",
     "Help" => "Aide",
-    "Config" => "Config",
-    //------------------------------------------------------------------------------/
-    // GROUP ITEMS
-    //------------------------------------------------------------------------------/
     "alphabetical order" => "ordre alphabétique",
     "grouped" => "groupé",
     "All items" => "Tous les éléments",
-    //------------------------------------------------------------------------------/
-    // HELP
-    //------------------------------------------------------------------------------/
     "Need help? Please visit the {link}." => "Besoin d'aide ? Veuillez visiter le lien {link}.",
-    "NullosInfo module documentation" => "documentation du module NullosInfo",
+    "Log calls" => "Appels des logs",
 ];
+

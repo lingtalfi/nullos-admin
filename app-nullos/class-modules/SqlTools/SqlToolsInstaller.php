@@ -4,13 +4,22 @@
 namespace SqlTools;
 
 
-use Installer\WithToolsLeftMenuModuleInstaller;
+use Installer\BaseModuleInstaller;
+use Installer\Saas\ModuleSaasInterface;
 
 
-class SqlToolsInstaller  extends WithToolsLeftMenuModuleInstaller
+class SqlToolsInstaller  extends BaseModuleInstaller implements ModuleSaasInterface
 {
-    protected function getLeftMenuPosition()
+    //------------------------------------------------------------------------------/
+    // SAAS
+    //------------------------------------------------------------------------------/
+    public function getSubscriberServiceIds()
     {
-        return 3;
+        return [
+            'ToolsLeftMenuSection.displayToolsLeftMenuLinks:3',
+            'Router.decorateUri2PagesMap',
+        ];
     }
+
+
 }

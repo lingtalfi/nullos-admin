@@ -15,9 +15,9 @@ require_once __DIR__ . '/class-planets/BumbleBee/Autoload/BeeAutoloader.php';
 require_once __DIR__ . '/class-planets/BumbleBee/Autoload/ButineurAutoloader.php';
 ButineurAutoloader::getInst()
     ->addLocation(__DIR__ . "/class")
+    ->addLocation(__DIR__ . "/class-core")
     ->addLocation(__DIR__ . "/class-modules")
-    ->addLocation(__DIR__ . "/class-planets")
-    ->addLocation(__DIR__ . "/../class-shared");
+    ->addLocation(__DIR__ . "/class-planets");
 ButineurAutoloader::getInst()->start();
 
 
@@ -43,7 +43,7 @@ if (true === Helper::isLocal()) {
     $privilegeSessionTimeout = null; // unlimited session
 } else {
     // php
-    ini_set('display_errors', 1);
+    ini_set('display_errors', 0);
 
     // db
     $dbUser = 'root';
@@ -62,10 +62,12 @@ date_default_timezone_set('Europe/Paris');
 ini_set('error_log', __DIR__ . "/log/php.err.log");
 if (null !== $privilegeSessionTimeout) { // or session expires when browser quits
     ini_set('session.cookie_lifetime', $privilegeSessionTimeout);
-} else {
+}
+else{
     ini_set('session.cookie_lifetime', 10 * 12 * 31 * 86400); // ~10 years
 }
 session_start();
+
 
 
 //--------------------------------------------

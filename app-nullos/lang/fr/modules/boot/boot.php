@@ -2,18 +2,10 @@
 
 
 $defs = [
-    //--------------------------------------------
-    // LEFT MENU LINKS
-    //--------------------------------------------
     "Init writer" => "Écriture du fichier init",
     "Reset" => "Réinitialiser",
-    //--------------------------------------------
-    // BOOT
-    //--------------------------------------------
     "Boot page" => "Page Boot",
     "Use this page to create {theInitLink}." => "Utilisez cette page pour créer {theInitLink}.",
-    "the init file" => "le fichier init",
-    "Need help?" => "Besoin d'aide?",
     "This will create/overwrite the {path} file." => "Le fichier {path} sera écrasé.",
     "Boot form" => "Formulaire Boot",
     "language" => "langue",
@@ -30,17 +22,12 @@ $defs = [
     "Oops, an error occurred, please check the logs." => "Oops, une erreur est survenue, veuillez vérifier les fichiers de logs.",
     "Oops, an error occurred" => "Oops, une erreur est survenue",
     "Congrats! The <b>init file</b> has been created" => "Félicitations ! Le <b>fichier init<b> a bien été créé.",
-    "Ok" => "Ok",
-    //--------------------------------------------
-    // RESET
-    //--------------------------------------------
     "Reset page" => "Page Réinitialiser",
     "Use this page to reset your <b>nullos admin</b> application." => "Cette page permet de réinitialiser votre application <b>nullos admin</b>.",
-    "Need help?" => "Besoin d'aide?",
     "Reset form" => "Formulaire Reset",
     "The website has been successfully reset." => "L'application a bien été réinitialisée.",
-    //--------------------------------------------
-    // RESET OPTION
-    //--------------------------------------------
     "remove the init file" => "supprimer le fichier init",
+    "Check all" => "Cocher tout",
+    "Uncheck all" => "Décocher tout",
 ];
+

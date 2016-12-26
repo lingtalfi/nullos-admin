@@ -4,6 +4,9 @@
 namespace Linguist;
 
 
+use Linguist\Util\LinguistModuleScanner;
+use ModuleInstaller\ModuleInstallerUtil;
+
 class LinguistUtil
 {
 
@@ -15,24 +18,20 @@ class LinguistUtil
     }
 
 
-
-
-    //--------------------------------------------
-    // Preferences
-    public static function getPreferences()
+    /**
+     * Notes:
+     * - this method scans the InstallAssets directory to guess the "module" languages
+     * - it then complete the translation files in the application (not in the InstallAssets dir)
+     *
+     *
+     */
+    public static function completeAllModules()
     {
-        $ret = LinguistServices::getPreferencesStore()->retrieve();
-        if (0 === count($ret)) {
-            $ret = LinguistConfig::getDefaultPreferences();
+        $list = ModuleInstallerUtil::getModulesList();
+        foreach ($list as $info) {
+            $moduleName = $info['name'];
+            $langs = LinguistModuleScanner::getModuleLangs($moduleName);
+            LinguistModuleScanner::createModuleTranslationsFile($moduleName, $langs);
         }
-        return $ret;
-    }
-
-
-    public static function setPreferences(array $config)
-    {
-        $prefs = self::getPreferences();
-        $newPrefs = array_replace_recursive($prefs, $config);
-        LinguistServices::getPreferencesStore()->store($newPrefs);
     }
 }

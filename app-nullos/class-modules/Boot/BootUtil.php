@@ -39,23 +39,4 @@ class BootUtil
         }
         return false;
     }
-
-
-    public static function reset(array $options=null)
-    {
-
-        throw new \Exception("oo");
-
-
-
-        if (true === $resetCrudConfig) {
-            CrudModule::resetCrudConfig();
-        }
-
-        if ($emptyCrudFilesDir) {
-            CrudModule::emptyCrudFilesDirectories();
-        }
-    }
-
-
 }

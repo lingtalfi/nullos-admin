@@ -26,7 +26,15 @@ class ApplicationLogModule
         }
         $thing = $identifier . ' -- ' . date('Y-m-d H:i:s') . PHP_EOL . str_repeat('-', 10) . PHP_EOL . $thing;
         file_put_contents($logPath, $thing . PHP_EOL . PHP_EOL, FILE_APPEND);
+    }
 
 
+
+    //------------------------------------------------------------------------------/
+    // SAAS
+    //------------------------------------------------------------------------------/
+    public static function decorateLogToWatch(array &$logs)
+    {
+        $logs["Application log"] = ApplicationLogConfig::logPath();
     }
 }

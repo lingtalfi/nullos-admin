@@ -1,11 +1,9 @@
 <?php
 
 
-use Bat\FileSystemTool;
 use Linguist\LinguistConfig;
-use Linguist\LinguistUtil;
+use Linguist\LinguistPreferences;
 use Linguist\Util\LinguistScanner;
-use QuickDoc\QuickDocUtil;
 
 $form = QuickFormZ::create();
 $form->title = __("Configuration", LL);
@@ -13,15 +11,10 @@ $form->title = __("Configuration", LL);
 
 $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
     $refLang = $formattedValues['refLang'];
-
     $langDir = LinguistConfig::getLangDir();
-
     $refLangDir = $langDir . "/" . $refLang;
-
     if (file_exists($refLangDir)) {
-        LinguistUtil::setPreferences([
-            'refLang' => $refLang,
-        ]);
+        LinguistPreferences::setPreferences($formattedValues);
         return true;
     } else {
         $msg = __("The reference lang directory must exist", LL);
@@ -30,9 +23,11 @@ $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
 };
 
 
-$prefs = LinguistUtil::getPreferences();
-$form->defaultValues = [
-    'refLang' => $prefs['refLang'],
+$prefs = LinguistPreferences::getPreferences();
+$form->defaultValues = $prefs;
+
+$form->labels = [
+    "refLang" => __("Reference language"),
 ];
 
 $langNames = LinguistScanner::getLangNames();

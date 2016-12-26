@@ -27,18 +27,13 @@ if (array_key_exists("tab", $_GET)) {
 }
 
 
-LayoutDynamicHeadModule::registerCssIf("/style/modules/linguist/linguist.css", LinguistConfig::getUri());
-
-if (false === file_exists(LinguistConfig::getPreferencesFile())) {
-    $tab = "config";
-}
 
 
 
 
 
 ?>
-<div class="tabby quickdoc">
+<div class="tabby blues">
     <?php
     $tabs = TabbyTabs::create();
     $tabs->addLeftTab(__("Translate", LL), LinguistUtil::getTabUri("links"))->icon('translate');

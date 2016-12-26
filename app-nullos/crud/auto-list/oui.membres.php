@@ -17,15 +17,12 @@ from oui.membres
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.membres", $query, $fields, ['id']);
 
 $table->title = "Membres";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "id" => "id",
     "pseudo" => "pseudo",
     "email" => "email",
@@ -43,4 +40,4 @@ $table->setTransformer('url_photo', function ($v) {
 });
 
 
-$table->printTable('oui.membres', $query, $fields, ['id']);
+$table->displayTable();

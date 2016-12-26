@@ -1,5 +1,6 @@
 <?php
 
+use Icons\Icons;
 use IconsViewer\IconsViewerUtil;
 
 $icons = IconsViewerUtil::getIconsList();

@@ -167,15 +167,63 @@ class LinguistEqualizer
     public static function copyWithComments($srcFile, $dstFile, array $defs = [])
     {
         $_defs = $defs;
-        $defs = [];
-        require $dstFile;
-        $defs = array_replace($defs, $_defs);
+        if (file_exists($dstFile)) {
+            $defs = [];
+            require $dstFile;
+            $defs = array_replace($defs, $_defs);
+        }
 
 
         $tokenIdentifiers = token_get_all(file_get_contents($srcFile));
+        $representation = self::getMessageLineTokenRepresentation($tokenIdentifiers, $_defs);
+        $representation->onSequenceMatch(function ($newSeq) use ($defs) {
+            $key = $newSeq[0][1];
+            $trueKey = TokenUtil::deEncapsulate($key);
+            if (array_key_exists($trueKey, $defs)) {
+                $newSeq[4][1] = TokenUtil::encapsulate($defs[$trueKey]);
+            }
+            return $newSeq;
+        });
+        $newTokens = $representation->getTokens();
+        return Tokens::toFile($newTokens, $dstFile);
+    }
+
+
+    /**
+     * - translationIds: an array of translation ids
+     * - removeObsoleteFromSrc:
+     *          use this mode if you trust the Linguist mechanism for scanning translations from files,
+     *          which should be reliable for most cases
+     */
+    public static function complete($srcFile, array $translationIds = [], $removeObsoleteFromSrc = true)
+    {
+        if (file_exists($srcFile)) {
+            $defs = [];
+            require $srcFile;
+            $newDefs = $defs;
+            foreach ($translationIds as $id) {
+                if (false === array_key_exists($id, $defs)) {
+                    $newDefs[$id] = $id;
+                }
+            }
+            if (true === $removeObsoleteFromSrc) {
+                foreach ($newDefs as $k => $v) {
+                    if (!in_array($k, $translationIds)) {
+                        unset($newDefs[$k]);
+                    }
+                }
+            }
+            $content = TranslationFileTemplate::getContentByDefs($newDefs);
+            file_put_contents($srcFile, $content);
+        }
+    }
+
+
+    private static function getMessageLineTokenRepresentation($tokenIdentifiers, array $defs)
+    {
         $representation = TokenRepresentation::create($tokenIdentifiers);
 
-        $representation
+        return $representation
             ->addReplacementSequence(
                 ReplacementSequence::create()
                     ->addToken(
@@ -210,18 +258,6 @@ class LinguistEqualizer
                                 return (is_array($tokenIdentifier) && T_CONSTANT_ENCAPSED_STRING === $tokenIdentifier[0]);
                             })
                     )
-            )
-            ->onSequenceMatch(function ($newSeq) use ($defs) {
-                $key = $newSeq[0][1];
-                $trueKey = TokenUtil::deEncapsulate($key);
-                if (array_key_exists($trueKey, $defs)) {
-                    $newSeq[4][1] = TokenUtil::encapsulate($defs[$trueKey]);
-                }
-                return $newSeq;
-            });
-        $newTokens = $representation->getTokens();
-        return Tokens::toFile($newTokens, $dstFile);
+            );
     }
-
-
 }

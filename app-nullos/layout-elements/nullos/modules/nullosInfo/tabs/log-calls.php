@@ -2,7 +2,7 @@
 
 
 use Layout\Body\GroupedItems\GroupedItemsLayout;
-use NullosInfo\NullosInfoUtil;
+use NullosInfo\NullosInfoPreferences;
 use NullosInfo\Util\InfoScanner;
 
 
@@ -10,17 +10,21 @@ $groups = InfoScanner::getLogCalls();
 
 
 
-$prefs = NullosInfoUtil::getPreferences();
+$prefs = NullosInfoPreferences::getPreferences();
 $defaultAlpha = $prefs['logCalls']['alpha'];
 $defaultGroup = $prefs['logCalls']['group'];
 
 
 $layout = new GroupedItemsLayout();
 $layout->onPreferencesChange(function (array $newPrefs) {
-    NullosInfoUtil::setPreferences([
+    NullosInfoPreferences::setPreferences([
         'logCalls' => $newPrefs,
     ]);
 });
+
+?>
+<h3 class="tac"><?php echo __("Log calls", LL); ?></h3>
+<?php
 
 $layout
     ->alpha($defaultAlpha)

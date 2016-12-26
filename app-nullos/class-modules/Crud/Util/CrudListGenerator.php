@@ -152,7 +152,13 @@ class CrudListGenerator extends AbstractCrudGenerator
         $this->line('";');
         $this->line('');
         $this->line('');
-        $this->line('$table = CrudModule::getDataTable();');
+        if (0 === count($primaryKey)) {
+            $primaryKey = $columnNames;
+        }
+        $ric = array_map(function ($v) {
+            return "'" . $v . "'";
+        }, $primaryKey);
+        $this->line('$table = CrudModule::getDataTable("' . $fullTable . '", $query, $fields, [' . implode(', ', $ric) . ']);');
         $this->line('');
 
 
@@ -175,9 +181,9 @@ class CrudListGenerator extends AbstractCrudGenerator
         //--------------------------------------------
         // WRITE ACTION COLUMNS POSITION
         //--------------------------------------------
-        $this->line('$table->actionColumnsPosition = "' . $this->actionColumnsPosition . '";');
-        $this->line('');
-        $this->line('');
+//        $this->line('$table->actionColumnsPosition = "' . $this->actionColumnsPosition . '";');
+//        $this->line('');
+//        $this->line('');
 
 
         //--------------------------------------------
@@ -202,7 +208,7 @@ class CrudListGenerator extends AbstractCrudGenerator
 
 
         if (count($headers) > 0) {
-            $this->line('$table->columnHeaders = [');
+            $this->line('$table->columnLabels= [');
             foreach ($headers as $k => $v) {
                 $this->line('    "' . $this->dqe($k) . '" => "' . $this->dqe($v) . '",');
             }
@@ -293,15 +299,7 @@ class CrudListGenerator extends AbstractCrudGenerator
         //--------------------------------------------
         // PRINT TABLE
         //--------------------------------------------
-        if (0 === count($primaryKey)) {
-            $primaryKey = $columnNames;
-        }
-
-        $ric = array_map(function ($v) {
-            return "'" . $v . "'";
-        }, $primaryKey);
-
-        $this->line('$table->printTable(\'' . $fullTable . '\', $query, $fields, [' . implode(', ', $ric) . ']);');
+        $this->line('$table->displayTable();');
 
 
         //--------------------------------------------

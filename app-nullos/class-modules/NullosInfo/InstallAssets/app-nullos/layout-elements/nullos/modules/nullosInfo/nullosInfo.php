@@ -15,7 +15,7 @@ LayoutDynamicHeadModule::registerCss('/style/grouped-items.css');
 define('LL', 'modules/nullosInfo/nullosInfo');
 Spirit::set('ll', LL);
 
-$prefs = QuickDocUtil::getPreferences();
+
 
 
 $tab = "log-calls";

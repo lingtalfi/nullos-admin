@@ -15,15 +15,12 @@ from oui.instruments
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.instruments", $query, $fields, ['id']);
 
 $table->title = "Instruments";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "id" => "id",
     "nom" => "nom",
 ];
@@ -34,4 +31,4 @@ $table->hiddenColumns = [
 ];
 
 
-$table->printTable('oui.instruments', $query, $fields, ['id']);
+$table->displayTable();

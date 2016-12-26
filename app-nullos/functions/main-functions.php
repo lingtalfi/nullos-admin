@@ -82,7 +82,7 @@ function linkt($text, $href, $external = false)
     if (true === $external) {
         $target = 'target="_blank"';
     }
-    return '<a ' . $target . ' href="' . $href . '">' . __($text, Spirit::get('ll')) . '</a>';
+    return '<a ' . $target . ' href="' . $href . '">' . $text . '</a>';
 }
 
 

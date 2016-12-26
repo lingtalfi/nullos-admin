@@ -15,15 +15,12 @@ from oui.styles_musicaux
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.styles_musicaux", $query, $fields, ['id']);
 
 $table->title = "Styles musicaux";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "id" => "id",
     "nom" => "nom",
 ];
@@ -34,4 +31,4 @@ $table->hiddenColumns = [
 ];
 
 
-$table->printTable('oui.styles_musicaux', $query, $fields, ['id']);
+$table->displayTable();

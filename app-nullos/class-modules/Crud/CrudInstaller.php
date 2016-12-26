@@ -4,29 +4,14 @@
 namespace Crud;
 
 
-use Installer\InstallerInterface;
-use Installer\Operation\LayoutBridge\LayoutBridgeDisplayLeftMenuBlocksOperation;
-use Installer\WithToolsLeftMenuModuleInstaller;
+use Installer\BaseModuleInstaller;
+use Installer\Saas\ModuleSaasInterface;
 
 
-class CrudInstaller extends WithToolsLeftMenuModuleInstaller
+class CrudInstaller extends BaseModuleInstaller implements ModuleSaasInterface
 {
 
-    protected function getLeftMenuPosition()
-    {
-        return 2;
-    }
 
-
-    protected function onInstallBefore(InstallerInterface $installer)
-    {
-        $installer->addOperation(LayoutBridgeDisplayLeftMenuBlocksOperation::create()->setLocationTransformerAfter('CrudModule::displayLeftMenuBlocks()', 'ToolsLeftMenuSectionModule'));
-    }
-
-    protected function onUninstallBefore(InstallerInterface $installer)
-    {
-        $installer->addOperation(LayoutBridgeDisplayLeftMenuBlocksOperation::create()->setLocationTransformerRemoveBySubstr('CrudModule'));
-    }
 
     protected function getSources()
     {
@@ -44,6 +29,19 @@ class CrudInstaller extends WithToolsLeftMenuModuleInstaller
             /**
              * Note: I left the app-nullos/crud directory alone, because they can contain user information
              */
+        ];
+    }
+
+
+    //------------------------------------------------------------------------------/
+    // SAAS
+    //------------------------------------------------------------------------------/
+    public function getSubscriberServiceIds()
+    {
+        return [
+            'ToolsLeftMenuSection.displayToolsLeftMenuLinks:2',
+            'Router.decorateUri2PagesMap',
+            'Layout.displayLeftMenuBlocks',
         ];
     }
 }

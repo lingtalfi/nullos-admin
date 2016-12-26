@@ -2,6 +2,7 @@
 
 
 use Layout\Goofy;
+use QuickDoc\QuickDocPreferences;
 use QuickDoc\QuickDocUtil;
 use QuickDoc\Util\Key2ValueListForm;
 
@@ -9,7 +10,7 @@ use QuickDoc\Util\Key2ValueListForm;
 $type = "links";
 
 
-$prefs = QuickDocUtil::getPreferences();
+$prefs = QuickDocPreferences::getPreferences();
 
 $mappings = QuickDocUtil::getMappings($type);
 
@@ -33,7 +34,7 @@ $form->onSubmit(function (array $foundList, array $unfoundList) use ($type) {
 
 
 $form->onPreferencesChange(function (array $newPrefs) use ($type) {
-    QuickDocUtil::setPreferences([
+    QuickDocPreferences::setPreferences([
         $type => $newPrefs,
     ]);
 });

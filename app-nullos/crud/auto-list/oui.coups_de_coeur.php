@@ -18,15 +18,12 @@ inner join oui.videos o on o.id=c.videos_id
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.coups_de_coeur", $query, $fields, ['id']);
 
 $table->title = "Coups de coeur";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "id" => "id",
     "videos_titre" => "videos",
     "position" => "position",
@@ -46,4 +43,4 @@ $table->setTransformer('videos_titre', function ($v, array $item) {
 
 
 
-$table->printTable('oui.coups_de_coeur', $query, $fields, ['id']);
+$table->displayTable();

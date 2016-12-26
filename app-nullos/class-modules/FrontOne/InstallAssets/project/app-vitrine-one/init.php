@@ -3,6 +3,7 @@
 use BumbleBee\Autoload\ButineurAutoloader;
 use Crud\CrudModule;
 use Lang\LangModule;
+use Mailer\AppMailer;
 use Privilege\Privilege;
 use Privilege\PrivilegeUser;
 use QuickPdo\QuickPdo;
@@ -15,10 +16,12 @@ require_once __DIR__ . '/class-planets/BumbleBee/Autoload/BeeAutoloader.php';
 require_once __DIR__ . '/class-planets/BumbleBee/Autoload/ButineurAutoloader.php';
 ButineurAutoloader::getInst()
     ->addLocation(__DIR__ . "/class")
+    ->addLocation(__DIR__ . "/class-core")
     ->addLocation(__DIR__ . "/../class-shared")
     ->addLocation(__DIR__ . "/class-modules")
     ->addLocation(__DIR__ . "/class-planets");
 ButineurAutoloader::getInst()->start();
+require_once __DIR__ . "/vendor/autoload.php"; // composer
 
 
 //--------------------------------------------
@@ -86,6 +89,18 @@ if ('/index.php' === $_SERVER['PHP_SELF']) {
 ////    PDO::MYSQL_ATTR_INIT_COMMAND => "SET sql_mode=(SELECT REPLACE(@@sql_mode,'STRICT_TRANS_TABLES','')), NAMES 'utf8'",
 //    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 //]);
+
+
+//------------------------------------------------------------------------------/
+// MAILER CONFIG
+//------------------------------------------------------------------------------/
+define('MAILER_HOST', 'smtp.example.org');
+define('MAILER_PORT', 25);
+define('MAILER_USER', "your username");
+define('MAILER_PASS', "your password");
+define('MAILER_SENDER', "robot@mywebsite.com");
+define('MAILER_ADMIN', "contact@mywebsite.com");
+AppMailer::$debug = Helper::isLocal();
 
 
 //--------------------------------------------

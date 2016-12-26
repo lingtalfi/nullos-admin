@@ -5,6 +5,7 @@ use Layout\Goofy;
 use LayoutDynamicHead\LayoutDynamicHeadModule;
 use QuickDoc\QuickDocConfig;
 use QuickDoc\QuickDocException;
+use QuickDoc\QuickDocPreferences;
 use QuickDoc\QuickDocUtil;
 use QuickDoc\Util\TodoUtil;
 
@@ -14,7 +15,7 @@ LayoutDynamicHeadModule::registerCss('/style/key2value-form.css');
 define('LL', 'modules/quickDoc/quickDoc');
 Spirit::set('ll', LL);
 
-$prefs = QuickDocUtil::getPreferences();
+$prefs = QuickDocPreferences::getPreferences();
 
 
 $tab = "links";

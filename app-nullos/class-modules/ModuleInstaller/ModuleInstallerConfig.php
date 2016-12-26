@@ -32,9 +32,11 @@ class ModuleInstallerConfig
             'Boot',
             'Crud',
             'Lang',
+            'Layout',
             'LayoutDynamicHead',
-            'LeftMenuSection',
             'ModuleInstaller',
+            'Router',
+            'ToolsLeftMenuSection',
         ];
     }
 

@@ -6,6 +6,16 @@ namespace QuickDoc;
 use Layout\AssetsList;
 use Privilege\Privilege;
 
+/**
+ * Are you creating a doc?
+ *
+ * If not, well, come back later, when you will be writing a documentation.
+ *
+ *
+ * Are you creating a doc?
+ *
+ * If yes, then meet the QuickDoc module.
+ */
 class QuickDocModule
 {
     public static function decorateUri2PagesMap(array &$uri2pagesMap)

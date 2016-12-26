@@ -5,35 +5,39 @@ namespace Lang;
 
 use Installer\Installer;
 use Installer\ModuleInstallerInterface;
-use Installer\Operation\LayoutBridge\LayoutBridgeDisplayTopBarOperation;
+use Installer\Operation\LayoutServices\LayoutBridgeDisplayTopBarOperation;
 use Installer\Report\Report;
+use Installer\Report\ReportInterface;
+use Installer\Saas\ModuleSaasInterface;
 
 
-class LangInstaller implements ModuleInstallerInterface
+class LangInstaller implements ModuleInstallerInterface, ModuleSaasInterface
 {
-    public function install()
+    public function install(ReportInterface $report)
     {
         /**
          * Hook into:
-         * - class/Layout/LayoutBridge
+         * - class/Layout/LayoutServices
          */
         $installer = new Installer();
-        $installer->addOperation(LayoutBridgeDisplayTopBarOperation::create()->setLocationTransformerAppend('LangModule::displayTopBar()'));
-
-        $report = new Report();
         $installer->run($report);
-        return $report;
     }
 
 
-    public function uninstall()
+    public function uninstall(ReportInterface $report)
     {
         $installer = new Installer();
-        $installer->addOperation(LayoutBridgeDisplayTopBarOperation::create()->setLocationTransformerRemoveBySubstr('LangModule'));
-
-
-        $report = new Report();
         $installer->run($report);
-        return $report;
     }
+
+    //------------------------------------------------------------------------------/
+    // SAAS
+    //------------------------------------------------------------------------------/
+    public function getSubscriberServiceIds()
+    {
+        return [
+            'Layout.displayTopBar',
+        ];
+    }
+
 }

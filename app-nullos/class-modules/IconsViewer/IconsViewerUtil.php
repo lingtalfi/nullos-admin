@@ -8,7 +8,7 @@ class IconsViewerUtil
 
     public static function getIconsList()
     {
-        $content = file_get_contents(APP_ROOT_DIR . "/class/Icons.php");
+        $content = file_get_contents(APP_ROOT_DIR . "/class-core/Icons/IconsFactory.php");
 
         $list = [];
 
@@ -23,7 +23,7 @@ class IconsViewerUtil
         $pattern = '!<g\s+id=(?:\\\'|")([a-zA-Z0-9-_]*)(?:\\\'|")\s*>!';
 
 
-        if(preg_match_all($pattern, $content, $matches, \PREG_PATTERN_ORDER)){
+        if (preg_match_all($pattern, $content, $matches, \PREG_PATTERN_ORDER)) {
             $list = $matches[1];
         }
         return $list;

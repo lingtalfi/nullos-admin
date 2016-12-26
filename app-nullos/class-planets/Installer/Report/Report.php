@@ -25,5 +25,10 @@ class Report implements ReportInterface
         return $this->messages;
     }
 
+    public function hasMessages()
+    {
+        return (count($this->messages) > 0);
+    }
+
 
 }

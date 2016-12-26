@@ -1,3 +1,4 @@
+AdminTable
 ArrayExport
 ArrayStore
 ArrayToString
@@ -6,7 +7,9 @@ BumbleBee
 CopyDir
 DirScanner
 DirTransformer
+Icons
 Installer
+LogSlicer
 PhpBeast
 Privilege
 PublicException

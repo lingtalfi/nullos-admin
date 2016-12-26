@@ -10,12 +10,12 @@ define('LL', $ll); // translation context
 
 ?>
 <div class="tac bignose install-page">
-    <h3>Theme configuration</h3>
+    <h3><?php echo __("Theme configuration", LL); ?></h3>
     <p>
-        Use this page to configure your theme.
+        <?php echo __("Use this page to configure your theme.", LL); ?>
     </p>
     <p>
-        <a href="#">Need help?</a>
+        <a href="<?php echo doclink('modules/frontone-module/theme-page.md'); ?>"><?php echo __("Need help?", LL); ?></a>
     </p>
     <div>
         <?php
@@ -25,16 +25,16 @@ define('LL', $ll); // translation context
 
         $form = \QuickFormZ::create();
 
-        $form->title = "Theme form";
+        $form->title = __("Theme form", LL);
         $form->labels = [
-            'icon' => "Icon",
+            'icon' => __("Icon", LL),
             // seo
-            'seoTitle' => "Seo title",
+            'seoTitle' => __("Seo title", LL),
 
             // texts
-            'title' => "Title",
-            'headerParagraph' => "Header paragraph",
-            'footerParagraph' => "Footer paragraph",
+            'title' => __("Title", LL),
+            'headerParagraph' => __("Header paragraph", LL),
+            'footerParagraph' => __("Footer paragraph", LL),
         ];
 
         $form->addFieldset(__('Seo', LL), [

@@ -156,3 +156,29 @@
 [22-Dec-2016 14:04:50 Europe/Paris] PHP Fatal error:  require_once(): Failed opening required '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/404.php' (include_path='.:/Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe:/usr/local/share/bigbang:/usr/local/bee:/php/includes') in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php on line 48
 [22-Dec-2016 14:04:50 Europe/Paris] PHP Stack trace:
 [22-Dec-2016 14:04:50 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[23-Dec-2016 19:32:44 Europe/Paris] PHP Fatal error:  Call to a member function replyTo() on integer in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/articles/content/contact.php on line 38
+[23-Dec-2016 19:32:44 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 19:32:44 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[23-Dec-2016 19:32:44 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:48
+[23-Dec-2016 19:32:44 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/home.php:6
+[23-Dec-2016 19:32:44 Europe/Paris] PHP   4. require() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/class/Layout/Layout.php:100
+[23-Dec-2016 19:35:45 Europe/Paris] PHP Fatal error:  Call to a member function replyTo() on integer in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/articles/content/contact.php on line 38
+[23-Dec-2016 19:35:45 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 19:35:45 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[23-Dec-2016 19:35:45 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:48
+[23-Dec-2016 19:35:45 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/home.php:6
+[23-Dec-2016 19:35:45 Europe/Paris] PHP   4. require() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/class/Layout/Layout.php:100
+[23-Dec-2016 19:36:37 Europe/Paris] PHP Fatal error:  Class 'ArrayStore\ArrayStore' not found in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/class-shared/FrontOne/FrontOneServices.php on line 31
+[23-Dec-2016 19:36:37 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 19:36:37 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[23-Dec-2016 19:36:37 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:48
+[23-Dec-2016 19:36:37 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/home.php:6
+[23-Dec-2016 19:36:37 Europe/Paris] PHP   4. require() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/class/Layout/Layout.php:100
+[23-Dec-2016 19:36:37 Europe/Paris] PHP   5. FrontOne\FrontOneUtil::getSocialLinks() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/articles/content/contact.php:85
+[23-Dec-2016 19:36:37 Europe/Paris] PHP   6. FrontOne\FrontOneServices::getSocialStore() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/class-shared/FrontOne/FrontOneUtil.php:30
+[23-Dec-2016 19:37:28 Europe/Paris] PHP Fatal error:  Call to a member function replyTo() on integer in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/articles/content/contact.php on line 38
+[23-Dec-2016 19:37:28 Europe/Paris] PHP Stack trace:
+[23-Dec-2016 19:37:28 Europe/Paris] PHP   1. {main}() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:0
+[23-Dec-2016 19:37:28 Europe/Paris] PHP   2. require_once() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/www/index.php:48
+[23-Dec-2016 19:37:28 Europe/Paris] PHP   3. Layout\Layout->display() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/pages/home.php:6
+[23-Dec-2016 19:37:28 Europe/Paris] PHP   4. require() /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-vitrine-one/class/Layout/Layout.php:100

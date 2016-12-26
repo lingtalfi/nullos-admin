@@ -4,7 +4,7 @@
 use Boot\BootConfig;
 use Boot\BootModule;
 use Privilege\PrivilegeUser;
-use Router\RouterBridge;
+use Router\RouterServices;
 
 if (file_exists(__DIR__ . "/../init.php")) {
     require_once __DIR__ . "/../init.php";
@@ -40,7 +40,7 @@ if (PrivilegeUser::isConnected()) {
         ];
 
 
-        RouterBridge::decorateUri2PagesMap($uri2pagesMap);
+        RouterServices::decorateUri2PagesMap($uri2pagesMap);
 
         /**
          * This is the router code, you shouldn't edit below this line
@@ -56,9 +56,9 @@ if (PrivilegeUser::isConnected()) {
         if (array_key_exists($uri, $uri2pagesMap)) {
             $page = $uri2pagesMap[$uri];
         }
-    }
-    else{
+    } else {
         $page = BootConfig::getBootPage();
+        Spirit::set('uri', BootConfig::getBootUri());
     }
 
 } else {

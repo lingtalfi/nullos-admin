@@ -15,15 +15,12 @@ from oui.pays
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.pays", $query, $fields, ['id']);
 
 $table->title = "Pays";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "id" => "id",
     "nom" => "nom",
 ];
@@ -34,4 +31,4 @@ $table->hiddenColumns = [
 ];
 
 
-$table->printTable('oui.pays', $query, $fields, ['id']);
+$table->displayTable();

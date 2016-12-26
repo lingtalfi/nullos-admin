@@ -3,13 +3,20 @@
 
 namespace Linguist;
 
-use Installer\WithToolsLeftMenuModuleInstaller;
+use Installer\BaseModuleInstaller;
+use Installer\Saas\ModuleSaasInterface;
 
 
-class LinguistInstaller extends WithToolsLeftMenuModuleInstaller
+class LinguistInstaller extends BaseModuleInstaller implements ModuleSaasInterface
 {
-    protected function getLeftMenuPosition()
+    //------------------------------------------------------------------------------/
+    // SAAS
+    //------------------------------------------------------------------------------/
+    public function getSubscriberServiceIds()
     {
-        return 5;
+        return [
+            'ToolsLeftMenuSection.displayToolsLeftMenuLinks:5',
+            'Router.decorateUri2PagesMap',
+        ];
     }
 }

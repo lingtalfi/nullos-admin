@@ -8,14 +8,15 @@ use FrontOne\FrontOneConfig;
 use QuickForm\ControlFactory\InertControlFactory;
 
 
-?><div class="tac bignose install-page">
-    <h3>Articles</h3>
+?>
+<div class="tac bignose install-page">
+    <h3><?php echo __("Articles", LL); ?></h3>
     <p>
         <a href="<?php
         echo url(FrontOneConfig::getArticlesUri(), [
             'action' => 'list',
         ]);
-        ?>">List of articles</a>
+        ?>"><?php echo __("List of articles", LL); ?></a>
     </p>
 </div>
 <?php
@@ -45,29 +46,29 @@ if (array_key_exists('ric', $_GET)) {
 
 
 $models = ArticleScannerUtil::getModels();
-array_unshift($models, "Choose a model to inject...");
+array_unshift($models, __("Choose a model to inject...", LL));
 
 
 $form = \QuickFormZ::create();
 $form->addControlFactory(InertControlFactory::create());
 
-$form->title = "Article form";
+$form->title = __("Article form", LL);
 $form->labels = [
-    'anchor' => "Anchor",
-    'label' => "Label",
-    'content' => "Content",
-    'position' => "Position",
-    'active' => "Active",
-    'protected' => "Protected",
+    'anchor' => __("Anchor", LL),
+    'label' => __("Label", LL),
+    'content' => __("Content", LL),
+    'position' => __("Position", LL),
+    'active' => __("Active", LL),
+    'protected' => __("Protected", LL),
 ];
 
 $form->defaultValues = $defaultValues;
 
 $id = 'fo_model_' . rand(0, 10000);
 $targetId = $id . '-t';
-$form->addControl('anchor')->type('text')
+$form->addControl('anchor')->type('text', ['focus' => true])
     ->addConstraint('required')
-    ->addConstraint('regex', '![^a-zA-Z0-9-_]!', "The anchor can only contain alphanumeric chars, dashes and underscores");
+    ->addConstraint('regex', '![^a-zA-Z0-9-_]!', __("The anchor can only contain alphanumeric chars, dashes and underscores", LL));
 $form->addControl('label')->type('text');
 $form->addControl('content')->type('message', [
     'id' => $targetId,
@@ -102,12 +103,12 @@ $form->formTreatmentFunc = function (array $formattedValues, &$msg) use ($ric) {
         $msg = $e->getMessage();
         return false;
     } catch (\Exception $e) {
-        $msg = "Oops, an exception occurred. Please check the logs";
+        $msg = Helper::defaultLogMsg();
         Logger::log($e, "frontOne.createArticle");
         return false;
     }
 
-    $msg = "The article was created successfully";
+    $msg = __("The article was created successfully", LL);
     return true;
 };
 

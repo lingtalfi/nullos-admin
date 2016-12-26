@@ -39,15 +39,12 @@ inner join oui.pays ou on ou.id=u.pays_id
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.users", $query, $fields, ['id']);
 
 $table->title = "Users";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "id" => "id",
     "active" => "active",
     "email" => "email",
@@ -111,4 +108,4 @@ $table->setTransformer('niveaux_nom', function ($v, array $item) {
 
 
 
-$table->printTable('oui.users', $query, $fields, ['id']);
+$table->displayTable();

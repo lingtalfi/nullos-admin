@@ -2,17 +2,7 @@
 
 
 $defs = [
-    //--------------------------------------------
-    // LEFT MENU ITEM
-    //--------------------------------------------
-    "QuickDoc" => "QuickDoc",
-    //--------------------------------------------
-    // QuickDocUtil
-    //--------------------------------------------
-    "The source dir or destination dir is not set. Please update your configuration first." => "Le dossier source ou bien le dossier de destination n'est pas configuré. Veuillez mettre à jour votre configuration d'abord.",
-    //------------------------------------------------------------------------------/
-    //
-    //------------------------------------------------------------------------------/
+    "QuickDoc" => "Quick Doc",
     "Links" => "Liens",
     "Images" => "Images",
     "Todo" => "Todo",
@@ -34,18 +24,12 @@ $defs = [
     "Unresolved images" => "Images non résolues",
     "Resolved images" => "Images résolues",
     "All images" => "Toutes les images",
-    "The mappings have been successfully updated" => "Les mappings ont bien été mis à jour",
-    "Couldn't write the mappings. Are your file permissions correct?" => "Impossible d'écrire les fichiers de mapping. Avez-vous les bonnes permissions ?",
     "Unresolved links" => "Liens non résolus",
     "Resolved links" => "Liens résolus",
     "All links" => "Tous les liens",
-    "QuickDoc module documentation" => "documentation du module QuickDoc",
-
-    //------------------------------------------------------------------------------/
-    // CONFIG FORM
-    //------------------------------------------------------------------------------/
     "srcDir" => "dossier source",
     "dstDir" => "dossier de destination",
     "linksUrlPrefix" => "préfixe d'url pour les liens",
     "linksAbsoluteUrlPrefix" => "Préfixe pour les urls absolues",
 ];
+

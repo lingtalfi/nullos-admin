@@ -196,6 +196,40 @@ $store = [
                 '[![phpmyadmin-import.png](https://s19.postimg.org/4b2vshko3/phpmyadmin_import.png)](https://postimg.org/image/ttv85i47z/)',
             ],
         ],
+        '/modules/frontone-module/articles-page.md' => [
+            [
+                'front-one-articles',
+                '[![front-one-articles.png](https://s19.postimg.org/fnybcm3tv/front_one_articles.png)](https://postimg.org/image/fb6x6fljz/)',
+            ],
+        ],
+        '/modules/frontone-module/theme-page.md' => [
+            [
+                'front-one-theme',
+                '[![front-one-theme.png](https://s19.postimg.org/a2bw8k34z/front_one_theme.png)](https://postimg.org/image/tk6joi02n/)',
+            ],
+        ],
+        '/modules/frontone-module.md' => [
+            [
+                'front-one-social',
+                '[![front-one-social.png](https://s19.postimg.org/64omj5gbn/front_one_social.png)](https://postimg.org/image/rec8tzwm7/)',
+            ],
+            [
+                'frontone',
+                '[![frontone.png](https://s19.postimg.org/9e31pm4f7/frontone.png)](https://postimg.org/image/ty7vo3k67/)',
+            ],
+        ],
+        '/modules/logwatcher-module.md' => [
+            [
+                'logwatcher-module',
+                '[![logwatcher-module.png](https://s19.postimg.org/6l9u5l42r/logwatcher_module.png)](https://postimg.org/image/wgtkos5wf/)',
+            ],
+        ],
+        '/modules/moduleinstaller-module/module-page.md' => [
+            [
+                'module installer',
+                '[![moduleinstaller-module.png](https://s19.postimg.org/udj5h463n/moduleinstaller_module.png)](https://postimg.org/image/udj5h463j/)',
+            ],
+        ],
     ],
     'unfound' => [
         '/modules/quickdoc-module.md' => [

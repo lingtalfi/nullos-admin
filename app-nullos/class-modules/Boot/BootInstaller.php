@@ -4,14 +4,24 @@
 namespace Boot;
 
 
-use Installer\WithToolsLeftMenuModuleInstaller;
+use Installer\Saas\ModuleSaasInterface;
+use Installer\BaseModuleInstaller;
 
 
-class BootInstaller extends WithToolsLeftMenuModuleInstaller
+class BootInstaller extends BaseModuleInstaller implements ModuleSaasInterface
 {
 
-    protected function getLeftMenuPosition()
+
+    //------------------------------------------------------------------------------/
+    // SAAS
+    //------------------------------------------------------------------------------/
+    public function getSubscriberServiceIds()
     {
-        return 0;
+        return [
+            'ToolsLeftMenuSection.displayToolsLeftMenuLinks:0',
+            'Router.decorateUri2PagesMap',
+        ];
     }
+
+
 }

@@ -16,7 +16,8 @@ class QuickDocUtil
 {
 
     private static $noSrcDirErrMsg = "The source dir or destination dir is not set. Please update your configuration first.";
-
+    private static $linksStore;
+    private static $imagesStore;
 
     //--------------------------------------------
     // Locations
@@ -33,25 +34,6 @@ class QuickDocUtil
         throw new \Exception("This mapping is not allowed: $name");
     }
 
-
-    //--------------------------------------------
-    // Preferences
-    public static function getPreferences()
-    {
-        $ret = QuickDocServices::getPreferencesStore()->retrieve();
-        if (0 === count($ret)) {
-            $ret = QuickDocConfig::getDefaultPreferences();
-        }
-        return $ret;
-    }
-
-
-    public static function setPreferences(array $config)
-    {
-        $prefs = self::getPreferences();
-        $newPrefs = array_replace_recursive($prefs, $config);
-        QuickDocServices::getPreferencesStore()->store($newPrefs);
-    }
 
 
     //--------------------------------------------
@@ -164,7 +146,7 @@ class QuickDocUtil
 
     private static function _copyDoc($dry)
     {
-        $prefs = self::getPreferences();
+        $prefs = QuickDocPreferences::getPreferences();
         $srcDir = $prefs['srcDir'];
         $dstDir = $prefs['dstDir'];
         if (null === $srcDir || null === $dstDir) {
@@ -249,9 +231,9 @@ class QuickDocUtil
     {
         $store = null;
         if ('links' === $name) {
-            $store = QuickDocServices::getLinksStore();
+            $store = QuickDocUtil::getLinksStore();
         } elseif ('images' === $name) {
-            $store = QuickDocServices::getImagesStore();
+            $store = QuickDocUtil::getImagesStore();
         } else {
             throw new \Exception("No store bound to the name $name");
         }
@@ -265,7 +247,7 @@ class QuickDocUtil
     private static function getTransformerByName($name)
     {
 
-        $prefs = self::getPreferences();
+        $prefs = QuickDocPreferences::getPreferences();
         $srcDir = $prefs['srcDir'];
         if (file_exists($srcDir)) {
 
@@ -368,6 +350,33 @@ class QuickDocUtil
             'unfound' => $newUnfound,
         ];
         return $ret;
+    }
+
+
+    //------------------------------------------------------------------------------/
+    // ARRAY STORES
+    //------------------------------------------------------------------------------/
+    /**
+     * @return ArrayStore
+     */
+    public static function getLinksStore()
+    {
+        if (null === self::$linksStore) {
+            self::$linksStore = ArrayStore::create()->path(QuickDocUtil::getMappingsFile('links'));
+        }
+        return self::$linksStore;
+    }
+
+
+    /**
+     * @return ArrayStore
+     */
+    public static function getImagesStore()
+    {
+        if (null === self::$imagesStore) {
+            self::$imagesStore = ArrayStore::create()->path(QuickDocUtil::getMappingsFile('images'));
+        }
+        return self::$imagesStore;
     }
 
 }

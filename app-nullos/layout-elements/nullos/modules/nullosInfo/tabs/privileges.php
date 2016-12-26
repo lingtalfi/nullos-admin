@@ -2,24 +2,29 @@
 
 
 use Layout\Body\GroupedItems\GroupedItemsLayout;
-use NullosInfo\NullosInfoUtil;
+use NullosInfo\NullosInfoPreferences;
 use NullosInfo\Util\InfoScanner;
 
 
 $groups = InfoScanner::getPrivilegeHasCalls();
 
 
-$prefs = NullosInfoUtil::getPreferences();
+$prefs = NullosInfoPreferences::getPreferences();
 $defaultAlpha = $prefs['privileges']['alpha'];
 $defaultGroup = $prefs['privileges']['group'];
 
 
 $layout = new GroupedItemsLayout();
 $layout->onPreferencesChange(function (array $newPrefs) {
-    NullosInfoUtil::setPreferences([
+    NullosInfoPreferences::setPreferences([
         'privileges' => $newPrefs,
     ]);
 });
+
+?>
+    <h3 class="tac"><?php echo __("Privileges", LL); ?></h3>
+<?php
+
 
 $layout
     ->alpha($defaultAlpha)

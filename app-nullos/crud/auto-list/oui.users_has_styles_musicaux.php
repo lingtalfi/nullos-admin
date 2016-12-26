@@ -19,15 +19,12 @@ inner join oui.users ou on ou.id=u.users_id
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.users_has_styles_musicaux", $query, $fields, ['users_id', 'styles_musicaux_id']);
 
 $table->title = "Users has styles musicaux";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "users_email" => "users",
     "styles_musicaux_nom" => "styles musicaux",
 ];
@@ -50,4 +47,4 @@ $table->setTransformer('styles_musicaux_nom', function ($v, array $item) {
 
 
 
-$table->printTable('oui.users_has_styles_musicaux', $query, $fields, ['users_id', 'styles_musicaux_id']);
+$table->displayTable();

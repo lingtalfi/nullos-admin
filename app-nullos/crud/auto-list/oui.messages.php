@@ -18,15 +18,12 @@ from oui.messages
 ";
 
 
-$table = CrudModule::getDataTable();
+$table = CrudModule::getDataTable("oui.messages", $query, $fields, ['id']);
 
 $table->title = "Messages";
 
 
-$table->actionColumnsPosition = "right";
-
-
-$table->columnHeaders = [
+$table->columnLabels= [
     "id" => "id",
     "objet" => "objet",
     "message" => "message",
@@ -46,4 +43,4 @@ $table->setTransformer('message', function ($v) use ($n) {
 });
 
 
-$table->printTable('oui.messages', $query, $fields, ['id']);
+$table->displayTable();
