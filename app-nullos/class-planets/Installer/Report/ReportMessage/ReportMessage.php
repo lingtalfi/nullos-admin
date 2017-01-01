@@ -22,4 +22,12 @@ class ReportMessage implements ReportMessageInterface
     {
         return $this->message;
     }
+
+    public function __toString()
+    {
+        if ($this->message instanceof \Exception) {
+            return $this->message->getMessage();
+        }
+        return (string)$this->message;
+    }
 }

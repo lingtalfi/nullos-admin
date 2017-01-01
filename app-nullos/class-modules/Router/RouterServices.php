@@ -30,6 +30,9 @@ class RouterServices
         \IconsViewer\IconsViewerModule::decorateUri2PagesMap($uri2pagesMap);
         \LogWatcher\LogWatcherModule::decorateUri2PagesMap($uri2pagesMap);
         \Linguist\LinguistModule::decorateUri2PagesMap($uri2pagesMap);
+        \FrontOne\FrontOneModule::decorateUri2PagesMap($uri2pagesMap);
+        \Crud\CrudModule::decorateUri2PagesMap($uri2pagesMap);
+        \Counter\CounterModule::decorateUri2PagesMap($uri2pagesMap);
     }
 
 }

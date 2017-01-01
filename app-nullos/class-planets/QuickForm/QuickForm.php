@@ -3,6 +3,7 @@
 namespace QuickForm;
 
 
+use Bat\StringTool;
 use QuickForm\ControlFactory\ControlFactoryInterface;
 use QuickForm\ControlFactory\LingControlFactory;
 use QuickForm\Tool\PhpFileExploder;
@@ -43,6 +44,7 @@ class QuickForm
     private $controls;
     private $controlFactories;
     private $fieldsets;
+    private $fieldsetsAttr;
 
     private static $count = 0;
 
@@ -58,6 +60,7 @@ class QuickForm
             new LingControlFactory(),
         ];
         $this->fieldsets = [];
+        $this->fieldsetsAttr = [];
         $this->controlErrorLocation = "local";
         $this->title = null;
         $this->header = null;
@@ -125,9 +128,10 @@ class QuickForm
         $this->_formId = $formCssId;
     }
 
-    public function addFieldset($label, array $controlNames)
+    public function addFieldset($label, array $controlNames, array $htmlAttributes = [])
     {
         $this->fieldsets[$label] = $controlNames;
+        $this->fieldsetsAttr[$label] = [$htmlAttributes];
         return $this;
     }
 
@@ -322,8 +326,11 @@ class QuickForm
                         foreach ($fieldsetsAndControls as $name => $c) {
 
                             if (is_array($c)):
+
+                                $htmlAttrs = (array_key_exists($name, $this->fieldsetsAttr)) ? $this->fieldsetsAttr[$name][0] : [];
+
                                 ?>
-                                <fieldset>
+                                <fieldset <?php echo StringTool::htmlAttributes($htmlAttrs); ?>>
                                     <legend><?php echo $name; ?></legend>
                                     <?php
                                     foreach ($c as $cname => $c2) {

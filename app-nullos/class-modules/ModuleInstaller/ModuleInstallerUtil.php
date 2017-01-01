@@ -4,22 +4,33 @@
 namespace ModuleInstaller;
 
 
+use BabyYaml\BabyYamlUtil;
 use Bat\FileSystemTool;
 use Installer\ModuleInstallerInterface;
 use Installer\PackableModuleInstallerInterface;
 use Installer\Report\Report;
 use Installer\Saas\ModuleSaasInterface;
+use Installer\Universe\ModuleUniverseInterface;
 use ModuleInstaller\Exception\ReportException;
+use ModuleInstaller\ModuleRepo\MainRepoUtil;
 use ModuleInstaller\Saas\SaasInstaller;
+use ModuleInstaller\Universe\ModuleUniverseInstaller;
+use ModuleInstaller\Util\RepoCachedListUtil;
 use PublicException\PublicException;
 
 class ModuleInstallerUtil
 {
 
 
-    public static function getTabUri($tab)
+    public static function getTabUri($tab, array $extra = null)
     {
-        return ModuleInstallerConfig::getUri() . "?tab=" . $tab;
+        $ret = ModuleInstallerConfig::getUri() . "?tab=" . $tab;
+        if (null !== $extra) {
+            foreach ($extra as $k => $v) {
+                $ret .= "&" . $k . "=$v";
+            }
+        }
+        return $ret;
     }
 
     public static function getModuleDir($name)
@@ -44,8 +55,32 @@ class ModuleInstallerUtil
     }
 
 
+    public static function getModuleInfo($module)
+    {
+        $dir = ModuleInstallerConfig::getModulesDir();
+        $file = $dir . "/$module/module-info.yml";
+        if (file_exists($file)) {
+            $info = BabyYamlUtil::readFile($file);
+            $version = (array_key_exists('version', $info)) ? $info['version'] : "";
+            $author = (array_key_exists('author', $info)) ? $info['author'] : "";
+            $description = (array_key_exists('description', $info)) ? $info['description'] : "";
+            $releaseDate = (array_key_exists('releaseDate', $info)) ? $info['releaseDate'] : "";
+            return [
+                'version' => $version,
+                'author' => $author,
+                'description' => $description,
+                'releaseDate' => $releaseDate,
+            ];
+        }
+        return false;
+    }
+
     public static function getModulesList()
     {
+
+        $cachedList = RepoCachedListUtil::getCachedRepoList();
+
+
         $ret = [];
         $dir = ModuleInstallerConfig::getModulesDir();
         $files = scandir($dir);
@@ -56,8 +91,11 @@ class ModuleInstallerUtil
                 $file = $dir . '/' . $f;
                 if (is_dir($file)) {
 
+
                     $hasInstaller = 0;
                     $installerFile = $file . "/$f" . "Installer.php";
+                    $moduleInfoFile = $file . "/module-info.yml";
+
                     if (file_exists($installerFile)) {
                         $hasInstaller = 1;
                         $class = '\\' . $f . '\\' . $f . 'Installer';
@@ -65,7 +103,21 @@ class ModuleInstallerUtil
                         if ($object instanceof PackableModuleInstallerInterface) {
                             $hasInstaller++;
                         }
+                    }
 
+                    $version = "";
+                    $lastVersion = "";
+                    $description = "";
+                    $releaseDate = "";
+                    if (file_exists($moduleInfoFile)) {
+                        $info = BabyYamlUtil::readFile($moduleInfoFile);
+                        $version = (array_key_exists('version', $info)) ? $info['version'] : $description;
+                    }
+
+                    if (array_key_exists($f, $cachedList)) {
+                        if (array_key_exists('version', $cachedList[$f])) {
+                            $lastVersion = $cachedList[$f]['version'];
+                        }
                     }
 
                     $state = 'unknown'; // unknown|installed|uninstalled
@@ -77,6 +129,8 @@ class ModuleInstallerUtil
 
                     $ret[$f] = [
                         'name' => $f,
+                        'version' => $version,
+                        'lastVersion' => $lastVersion,
                         'state' => $state,
                         'installer' => (int)$hasInstaller,
                         'core' => (int)$isCore,
@@ -96,6 +150,9 @@ class ModuleInstallerUtil
         if ($class instanceof ModuleSaasInterface) {
             SaasInstaller::subscribe($class, $report);
         }
+        if ($class instanceof ModuleUniverseInterface) {
+            ModuleUniverseInstaller::installPlanets($class, $report);
+        }
         self::throwReportIfNecessary($report);
 
 
@@ -113,6 +170,9 @@ class ModuleInstallerUtil
 
         if ($class instanceof ModuleSaasInterface) {
             SaasInstaller::unsubscribe($class, $report);
+        }
+        if ($class instanceof ModuleUniverseInterface) {
+            ModuleUniverseInstaller::uninstallPlanets($class, $report);
         }
         self::throwReportIfNecessary($report);
 
@@ -166,6 +226,46 @@ class ModuleInstallerUtil
         }
 
     }
+
+    //------------------------------------------------------------------------------/
+    // REPO METHODS
+    //------------------------------------------------------------------------------/
+    public static function repoListIsOutOfDate()
+    {
+        $prefs = ModuleInstallerPreferences::getPreferences();
+        $id = MainRepoUtil::getRepoId();
+        if ($id === (int)$prefs['mainRepoId']) {
+            return false;
+        }
+        return true;
+    }
+
+    public static function updateRepoList()
+    {
+        $id = MainRepoUtil::getRepoId();
+        $list = MainRepoUtil::getModuleInfoList();
+        $prefs = [
+            'mainRepoId' => $id,
+        ];
+        ModuleInstallerPreferences::setPreferences($prefs);
+        RepoCachedListUtil::setCachedRepoList($list);
+    }
+
+    public static function updateModule($module)
+    {
+        //  we actually force the update of the module in this case
+        // i.e. the checkings have been done before
+        $list = RepoCachedListUtil::getCachedRepoList();
+        if (array_key_exists($module, $list)) {
+            $dstModuleDir = APP_ROOT_DIR . "/class-modules/$module";
+            $progressFile = ModuleInstallerConfig::getProgressFile();
+            MainRepoUtil::downloadModule($module, $dstModuleDir, function($file, $n, $count) use($progressFile){
+                az($file);
+                file_put_contents($progressFile, "$n/$count");
+            });
+        }
+    }
+
 
     //------------------------------------------------------------------------------/
     //

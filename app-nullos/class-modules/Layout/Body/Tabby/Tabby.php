@@ -4,17 +4,17 @@
 namespace Layout\Body\Tabby;
 
 
+use AssetsList\AssetsList;
 use Icons\Icons;
 use Layout\Body\GroupedItems\GroupedItems;
 use Layout\Body\Key2ValueForm\Key2ValueForm;
-use LayoutDynamicHead\LayoutDynamicHeadModule;
 
 class Tabby
 {
 
     public static function demo()
     {
-        LayoutDynamicHeadModule::registerCss('/style/tabby.css');
+        AssetsList::css('/style/tabby.css');
         ?>
         <div class="tabby">
             <div class="tabs">
@@ -96,7 +96,7 @@ class Tabby
 
     public static function demo2()
     {
-        LayoutDynamicHeadModule::registerCss('/style/tabby.css');
+        AssetsList::css('/style/tabby.css');
         ?>
         <div class="tabby">
             <div class="tabs">

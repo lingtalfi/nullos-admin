@@ -4,7 +4,7 @@
 namespace Layout\Body\GroupedItems;
 
 
-use LayoutDynamicHead\LayoutDynamicHeadModule;
+use AssetsList\AssetsList;
 
 class GroupedItemsLayout
 {
@@ -78,7 +78,7 @@ class GroupedItemsLayout
 
     public function display()
     {
-        LayoutDynamicHeadModule::registerCss('/style/grouped-items.css');
+        AssetsList::css('/style/grouped-items.css');
         $n = rand(0, 10000);
         $id = 'groupeditems-' . $n;
         $alphaId = $id . '-a';

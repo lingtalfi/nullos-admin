@@ -210,6 +210,64 @@ any token EXCEPT the one given.
 
 
 
+Another example: fetch the use statements in a file
+------------------------------------------
+
+Here is another useful example of how to use the SequenceMatcher.
+
+Again, it involves php tokens, and so we use 
+the TokenEntity from the [Tokens](https://github.com/lingtalfi/Tokens) planet as the concrete 
+thing that is iterated.
+
+ 
+```php
+<?php
+
+
+use SequenceMatcher\Model;
+use \SequenceMatcher\SequenceMatcher;
+use Tokens\SequenceMatcher\Element\TokenAlternateEntity;
+use Tokens\SequenceMatcher\Element\TokenEntity as TokenEntity;
+use Tokens\SequenceMatcher\Element\TokenGreedyEntity;
+use Tokens\Tokens;
+
+require_once "bigbang.php";
+
+
+$file = __FILE__;
+$tokens = token_get_all(file_get_contents($file));
+//az(Tokens::explicitTokenNames($tokens));
+
+$model = Model::create()
+    ->addElement(TokenEntity::create(T_USE, null))
+    ->addElement(TokenEntity::create(T_WHITESPACE, null), '?')
+    ->addElement(TokenAlternateEntity::create([T_STRING, T_NS_SEPARATOR]), null, 'a')
+    ->addElement(TokenGreedyEntity::create(null, ';'), '*', 'a')
+    ->addElement(TokenEntity::create(null, ';'));
+
+$sequence = $tokens;
+
+$markers = [];
+SequenceMatcher::create()
+    ->match($sequence, $model, function (array $matchedElements, array $matchedThings, array $_markers = null) use (&$markers) {
+        $markers[] = Tokens::concatenate($_markers['a']);
+    });
+
+a($markers);
+/**
+ * array (size=6)
+ * 0 => string 'SequenceMatcher\Model' (length=21)
+ * 1 => string '\SequenceMatcher\SequenceMatcher' (length=32)
+ * 2 => string 'Tokens\SequenceMatcher\Element\TokenAlternateEntity' (length=51)
+ * 3 => string 'Tokens\SequenceMatcher\Element\TokenEntity as TokenEntity' (length=57)
+ * 4 => string 'Tokens\SequenceMatcher\Element\TokenGreedyEntity' (length=48)
+ * 5 => string 'Tokens\Tokens' (length=13)
+ */
+```
+
+
+
+
 Replace things
 ==================
 

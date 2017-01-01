@@ -6,11 +6,11 @@ namespace Crud;
 
 use Installer\BaseModuleInstaller;
 use Installer\Saas\ModuleSaasInterface;
+use Installer\Universe\ModuleUniverseInterface;
 
 
-class CrudInstaller extends BaseModuleInstaller implements ModuleSaasInterface
+class CrudInstaller extends BaseModuleInstaller implements ModuleSaasInterface, ModuleUniverseInterface
 {
-
 
 
     protected function getSources()
@@ -44,4 +44,19 @@ class CrudInstaller extends BaseModuleInstaller implements ModuleSaasInterface
             'Layout.displayLeftMenuBlocks',
         ];
     }
+
+    public function getPlanetDependencies()
+    {
+        return [
+            'git::/lingtalfi/AdminTable',
+            'git::/lingtalfi/ArrayExport',
+            'git::/lingtalfi/ArrayToString',
+            'git::/lingtalfi/AssetsList',
+            'git::/lingtalfi/Bat',
+            'git::/lingtalfi/QuickForm',
+            'git::/lingtalfi/QuickPdo',
+        ];
+    }
+
+
 }

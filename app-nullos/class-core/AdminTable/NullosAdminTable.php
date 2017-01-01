@@ -6,14 +6,14 @@ namespace AdminTable;
 
 use AdminTable\Table\QuickAdminTable;
 use AdminTable\View\AdminTableRenderer;
-use LayoutDynamicHead\LayoutDynamicHeadModule;
+use AssetsList\AssetsList;
 
 class NullosAdminTable extends QuickAdminTable
 {
     public function __construct()
     {
         parent::__construct();
-        LayoutDynamicHeadModule::registerCss('/style/planets/adminTable/admintable.css');
+        AssetsList::css('/style/planets/adminTable/admintable.css');
         $this->setRenderer(AdminTableRenderer::create());
     }
 

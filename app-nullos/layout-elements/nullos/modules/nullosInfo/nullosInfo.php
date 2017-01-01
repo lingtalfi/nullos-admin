@@ -1,21 +1,16 @@
 <?php
 
+use AssetsList\AssetsList;
 use Layout\Body\Tabby\TabbyTabs;
 use Layout\Goofy;
-use LayoutDynamicHead\LayoutDynamicHeadModule;
 use NullosInfo\NullosInfoUtil;
-use QuickDoc\QuickDocConfig;
-use QuickDoc\QuickDocException;
-use QuickDoc\QuickDocUtil;
-use QuickDoc\Util\TodoUtil;
+use PublicException\PublicException;
 
-LayoutDynamicHeadModule::registerCss('/style/tabby.css');
-LayoutDynamicHeadModule::registerCss('/style/grouped-items.css');
+AssetsList::css('/style/tabby.css');
+AssetsList::css('/style/grouped-items.css');
 
 define('LL', 'modules/nullosInfo/nullosInfo');
 Spirit::set('ll', LL);
-
-
 
 
 $tab = "log-calls";
@@ -41,7 +36,7 @@ if (array_key_exists("tab", $_GET)) {
         <?php
         try {
             require_once __DIR__ . "/tabs/" . $tab . ".php";
-        } catch (QuickDocException $e) {
+        } catch (PublicException $e) {
             Goofy::alertError($e->getMessage());
         }
         ?>

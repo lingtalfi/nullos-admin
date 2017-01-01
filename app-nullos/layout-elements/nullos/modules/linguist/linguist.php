@@ -1,17 +1,14 @@
 <?php
 
+use AssetsList\AssetsList;
 use Layout\Body\Tabby\TabbyTabs;
 use Layout\Goofy;
-use LayoutDynamicHead\LayoutDynamicHeadModule;
-use Linguist\LinguistConfig;
 use Linguist\LinguistUtil;
-use QuickDoc\QuickDocConfig;
-use QuickDoc\QuickDocException;
-use QuickDoc\QuickDocUtil;
+use PublicException\PublicException;
 
 
-LayoutDynamicHeadModule::registerCss('/style/tabby.css');
-LayoutDynamicHeadModule::registerCss('/style/key2value-form.css');
+AssetsList::css('/style/tabby.css');
+AssetsList::css('/style/key2value-form.css');
 
 
 define('LL', 'modules/linguist/linguist');
@@ -47,7 +44,7 @@ if (array_key_exists("tab", $_GET)) {
         <?php
         try {
             require_once __DIR__ . "/tabs/" . $tab . ".php";
-        } catch (QuickDocException $e) {
+        } catch (PublicException $e) {
             Goofy::alertError($e->getMessage());
         }
         ?>

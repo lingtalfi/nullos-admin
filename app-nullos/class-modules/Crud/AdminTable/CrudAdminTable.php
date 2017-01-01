@@ -6,9 +6,9 @@ namespace Crud\AdminTable;
 
 use AdminTable\Listable\QuickPdoListable;
 use AdminTable\Table\QuickAdminTable;
+use AssetsList\AssetsList;
 use Crud\CrudConfig;
 use Crud\CrudHelper;
-use LayoutDynamicHead\LayoutDynamicHeadModule;
 use QuickPdo\QuickPdo;
 
 class CrudAdminTable extends QuickAdminTable
@@ -22,7 +22,7 @@ class CrudAdminTable extends QuickAdminTable
         parent::__construct();
         $this->table = $table;
 
-        LayoutDynamicHeadModule::registerCss('/style/planets/adminTable/admintable.css');
+        AssetsList::css('/style/planets/adminTable/admintable.css');
 
 
         $this->setListable(QuickPdoListable::create()

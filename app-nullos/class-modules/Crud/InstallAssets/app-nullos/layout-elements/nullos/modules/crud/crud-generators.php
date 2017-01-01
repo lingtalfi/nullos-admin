@@ -4,7 +4,6 @@ use Crud\Util\CrudFilesPreferencesGenerator;
 use Crud\Util\CrudFilesGenerator;
 use Crud\Util\LeftMenuPreferencesGenerator;
 use Layout\Goofy;
-use QuickForm\ControlFactory\MagicControlFactory;
 use QuickPdo\QuickPdo;
 use QuickPdo\QuickPdoInfoTool;
 
@@ -32,7 +31,6 @@ define('LL', $ll);
             }
         }
         $form2 = QuickFormZ::create();
-        $form2->addControlFactory(MagicControlFactory::create());
 
         $form2->title = __("Generate forms and lists", LL);
         $form2->labels = [

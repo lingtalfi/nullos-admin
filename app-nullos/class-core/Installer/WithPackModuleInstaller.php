@@ -20,6 +20,7 @@ abstract class WithPackModuleInstaller extends ModuleInstaller implements Packab
         $sources = $this->getSources();
         $targetDir = $this->getTargetDir();
         $sourceDir = $this->getSourceDir();
+        FileSystemTool::mkdir($sourceDir, 0777, true);
 
         foreach ($sources as $source) {
             $extSrc = $targetDir . '/' . $source;

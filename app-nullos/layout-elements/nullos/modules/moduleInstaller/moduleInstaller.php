@@ -1,18 +1,14 @@
 <?php
 
+use AssetsList\AssetsList;
 use Layout\Body\Tabby\TabbyTabs;
 use Layout\Goofy;
-use LayoutDynamicHead\LayoutDynamicHeadModule;
-use Linguist\LinguistConfig;
-use Linguist\LinguistUtil;
 use ModuleInstaller\ModuleInstallerUtil;
-use QuickDoc\QuickDocConfig;
 use QuickDoc\QuickDocException;
-use QuickDoc\QuickDocUtil;
 
 
-LayoutDynamicHeadModule::registerCss('/style/tabby.css');
-LayoutDynamicHeadModule::registerCss('/style/key2value-form.css');
+AssetsList::css('/style/tabby.css');
+AssetsList::css('/style/key2value-form.css');
 
 
 define('LL', 'modules/moduleInstaller/moduleInstaller');
@@ -22,22 +18,20 @@ Spirit::set('ll', LL);
 $tab = "modules";
 if (array_key_exists("tab", $_GET)) {
     $tab = $_GET['tab'];
-    if (false === in_array($tab, ['modules', 'help'])) {
+    if (false === in_array($tab, ['modules', 'help', 'tools', 'config', 'module'])) {
         $tab = "modules";
     }
 }
 
 
-//LayoutDynamicHeadModule::registerCssIf("/style/modules/linguist/linguist.css", LinguistConfig::getUri());
-
-
-
 ?>
-<div class="tabby quickdoc">
+<div class="tabby blues">
     <?php
     $tabs = TabbyTabs::create();
     $tabs->addLeftTab(__("Modules", LL), ModuleInstallerUtil::getTabUri("modules"))->icon('widgets');
+    $tabs->addLeftTab(__("Tools", LL), ModuleInstallerUtil::getTabUri("tools"))->icon('build');
     $tabs->addRightTab(__("Help", LL), ModuleInstallerUtil::getTabUri("help"))->icon("help");
+    $tabs->addRightTab(__("Config", LL), ModuleInstallerUtil::getTabUri("config"))->icon("settings");
     $tabs->display();
     ?>
 

@@ -8,6 +8,7 @@ use Installer\Installer;
 use Installer\Operation\Init\InitAutoloadOperation\InitAutoloadOperation;
 use Installer\Report\ReportInterface;
 use Installer\Saas\ModuleSaasInterface;
+use Installer\Universe\ModuleUniverseInterface;
 use Installer\WithPackModuleInstaller;
 
 
@@ -23,7 +24,7 @@ use Installer\WithPackModuleInstaller;
  * to the report.
  *
  */
-class FrontOneInstaller extends WithPackModuleInstaller implements ModuleSaasInterface
+class FrontOneInstaller extends WithPackModuleInstaller implements ModuleSaasInterface, ModuleUniverseInterface
 {
     public function install(ReportInterface $report)
     {
@@ -110,6 +111,14 @@ class FrontOneInstaller extends WithPackModuleInstaller implements ModuleSaasInt
         return [
             'Router.decorateUri2PagesMap',
             'Layout.displayLeftMenuBlocks',
+            'ModuleInfo.getFrontWebsites',
+        ];
+    }
+
+    public function getPlanetDependencies()
+    {
+        return [
+            'git::/lingtalfi/Installer',
         ];
     }
 

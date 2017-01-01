@@ -10,15 +10,11 @@ use Installer\BaseModuleInstaller;
 
 class LogWatcherInstaller extends BaseModuleInstaller implements ModuleSaasInterface
 {
-    protected function getLeftMenuPosition()
-    {
-        return 1001;
-    }
 
     public function getSubscriberServiceIds()
     {
         return [
-            'ToolsLeftMenuSection.displayToolsLeftMenuLinks',
+            'ToolsLeftMenuSection.displayToolsLeftMenuLinks:1001',
             'Router.decorateUri2PagesMap',
         ];
     }

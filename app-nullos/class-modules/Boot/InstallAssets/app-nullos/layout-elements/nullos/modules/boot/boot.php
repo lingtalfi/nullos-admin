@@ -1,19 +1,10 @@
 <?php
 
 
-use ArrayToString\ArrayToStringUtil;
-use ArrayToString\SymbolManager\PhpArrayToStringSymbolManager;
+
 use Boot\BootUtil;
-use Crud\CrudConfig;
-use Crud\CrudFormGenerator;
-use Crud\CrudGenHelper;
-use Crud\CrudListGenerator;
-use Crud\CrudModule;
 use Layout\Goofy;
-use QuickForm\QuickForm;
 use QuickPdo\QuickPdo;
-use QuickPdo\QuickPdoInfoTool;
-use QuickStart\QuickStartModule;
 
 
 $ll = 'modules/boot/boot';
@@ -50,6 +41,7 @@ define('LL', $ll); // translation context
             'language' => __("language", LL),
             'websiteName' => __('website name', LL),
             'timezone' => __('time zone', LL),
+            'useDb' => __('Use a database', LL),
             'dbName' => __('name', LL),
             'dbUser' => __('user', LL),
             'dbPass' => __('password', LL),
@@ -65,9 +57,12 @@ define('LL', $ll); // translation context
             'dbName',
             'dbUser',
             'dbPass',
+        ], [
+            'id' => 'boot-fieldset-dbinfo',
         ]);
         $form->defaultValues = [
             'websiteName' => __('My Website', LL),
+            'useDb' => 1,
             'dbUser' => 'root',
             'dbPass' => 'root',
         ];
@@ -88,26 +83,30 @@ define('LL', $ll); // translation context
         $form->addControl('language')->type('select', $langs)->addConstraint('required');
         $form->addControl('websiteName')->type('text', 'my website')->addConstraint('required');
         $form->addControl('timezone')->type('select', $tzIdentifiers)->value("Europe/Paris");
-        $form->addControl('dbName')->type('text', 'my_db')->addConstraint('required');
-        $form->addControl('dbUser')->type('text')->addConstraint('required');
+        $form->addControl('useDb')->type('revealingCheckbox', 'boot-fieldset-dbinfo');
+
+        $form->addControl('dbName')->type('text', 'my_db');
+        $form->addControl('dbUser')->type('text');
         $form->addControl('dbPass')->type('text');
 
 
         $form->formTreatmentFunc = function (array $formattedValues, &$msg) use ($langs, $form) {
-
             $lang = $formattedValues['language'];
             if (array_key_exists($lang, $langs)) {
                 try {
+                    $useDb = (bool)$formattedValues['useDb'];
                     $dbName = (string)$formattedValues['dbName'];
                     $dbUser = (string)$formattedValues['dbUser'];
                     $dbPass = (string)$formattedValues['dbPass'];
                     $websiteName = (string)$formattedValues['websiteName'];
                     $timeZone = (string)$formattedValues['timezone'];
 
-                    QuickPdo::setConnection("mysql:host=localhost;dbname=$dbName", $dbUser, $dbPass, [
-                        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
-                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    ]);
+                    if (true === $useDb) {
+                        QuickPdo::setConnection("mysql:host=localhost;dbname=$dbName", $dbUser, $dbPass, [
+                            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
+                            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                        ]);
+                    }
 
                     if (true === BootUtil::generateInitTmp([
                             'lang' => $lang,
@@ -120,6 +119,8 @@ define('LL', $ll); // translation context
                             'dbUserDistant' => $dbUser,
                             'dbPassDistant' => $dbPass,
 
+                        ], [
+                            'useDb' => (bool)$useDb,
                         ])
                     ) {
                         $msg = Goofy::alertSuccess(__("Congrats! The <b>init file</b> has been created", LL), true, true);

@@ -6,12 +6,11 @@ namespace ApplicationLog;
 
 use Installer\ModuleInstaller;
 use Installer\Saas\ModuleSaasInterface;
+use Installer\Universe\ModuleUniverseInterface;
 
 
-class ApplicationLogInstaller extends ModuleInstaller implements ModuleSaasInterface
+class ApplicationLogInstaller extends ModuleInstaller implements ModuleSaasInterface, ModuleUniverseInterface
 {
-
-
 
 
     //------------------------------------------------------------------------------/
@@ -23,4 +22,13 @@ class ApplicationLogInstaller extends ModuleInstaller implements ModuleSaasInter
             'LogWatcher.decorateLogToWatch',
         ];
     }
+
+    public function getPlanetDependencies()
+    {
+        return [
+            'git::/lingtalfi/Bat',
+        ];
+    }
+
+
 }

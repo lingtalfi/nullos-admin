@@ -51,6 +51,8 @@ abstract class ModulePreferences
         $ret = self::getPreferencesStore()->retrieve();
         if (0 === count($ret)) {
             $ret = static::getDefaultPreferences();
+        } else {
+            $ret = array_replace(static::getDefaultPreferences(), $ret);
         }
         return $ret;
     }

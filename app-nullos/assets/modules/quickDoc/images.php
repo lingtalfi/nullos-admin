@@ -202,7 +202,17 @@ $store = [
                 '[![oui-concours-debug-rows.png](https://s19.postimg.org/8ydj7zxer/oui_concours_debug_rows.png)](https://postimg.org/image/chzgxt04f/)',
             ],
         ],
-        '/tutorials/getting-started-with-nullos-admin.md' => [
+        '/tutorials/generate-admin-with-nullos.md' => [
+            [
+                'crud-generators-success',
+                '[![crud-generators-success.png](https://s19.postimg.org/jtr4y4e77/crud_generators_success.png)](https://postimg.org/image/nq4gu3z6n/)',
+            ],
+            [
+                'crud-generator-list',
+                '[![crud-generator-list.png](https://s19.postimg.org/9v66bn4rn/crud_generator_list.png)](https://postimg.org/image/khzzh2cwv/)',
+            ],
+        ],
+        '/tutorials/install-nullos-tutorial.md' => [
             [
                 'boot-success',
                 '[![boot-success.png](https://s19.postimg.org/6aaasf083/boot_success.png)](https://postimg.org/image/f5b52xp0f/)',
@@ -214,14 +224,6 @@ $store = [
             [
                 'execute-sql-from-favorites-success',
                 '[![execute-sql-from-favorites-success.png](https://s19.postimg.org/3lfi2duqr/execute_sql_from_favorites_success.png)](https://postimg.org/image/p7uijetb3/)',
-            ],
-            [
-                'crud-generators-success',
-                '[![crud-generators-success.png](https://s19.postimg.org/jtr4y4e77/crud_generators_success.png)](https://postimg.org/image/nq4gu3z6n/)',
-            ],
-            [
-                'crud-generator-list',
-                '[![crud-generator-list.png](https://s19.postimg.org/9v66bn4rn/crud_generator_list.png)](https://postimg.org/image/khzzh2cwv/)',
             ],
         ],
         '/tutorials/install-oui-database.md' => [
@@ -235,6 +237,24 @@ $store = [
         '/modules/quickdoc-module.md' => [
             [
                 'image',
+            ],
+        ],
+        '/tutorials/install-frontone.md' => [
+            [
+                'module-installer-page',
+            ],
+            [
+                'front-one-admin-left-menu',
+            ],
+        ],
+        '/tutorials/install-module-tutorial.md' => [
+            [
+                'Module installer gui page',
+            ],
+        ],
+        '/tutorials/install-nullos-tutorial.md' => [
+            [
+                'oui-schema.png',
             ],
         ],
     ],

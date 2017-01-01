@@ -128,12 +128,16 @@ $store = [
         ],
         '/core/nullos-permissions.md' => [
             [
-                'linguist module',
-                'modules/linguist-module.md',
+                'Saas system',
+                'modules/module-concepts/saas.md',
             ],
             [
                 'crud module',
                 'modules/crud-module.md',
+            ],
+            [
+                'linguist module',
+                'modules/linguist-module.md',
             ],
             [
                 'application log module',
@@ -348,6 +352,12 @@ $store = [
                 'modules/lang-module/translation-files.md',
             ],
         ],
+        '/modules/module-concepts/module-repository-system.md' => [
+            [
+                'ModuleInstaller module',
+                'modules/moduleinstaller-module.md',
+            ],
+        ],
         '/modules/module-concepts/module.md' => [
             [
                 'module installer page',
@@ -356,10 +366,6 @@ $store = [
             [
                 'saas system',
                 'modules/module-concepts/saas.md',
-            ],
-            [
-                'ModuleInstaller module',
-                'modules/moduleinstaller-module.md',
             ],
             [
                 'module installer module page',
@@ -376,10 +382,6 @@ $store = [
             [
                 'moduleinstaller page',
                 'modules/moduleinstaller-module.md',
-            ],
-            [
-                'Saas system',
-                'modules/module-concepts/saas.md',
             ],
         ],
         '/modules/quickdoc-module.md' => [
@@ -414,14 +416,10 @@ $store = [
                 'modules/crud-module/ric.md',
             ],
         ],
-        '/tutorials/getting-started-with-nullos-admin.md' => [
+        '/tutorials/install-nullos-tutorial.md' => [
             [
                 'nullos permissions',
                 'core/nullos-permissions.md',
-            ],
-            [
-                'oui-schema',
-                'assets/oui-schema.png',
             ],
             [
                 'SqlTools module',
@@ -444,14 +442,32 @@ $store = [
         ],
     ],
     'unfound' => [
+        '/core/nullos-permissions.md' => [
+            [
+                'boot module',
+            ],
+            [
+                'Module installer',
+            ],
+        ],
         '/modules/crud-module/crud-files.md' => [
             [
                 'configure a form',
             ],
         ],
+        '/modules/layout-module/main-layout-styling.md' => [
+            [
+                'moduleInstaller module',
+            ],
+        ],
         '/modules/layout-module.md' => [
             [
                 'main nullos layout',
+            ],
+        ],
+        '/modules/module-concepts/module-repository-system.md' => [
+            [
+                'babyYaml',
             ],
         ],
         '/modules/quickdoc-module.md' => [
@@ -462,6 +478,47 @@ $store = [
         '/tutorials/configure-a-list.md' => [
             [
                 'Configure a form',
+            ],
+        ],
+        '/tutorials/generate-admin-with-nullos.md' => [
+            [
+                'install nullos app tutorial',
+            ],
+            [
+                'install a module tutorial',
+            ],
+            [
+                'crud module page',
+            ],
+            [
+                'Crud module documentation',
+            ],
+            [
+                'sql tools built-in in module',
+            ],
+        ],
+        '/tutorials/install-frontone.md' => [
+            [
+                'FrontOne',
+            ],
+            [
+                'install nullos tutorial',
+            ],
+            [
+                'frontOne module documentation',
+            ],
+        ],
+        '/tutorials/install-module-tutorial.md' => [
+            [
+                'ModuleInstaller module page',
+            ],
+        ],
+        '/tutorials/install-nullos-tutorial.md' => [
+            [
+                'boot init page',
+            ],
+            [
+                'MysqlWorkBench',
             ],
         ],
     ],

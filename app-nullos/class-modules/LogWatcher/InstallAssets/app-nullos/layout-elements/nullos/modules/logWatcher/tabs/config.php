@@ -1,12 +1,8 @@
 <?php
 
 
-use Bat\FileSystemTool;
-use Linguist\LinguistConfig;
-use Linguist\LinguistUtil;
-use Linguist\Util\LinguistScanner;
+
 use LogWatcher\LogWatcherPreferences;
-use QuickDoc\QuickDocUtil;
 
 $form = QuickFormZ::create();
 $form->title = __("Configuration", LL);

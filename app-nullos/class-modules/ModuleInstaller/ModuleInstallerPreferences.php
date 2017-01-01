@@ -10,7 +10,10 @@ class ModuleInstallerPreferences extends ModulePreferences
 
     public static function getDefaultPreferences()
     {
-        return [];
+        return [
+            'warpZone' => '/tmp/explorer-script/warp',
+            'mainRepoId' => 0,
+        ];
     }
 
 }

@@ -1,16 +1,16 @@
 <?php
 
+use AssetsList\AssetsList;
 use Layout\Body\Tabby\TabbyTabs;
 use Layout\Goofy;
-use LayoutDynamicHead\LayoutDynamicHeadModule;
-use QuickDoc\QuickDocConfig;
 use QuickDoc\QuickDocException;
 use QuickDoc\QuickDocPreferences;
 use QuickDoc\QuickDocUtil;
 use QuickDoc\Util\TodoUtil;
 
-LayoutDynamicHeadModule::registerCss('/style/tabby.css');
-LayoutDynamicHeadModule::registerCss('/style/key2value-form.css');
+AssetsList::css('/style/tabby.css');
+AssetsList::css('/style/key2value-form.css');
+AssetsList::css("/style/modules/quickDoc/quickDoc.css");
 
 define('LL', 'modules/quickDoc/quickDoc');
 Spirit::set('ll', LL);
@@ -35,7 +35,7 @@ $nMissingImages = QuickDocUtil::countUnfoundItemsByName("images");
 $nTodos = TodoUtil::getCountTodos();
 
 
-LayoutDynamicHeadModule::registerCssIf("/style/modules/quickDoc/quickDoc.css", QuickDocConfig::getUri());
+
 
 ?>
 <div class="tabby quickdoc">

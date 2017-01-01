@@ -1,6 +1,7 @@
 <?php
 
 namespace Layout;
+
 use Icons\Icons;
 
 
@@ -68,6 +69,24 @@ class Goofy
         ?>
         <div class="alert alert-error flexc">
             <span class="icon-span"><?php echo Icons::printIcon('warning', '#d21c1c', 48); ?></span>
+            <div>
+                <span class="text"><?php echo $msg; ?></span>
+            </div>
+        </div>
+        <?php
+        if (true === $return) {
+            return ob_get_clean();
+        }
+    }
+
+    public static function alertInfo($msg, $return = false)
+    {
+        if (true === $return) {
+            ob_start();
+        }
+        ?>
+        <div class="alert alert-info flexc">
+            <span class="icon-span"><?php echo Icons::printIcon('info', '#31708f', 48); ?></span>
             <div>
                 <span class="text"><?php echo $msg; ?></span>
             </div>

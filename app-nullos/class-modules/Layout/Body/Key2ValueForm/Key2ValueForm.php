@@ -4,7 +4,8 @@
 namespace Layout\Body\Key2ValueForm;
 
 
-use LayoutDynamicHead\LayoutDynamicHeadModule;
+
+use AssetsList\AssetsList;
 
 class Key2ValueForm
 {
@@ -12,7 +13,7 @@ class Key2ValueForm
 
     public static function demo()
     {
-        LayoutDynamicHeadModule::registerCss('/style/key2value-form.css');
+        AssetsList::css('/style/key2value-form.css');
         ?>
         <form action="" method="post" class="key2value-form">
             <table>

@@ -50,8 +50,9 @@ class TreeUtil
             };
         }
         if (null === $transformer) {
-            $transformer = function ($file) {
-                return '[' . $file . '](' . self::$prefix . $file . ')';
+            $n = strlen($srcDir) + 1;
+            $transformer = function ($file, $realFile) use ($n) {
+                return '[' . $file . '](' . self::$prefix . substr($realFile, $n) . ')';
             };
         }
         self::scan($string, $srcDir, $filter, $transformer, 1);
@@ -69,10 +70,10 @@ class TreeUtil
                 $realFile = $dir . '/' . $file;
                 if (true === call_user_func($filter, $file, $realFile, $level)) {
                     if (is_dir($realFile)) {
-                        self::decorate($string, $level, $transformer, $file);
+                        self::decorate($string, $level, $transformer, $file, $realFile);
                         self::scan($string, $realFile, $filter, $transformer, $level + 1);
                     } else {
-                        self::decorate($string, $level, $transformer, $file);
+                        self::decorate($string, $level, $transformer, $file, $realFile);
                     }
                 }
             }
@@ -80,10 +81,10 @@ class TreeUtil
     }
 
 
-    private static function decorate(&$string, $level, $transformer, $file)
+    private static function decorate(&$string, $level, $transformer, $file, $realFile)
     {
         $string .= str_repeat(' ', $level * 2);
-        $string .= '- ' . call_user_func($transformer, $file);
+        $string .= '- ' . call_user_func($transformer, $file, $realFile);
         $string .= PHP_EOL;
     }
 

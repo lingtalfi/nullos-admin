@@ -17,6 +17,9 @@ body.holygrail {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 20px 0 0;
+    background: #ddd;
 }
 
 .body {
@@ -230,9 +233,17 @@ body.holygrail {
     text-align: center;
 }
 
+.tal {
+    text-align: left;
+}
+
 .bignose {
     /*font-size: 1.2em;*/
     /*line-height: 1.6em;*/
+}
+
+.mt20 {
+    margin-top: 20px;
 }
 
 .pad {
@@ -302,6 +313,12 @@ body.holygrail {
     color: #a94442;
 }
 
+.alert-info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+
 .alert-error .icon-span {
     margin-right: 10px;
 }
@@ -360,6 +377,16 @@ body.holygrail {
     fill: #ca6310;
 }
 
+.whiteboard {
+    background: white;
+    color: black;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    padding: 20px;
+    line-height: 1.3em;
+    font-size: 1em;
+}
+
 /*------------------------------------
 - DATATABLE
 ------------------------------------*/
@@ -414,7 +441,7 @@ body.holygrail {
     flex: auto;
 }
 
-.form input,
+.form input:not([type="checkbox"]),
 .form textarea,
 .form select {
     width: 100%;
@@ -429,7 +456,7 @@ body.holygrail {
 }
 
 .form .autowidth {
-    width: auto;
+    width: auto !important;
 }
 
 .form hr {

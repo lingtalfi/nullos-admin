@@ -4,14 +4,14 @@
 namespace Layout\Body\GroupedItems;
 
 
-use LayoutDynamicHead\LayoutDynamicHeadModule;
+use AssetsList\AssetsList;
 
 class GroupedItems
 {
 
     public static function demo()
     {
-        LayoutDynamicHeadModule::registerCss('/style/grouped-items.css');
+        AssetsList::css('/style/grouped-items.css');
         ?>
         <div class="body-top">
             <div class="box">

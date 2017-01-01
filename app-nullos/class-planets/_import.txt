@@ -2,11 +2,15 @@ AdminTable
 ArrayExport
 ArrayStore
 ArrayToString
+AssetsList
+BabyYaml
 Bat
 BumbleBee
 CopyDir
 DirScanner
 DirTransformer
+Explorer
+FileCreator
 Icons
 Installer
 LogSlicer

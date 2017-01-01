@@ -3,7 +3,6 @@
 
 use Boot\BootBridge;
 use Layout\Goofy;
-use QuickForm\ControlFactory\MagicControlFactory;
 
 $ll = 'modules/boot/boot';
 Spirit::set('ll', $ll);
@@ -24,7 +23,6 @@ define('LL', $ll);
 
 
     $form = QuickFormZ::create();
-    $form->addControlFactory(MagicControlFactory::create());
 
     $_resetOptions = [];
     $resetOptions = [];

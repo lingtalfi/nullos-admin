@@ -41,9 +41,9 @@ class DeployFileOperation implements OperationInterface
     public function execute(ReportInterface $report)
     {
         if (!is_dir($this->srcDir)) {
-            $this->abort("Source dir must exist");
+            $this->abort("Source dir must exist (" . $this->srcDir . ")");
         } elseif (!is_dir($this->dstDir)) {
-            $this->abort("Destination dir must exist");
+            $this->abort("Destination dir must exist (" . $this->dstDir . ")");
         } else {
             $errors = [];
             FileSystemTool::copyDir($this->srcDir, $this->dstDir, true, $errors);

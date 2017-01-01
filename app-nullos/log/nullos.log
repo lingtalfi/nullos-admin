@@ -540,3 +540,31 @@ Stack trace:
 #7 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php(68): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php')
 #8 {main}
 
+moduleInstaller.modulesList -- 2016-12-30 20:35:22
+----------
+exception 'Exception' with message 'Invalid dependency syntax, missing the ::/ symbol' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe/planets/Explorer/Util/MaculusExplorerUtil.php:26
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/Universe/ModuleUniverseInstaller.php(24): Explorer\Util\MaculusExplorerUtil::getDependencyInfo('AssetsList')
+#1 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php(102): ModuleInstaller\Universe\ModuleUniverseInstaller::installPlanets(Linguist\LinguistInstaller, Installer\Report\Report)
+#2 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php(30): ModuleInstaller\ModuleInstallerUtil::installModule('Linguist')
+#3 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php(43): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php')
+#4 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Layout/Layout.php(152): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php')
+#5 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Layout/Layout.php(66): Layout\Layout->includeElement('body')
+#6 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php(8): Layout\Layout->display()
+#7 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php(74): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php')
+#8 {main}
+
+moduleInstaller.modulesList -- 2016-12-30 20:40:25
+----------
+exception 'Exception' with message 'Invalid dependency syntax, missing the ::/ symbol' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/universe/planets/Explorer/Util/MaculusExplorerUtil.php:26
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/Universe/ModuleUniverseInstaller.php(24): Explorer\Util\MaculusExplorerUtil::getDependencyInfo('AssetsList')
+#1 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleInstallerUtil.php(102): ModuleInstaller\Universe\ModuleUniverseInstaller::installPlanets(Linguist\LinguistInstaller, Installer\Report\Report)
+#2 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php(30): ModuleInstaller\ModuleInstallerUtil::installModule('Linguist')
+#3 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php(43): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/tabs/modules.php')
+#4 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Layout/Layout.php(152): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/layout-elements/nullos/modules/moduleInstaller/moduleInstaller.php')
+#5 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Layout/Layout.php(66): Layout\Layout->includeElement('body')
+#6 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php(8): Layout\Layout->display()
+#7 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php(74): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php')
+#8 {main}
+

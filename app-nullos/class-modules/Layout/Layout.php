@@ -2,6 +2,7 @@
 
 namespace Layout;
 
+use AssetsList\AssetsList;
 use Icons\Icons;
 use Icons\IconsFactory;
 
@@ -121,6 +122,8 @@ class Layout
         </body>
         <?php
         $body = ob_get_clean();
+
+
         ?>
 
 
@@ -135,9 +138,7 @@ class Layout
             <script src="<?php echo url('/libs/zquery/zquery.js'); ?>"></script>
             <script src="<?php echo url('/libs/split/split.js'); ?>"></script>
             <?php
-            $assets = new AssetsList();
-            LayoutServices::registerAssets($assets);
-            $assets->displayList();
+            AssetsList::displayList();
             ?>
         </head>
         <?php echo $body; ?>

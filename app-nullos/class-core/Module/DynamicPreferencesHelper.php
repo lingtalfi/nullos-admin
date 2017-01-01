@@ -34,4 +34,14 @@ class DynamicPreferencesHelper
         }
         return $default;
     }
+
+    public static function getP($key, array $prefs, $default = null)
+    {
+        if (array_key_exists($key, $_POST)) {
+            return $_POST[$key];
+        } elseif (array_key_exists('_' . $key, $prefs)) {
+            return $prefs['_' . $key];
+        }
+        return $default;
+    }
 }

@@ -84,8 +84,8 @@ class FrontOneInstaller
          *
          *
          * Hook into:
-         * - class/Router/RouterBridge
-         * - class/Layout/LayoutBridge
+         * - class/Router/RouterServices
+         * - class/Layout/LayoutServices
          * - init.php (autoloader)
          */
         $installer = new Installer();
@@ -128,6 +128,10 @@ History Log
 ------------------
 
 
+- 1.2.2 -- 2016-12-27
+
+    - add debug some error message precision 
+    
 - 1.2.1 -- 2016-12-25
 
     - fix forget interface

@@ -1,7 +1,6 @@
 <?php
 
 
-
 namespace Tokens\SequenceMatcher\Util;
 
 
@@ -26,7 +25,11 @@ class TokensSequenceMatcherUtil
                 if (is_string($tokenIdentifier)) {
                     $ret[$id][] = $tokenIdentifier;
                 } else {
-                    $ret[$id][] = TokenUtil::deEncapsulate($tokenIdentifier[1]);
+                    $value = $tokenIdentifier[1];
+                    if (T_CONSTANT_ENCAPSED_STRING === $tokenIdentifier[0]) {
+                        $value = TokenUtil::deEncapsulate($value);
+                    }
+                    $ret[$id][] = $value;
                 }
             }
         }

@@ -3,6 +3,7 @@
 $store = [
     'LogWatcher' => 'installed',
     'Linguist' => 'installed',
-    'FrontOne' => 'uninstalled',
-    'Crud' => 'uninstalled',
+    'FrontOne' => 'installed',
+    'Crud' => 'installed',
+    'Counter' => 'installed',
 ];

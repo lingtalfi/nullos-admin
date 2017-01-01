@@ -35,13 +35,21 @@ class FrontOneModule
                 <?php LayoutHelper::displayLeftMenuExpandableTitle(__("Front", $ll)); ?>
                 <ul class="linkslist">
                     <li><a href="<?php echo FrontOneConfig::getThemeUri(); ?>"><?php echo __("Theme", $ll); ?></a></li>
-                    <li><a href="<?php echo FrontOneConfig::getArticlesUri(); ?>"><?php echo __("Articles", $ll); ?></a></li>
-                    <li><a href="<?php echo FrontOneConfig::getSocialUri(); ?>"><?php echo __("Social links", $ll); ?></a></li>
+                    <li><a href="<?php echo FrontOneConfig::getArticlesUri(); ?>"><?php echo __("Articles", $ll); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo FrontOneConfig::getSocialUri(); ?>"><?php echo __("Social links", $ll); ?></a>
+                    </li>
                 </ul>
             </section>
             <?php
         endif;
 
+    }
+
+    public static function getFrontWebsites(array &$fronts)
+    {
+        $fronts['FrontOne'] = APP_ROOT_DIR . "/../app-vitrine-one";
     }
 
 

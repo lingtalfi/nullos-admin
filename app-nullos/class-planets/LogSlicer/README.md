@@ -61,12 +61,12 @@ Concrete example
 Here is my example log file.
 
 ```txt
-[220-Dec-2016 16:33:19 Europe/Paris] PHP Fatal error:  Class 'Installer\Operation\LayoutBridge\ReflectionClass' not found in /Users/me/somepath/class/Installer/Operation/LayoutBridge/LayoutBridgeDisplayLeftMenuBlocksOperation.php on line 22
+[220-Dec-2016 16:33:19 Europe/Paris] PHP Fatal error:  Class 'Installer\Operation\LayoutServices\ReflectionClass' not found in /Users/me/somepath/class/Installer/Operation/LayoutServices/LayoutBridgeDisplayLeftMenuBlocksOperation.php on line 22
 [22-Dec-2016 16:33:19 Europe/Paris] PHP Stack trace:
 [22-Dec-2016 16:33:19 Europe/Paris] PHP   1. {main}() /Users/me/somepath/www/index.tmp.php:0
 [22-Dec-2016 16:33:19 Europe/Paris] PHP   2. FrontOne\FrontOneInstaller::install() /Users/me/somepath/www/index.tmp.php:17
 [226-Dec-2016 16:33:19 Europe/Paris] PHP   3. Installer\Installer->run() /Users/me/somepath/class-modules/FrontOne/FrontOneInstaller.php:50
-[227-Dec-2016 16:33:19 Europe/Paris] PHP   4. Installer\Operation\LayoutBridge\LayoutBridgeDisplayLeftMenuBlocksOperation->execute() /Users/me/somepath/class/Installer/Installer.php:49
+[227-Dec-2016 16:33:19 Europe/Paris] PHP   4. Installer\Operation\LayoutServices\LayoutBridgeDisplayLeftMenuBlocksOperation->execute() /Users/me/somepath/class/Installer/Installer.php:49
 [22-Dec-2016 19:14:13 Europe/Paris] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, no array or string given in /Users/me/somepath/class/Installer/Operation/Util/ArrayTransformer.php on line 21
 [229-Dec-2016 19:14:13 Europe/Paris] PHP Stack trace:
 [22-Dec-2016 19:14:13 Europe/Paris] PHP   1. {main}() /Users/me/somepath/www/index.tmp.php:0
@@ -124,14 +124,14 @@ And here is the output:
 
 ```txt
 array (size=5)
-  0 => string '[220-Dec-2016 16:33:19 Europe/Paris] PHP Fatal error:  Class 'Installer\Operation\LayoutBridge\ReflectionClass' not found in /Users/me/somepath/class/Installer/Operation/LayoutBridge/LayoutBridgeDisplayLeftMenuBlocksOperation.php on line 22' (length=240)
+  0 => string '[220-Dec-2016 16:33:19 Europe/Paris] PHP Fatal error:  Class 'Installer\Operation\LayoutServices\ReflectionClass' not found in /Users/me/somepath/class/Installer/Operation/LayoutServices/LayoutBridgeDisplayLeftMenuBlocksOperation.php on line 22' (length=240)
   1 => string '[22-Dec-2016 16:33:19 Europe/Paris] PHP Stack trace:' (length=52)
   2 => string '[22-Dec-2016 16:33:19 Europe/Paris] PHP   1. {main}() /Users/me/somepath/www/index.tmp.php:0' (length=92)
   3 => string '[22-Dec-2016 16:33:19 Europe/Paris] PHP   2. FrontOne\FrontOneInstaller::install() /Users/me/somepath/www/index.tmp.php:17' (length=122)
   4 => string '[226-Dec-2016 16:33:19 Europe/Paris] PHP   3. Installer\Installer->run() /Users/me/somepath/class-modules/FrontOne/FrontOneInstaller.php:50' (length=139)
 
 array (size=5)
-  0 => string '[227-Dec-2016 16:33:19 Europe/Paris] PHP   4. Installer\Operation\LayoutBridge\LayoutBridgeDisplayLeftMenuBlocksOperation->execute() /Users/me/somepath/class/Installer/Installer.php:49' (length=184)
+  0 => string '[227-Dec-2016 16:33:19 Europe/Paris] PHP   4. Installer\Operation\LayoutServices\LayoutBridgeDisplayLeftMenuBlocksOperation->execute() /Users/me/somepath/class/Installer/Installer.php:49' (length=184)
   1 => string '[22-Dec-2016 19:14:13 Europe/Paris] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, no array or string given in /Users/me/somepath/class/Installer/Operation/Util/ArrayTransformer.php on line 21' (length=226)
   2 => string '[229-Dec-2016 19:14:13 Europe/Paris] PHP Stack trace:' (length=53)
   3 => string '[22-Dec-2016 19:14:13 Europe/Paris] PHP   1. {main}() /Users/me/somepath/www/index.tmp.php:0' (length=92)
@@ -154,14 +154,14 @@ array (size=5)
 array (size=5)
   0 => string '[229-Dec-2016 19:14:13 Europe/Paris] PHP Stack trace:' (length=53)
   1 => string '[22-Dec-2016 19:14:13 Europe/Paris] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, no array or string given in /Users/me/somepath/class/Installer/Operation/Util/ArrayTransformer.php on line 21' (length=226)
-  2 => string '[227-Dec-2016 16:33:19 Europe/Paris] PHP   4. Installer\Operation\LayoutBridge\LayoutBridgeDisplayLeftMenuBlocksOperation->execute() /Users/me/somepath/class/Installer/Installer.php:49' (length=184)
+  2 => string '[227-Dec-2016 16:33:19 Europe/Paris] PHP   4. Installer\Operation\LayoutServices\LayoutBridgeDisplayLeftMenuBlocksOperation->execute() /Users/me/somepath/class/Installer/Installer.php:49' (length=184)
   3 => string '[226-Dec-2016 16:33:19 Europe/Paris] PHP   3. Installer\Installer->run() /Users/me/somepath/class-modules/FrontOne/FrontOneInstaller.php:50' (length=139)
   4 => string '[22-Dec-2016 16:33:19 Europe/Paris] PHP   2. FrontOne\FrontOneInstaller::install() /Users/me/somepath/www/index.tmp.php:17' (length=122)
 
 array (size=3)
   0 => string '[22-Dec-2016 16:33:19 Europe/Paris] PHP   1. {main}() /Users/me/somepath/www/index.tmp.php:0' (length=92)
   1 => string '[22-Dec-2016 16:33:19 Europe/Paris] PHP Stack trace:' (length=52)
-  2 => string '[220-Dec-2016 16:33:19 Europe/Paris] PHP Fatal error:  Class 'Installer\Operation\LayoutBridge\ReflectionClass' not found in /Users/me/somepath/class/Installer/Operation/LayoutBridge/LayoutBridgeDisplayLeftMenuBlocksOperation.php on line 22' (length=240)
+  2 => string '[220-Dec-2016 16:33:19 Europe/Paris] PHP Fatal error:  Class 'Installer\Operation\LayoutServices\ReflectionClass' not found in /Users/me/somepath/class/Installer/Operation/LayoutServices/LayoutBridgeDisplayLeftMenuBlocksOperation.php on line 22' (length=240)
 
 ```
 

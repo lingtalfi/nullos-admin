@@ -1,6 +1,6 @@
 QuickDoc module
 ===================
-2016-12-19
+2016-12-19 -- 2016-12-26
 
 
 
@@ -25,7 +25,7 @@ Doing so, I discovered other benefits of having an abstract doc:
 - easier to write the doc (you don't need to fetch a link somewhere else, so you stay focus)
 
 
-I then added a few more tools: the toc converter, and a todo scanner.
+I then added a few more tools: the toc converter, a todo scanner, and a tree scanner.
 
 
 

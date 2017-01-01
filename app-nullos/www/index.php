@@ -42,12 +42,17 @@ if (PrivilegeUser::isConnected()) {
 
         RouterServices::decorateUri2PagesMap($uri2pagesMap);
 
+
         /**
          * This is the router code, you shouldn't edit below this line
          */
         $uri = explode('?', $_SERVER['REQUEST_URI'])[0];
         if ('' !== URL_PREFIX && URL_PREFIX === substr($uri, 0, strlen(URL_PREFIX))) {
             $uri = substr($uri, strlen(URL_PREFIX));
+        }
+
+        if (strlen($uri) > 1) {
+            $uri = rtrim($uri, '/'); // I had the problem with /stats/ instead of /stats, not sure why
         }
         Spirit::set('uri', $uri);
 
@@ -56,6 +61,7 @@ if (PrivilegeUser::isConnected()) {
         if (array_key_exists($uri, $uri2pagesMap)) {
             $page = $uri2pagesMap[$uri];
         }
+
     } else {
         $page = BootConfig::getBootPage();
         Spirit::set('uri', BootConfig::getBootUri());
@@ -67,3 +73,4 @@ if (PrivilegeUser::isConnected()) {
 
 require_once APP_ROOT_DIR . "/pages/" . $page;
 echo ob_get_clean();
+

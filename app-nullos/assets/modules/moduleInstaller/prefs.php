@@ -1,8 +1,6 @@
 <?php
 
 $store = [
-    'LogWatcher' => 'installed',
-    'Linguist' => 'installed',
-    'FrontOne' => 'uninstalled',
-    'Crud' => 'uninstalled',
+    'warpZone' => '/tmp/explorer-script/warp',
+    'mainRepoId' => 3,
 ];

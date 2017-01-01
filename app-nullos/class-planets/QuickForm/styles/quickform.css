@@ -35,7 +35,7 @@
     flex: auto;
 }
 
-.form input,
+.form input:not([type="checkbox"]),
 .form textarea,
 .form select {
     width: 100%;

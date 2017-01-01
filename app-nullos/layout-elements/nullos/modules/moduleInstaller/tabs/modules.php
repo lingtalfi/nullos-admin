@@ -4,6 +4,7 @@
 use AdminTable\Listable\ArrayListable;
 use AdminTable\NullosAdminTable;
 use AdminTable\Table\ListWidgets;
+use Http\HttpResponseUtil;
 use Layout\Goofy;
 use ModuleInstaller\Exception\ReportException;
 use ModuleInstaller\ModuleInstallerUtil;
@@ -14,7 +15,20 @@ use PublicException\PublicException;
     <div class="tac bignose install-page">
         <h3><?php echo __("Modules", LL); ?></h3>
     </div>
+
 <?php
+
+if (true === ModuleInstallerUtil::repoListIsOutOfDate()) {
+    Goofy::alertInfo(__("A new version of the \"module information list\" is available.", LL) .
+        '<br>' .
+        '<a href="' . url(null, ['update' => '1']) . '">Click here to update the list</a>.'
+    );
+    if (array_key_exists("update", $_GET)) {
+        ModuleInstallerUtil::updateRepoList();
+        HttpResponseUtil::redirect(ModuleInstallerUtil::getTabUri('modules'));
+    }
+}
+
 
 if (
     array_key_exists('ric', $_POST) &&
@@ -41,6 +55,9 @@ if (
         } elseif ('remove' === $value) {
             ModuleInstallerUtil::removeModule($name);
             $msg = __("The module was successfully removed", LL);
+        } elseif ('update' === $value) {
+            $msg = __("The module was successfully updated", LL);
+            ModuleInstallerUtil::updateModule($name);
         } else {
             throw new \Exception("Unknown value type: $value");
         }
@@ -72,6 +89,7 @@ $list = NullosAdminTable::create()
 
 
 $list->showCheckboxes = false;
+$list->hiddenColumns = ['lastVersion'];
 
 
 $list->setTransformer('installer', function ($v, $item, $ricValue) {
@@ -104,6 +122,13 @@ $list->setTransformer('core', function ($v, $item, $ricValue) {
     return '';
 });
 
+$list->setTransformer('version', function ($v, $item, $ricValue) {
+    if ($item['lastVersion'] !== $v) {
+        return $v . ' -- ' . $item['lastVersion'] . ' available (<a data-action="update" data-ric="' . $ricValue . '" class="action-link postlink confirmlink" href="#">update</a>)';
+    }
+    return $v;
+});
+
 
 $classes = [
     'unknown' => 'black',
@@ -114,6 +139,10 @@ $list->setTransformer('state', function ($v, $item) use ($classes) {
 
     $class = $classes[$v];
     return '<span style="color: ' . $class . '">' . $v . '</span>';
+});
+
+$list->setTransformer('name', function ($v, $item) {
+    return '<a href="' . ModuleInstallerUtil::getTabUri('module', ['module' => $v]) . '">' . $v . '</a>';
 });
 
 
@@ -131,8 +160,21 @@ $list->setTransformer('state', function ($v, $item) use ($classes) {
                 e.preventDefault();
                 e.target.parentNode.submit();
             });
+
+
+            var url = '/services/progress.txt';
+            setInterval(function(){
+                z.ajaxGet(url, function(msg){
+                    console.log(msg);
+                });
+            }, 1000);
+
+
+
+
         </script>
     </div>
+
 <?php
 
 $list->displayTable();

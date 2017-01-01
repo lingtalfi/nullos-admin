@@ -55,19 +55,20 @@ function __($identifier, $context = 'default', array $tags = [])
     // use the loaded definitions and check if there is a matching identifier
     if (array_key_exists($identifier, $defs)) {
         $value = $defs[$identifier];
-        if (count($tags) > 0) {
-            $ks = array_map(function ($v) {
-                return '{' . $v . '}';
-            }, array_keys($tags));
-            $vs = array_values($tags);
-            $value = str_replace($ks, $vs, $value);
-        }
-        return $value;
+
     } else {
         // error?
-        return $identifier;
-        throw new \Exception("__ error: dictionary term not found: " . $identifier);
+        $value = $identifier;
+//        throw new \Exception("__ error: dictionary term not found: " . $identifier);
     }
+    if (count($tags) > 0) {
+        $ks = array_map(function ($v) {
+            return '{' . $v . '}';
+        }, array_keys($tags));
+        $vs = array_values($tags);
+        $value = str_replace($ks, $vs, $value);
+    }
+    return $value;
 }
 
 function ___()

@@ -35,8 +35,8 @@ The configuration of your module is stored in the following locations:
 - **MyModuleConfig**, contains the core config of your module (important paths, other things...)
 - **MyModuleServices**, offer services to other modules (see the <-saas system-> for more details)
 - **MyModuleModule**, subscribe to other module's services (see the <-saas system-> for more details).
-- **MyModuleUtil**, I believe this class should be used as a private interface of the module.
-            Basically, the remote of the module, which triggers its most requested features.
+- **MyModuleUtil**, I believe this class should be used as a (preferably private) interface of the module.
+            Basically, it would be the remote of the module, which triggers its most requested features.
 - **MyModule/Util/**, this directory should contain the Utilities used by the module.
                     The most used utilities might be referenced in the **MyModuleUtil** class.
 - **MyModuleInstaller**, create this class and implement ModuleInstallerInterface to have the <-ModuleInstaller module->

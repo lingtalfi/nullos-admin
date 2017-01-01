@@ -51,6 +51,7 @@ class MagicControlFactory implements ControlFactoryInterface
                 $c->markAsFake();
                 break;
             case 'multipleInput':
+            case 'revealingCheckbox':
 
                 break;
             default:
@@ -113,6 +114,60 @@ class MagicControlFactory implements ControlFactoryInterface
                     }
 
 
+                </script>
+                <?php
+                break;
+            case 'revealingCheckbox':
+
+                $formId = $f->getFormCssId();
+                $checkId = $formId . '_' . rand(0, 1000);
+                $target = $args[0];
+                $targetId = $target;
+                $cssClass = (array_key_exists(1, $args)) ? $args[1] : 'hidden';
+                $value = (int)$value;
+                $s = (1 === $value) ? ' checked="checked"' : '';
+
+                ?>
+                <input <?php echo $s; ?> type="checkbox" name="<?php echo htmlspecialchars($name); ?>" value="1"
+                                         id="<?php echo $checkId; ?>">
+                <script>
+
+
+                    document.addEventListener('DOMContentLoaded', function () {
+
+                        var target = document.getElementById("<?php echo $targetId; ?>");
+
+                        if (target) {
+                            var cssClass = "<?php echo str_replace('"', '\"', $cssClass); ?>";
+
+                            function toggle() {
+                                if (target.classList.contains(cssClass)) {
+                                    target.classList.remove(cssClass);
+                                }
+                                else {
+                                    target.classList.add(cssClass);
+                                }
+                            }
+
+                            var cb = document.getElementById('<?php echo $checkId; ?>');
+                            cb.addEventListener('click', function (e) {
+                                toggle();
+                            });
+
+                            <?php
+                            if(1 !== (int)$value){
+                            ?>
+                            target.classList.add(cssClass);
+                            <?php
+                            }
+                            ?>
+
+
+                        }
+                        else {
+                            console.log("MagicControlFactory error: target not found, with cssId=<?php echo $targetId; ?>");
+                        }
+                    });
                 </script>
                 <?php
                 break;

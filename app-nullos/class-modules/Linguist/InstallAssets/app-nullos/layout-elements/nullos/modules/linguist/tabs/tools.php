@@ -1,11 +1,10 @@
 <?php
 
 
+use AssetsList\AssetsList;
 use Bat\FileSystemTool;
 use DirScanner\YorgDirScannerTool;
 use Layout\Goofy;
-use LayoutDynamicHead\LayoutDynamicHeadModule;
-use Linguist\LinguistPreferences;
 use Linguist\LinguistUtil;
 use Linguist\Util\LinguistModuleScanner;
 use Linguist\Util\LinguistScanner;
@@ -18,7 +17,7 @@ $dirs = YorgDirScannerTool::getDirs($dir, true, true);
 $modules = ModuleInstallerUtil::getModuleNames();
 
 
-LayoutDynamicHeadModule::registerCss("style/modules/layout/blues.css");
+AssetsList::css("style/modules/layout/blues.css");
 
 
 $messages = [];

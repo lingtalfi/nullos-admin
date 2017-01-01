@@ -21,6 +21,21 @@ class ModuleInstallerConfig
         return APP_ROOT_DIR . "/class-modules";
     }
 
+    public static function getUniverseWorkingDir()
+    {
+        return APP_ROOT_DIR . "/class-planets";
+    }
+
+    public static function getMainModuleRepoUrl()
+    {
+        return "http://nullos/repo-module";
+    }
+
+    public static function getProgressFile()
+    {
+        return tempnam('/tmp', '');
+    }
+
     public static function getCoreModules()
     {
         /**
@@ -34,9 +49,40 @@ class ModuleInstallerConfig
             'Lang',
             'Layout',
             'LayoutDynamicHead',
+            'ModuleInfo',
             'ModuleInstaller',
             'Router',
             'ToolsLeftMenuSection',
+        ];
+    }
+
+    public static function getCorePlanets()
+    {
+        /**
+         * A core planet means that its functionality is used by the core or core modules and shouldn't be removed.
+         *
+         */
+        return [
+            'AdminTable',
+            'ArrayExport',
+            'ArrayStore',
+            'ArrayToString',
+            'AssetsList',
+            'BabyYaml',
+            'Bat',
+            'BumbleBee',
+            'CopyDir',
+            'DirScanner',
+            'DirTransformer',
+            'Explorer',
+            'Icons',
+            'Installer',
+            'Privilege',
+            'PublicException',
+            'QuickForm',
+            'QuickPdo',
+            'SequenceMatcher',
+            'Tokens',
         ];
     }
 
