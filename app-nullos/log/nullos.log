@@ -568,3 +568,21 @@ Stack trace:
 #7 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/index.php(74): require_once('/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/pages/modules/moduleInstaller/moduleInstaller.php')
 #8 {main}
 
+(no identifier) -- 2017-01-02 15:28:33
+----------
+exception 'Exception' with message 'translation file not found: /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/lang/en/modules/moduleInstaller/moduleInstaller.zip.php' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/functions/main-functions.php:48
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/ModuleRepo/MainRepoUtil.php(37): __('looking for module {module}', 'modules/moduleInstaller/moduleInstaller.zip', Array)
+#1 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/services/modules/moduleInstaller/update-module.php(53): ModuleInstaller\ModuleRepo\MainRepoUtil::downloadModule('Counter', '/Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules', Closure)
+#2 {main}
+
+(no identifier) -- 2017-01-02 18:20:33
+----------
+exception 'Exception' with message 'translation file not found: /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/lang/en/modules/layout/layout.php' in /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/functions/main-functions.php:48
+Stack trace:
+#0 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Layout/Body/LiveSteps/LiveSteps.php(160): __('<a href="/services/modules/moduleInstaller">Click here to refresh the page</a>', 'modules/layout/layout')
+#1 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/ModuleInstaller/Layout/LiveSteps/ModuleInstallerLiveSteps.php(33): Layout\Body\LiveSteps\LiveSteps->addMessageFinish('done', true)
+#2 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/class-modules/Layout/Body/LiveSteps/LiveSteps.php(95): ModuleInstaller\Layout\LiveSteps\ModuleInstallerLiveSteps->processRequest()
+#3 /Users/pierrelafitte/Desktop/mondossier/web/php/projects/nullos-admin/app-nullos/www/services/modules/moduleInstaller/update-module.php(11): Layout\Body\LiveSteps\LiveSteps->listen()
+#4 {main}
+

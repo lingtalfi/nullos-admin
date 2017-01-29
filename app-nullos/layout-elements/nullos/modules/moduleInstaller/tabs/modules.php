@@ -4,7 +4,10 @@
 use AdminTable\Listable\ArrayListable;
 use AdminTable\NullosAdminTable;
 use AdminTable\Table\ListWidgets;
+use AssetsList\AssetsList;
 use Http\HttpResponseUtil;
+use Icons\Icons;
+use Layout\Body\LiveSteps\LiveSteps;
 use Layout\Goofy;
 use ModuleInstaller\Exception\ReportException;
 use ModuleInstaller\ModuleInstallerUtil;
@@ -12,9 +15,9 @@ use PublicException\PublicException;
 
 
 ?>
-    <div class="tac bignose install-page">
-        <h3><?php echo __("Modules", LL); ?></h3>
-    </div>
+<div class="tac bignose install-page">
+    <h3><?php echo __("Modules", LL); ?></h3>
+</div>
 
 <?php
 
@@ -29,6 +32,7 @@ if (true === ModuleInstallerUtil::repoListIsOutOfDate()) {
     }
 }
 
+AssetsList::css(url('/style/live-steps.css'));
 
 if (
     array_key_exists('ric', $_POST) &&
@@ -124,7 +128,7 @@ $list->setTransformer('core', function ($v, $item, $ricValue) {
 
 $list->setTransformer('version', function ($v, $item, $ricValue) {
     if ($item['lastVersion'] !== $v) {
-        return $v . ' -- ' . $item['lastVersion'] . ' available (<a data-action="update" data-ric="' . $ricValue . '" class="action-link postlink confirmlink" href="#">update</a>)';
+        return $v . ' -- ' . $item['lastVersion'] . ' available (<a data-ric="' . $ricValue . '" class="action-link updatemodulelink" href="#">update</a>)';
     }
     return $v;
 });
@@ -145,36 +149,60 @@ $list->setTransformer('name', function ($v, $item) {
     return '<a href="' . ModuleInstallerUtil::getTabUri('module', ['module' => $v]) . '">' . $v . '</a>';
 });
 
+$tableId = $list->getRenderer()->getTableId();
+
 
 ?>
-    <div class="pad">
-        <form method="post" action="">
-            <button id="moduleinstaller-packall-btn" type="submit"
-                    class="autowidth"><?php echo __("Pack all modules", LL); ?></button>
-            <input type="hidden" name="ric" value="fake">
-            <input type="hidden" name="action" value="packall">
-        </form>
-        <script>
-            var btn = document.getElementById('moduleinstaller-packall-btn');
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.target.parentNode.submit();
-            });
-
-
-            var url = '/services/progress.txt';
-            setInterval(function(){
-                z.ajaxGet(url, function(msg){
-                    console.log(msg);
-                });
-            }, 1000);
-
-
-
-
-        </script>
-    </div>
-
+<div class="pad">
+    <form method="post" action="">
+        <button id="moduleinstaller-packall-btn" type="submit"
+                class="autowidth"><?php echo __("Pack all modules", LL); ?></button>
+        <input type="hidden" name="ric" value="fake">
+        <input type="hidden" name="action" value="packall">
+    </form>
+    <script>
+        var btn = document.getElementById('moduleinstaller-packall-btn');
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.target.parentNode.submit();
+        });
+    </script>
+</div>
 <?php
 
+LiveSteps::displayContainer();
+
 $list->displayTable();
+
+?>
+<script>
+
+
+    var table = document.getElementById("<?php echo $tableId; ?>");
+    var updateLinks = table.querySelectorAll(".updatemodulelink");
+    [].forEach.call(updateLinks, function (el) {
+        el.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            if (true === confirm("<?php echo __("Are you sure you want to update this module? It will override the previous one", LL); ?>")) {
+
+                var module = el.getAttribute('data-ric');
+                <?php
+                $serviceUrl = url("/services/modules/moduleInstaller/update-module.php");
+                LiveSteps::displayJsCall($serviceUrl, 'live-steps');
+                ?>
+            }
+        });
+    });
+
+
+    var els = document.querySelectorAll(".live-steps");
+    [].forEach.call(els, function (el) {
+        el.addEventListener('click', function (e) {
+            if (e.target.classList.contains("live-steps-close")) {
+                el.parentNode.removeChild(el);
+            }
+        });
+    });
+
+</script>

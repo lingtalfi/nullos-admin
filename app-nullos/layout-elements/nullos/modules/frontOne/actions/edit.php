@@ -1,10 +1,10 @@
 <?php
 
-use FrontOne\Article;
-use FrontOne\ArticleCrud\ArticleCrudUtil;
-use FrontOne\ArticleCrud\ArticleScannerUtil;
-use FrontOne\ArticleCrud\Exception\ArticleCrudException;
-use FrontOne\FrontOneConfig;
+use Shared\FrontOne\Article;
+use Shared\FrontOne\ArticleCrud\ArticleCrudUtil;
+use Shared\FrontOne\ArticleCrud\ArticleScannerUtil;
+use Shared\FrontOne\ArticleCrud\Exception\ArticleCrudException;
+use Shared\FrontOne\FrontOneConfig;
 use QuickForm\ControlFactory\InertControlFactory;
 
 

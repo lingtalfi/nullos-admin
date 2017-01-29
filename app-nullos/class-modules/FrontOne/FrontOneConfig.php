@@ -24,17 +24,17 @@ class FrontOneConfig
 
     public static function getThemePage()
     {
-        return "modules/frontOne/frontOne.php";
+        return "modules/frontOne/frontOne-theme.php";
     }
 
     public static function getArticlesPage()
     {
-        return "modules/frontOne/frontOne.php";
+        return "modules/frontOne/frontOne-articles.php";
     }
 
     public static function getSocialPage()
     {
-        return "modules/frontOne/frontOne.php";
+        return "modules/frontOne/frontOne-social.php";
     }
 
 }

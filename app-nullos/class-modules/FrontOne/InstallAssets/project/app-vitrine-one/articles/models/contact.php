@@ -1,7 +1,7 @@
 <?php
 // contact form...
 
-use FrontOne\FrontOneUtil;
+use Shared\FrontOne\FrontOneUtil;
 use Mailer\AppMailer;
 
 $d = [

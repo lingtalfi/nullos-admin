@@ -4,10 +4,10 @@
 use AdminTable\Listable\ArrayListable;
 use AdminTable\NullosAdminTable;
 use AdminTable\Table\ListWidgets;
-use FrontOne\ArticleCrud\ArticleCrudUtil;
-use FrontOne\ArticleCrud\ArticleScannerUtil;
-use FrontOne\ArticleCrud\Exception\ArticleCrudCannotDeleteProtectedException;
-use FrontOne\FrontOneConfig;
+use Shared\FrontOne\ArticleCrud\ArticleCrudUtil;
+use Shared\FrontOne\ArticleCrud\ArticleScannerUtil;
+use Shared\FrontOne\ArticleCrud\Exception\ArticleCrudCannotDeleteProtectedException;
+use Shared\FrontOne\FrontOneConfig;
 use FrontOne\Util\ArticlesUtil;
 use Layout\Goofy;
 

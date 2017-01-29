@@ -12,7 +12,7 @@ $store = [
         1000,
     ],
     'maui' => 'oo',
-    '_page' => 1,
+    '_page' => 31,
     '_nlpp' => 1000,
-    '_log' => 'Application log',
+    '_log' => 'PhpLog',
 ];

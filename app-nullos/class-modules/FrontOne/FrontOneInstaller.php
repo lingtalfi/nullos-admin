@@ -84,7 +84,7 @@ class FrontOneInstaller extends WithPackModuleInstaller implements ModuleSaasInt
     protected function getSources()
     {
         return [
-            'class-shared/FrontOne',
+            'class-shared/Shared/FrontOne',
             'app-vitrine-one',
             'app-nullos/lang/en/modules/frontOne',
             'app-nullos/layout-elements/nullos/modules/frontOne',

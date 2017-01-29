@@ -42,12 +42,14 @@ class Goofy
             <span class="icon-span"><?php echo Icons::printIcon('done', 'green', 48); ?></span>
             <div>
                 <span class="text"><?php echo $msg; ?></span>
-                <?php if (true === $clickHereToContinue): ?>
+                <?php if (false !== $clickHereToContinue):
+                    $url = (true === $clickHereToContinue) ? htmlspecialchars($_SERVER['REQUEST_URI']) : $clickHereToContinue;
+                    ?>
                     <br>
                     <span>
                 <?php
                 echo __("{ClickHere} to continue.", "form", [
-                    'ClickHere' => '<a href="' . htmlspecialchars($_SERVER['REQUEST_URI']) . '">' . __("ClickHere", "form") . '</a>',
+                    'ClickHere' => '<a href="' . $url . '">' . __("ClickHere", "form") . '</a>',
                 ]);
                 ?>
             </span>

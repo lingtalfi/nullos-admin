@@ -2,7 +2,7 @@
 
 namespace FrontOne\Util;
 
-use FrontOne\ArticleList;
+use Shared\FrontOne\ArticleList;
 
 class ArticlesUtil
 {

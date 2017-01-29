@@ -1,7 +1,7 @@
 <?php
 
 
-use FrontOne\FrontOneUtil;
+use Shared\FrontOne\FrontOneUtil;
 
 $ll = 'modules/frontOne/frontOne';
 Spirit::set('ll', $ll); // for linkt

@@ -43,6 +43,7 @@ class ModuleInstallerConfig
          */
         return [
             'ApplicationLog',
+            'ApplicationDetector',
             'Authentication',
             'Boot',
             'Crud',

@@ -1,6 +1,6 @@
 <?php
 
-use FrontOne\FileArticle;
+use Shared\FrontOne\FileArticle;
 
 $article = new FileArticle();
 $article->setAnchor('intro');

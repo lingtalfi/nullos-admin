@@ -131,6 +131,10 @@ class SaasInstaller
     }
 
 
+
+
+
+
     //------------------------------------------------------------------------------/
     //
     //------------------------------------------------------------------------------/
@@ -189,6 +193,16 @@ class SaasInstaller
                 }
             }
         }
+    }
+
+
+    public static function subscribeModule($class, $method, $subscriberModule, $transformMode, $desiredPos)
+    {
+        $refMethod = new \ReflectionMethod($class, $method);
+        $invocMethod = self::getInvocationMethod($refMethod);
+        $line = $subscriberModule . '::' . $invocMethod . ';';
+        $transformer = self::getTransformer($line, $transformMode, $desiredPos);
+        ClassTool::rewriteMethodContent($class, $method, $transformer);
     }
 
     private static function getTransformer($line, $transformMode, $desiredPos = null)

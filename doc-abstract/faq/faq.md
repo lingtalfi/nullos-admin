@@ -18,3 +18,14 @@ HttpResponseUtil::redirect("/my/url"); // the website absolute url will be autom
 This will actually clean all the ob buffers, and make a regular http redirection
 using the php location header.
 
+
+
+How to make a div that shows progress steps in live?
+---------------------------------------------
+You can use the LiveSteps helper from the Layout module.
+Find implementation indications in that class.
+ 
+
+
+
+

@@ -28,9 +28,19 @@ class MainRepoUtil
 
     public static function downloadModule($module, $dstModuleDir, $progressFunc = null)
     {
+        $ll = "modules/moduleInstaller/moduleInstaller";
         $list = self::getModuleInfoList();
+
+        call_user_func($progressFunc, __("looking for module {module}", $ll, [
+            'module' => $module,
+        ]));
+
         if (array_key_exists($module, $list)) {
             $info = $list[$module];
+            if (null === $progressFunc) {
+                $progressFunc = function () {
+                };
+            }
 
             // check if zip exist
             $zipUrl = self::getUrl() . "/modules-zip/$module.zip";
@@ -43,12 +53,14 @@ class MainRepoUtil
                 }
             }
             if (true === $hasZip) {
+                call_user_func($progressFunc, __("downloading zip", $ll));
                 $c = file_get_contents($zipUrl);
-
                 $tmpFile = tempnam(APP_ROOT_DIR . "/tmp", '');
                 file_put_contents($tmpFile, $c);
                 ZipTool::unzip($tmpFile, $dstModuleDir);
+                call_user_func($progressFunc, __("cleaning...", $ll));
                 unlink($tmpFile);
+                return true;
             }
 //            elseif (array_key_exists('fileList', $info)) {
 //                $fileList = $info['fileList'];
@@ -77,12 +89,14 @@ class MainRepoUtil
 //                }
 //            }
             else {
-                throw new \Exception("Don't know how to download the module yet");
+                throw new \Exception(__("Don't know how to download the module yet", $ll));
             }
         } else {
-            throw new \Exception("module not found: $module");
+            throw new \Exception(__("module not found: {module}", $ll, [
+                'module' => $module,
+            ]));
         }
-
+        return false;
     }
 
     //------------------------------------------------------------------------------/

@@ -1,4 +1,4 @@
-<h2 class="major">Intro</h2>
+<h2 class="major">Intjjro</h2>
 <span class="image main"><img src="<?php echo url('images/pic01.jpg'); ?>" alt=""/></span>
 <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue.
     Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus

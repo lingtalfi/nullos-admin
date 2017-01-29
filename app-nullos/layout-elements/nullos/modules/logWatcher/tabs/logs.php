@@ -20,7 +20,11 @@ use PublicException\PublicException;
 <?php
 
 $prefs = LogWatcherPreferences::getPreferences();
+
+$changedLog = (array_key_exists('log', $_GET));
 $logLabel = DynamicPreferencesHelper::get('log', $prefs);
+
+
 $logList = LogWatcherUtil::getLogList();
 
 if (null === $logLabel && count($logList) > 0) {
@@ -37,7 +41,14 @@ if (null !== $logLabel) {
         ->nbLinesPerPage($nbLinesPerPage);
     $nbPages = (int)$slicer->getNbPages();
 
-    $page = DynamicPreferencesHelper::get('page', $prefs, 100);
+
+    if (array_key_exists('page', $_GET) || false === $changedLog) {
+        $page = DynamicPreferencesHelper::get('page', $prefs, $nbPages);
+    } else {
+        $page = $nbPages;
+    }
+
+
     if ($page < 1) {
         $page = 1;
     } elseif ($page > $nbPages) {
@@ -148,7 +159,6 @@ if (null !== $logLabel) {
                                 value="<?php echo htmlspecialchars($label); ?>"><?php echo $label; ?></option>
                     <?php endforeach; ?>
                 </select>
-                <input type="hidden" name="page" value="<?php echo $page; ?>">
             </form>
             <form method="get" action="">
                 <label><?php echo __("Nb lines per page", LL); ?></label>

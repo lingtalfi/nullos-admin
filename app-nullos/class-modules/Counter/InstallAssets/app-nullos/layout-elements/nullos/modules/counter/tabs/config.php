@@ -14,12 +14,15 @@ $form->formTreatmentFunc = function (array $formattedValues, &$msg) {
 
 
 $prefs = CounterPreferences::getPreferences();
+$availableSites = $prefs['availableSites'];
+
+
 $form->labels = [
-    'nbLinesPerPageList' => __("List of 'number of lines per page'", LL),
+    'availableSites' => __("Available sites", LL),
 ];
 $form->defaultValues = [
-    'nbLinesPerPageList' => $prefs['nbLinesPerPageList'],
+    'availableSites' => $prefs['availableSites'],
 ];
-$form->addControl("nbLinesPerPageList")->type('multipleInput');
+$form->addControl("availableSites")->type('selectMultiple', $availableSites);
 
 $form->play();

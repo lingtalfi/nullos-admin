@@ -13,3 +13,8 @@ todo: linguist doc: complete all modules: tell about the "Fatal error: Maximum e
 And the max_execution_time = 30 directive
 
 
+todo: ensure the services of a module are imported during the pack procedure
+
+todo: toggl
+todo: front one \ EventsServices onPageRenderedAfter subscription does not work
+todo: front one -> uninstall doesn't remove preferences..., it should

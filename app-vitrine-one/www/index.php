@@ -3,6 +3,7 @@
 
 use Boot\BootConfig;
 use Boot\BootModule;
+use Events\EventsServices;
 use Privilege\PrivilegeUser;
 use Router\RouterBridge;
 
@@ -47,3 +48,5 @@ if (array_key_exists($uri, $uri2pagesMap)) {
 
 require_once APP_ROOT_DIR . "/pages/" . $page;
 echo ob_get_clean();
+
+EventsServices::onPageRenderedAfter();

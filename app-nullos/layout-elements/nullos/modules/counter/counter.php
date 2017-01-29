@@ -19,7 +19,7 @@ Spirit::set('ll', LL);
 $tab = "counter";
 if (array_key_exists("tab", $_GET)) {
     $tab = $_GET['tab'];
-    if (false === in_array($tab, ['counter', 'help', 'config'])) {
+    if (false === in_array($tab, ['counter', 'tools', 'help', 'config'])) {
         $tab = "counter";
     }
 }
@@ -30,6 +30,7 @@ if (array_key_exists("tab", $_GET)) {
     <?php
     $tabs = TabbyTabs::create();
     $tabs->addLeftTab(__("Counter", LL), CounterUtil::getTabUri("counter"))->icon('timeline');
+    $tabs->addLeftTab(__("Tools", LL), CounterUtil::getTabUri("tools"))->icon('build');
     $tabs->addRightTab(__("Help", LL), CounterUtil::getTabUri("help"))->icon("help");
 //    $tabs->addRightTab(__("Config", LL), CounterUtil::getTabUri("config"))->icon("settings");
     $tabs->display();
