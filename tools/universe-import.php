@@ -109,7 +109,6 @@ if (array_key_exists("d", $options)) {
 if (file_exists($destDir)) {
     if (file_exists($sourceDir)) {
         $files = file($destDir . "/_import.txt", \FILE_IGNORE_NEW_LINES);
-
         foreach ($files as $dir) {
 
 

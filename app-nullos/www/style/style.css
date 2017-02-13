@@ -63,6 +63,36 @@ body.holygrail {
 }
 
 /*------------------------------------
+- TOPMENU
+------------------------------------*/
+.topmenu {
+    height: 40px;
+    background: #ddd;
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    padding: 15px 0 10px 0;
+}
+
+.topmenu ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.topmenu ul li{
+    margin: 0 10px;
+}
+
+.topmenu ul li a{
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    background: rgba(12, 68, 129, 0.8);
+    color: white;
+    text-decoration: none;
+}
+
+/*------------------------------------
 - PANES CODE
 ------------------------------------*/
 .panes-container {

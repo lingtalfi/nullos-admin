@@ -13,7 +13,8 @@ use Icons\Icons;
 class CrudAdminTableRenderer extends AdminTableRenderer
 {
 
-    public static function create(){
+    public static function create()
+    {
         return new self();
     }
 
@@ -35,6 +36,17 @@ class CrudAdminTableRenderer extends AdminTableRenderer
 
             parent::renderTable($p);
         }
+    }
+
+
+    protected function printHiddenFields($exclude, ListParameters $p, $page, $sortColumn, $sortColumnDir, $search, $nbItemsPerPageChoice)
+    {
+        parent::printHiddenFields($exclude, $p, $page, $sortColumn, $sortColumnDir, $search, $nbItemsPerPageChoice);
+        ?>
+        <input type="hidden" name="name"
+               value="<?php echo htmlspecialchars($p->table); ?>">
+
+        <?php
     }
 
 

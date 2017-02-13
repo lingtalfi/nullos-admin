@@ -32,7 +32,6 @@ class RouterServices
         \Linguist\LinguistModule::decorateUri2PagesMap($uri2pagesMap);
         \Crud\CrudModule::decorateUri2PagesMap($uri2pagesMap);
         \Counter\CounterModule::decorateUri2PagesMap($uri2pagesMap);
-        \FrontOne\FrontOneModule::decorateUri2PagesMap($uri2pagesMap);
     }
 
 }

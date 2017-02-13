@@ -13,6 +13,6 @@ class ModuleInfoServices
      */
     public static function getFrontWebsites(array &$fronts)
     {
-        \FrontOne\FrontOneModule::getFrontWebsites($fronts);
+        
     }
 }

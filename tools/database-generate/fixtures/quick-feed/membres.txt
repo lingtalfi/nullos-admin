@@ -1,4 +1,0 @@
-clarisse        ##      clarisse_doe@gmail.com      ##      /img/membre/clarisse.jpg
-marie-pierre    ##      mp-du-37@me.com             ##      /img/membre/marie-pierre.jpg
-marion          ##      hachis-parmentier@yahoo.fr  ##      /img/membre/marion.jpg
-paul            ##      kerberos-934@yahoo.com      ##      /img/membre/paul.jpg

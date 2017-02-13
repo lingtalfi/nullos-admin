@@ -13,16 +13,16 @@ class ToolsLeftMenuSectionServices
      */
     public static function displayToolsLeftMenuLinks()
     {
-        \Boot\BootModule::displayToolsLeftMenuLinks();
-        \IconsViewer\IconsViewerModule::displayToolsLeftMenuLinks();
+//        \Boot\BootModule::displayToolsLeftMenuLinks();
+//        \IconsViewer\IconsViewerModule::displayToolsLeftMenuLinks();
         \Crud\CrudModule::displayToolsLeftMenuLinks();
         \ModuleInstaller\ModuleInstallerModule::displayToolsLeftMenuLinks();
-        \NullosInfo\NullosInfoModule::displayToolsLeftMenuLinks();
-        \Linguist\LinguistModule::displayToolsLeftMenuLinks();
-        \QuickDoc\QuickDocModule::displayToolsLeftMenuLinks();
-        \SqlTools\SqlToolsModule::displayToolsLeftMenuLinks();
-        \LogWatcher\LogWatcherModule::displayToolsLeftMenuLinks();
-        \Counter\CounterModule::displayToolsLeftMenuLinks();
+//        \NullosInfo\NullosInfoModule::displayToolsLeftMenuLinks();
+//        \Linguist\LinguistModule::displayToolsLeftMenuLinks();
+//        \QuickDoc\QuickDocModule::displayToolsLeftMenuLinks();
+//        \SqlTools\SqlToolsModule::displayToolsLeftMenuLinks();
+//        \LogWatcher\LogWatcherModule::displayToolsLeftMenuLinks();
+//        \Counter\CounterModule::displayToolsLeftMenuLinks();
     }
 
 

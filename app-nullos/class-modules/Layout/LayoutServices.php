@@ -15,9 +15,8 @@ class LayoutServices
      */
     public static function displayLeftMenuBlocks()
    {
-        ToolsLeftMenuSectionModule::displayLeftMenuBlocks();
+//        ToolsLeftMenuSectionModule::displayLeftMenuBlocks();
         \Crud\CrudModule::displayLeftMenuBlocks();
-        \FrontOne\FrontOneModule::displayLeftMenuBlocks();
     }
 
 

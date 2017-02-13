@@ -16,8 +16,7 @@ ButineurAutoloader::getInst()
     ->addLocation(__DIR__ . "/class")
     ->addLocation(__DIR__ . "/class-core")
     ->addLocation(__DIR__ . "/class-modules")
-    ->addLocation(__DIR__ . "/class-planets")
-    ->addLocation(__DIR__ . "/../class-shared");
+    ->addLocation(__DIR__ . "/class-planets");
 ButineurAutoloader::getInst()->start();
 
 
@@ -35,12 +34,11 @@ require_once __DIR__ . "/functions/main-functions.php";
 if (true === Helper::isLocal()) {
     // php
     ini_set('display_errors', 1);
-
     
     // db
     $dbUser = 'root';
-    $dbPass = '';
-    $dbName = 'oui';
+    $dbPass = 'root';
+    $dbName = 'zilu';
             
 
     // privilege
@@ -53,7 +51,7 @@ if (true === Helper::isLocal()) {
     // db
     $dbUser = 'root';
     $dbPass = '';
-    $dbName = 'oui';
+    $dbName = 'zilu';
             
 
     // privilege
@@ -92,7 +90,6 @@ if ('/index.php' === $_SERVER['PHP_SELF']) {
 //--------------------------------------------
 // DATABASE CONNEXION
 //--------------------------------------------
-$dbName = "prestashop16";
 QuickPdo::setConnection("mysql:host=localhost;dbname=$dbName", $dbUser, $dbPass, [
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY','')), NAMES 'utf8'",
@@ -113,7 +110,7 @@ define('APP_ROOT_DIR', __DIR__);
 // website
 // used in mail communication and authentication form,
 // used in html title, and at the top of the left menu
-define('WEBSITE_NAME', "My Website");
+define('WEBSITE_NAME', "Zilu's interface");
 
 
 Spirit::set('ricSeparator', '--*--');

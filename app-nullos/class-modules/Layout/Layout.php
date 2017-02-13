@@ -47,9 +47,12 @@ class Layout
 
 
         <body class="holygrail">
-        <div class="topbar">
-            <?php LayoutServices::displayTopBar(); ?>
-
+<!--        <div class="topbar">--><?php ////LayoutServices::displayTopBar(); ?><!--</div>-->
+        <div class="topmenu">
+            <ul>
+                <li><a href="/commande">Commande</a></li>
+                <li><a href="/container">Container</a></li>
+            </ul>
         </div>
         <div class="body panes-container">
             <div id="one" class="pane-main leftmenu">
